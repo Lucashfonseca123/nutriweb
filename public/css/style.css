@@ -1,3 +1,4 @@
+/* INICIO MENU*/
 @keyframes swing {
     0% {
         transform: rotate(0deg);
@@ -478,6 +479,8 @@ body {
 .chiller-theme .sidebar-footer>a:last-child {
     border-right: none;
 }
+
+/* FINAL MENU */
 
 .logo {
     width: 70px;
