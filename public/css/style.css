@@ -486,8 +486,8 @@ body {
 }
 
 body{
-    background-image: url("/nutriweb/public/img/MorangoDesfoque.jpg");
-    background-repeat: no-repeat;
+    background-image: url("/img/MorangoDesfoque.jpg");
+    background-repeat:repeat;
     background-size: cover;
 }
 
