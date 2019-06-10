@@ -15,7 +15,7 @@
                         </label>
                     </div>
                     <div class="list-group">
-                       <div class="list-group-item list-group-item-action active">
+                       <div class="list-group-item list-group-item-dark">
                            Pacientes
                        </div>
                         <a href="#" class="list-group-item list-group-item-action">Paciente 1</a>

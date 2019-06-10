@@ -25,5 +25,8 @@ class Controller extends BaseController
     public function reconsulta(){
         return view('paciente_reconsulta');
     }
+    public function cardapio(){
+        return view ('cardapio_cadastro');
+    }
 
 }

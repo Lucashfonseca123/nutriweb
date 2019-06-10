@@ -77,7 +77,7 @@
                                     <a href="reconsulta">Reconsulta</a>
                                 </li>
                                 <li>
-                                    <a href="#">Relatório Paciente</a>
+                                    <a href="relatorio">Relatório Paciente</a>
                                 </li>
                             </ul>
                         </div>
@@ -111,7 +111,7 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
-                                    <a href="#">Criar cardápios</a>
+                                    <a href="cardapio">Criar cardápios</a>
                                 </li>
                                 <li>
                                     <a href="#">Criar grupos</a>
