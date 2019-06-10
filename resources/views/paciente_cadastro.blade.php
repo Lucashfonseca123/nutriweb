@@ -11,7 +11,7 @@
 
                 <div class="panel-body">
                     <div class="form-group">
-                        <label for="nome" class="col-md-5">  <h7><b>*</b> Campo obrigatório</h7>
+                        <label for="nome" class="col-md-5"><b>* Campo obrigatório</b>
                         </label>
                     </div>
 

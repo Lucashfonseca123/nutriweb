@@ -74,7 +74,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">Reconsulta</a>
+                                    <a href="reconsulta">Reconsulta</a>
                                 </li>
                                 <li>
                                     <a href="#">Relatório Paciente</a>

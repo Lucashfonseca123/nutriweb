@@ -23,3 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/cadastro','Controller@cadastrar');
 
 Route::get('/relatorio', 'Controller@consultar_relatorio');
+
+Route::get('/reconsulta', 'Controller@reconsulta');

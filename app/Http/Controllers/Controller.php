@@ -22,4 +22,8 @@ class Controller extends BaseController
         return view ('relatorio');
     }
 
+    public function reconsulta(){
+        return view('paciente_reconsulta');
+    }
+
 }
