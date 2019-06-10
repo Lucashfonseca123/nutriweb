@@ -21,26 +21,6 @@
             </div>
             <h5>Cardápios a fazer:</h5>
             <hr>
-            <div class="row">
-                <div class="col-md-8">
-                    <ul class="list-group">
-                        <h6>Paciente</h6>
-                        <li class="list-group-item">Paciente 1</li>
-                        <li class="list-group-item">Paciente 2</li>
-                        <li class="list-group-item">Paciente 3</li>
-                        <li class="list-group-item">Paciente 4</li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <ul class="list-group">
-                        <h6>Data</h6>
-                        <li class="list-group-item"> 1</li>
-                        <li class="list-group-item"> 2</li>
-                        <li class="list-group-item"> 3</li>
-                        <li class="list-group-item"> 4</li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </main>
     <!-- page-content" -->
