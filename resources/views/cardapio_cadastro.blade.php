@@ -8,7 +8,7 @@
                 <!-- NOME -->
                 <div class="form-group">
                     <label for="nome" >
-                        <input id="cpf" name="cpf" type="text" class="form-control" placeholder="Busca grupos.." maxlength="11">
+                        <input id="cpf" name="cpf" type="text" class="form-control" placeholder="Selecionar grupos.." maxlength="11">
                     </label>
                     <label for="nome" >
                         <button id="Busca" name="Busca" class="btn btn-success" type="Submit">Busca</button>

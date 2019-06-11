@@ -27,3 +27,5 @@ Route::get('/relatorio', 'Controller@consultar_relatorio');
 Route::get('/reconsulta', 'Controller@reconsulta');
 
 Route::get('/cardapio', 'Controller@cardapio');
+
+Route::get('/grupos','Controller@grupos');

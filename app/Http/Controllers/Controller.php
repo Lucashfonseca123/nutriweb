@@ -28,5 +28,8 @@ class Controller extends BaseController
     public function cardapio(){
         return view ('cardapio_cadastro');
     }
+    public function grupos(){
+        return view ('grupo_cadastro');
+    }
 
 }

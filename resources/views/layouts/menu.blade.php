@@ -114,7 +114,7 @@
                                     <a href="cardapio">Criar cardápios</a>
                                 </li>
                                 <li>
-                                    <a href="#">Criar grupos</a>
+                                    <a href="grupos">Criar grupos</a>
                                 </li>
                             </ul>
                         </div>
