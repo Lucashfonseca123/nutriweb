@@ -19,7 +19,6 @@
                     </div>
                 </div>
             </div>
-            <h5>Cardápios a fazer:</h5>
             <hr>
         </div>
     </main>
