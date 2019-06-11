@@ -50,9 +50,9 @@
                         <input type="text" class="form-control search-menu" placeholder="Buscar alimentos...">
                         <div class="input-group-append">
                             <span class="input-group-text">
-                                <a href="/cadastro" target="_blank">
+                                <span onclick="window.open('/cadastro', '', 'width=780,height=400')">
                                     <i class="fa fa-search" aria-hidden="true"></i>
-                                </a>
+                                </span>
                             </span>
                         </div>
                     </div>
