@@ -33,14 +33,14 @@
                          alt="User picture" style="height: 80px; width: 60px">
                 </div>
                 <div class="user-info">
-          <span class="user-name">Fernanda
-            Fonseca
-          </span>
-                    <span class="user-role">Administrador</span>
-                    <span class="user-status">
-            <i class="fa fa-circle"></i>
-            <span>Online</span>
-          </span>
+                     <span class="user-name">Fernanda
+                        Fonseca
+                     </span>
+                     <span class="user-role">Administrador</span>
+                     <span class="user-status">
+                        <i class="fa fa-circle"></i>
+                     <span>Online</span>
+                     </span>
                 </div>
             </div>
             <!-- sidebar-header  -->
@@ -49,9 +49,11 @@
                     <div class="input-group">
                         <input type="text" class="form-control search-menu" placeholder="Buscar alimentos...">
                         <div class="input-group-append">
-              <span class="input-group-text">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </span>
+                            <span class="input-group-text">
+                                <a href="/cadastro" target="_blank">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -69,14 +71,14 @@
                         </a>
                         <div class="sidebar-submenu">
                             <ul>
-                                <li>
+                                <li title="Adicione novos pacientes">
                                     <a href="cadastro">Novo paciente
                                     </a>
                                 </li>
-                                <li>
+                                <li title="Selecione pacientes para a reconsulta">
                                     <a href="reconsulta">Reconsulta</a>
                                 </li>
-                                <li>
+                                <li title="Analise a situação do paciente">
                                     <a href="relatorio">Relatório Paciente</a>
                                 </li>
                             </ul>
@@ -110,16 +112,16 @@
                         </a>
                         <div class="sidebar-submenu">
                             <ul>
-                                <li>
+                                <li title="Adicione grupos nas refeições, crie seu cardápio">
                                     <a href="cardapio">Criar cardápios</a>
                                 </li>
-                                <li>
+                                <li title="Selecione alimentos para criar grupos">
                                     <a href="grupos">Criar grupos</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                    <li class="sidebar-dropdown">
+                    <li class="sidebar" title="Analise a situação do paciente">
                         <a href="/relatorio">
                             <i class="fa fa-globe"></i>
                             <span>Relatório</span>
