@@ -1,7 +1,7 @@
 @extends('layouts.menu')
 @section('content')
     <main class="page-content">
-        <div class="container">
+        <div class="container" id="div">
             <form class="form-horizontal">
                 <fieldset>
                     <h3>Grupos <br><br></h3>
@@ -16,33 +16,22 @@
                     </div>
                 </fieldset>
             </form>
-            <p>This is a paragraph.</p>
-            <p>This is another paragraph.</p>
 
-            <ol>
-                <li>List item 1</li>
-                <li>List item 2</li>
-                <li>List item 3</li>
-            </ol>
-
-            <button id="btn1">Append text</button>
-            <button id="btn2">Append list items</button>
-
-            <div class="col-md-4 test">
-                <div class="card mt-4">
-                    <div class="card-header">
-                      <center><h6> Frango </h6></center>
-                    </div>
-                    <div class="card-body">
-                        O teor de lipídios variou de 0,78% para o peito sem pele a 26,54% para a pele pura.
-                        Os teores de colesterol variaram de 115mg/100g para pele pura e peito sem pele a 220mg/100g
-                        para asa sem pele.
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-success">Adicionar alimento</button>
-                    </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">Nome</label>
+                    <input type="text" id="Nome" class="form-control">
                 </div>
+                <div class="form-group">
+                    <label for="" class="form-group">Descrição</label>
+                    <textarea class="form-control" name="desc" id="texto" cols="30" rows="10"></textarea>
+                </div>
+                <button class="btn btn-success" id="btn1">Adicionar alimento</button>
             </div>
+
+            <div id="cards">
+
+             </div>
         </div>
     </main>
 @endsection

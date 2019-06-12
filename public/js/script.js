@@ -30,8 +30,8 @@ jQuery(function ($) {
     });
 
 });
-
-//Adicionando novo alimento
+/*
+// Adicionando novo alimento
 
 $(document).ready(function(){
     $("#btn1").click(function(){
@@ -42,3 +42,43 @@ $(document).ready(function(){
         $("ol").append("<li>Appended item</li>");
     });
 });
+*/
+
+//Fim novo Alimento
+
+// Adicionar novo Grupo
+
+let id = 0;
+let geraCard = function(id, header, body, footer){
+
+    let card = document.createElement('div');
+    let cardHeader = document.createElement('div');
+    let cardBody = document.createElement('div');
+    let cardFooter = document.createElement('div');
+
+    card.className = 'card col-md-4';
+    cardHeader.className = 'card-header';
+    cardBody.className = 'card-body';
+    cardFooter.className = 'card-footer';
+
+    cardHeader.append(header);
+    cardBody.append(body);
+    cardFooter.append(footer);
+
+    card.append(cardHeader);
+    card.append(cardBody);
+    card.append(cardFooter);
+
+    card.id = id;
+    return card;
+}
+
+$('#btn1').click(function(){
+
+     let card = geraCard(id, 'titulo', 'corpo', 'fim');
+    console.log(card);
+    $('#cards').append(card);
+    id++;
+});
+
+//Fim novo grupo
