@@ -1,25 +1,40 @@
-@extends('layouts.menu')
+@extends('layouts.pop_up')
 @section('title', 'Nutriweb')
 @section('content')
     <main class="page-content">
-        <div class="container">
-            <h2>Bem vinda Fernanda</h2>
+        <div class="container mt-4">
+            <h2>Informação nutricional: </h2>
             <img class="logo" src="img/logo.png">
-            <div class="row">
-                <div class="form-group col-md-12">
-                    <h5>Selecione alimento:</h5>
-                </div>
-                <div class="form-group col-md-8">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <a href="" class="btn btn-outline-secondary" type="button" id="button-addon2">Busca
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Alimento</th>
+                    <th scope="col">Quantidade calórica (Kcal)</th>
+                    <th scope="col">Sódio (mg)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Macarrão</td>
+                    <td>1550</td>
+                    <td>370</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Feijão</td>
+                    <td>791</td>
+                    <td>420</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Leite</td>
+                    <td>659</td>
+                    <td>200</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </main>
     <!-- page-content" -->

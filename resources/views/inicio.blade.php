@@ -3,7 +3,7 @@
     @section('content')
     <main class="page-content">
         <div class="container">
-            <h2>Bem vinda Fernanda</h2>
+            <h2>Bem vinda, Fernanda</h2>
             <img class="logo" src="img/logo.png">
             <div class="row">
                 <div class="form-group col-md-12">

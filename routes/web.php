@@ -29,3 +29,5 @@ Route::get('/reconsulta', 'Controller@reconsulta');
 Route::get('/cardapio', 'Controller@cardapio');
 
 Route::get('/grupos','Controller@grupos');
+
+Route::get('/alimentos', 'Controller@buscar_alimentos');

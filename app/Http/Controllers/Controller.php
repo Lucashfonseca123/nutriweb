@@ -32,4 +32,8 @@ class Controller extends BaseController
         return view ('grupo_cadastro');
     }
 
+    public function buscar_alimentos(){
+        return view ('alimentos_busca');
+    }
+
 }
