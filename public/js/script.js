@@ -30,3 +30,15 @@ jQuery(function ($) {
     });
 
 });
+
+//Adicionando novo alimento
+
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $('.test').append('1sada');
+    });
+
+    $("#btn2").click(function(){
+        $("ol").append("<li>Appended item</li>");
+    });
+});
