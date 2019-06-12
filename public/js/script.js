@@ -53,21 +53,21 @@ let geraCard = function(id, header, body, footer){
 
     let card = document.createElement('div');
     let cardHeader = document.createElement('div');
-    let cardBody = document.createElement('div');
-    let cardFooter = document.createElement('div');
+  //  let cardBody = document.createElement('div');
+  //  let cardFooter = document.createElement('div');
 
-    card.className = 'card col-md-4';
-    cardHeader.className = 'card-header';
-    cardBody.className = 'card-body';
-    cardFooter.className = 'card-footer';
+    card.className = 'card ';
+    cardHeader.className = 'card-header card';
+  //  cardBody.className = 'card-body';
+  //  cardFooter.className = 'card-footer';
 
     cardHeader.append(header);
-    cardBody.append(body);
-    cardFooter.append(footer);
+ //   cardBody.append(body);
+ //   cardFooter.append(footer);
 
     card.append(cardHeader);
-    card.append(cardBody);
-    card.append(cardFooter);
+ //   card.append(cardBody);
+ //   card.append(cardFooter);
 
     card.id = id;
     return card;
@@ -75,8 +75,8 @@ let geraCard = function(id, header, body, footer){
 
 $('#btn1').click(function(){
 
-     let card = geraCard(id, 'titulo', 'corpo', 'fim');
-    console.log(card);
+     let card = geraCard(id, 'macarrao', 'corpo', 'fim');
+    //console.log(card);
     $('#cards').append(card);
     id++;
 });

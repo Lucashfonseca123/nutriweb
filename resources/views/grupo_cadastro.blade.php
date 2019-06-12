@@ -6,32 +6,33 @@
                 <fieldset>
                     <h3>Grupos <br><br></h3>
                     <!-- NOME -->
-                    <div class="form-group">
-                        <label for="nome" >
-                            <input id="cpf" name="cpf" type="text" class="form-control" placeholder="Selecionar alimentos.." maxlength="11">
-                        </label>
-                        <label for="nome" >
-                            <button id="Busca" name="Busca" class="btn btn-success" type="Submit">Busca</button>
-                        </label>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nome" >
+                                <button id="Busca" name="Busca" class="btn btn-success" type="Submit">Novo grupo</button>
+                            </label>
+                        </div>
                     </div>
                 </fieldset>
             </form>
 
-            <div class="col-md-4">
+            <div class="col-md-4 card">
                 <div class="form-group">
-                    <label for="">Nome</label>
-                    <input type="text" id="Nome" class="form-control">
+                    <label for=""><h6>Nome do grupo</h6></label>
+                    <input type="text" id="Nome" class="form-control" placeholder="Escreva o nome do grupo..">
                 </div>
                 <div class="form-group">
-                    <label for="" class="form-group">Descrição</label>
-                    <textarea class="form-control" name="desc" id="texto" cols="30" rows="10"></textarea>
+                    <label for="" class="form-group"><h6>Alimentos</h6></label>
+                    <input type="text" id="Nome" class="form-control" placeholder="Escreva o nome alimento..">
+                    <div id="cards">
+                    </div>
                 </div>
-                <button class="btn btn-success" id="btn1">Adicionar alimento</button>
+                <button class="btn btn-success" id="btn1">Adicionar alimento <br></button>
             </div>
-
-            <div id="cards">
-
+            <div class="col-md-4 text-center">
+                 <button class="btn btn-success" id="btn2" style="text-align: center">Salvar</button>
              </div>
+
         </div>
     </main>
 @endsection
