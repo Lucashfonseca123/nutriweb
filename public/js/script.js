@@ -32,6 +32,7 @@ jQuery(function ($) {
 });
 
 // Adicionar novo Grupo
+let alimentos = [];
 
 let id = 0;
 let geraCard = function(id, header, body, footer){
@@ -59,21 +60,20 @@ let geraCard = function(id, header, body, footer){
 }
 
 $('#btn1').click(function(){
-
-     let card = geraCard(id, 'macarrao', 'corpo', 'fim');
-    //console.log(card);
+    let card = geraCard(id, 'Macarrao', 'corpo', 'fim');
     $('#cards').append(card);
     id++;
 });
 
-$('#btn2').click(function(card){
-
-    delete(card.id);
-    remove(card);
+$('#btn2').click(function(){
+    let card = $(this).attr("cardId");
+    $('#'+(id-1)).remove();
+    id--;
 });
 
 //Fim novo grupo
 
+/*
 //Auto complete
 
 $(function() {
@@ -95,4 +95,21 @@ $(function() {
     $("#pessoas" ).autocomplete({
         source: pessoas
     });
+});
+*/
+
+$('.escondido').hide();
+
+$('.mostrar').click(function(){
+    let alvo = $(this).attr('alvo');
+    $('#' + alvo).fadeToggle("slow", "linear");
+    $(this).hide();
+    $('.esconder').show();
+});
+
+$('.esconder').click(function(){
+    let alvo = $(this).attr('alvo');
+    $('#' + alvo).fadeToggle("slow", "linear");
+    $(this).hide();
+    $('.mostrar').show();
 });
