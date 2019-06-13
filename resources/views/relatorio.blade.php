@@ -2,7 +2,8 @@
 @section('content')
     <main class="page-content">
         <div class="container">
-            <h2>Relatório</h2>
+            <h2>Bem vindo(a), Fernanda</h2><br>
+            <h3>Relatórios</h3>
             <img class="logo" src="img/logo.png">
             <div class="row">
                 <div class="form-group col-md-12">

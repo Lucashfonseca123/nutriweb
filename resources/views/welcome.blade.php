@@ -50,7 +50,7 @@
                         <input type="checkbox">Relembrar senha
                     </div>
                     <div class="form-group">
-                        <a href="/inicio">
+                        <a href="relatorio">
                         <input type="" value="Entrar" class="btn float-right login_btn">
                         </a>
                     </div>
