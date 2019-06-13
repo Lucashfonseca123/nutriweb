@@ -30,21 +30,6 @@ jQuery(function ($) {
     });
 
 });
-/*
-// Adicionando novo alimento
-
-$(document).ready(function(){
-    $("#btn1").click(function(){
-        $('.test').append('1sada');
-    });
-
-    $("#btn2").click(function(){
-        $("ol").append("<li>Appended item</li>");
-    });
-});
-*/
-
-//Fim novo Alimento
 
 // Adicionar novo Grupo
 
@@ -81,4 +66,33 @@ $('#btn1').click(function(){
     id++;
 });
 
+$('#btn2').click(function(card){
+
+    delete(card.id);
+    remove(card);
+});
+
 //Fim novo grupo
+
+//Auto complete
+
+$(function() {
+    var alimentos = [
+        "Manga",
+        "Mamão",
+        "Melão",
+        "Mimosa"
+    ];
+    var pessoas = [
+        "Marcos",
+        "José",
+        "Antonio"
+    ];
+
+    $("#alimentos" ).autocomplete({
+        source: alimentos
+    });
+    $("#pessoas" ).autocomplete({
+        source: pessoas
+    });
+});

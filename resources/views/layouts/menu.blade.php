@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>@yield('title')</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -84,27 +84,6 @@
                     </li>
                     <li class="sidebar-dropdown">
                         <a href="#">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>Paciente</span>
-                        </a>
-                        <div class="sidebar-submenu">
-                            <ul>
-                                <li>
-                                    <a href="#">Products
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">Orders</a>
-                                </li>
-                                <li>
-                                    <a href="#">Credit cart</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="sidebar-dropdown">
-                        <a href="#">
                             <i class="fa fa-globe"></i>
                             <span>Dietas</span>
                         </a>
@@ -122,7 +101,7 @@
                     <li class="sidebar" title="Analise a situação do paciente">
                         <a href="/relatorio">
                             <i class="fa fa-globe"></i>
-                            <span>Relatório</span>
+                            <span>Paciente</span>
                         </a>
                     </li>
                 </ul>
@@ -149,7 +128,13 @@
     <!-- Fim Menu -->
     @yield('content')
 </div>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script src="js/script.js"></script>
 <script src="js/cadastro.js"></script>
+
+
 </body>
 </html>
