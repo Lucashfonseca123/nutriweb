@@ -107,6 +107,12 @@ $('.mostrar').click(function(){
     $('.esconder').show();
 });
 
+$('.mostrar_sempre').click(function(){
+    let alvo = $(this).attr('alvo');
+    $('#' + alvo).fadeToggle("slow", "linear");
+    $('.esconder').show();
+});
+
 $('.esconder').click(function(){
     let alvo = $(this).attr('alvo');
     $('#' + alvo).fadeToggle("slow", "linear");

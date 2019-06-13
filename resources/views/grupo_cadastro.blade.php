@@ -5,7 +5,7 @@
             <h3>Grupos <br><br></h3>
             <button class="btn btn-primary mostrar" type="button" alvo="revelado">Novo grupo</button>
             <button class="btn btn-danger escondido esconder" type="button" alvo="revelado">Cancelar</button>
-            <button class="btn btn-success escondido esconder" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Salvar grupo</button>
+            <button class="btn btn-success escondido esconder" type="button">Salvar grupo</button>
             <br><br>
                     <div class="row">
                         <div class="col-md-4 card-header escondido" id="revelado">
@@ -33,7 +33,5 @@
                             </div>
                         </div>
                     </div>
-
-
     </main>
 @endsection
