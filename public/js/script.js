@@ -35,32 +35,40 @@ jQuery(function ($) {
 let alimentos = [];
 
 let id = 0;
-let geraCard = function(id, header, body, footer){
+let btn3 = 0;
+let geraCard = function(id, header, btn){
+
+    if(id == 1 & btn != 0){
+        header = 'Peixe';
+    }
+    else if(btn == 0 & id ==1) {
+        header = 'Cetogênica';
+    }
+    if(id == 2 & btn != 0){
+        header = 'Feijão';
+    }
+    else if(btn == 0 & id ==2) {
+        header = 'High Carb';
+    }
 
     let card = document.createElement('div');
     let cardHeader = document.createElement('div');
-  //  let cardBody = document.createElement('div');
-  //  let cardFooter = document.createElement('div');
+    let cardBody = document.createElement('div');
+    let cardFooter = document.createElement('div');
 
     card.className = 'card ';
     cardHeader.className = 'card-header card';
-  //  cardBody.className = 'card-body';
-  //  cardFooter.className = 'card-footer';
 
     cardHeader.append(header);
- //   cardBody.append(body);
- //   cardFooter.append(footer);
 
     card.append(cardHeader);
- //   card.append(cardBody);
- //   card.append(cardFooter);
 
     card.id = id;
     return card;
 }
 
 $('#btn1').click(function(){
-    let card = geraCard(id, 'Macarrao', 'corpo', 'fim');
+    let card = geraCard(id, 'Macarrão', 1);
     $('#cards').append(card);
     id++;
 });
@@ -71,22 +79,33 @@ $('#btn2').click(function(){
     id--;
 });
 
+$('#btn3').click(function(){
+    let card = geraCard(id, 'Low Carb', btn3);
+    $('#cards').append(card);
+    id++;
+});
+
 //Fim novo grupo
 
-/*
 //Auto complete
 
 $(function() {
     var alimentos = [
-        "Manga",
+        "Macarrão",
         "Mamão",
         "Melão",
         "Mimosa"
     ];
     var pessoas = [
-        "Marcos",
+        "André",
         "José",
-        "Antonio"
+        "Antonio",
+        "Jessé"
+    ];
+    var grupo = [
+        "Low Carb",
+        "High Carb",
+        "Cetogênica"
     ];
 
     $("#alimentos" ).autocomplete({
@@ -95,29 +114,10 @@ $(function() {
     $("#pessoas" ).autocomplete({
         source: pessoas
     });
-});
-*/
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete');
-    var instances = M.Autocomplete.init(elems, options);
-});
-
-
-// Or with jQuery
-
-$(document).ready(function(){
-    $('input.autocomplete').autocomplete({
-        data: {
-            "Apple": null,
-            "Microsoft": null,
-            "Google": 'https://placehold.it/250x250'
-        },
+    $("#grupo" ).autocomplete({
+        source: grupo
     });
 });
-
-
 
 $('.escondido').hide();
 

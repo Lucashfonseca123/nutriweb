@@ -10,8 +10,8 @@
                     <h5>Selecione paciente:</h5>
                 </div>
                 <div class="form-group col-md-8">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="pessoas" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-primary mostrar_sempre" type="button" alvo="revelado">Busca</button>
                         </div>
