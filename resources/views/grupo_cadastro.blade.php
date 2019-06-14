@@ -22,7 +22,7 @@
                             <button class="btn btn-success" id="btn1">Adicionar alimento <br></button>
                             <button class="btn btn-danger" id="btn2">Remover <br></button>
                         </div>
-                        <div class="col-md-4 card-header">
+                        <div class="col-md-4 card-header text-center">
                             <div class="form-group text-center">
                                 <label for=""><h6>Low carb</h6></label>
                             </div>
@@ -31,6 +31,7 @@
                                 <input type="text" id="Nome" class="form-control" placeholder="Peixe" disabled>
                                 <input type="text" id="Nome" class="form-control" placeholder="Feijão" disabled>
                             </div>
+                            <button class="btn btn-danger" id="btn2">Remover grupo<br></button>
                         </div>
                     </div>
     </main>

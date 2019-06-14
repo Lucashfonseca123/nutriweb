@@ -13,7 +13,7 @@
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-primary mostrar_sempre" type="button" alvo="revelado">Novo grupo</button>
+                            <button class="btn btn-primary mostrar_sempre" type="button" alvo="revelado">Busca</button>
                         </div>
                     </div>
                 </div>
@@ -34,10 +34,10 @@
                         <div class="col-md-2">
                             <ul class="list-group">
                                 <h6>Data</h6>
-                                <li class="list-group-item"> 1</li>
-                                <li class="list-group-item"> 2</li>
-                                <li class="list-group-item"> 3</li>
-                                <li class="list-group-item"> 4</li>
+                                <li class="list-group-item"> 12/09</li>
+                                <li class="list-group-item"> 19/07</li>
+                                <li class="list-group-item"> 06/10</li>
+                                <li class="list-group-item"> 16/08</li>
                             </ul>
                         </div>
                     </div>
