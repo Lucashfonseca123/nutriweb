@@ -31,3 +31,5 @@ Route::get('/cardapio', 'Controller@cardapio');
 Route::get('/grupos','Controller@grupos');
 
 Route::get('/alimentos', 'Controller@buscar_alimentos');
+
+Route::get('/grupo_final', 'Controller@grupo_finalizar');

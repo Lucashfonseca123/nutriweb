@@ -35,5 +35,8 @@ class Controller extends BaseController
     public function buscar_alimentos(){
         return view ('alimentos_busca');
     }
+    public function grupo_finalizar(){
+        return view('grupo_finalizado');
+    }
 
 }
