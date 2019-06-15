@@ -14,12 +14,29 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                <div class="form-group escondido " id="revelado">
-                    <label for="" class="col">
-                        <input type="text" style="width: 180px" id="alimentos" class="form-control" placeholder="Tem um gráfico aqui.." disabled>
-                    </label>
-                </div>
+                <div class="col">
+                    <h5>Ultimos relatórios</h5>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <ul class="list-group">
+                                <h6>Paciente</h6>
+                                <li class="list-group-item">Paciente 1</li>
+                                <li class="list-group-item">Paciente 2</li>
+                                <li class="list-group-item">Paciente 3</li>
+                                <li class="list-group-item">Paciente 4</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2">
+                            <ul class="list-group">
+                                <h6>Data</h6>
+                                <li class="list-group-item"> 12/09</li>
+                                <li class="list-group-item"> 19/07</li>
+                                <li class="list-group-item"> 06/10</li>
+                                <li class="list-group-item"> 16/08</li>
+                            </ul>
+                        </div>
+                    </div>
             </form>
         </div>
     </main>

@@ -532,10 +532,10 @@
                         <div class="col-md-2">
                             <select required id="Estado Civil" name="Estado Civil" class="form-control">
                                 <option value=""></option>
-                                <option value="Solteiro(a)">Lenta</option>
-                                <option value="Casado(a)">Normal</option>
-                                <option value="Divorciado(a)">Rápida</option>
-                                <option value="Viuvo(a)">Muito rápida</option>
+                                <option value="lenta ">Lenta</option>
+                                <option value="normal">Normal</option>
+                                <option value="rapida">Rápida</option>
+                                <option value="muito_rapida">Muito rápida</option>
                             </select>
                         </div>
                     </div>
@@ -543,8 +543,6 @@
                         <label class="col-md-3" for="prependedtext">Preferência alimentares
                             <input id="profissao" name="profissao" placeholder="" class="form-control">
                         </label>
-                    </div>
-                    <div class="form-group">
                         <label class="col-md-3" for="prependedtext">Aversões alimentares
                             <input id="profissao" name="profissao" placeholder="" class="form-control">
                         </label>
@@ -606,9 +604,8 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label class="col" for="Filhos">Usou suplementos</label>
-                        <label class="" style="vertical-align: top;" for="radios">&emsp;Sexo</label>
-                        <label required="" class="radio-inline" for="radios-0" >
+                        <label class="" style="vertical-align: top;" for="radios">&emsp;Usou suplementos</label><br>
+                        <label required="" class="radio-inline" for="radios-0" >&emsp;
                             <input type="radio" name="sup" id="sup" value="nao" onclick="desabilita('sup1')" required>
                             Não
                         </label>

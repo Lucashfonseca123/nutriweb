@@ -2,7 +2,7 @@
 @section('content')
     <main class="page-content">
         <div class="container">
-            <h2>Bem vindo(a), Fernanda</h2><br>
+            <h2>Situação paciente</h2><br>
             <h3>Relatórios</h3>
             <img class="logo" src="img/logo.png">
             <div class="row">
@@ -25,10 +25,8 @@
                         <div class="col-md-8">
                             <ul class="list-group">
                                 <h6>Paciente</h6>
-                                <li class="list-group-item">Paciente 1</li>
-                                <li class="list-group-item">Paciente 2</li>
-                                <li class="list-group-item">Paciente 3</li>
-                                <li class="list-group-item">Paciente 4</li>
+                                <li class="list-group-item">Gráfico 1</li>
+                                <li class="list-group-item">Gráfico 2</li>
                             </ul>
                         </div>
                         <div class="col-md-2">
@@ -36,8 +34,6 @@
                                 <h6>Data</h6>
                                 <li class="list-group-item"> 12/09</li>
                                 <li class="list-group-item"> 19/07</li>
-                                <li class="list-group-item"> 06/10</li>
-                                <li class="list-group-item"> 16/08</li>
                             </ul>
                         </div>
                     </div>

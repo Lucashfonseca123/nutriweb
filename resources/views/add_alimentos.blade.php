@@ -4,12 +4,49 @@
         <div class="container">
             <form class="form-horizontal">
                 <h4 class="col">Adicionar alimentos</h4><br>
+                <img class="logo3" src="img/logo.png">
                 <div class="form-group ">
-                    <div class="input-group col-md-7">
-                        <input type="text" class="form-control" id="alimentos" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-success mostrar_sempre" id="btn1" type="button" alvo="revelado">Adicionar</button>
-                        </div>
+                    <div class="input-group col-md-11">
+                        <input type="text" class="form-control" placeholder="Nome do alimentos..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <input type="text" class="form-control col-md-3" id="alimentos" placeholder="Quantidade calórica (Kcal)..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <input type="text" class="form-control col-md-2" id="alimentos" placeholder="Sódio (mg)..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    </div>
+                    <br>
+                    <div class=" col">
+                        <button class="btn btn-success" id="btn1" type="button">Adicionar</button>
+                    </div>
+                    <div class="container mt-4 card-header">
+                        <h2>Alimentos cadastrados: </h2>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Alimento</th>
+                                <th scope="col">Quantidade calórica (Kcal)</th>
+                                <th scope="col">Sódio (mg)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row" >1</th>
+                                <td>Macarrão</td>
+                                <td>1550</td>
+                                <td>370</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Feijão</td>
+                                <td>791</td>
+                                <td>420</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Leite</td>
+                                <td>659</td>
+                                <td>200</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                         <label for="" class="form-group col ">
                             <label for="">
