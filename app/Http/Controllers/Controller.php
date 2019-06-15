@@ -59,4 +59,8 @@ class Controller extends BaseController
         return view ('paciente_editar');
     }
 
+    public function info_paciente(){
+        return view('paciente_info');
+    }
+
 }

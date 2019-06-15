@@ -117,7 +117,7 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li title="Adicione grupos nas refeições, crie seu cardápio">
-                                    <a href="cardapio">Relatório</a>
+                                    <a href="infopaciente">Relatório</a>
                                 </li>
                                 <li title="Adicione grupos nas refeições, crie seu cardápio">
                                     <a href="/editinfo">Editar informações</a>

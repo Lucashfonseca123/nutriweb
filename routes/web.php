@@ -41,3 +41,5 @@ Route::get('/editgrupos', 'Controller@edit_grupos');
 Route::get('/addalimentos', 'Controller@add_alimentos');
 
 Route::get('/editinfo', 'Controller@edit_paciente');
+
+Route::get('/infopaciente', 'Controller@info_paciente');
