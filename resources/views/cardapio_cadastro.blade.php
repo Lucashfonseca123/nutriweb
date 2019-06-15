@@ -5,6 +5,7 @@
         <form class="form-horizontal">
             <fieldset>
                 <h3>Cardápio <br><br></h3>
+                <img class="logo5" src="img/logo.png">
                 <span style="cursor: pointer" onclick="window.open('/grupo_final', '', 'width=600,height=300')">
                     <button class="btn btn-success" type="button">Salvar cardapio </button>
                 </span>

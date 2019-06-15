@@ -2,7 +2,7 @@
 @section('title', 'Nutriweb')
 @section('content')
     <main class="page-content">
-        <div class="container mt-4   card-header">
+        <div class="container mt-4 card-header">
             <h2>Informação nutricional: </h2>
             <img class="logo" src="img/logo.png">
             <table class="table">

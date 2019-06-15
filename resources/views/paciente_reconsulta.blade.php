@@ -5,6 +5,7 @@
             <form class="form-horizontal">
                 <fieldset>
                 <h3>Reconsulta <br><br></h3>
+                    <img class="logo4" src="img/logo.png">
                     <!-- NOME -->
                     <div class="form-group">
                         <label for="nome" >

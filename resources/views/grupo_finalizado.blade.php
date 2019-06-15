@@ -2,6 +2,7 @@
 @section ('content')
     <div class="container">
         <h2 style="text-align: center" class="mt-5  ">Cardápio paciente 3</h2><br><br>
+        <img class="logo2" src="img/logo.png">
         <h6 class="text-center">Olá paciente 3 !!! Abaixo o cardápio você seguirá durante 30 dias após isso faremos algumas alterações, até lá qualquer duvida é só entrar em contato comigo!</h6>
         <br><br><br>
         <div class="card-header">

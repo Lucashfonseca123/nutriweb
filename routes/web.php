@@ -33,3 +33,11 @@ Route::get('/grupos','Controller@grupos');
 Route::get('/alimentos', 'Controller@buscar_alimentos');
 
 Route::get('/grupo_final', 'Controller@grupo_finalizar');
+
+Route::get('/editcardapio', 'Controller@edit_cardapio');
+
+Route::get('/editgrupos', 'Controller@edit_grupos');
+
+Route::get('/addalimentos', 'Controller@add_alimentos');
+
+Route::get('/editinfo', 'Controller@edit_paciente');

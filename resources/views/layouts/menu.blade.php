@@ -97,14 +97,33 @@
                                 <li title="Selecione alimentos para criar grupos">
                                     <a href="grupos">Criar grupos</a>
                                 </li>
+                                <li title="Revise ou edite seus cardápios">
+                                    <a href="editcardapio">Editar cardapio</a>
+                                </li>
+                                <li title="Revise ou edite seus grupos">
+                                    <a href="editgrupos">Editar grupos</a>
+                                </li>
+                                <li title="Adicionar alimentos">
+                                    <a href="addalimentos">Adicionar alimentos</a>
+                                </li>
                             </ul>
                         </div>
                     </li>
-                    <li class="sidebar" title="Analise a situação do paciente">
-                        <a href="/relatorio">
+                    <li class="sidebar-dropdown" title="Analise a situação do paciente">
+                        <a href="#">
                             <i class="fa fa-globe"></i>
                             <span>Paciente</span>
                         </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li title="Adicione grupos nas refeições, crie seu cardápio">
+                                    <a href="cardapio">Relatório</a>
+                                </li>
+                                <li title="Adicione grupos nas refeições, crie seu cardápio">
+                                    <a href="/editinfo">Editar informações</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </div>

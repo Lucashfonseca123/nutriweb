@@ -3,6 +3,7 @@
     <main class="page-content">
         <div class="container">
             <h3>Grupos <br><br></h3>
+            <img class="logo4" src="img/logo.png">
             <button class="btn btn-primary mostrar" type="button" alvo="revelado" title="Clique para selecionar grupo">Novo grupo</button>
             <button class="btn btn-danger escondido esconder" type="button" alvo="revelado">Cancelar</button>
             <button class="btn btn-success escondido esconder" type="button">Salvar grupo</button>
