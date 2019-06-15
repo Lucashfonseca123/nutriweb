@@ -53,8 +53,6 @@ let geraCard = function(id, header, btn){
 
     let card = document.createElement('div');
     let cardHeader = document.createElement('div');
-    let cardBody = document.createElement('div');
-    let cardFooter = document.createElement('div');
 
     card.className = 'card ';
     cardHeader.className = 'card-header card';
@@ -67,14 +65,43 @@ let geraCard = function(id, header, btn){
     return card;
 }
 
+let geraCard2 = function(id, header, btn){
+
+    let card2 = document.createElement('div');
+    let cardHeader2 = document.createElement('div');
+
+    card2.className = 'card ';
+    cardHeader2.className = 'card-header card';
+
+    cardHeader2.append(header);
+
+    card2.append(cardHeader2);
+
+    card2.id = id;
+    return card2;
+}
+
+
 $('#btn1').click(function(){
     let card = geraCard(id, 'Macarrão', 1);
     $('#cards').append(card);
     id++;
 });
 
+$('#btn1').click(function(){
+    let card = geraCard2(id, '4 unidades', 1);
+    $('#cards2').append(card);
+    id++;
+});
+
 $('#btn2').click(function(){
     let card = $(this).attr("cardId");
+    $('#'+(id-1)).remove();
+    id--;
+});
+
+$('#btn2').click(function(){
+    let card2 = $(this).attr("cardId");
     $('#'+(id-1)).remove();
     id--;
 });
@@ -126,6 +153,11 @@ $('.mostrar').click(function(){
     $('#' + alvo).fadeToggle("slow", "linear");
     $(this).hide();
     $('.esconder').show();
+});
+
+$('.mostrar2').click(function(){
+    let alvo = $(this).attr('alvo');
+    $('#' + alvo).fadeToggle("slow", "linear");
 });
 
 $('.mostrar_sempre').click(function(){
