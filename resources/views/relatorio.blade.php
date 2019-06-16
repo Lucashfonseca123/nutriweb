@@ -2,10 +2,10 @@
 @section('content')
     <main class="page-content">
         <div class="container">
-            <h2>Situação paciente</h2><br>
-            <h3>Relatórios</h3>
+            <h2 class="col">Situação paciente</h2><br>
+            <h3 class="col">Relatórios</h3>
             <img class="logo" src="img/logo.png">
-            <div class="row">
+            <div class="row col">
                 <div class="form-group col-md-12">
                     <h5>Selecione paciente:</h5>
                 </div>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <div class="escondido" id="revelado">
+            {{--<div class="escondido" id="revelado">
                 <h5>Ultimos relatórios</h5>
                 <hr>
                     <div class="row">
@@ -37,7 +37,53 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div>--}}
+            <div class=" col-md-12 mt-2" id="revelado" >
+                <div class="bolaazul">&ensp;<h6>Parâmetro 1</h6></div>
+                <br>
+                <div class="bolaverm">&ensp;<h6>Parâmetro 2</h6></div>
+                <div class="row">
+                    <div class="col-md-4  mt-4">
+                        <h6>Peso/Estatura</h6>
+                        <img class="mt-4" src="img/graficos.jpg">
+                    </div>
+                    <div class="col-md-4 mt-4">
+                        <h6>Circ. da cintura/Circ. do abdômen</h6>
+                        <img class="mt-4" src="img/graficos.jpg">
+                    </div>
+                    <div class="col-md-4 ">
+                        <h6>Circ. coxa prox. direita/Circ. coxa prox. esquerda</h6>
+                        <img class="mt-4" src="img/graficos.jpg">
+                    </div>
+                    <br>
+                    <div class="col-md-4 mt-4">
+                        <h6> Circ. do quadril/Circ. da panturrilha</h6>
+                        <img class="mt-4" src="img/graficos.jpg">
+                    </div>
+                    <div class="col-md-4 mt-4">
+                        <h6> Circ. braço direito/Circ braço esquerdo</h6>
+                        <img class="mt-4" src="img/graficos.jpg">
+                    </div>
+                    <div class="col-md-4 mt-4">
+                        <h6> Circ. do punho/IMC</h6>
+                        <img class="mt-4" src="img/graficos.jpg">
+                    </div>
+                    <br>
+                    <div class="col-md-4 mt-4">
+                        <h6> %Gordura/%Muscular</h6>
+                        <img class="mt-4" src="img/graficos.jpg">
+                    </div>
+                    <br>
+                    <div class="col-md-4 mt-4">
+                        <h6> TMB/Body Age</h6>
+                        <img class="mt-4" src="img/graficos.jpg">
+                    </div>
+                    <div class="col-md-4 mt-4">
+                        <h6> Gordura Visceral</h6>
+                        <img class="mt-4" src="img/graficos.jpg">
+                    </div>
+            </div>
+            </div>
         </div>
     </main>
     <!-- page-content" -->

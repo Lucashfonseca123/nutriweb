@@ -518,6 +518,7 @@ body {
     margin-right: -40px;
 }
 
+
 body{
     background-image: url("/img/MorangoDesfoque.jpg");
     background-repeat:repeat;
@@ -530,4 +531,22 @@ h2 {
 
 .input-group-append{
     background-color: #FFFFFF;
+}
+
+.bolaazul {
+    border-radius: 50%;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #000000;
+    background-color: #5181C1;
+}
+
+.bolaverm {
+    border-radius: 50%;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #000000;
+    background-color: #C0504C;
 }
