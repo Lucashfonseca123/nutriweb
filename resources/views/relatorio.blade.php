@@ -18,31 +18,14 @@
                     </div>
                 </div>
             </div>
-            {{--<div class="escondido" id="revelado">
-                <h5>Ultimos relatórios</h5>
-                <hr>
+            <div class=" col-md-12 mt-2" id="revelado" ><div>
+                   <h6>Legenda:</h6>
+                    <div><h6>Parâmetro 1/Parâmetro 2</h6></div>&ensp;&ensp;&ensp;&ensp;&ensp;
+                    <div class="bolaazul">&ensp;</div>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                    <div class="bolaverm">&ensp;</div>
+                <br><br>
+                </div>
                     <div class="row">
-                        <div class="col-md-8">
-                            <ul class="list-group">
-                                <h6>Paciente</h6>
-                                <li class="list-group-item">Gráfico 1</li>
-                                <li class="list-group-item">Gráfico 2</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-2">
-                            <ul class="list-group">
-                                <h6>Data</h6>
-                                <li class="list-group-item"> 12/09</li>
-                                <li class="list-group-item"> 19/07</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>--}}
-            <div class=" col-md-12 mt-2" id="revelado" >
-                <div class="bolaazul">&ensp;<h6>Parâmetro 1</h6></div>
-                <br>
-                <div class="bolaverm">&ensp;<h6>Parâmetro 2</h6></div>
-                <div class="row">
                     <div class="col-md-4  mt-4">
                         <h6>Peso/Estatura</h6>
                         <img class="mt-4" src="img/graficos.jpg">
