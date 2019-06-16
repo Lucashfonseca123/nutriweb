@@ -100,9 +100,6 @@
                                 <li title="Revise ou edite seus cardápios">
                                     <a href="editcardapio">Editar cardapio</a>
                                 </li>
-                                <li title="Revise ou edite seus grupos">
-                                    <a href="editgrupos">Editar grupos</a>
-                                </li>
                                 <li title="Adicionar alimentos">
                                     <a href="addalimentos">Adicionar alimentos</a>
                                 </li>

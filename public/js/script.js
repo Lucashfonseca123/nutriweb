@@ -89,7 +89,7 @@ $('#btn1').click(function(){
 });
 
 $('#btn1').click(function(){
-    let card = geraCard2(id, '4 unidades', 1);
+    let card = geraCard2(id, '2 colheres', 1);
     $('#cards2').append(card);
     id++;
 });

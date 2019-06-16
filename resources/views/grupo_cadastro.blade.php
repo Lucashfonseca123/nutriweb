@@ -45,10 +45,10 @@
                             </div>
                             <div class="form-group text-center">
                                 <label for="">
-                                    <input type="text" id="Nome" style="width: 180px" class="form-control" placeholder="Macarrão" disabled>
+                                    <input type="text" id="Atr1" style="width: 180px" class="form-control" placeholder="Macarrão" disabled>
                                 </label>
                                 <label for="">
-                                    <input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="4 colheres" disabled>
+                                    <input type="text" id="Atr2" style="width: 114px" class="form-control Atr1" placeholder="4 colheres" disabled>
                                 </label>
                                 <label for="">
                                     <input type="text" id="Nome" style="width: 180px" class="form-control" placeholder="Arroz" disabled>
@@ -70,6 +70,7 @@
                                 </label>
                             </div>
                             <button class="btn btn-danger" id="btn2">Remover grupo<br></button>
+                            <button class="btn btn-dark" id="btn2" onclick="habilita('Atr1')">Editar grupo<br></button>
                         </div>
                     </div>
     </main>

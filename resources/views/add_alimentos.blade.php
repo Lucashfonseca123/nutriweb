@@ -24,6 +24,7 @@
                                 <th scope="col">Alimento</th>
                                 <th scope="col">Quantidade calórica (Kcal)</th>
                                 <th scope="col">Sódio (mg)</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -32,18 +33,21 @@
                                 <td>Macarrão</td>
                                 <td>1550</td>
                                 <td>370</td>
+                                <td><button class="btn btn-danger" type="button" >Remover</button></td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
                                 <td>Feijão</td>
                                 <td>791</td>
                                 <td>420</td>
+                                <td><button class="btn btn-danger" type="button" >Remover</button></td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td>Leite</td>
                                 <td>659</td>
                                 <td>200</td>
+                                <td><button class="btn btn-danger" type="button" >Remover</button></td>
                             </tr>
                             </tbody>
                         </table>

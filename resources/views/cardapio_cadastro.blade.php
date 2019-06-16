@@ -14,6 +14,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Refeições</th>
+                            <th scope="col">Horario</th>
                             <th scope="col">Opção 1</th>
                             <th scope="col">Opção 2</th>
                         </tr>
@@ -21,6 +22,9 @@
                     <tbody>
                     <tr>
                         <th scope="row" style="vertical-align: middle">Café da manhã</th>
+                        <th class="col">
+                                <input type="time" class="form-control col-md-10">
+                        </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
@@ -62,6 +66,9 @@
                     </tr>
                     <tr>
                         <th scope="row" style="vertical-align: middle">Lanche da manhã</th>
+                        <th class="col">
+                            <input type="time" class="form-control col-md-10">
+                        </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
@@ -83,6 +90,9 @@
                     </tr>
                     <tr>
                         <th scope="row" style="vertical-align: middle">Almoço</th>
+                        <th class="col">
+                            <input type="time" class="form-control col-md-10">
+                        </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
@@ -104,6 +114,9 @@
                     </tr>
                     <tr>
                         <th scope="row" style="vertical-align: middle">Lanche da tarde 2</th>
+                        <th class="col">
+                            <input type="time" class="form-control col-md-10">
+                        </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
@@ -125,6 +138,9 @@
                     </tr>
                     <tr>
                         <th scope="row" style="vertical-align: middle">Jantar</th>
+                        <th class="col">
+                            <input type="time" class="form-control col-md-10">
+                        </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
@@ -146,6 +162,9 @@
                     </tr>
                     <tr>
                         <th scope="row" style="vertical-align: middle">Ceia</th>
+                        <th class="col">
+                            <input type="time" class="form-control col-md-10">
+                        </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">

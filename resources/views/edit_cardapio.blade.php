@@ -43,10 +43,10 @@
                             </div>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 1<br></button>
+                            <button class="btn btn-dark" >Editar opção 1<br></button>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 2<br></button>
+                            <button class="btn btn-dark" >Editar opção 2<br></button>
                         </td>
                     </tr>
                     <tr>
@@ -67,10 +67,10 @@
                             </div>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 1<br></button>
+                            <button class="btn btn-dark" >Editar opção 1<br></button>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 2<br></button>
+                            <button class="btn btn-dark" >Editar opção 2<br></button>
                         </td>
                     </tr>
                     <tr>
@@ -93,10 +93,10 @@
                             </div>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 1<br></button>
+                            <button class="btn btn-dark" >Editar opção 1<br></button>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 2<br></button>
+                            <button class="btn btn-dark" >Editar opção 2<br></button>
                         </td>
                     </tr>
                     <tr>
@@ -116,10 +116,10 @@
                             </div>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 1<br></button>
+                            <button class="btn btn-dark" >Editar opção 1<br></button>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 2<br></button>
+                            <button class="btn btn-dark" >Editar opção 2<br></button>
                         </td>
                     </tr>
                     <tr>
@@ -139,10 +139,10 @@
                             </div>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 1<br></button>
+                            <button class="btn btn-dark" >Editar opção 1<br></button>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 2<br></button>
+                            <button class="btn btn-dark" >Editar opção 2<br></button>
                         </td>
                     </tr>
                     <tr>
@@ -163,10 +163,10 @@
                             </div>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 1<br></button>
+                            <button class="btn btn-dark" >Editar opção 1<br></button>
                         </td>
                         <td style="vertical-align: middle">
-                            <button class="btn btn-dark" >Editar grupo 2<br></button>
+                            <button class="btn btn-dark" >Editar opção 2<br></button>
                         </td>
                     </tr>
                     </tbody>

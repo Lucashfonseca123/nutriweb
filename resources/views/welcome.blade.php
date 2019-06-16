@@ -11,7 +11,6 @@
 
     <!--Bootsrap 4 CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
     <!--Fontawesome CDN-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -50,18 +49,15 @@
                         <input type="checkbox">Relembrar senha
                     </div>
                     <div class="form-group">
-                        <a href="relatorio">
+                        <a href="relatorio"><br>
                         <input type="" value="Entrar" class="btn float-right login_btn">
                         </a>
                     </div>
                 </form>
             </div>
             <div class="card-footer">
-                <div class="d-flex justify-content-center links">
-                    Você não tem um usuário?<a href="#">Cadastre-se!</a>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <a href="#">Esqueceu sua senha?</a>
+                <div class="d-flex justify-content-center" >
+                    <a href="/recuperar_senha" style="color: white">Esqueceu sua senha?</a>
                 </div>
             </div>
         </div>

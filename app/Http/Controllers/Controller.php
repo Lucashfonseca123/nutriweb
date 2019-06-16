@@ -47,10 +47,6 @@ class Controller extends BaseController
         return view ('edit_cardapio');
     }
 
-    public function edit_grupos(){
-        return view ('edit_grupos');
-    }
-
     public function add_alimentos(){
         return view ('add_alimentos');
     }
@@ -63,4 +59,7 @@ class Controller extends BaseController
         return view('paciente_info');
     }
 
+    public function recuperar_senha(){
+        return view ('recuperar_senha');
+    }
 }

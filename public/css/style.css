@@ -511,6 +511,12 @@ body {
     float: right;
     margin-top: -75px;
 }
+.logo6 {
+    width: 70px;
+    float: right;
+    margin-top: 5px;
+    margin-right: -40px;
+}
 
 body{
     background-image: url("/img/MorangoDesfoque.jpg");

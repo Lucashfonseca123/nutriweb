@@ -15,29 +15,43 @@
                     </div>
                 </div>
                 <div class="col">
-                    <h5>Ultimos relatórios</h5>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <ul class="list-group">
-                                <h6>Paciente</h6>
-                                <li class="list-group-item">Paciente 1</li>
-                                <li class="list-group-item">Paciente 2</li>
-                                <li class="list-group-item">Paciente 3</li>
-                                <li class="list-group-item">Paciente 4</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-2">
-                            <ul class="list-group">
-                                <h6>Data</h6>
-                                <li class="list-group-item"> 12/09</li>
-                                <li class="list-group-item"> 19/07</li>
-                                <li class="list-group-item"> 06/10</li>
-                                <li class="list-group-item"> 16/08</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <br><h5>Próximas consultas</h5>
             </form>
-        </div>
+            <div class="container mt-4 card-header">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row" >1</th>
+                        <td>João da Silva</td>
+                        <td>15/07</td>
+                        <td><button class="btn btn-danger" type="button" >Remover</button>
+                            <button class="btn btn-dark" type="button" >Editar ficha</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>André borato</td>
+                        <td>07/06</td>
+                        <td><button class="btn btn-danger" type="button" >Remover</button>
+                            <button class="btn btn-dark" type="button" >Editar ficha</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Marcos Henrique</td>
+                        <td>06/07</td>
+                        <td><button class="btn btn-danger" type="button" >Remover</button>
+                            <button class="btn btn-dark" type="button" >Editar ficha</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
     </main>
 @endsection
