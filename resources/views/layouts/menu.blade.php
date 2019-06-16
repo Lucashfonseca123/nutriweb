@@ -116,9 +116,9 @@
                                 <li title="Adicione grupos nas refeições, crie seu cardápio">
                                     <a href="infopaciente">Relatório</a>
                                 </li>
-                                <li title="Adicione grupos nas refeições, crie seu cardápio">
+                                {{--<li title="Adicione grupos nas refeições, crie seu cardápio">
                                     <a href="/editinfo">Editar informações</a>
-                                </li>
+                                </li>--}}
                             </ul>
                         </div>
                     </li>
@@ -128,15 +128,6 @@
         </div>
         <!-- sidebar-content  -->
         <div class="sidebar-footer">
-            <a href="#">
-                <i class="fa fa-bell"></i>
-            </a>
-            <a href="#">
-                <i class="fa fa-envelope"></i>
-            </a>
-            <a href="#">
-                <i class="fa fa-cog"></i>
-            </a>
             <a href="#">
                 <i class="fa fa-power-off"></i>
             </a>

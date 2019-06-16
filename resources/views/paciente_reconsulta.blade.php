@@ -21,7 +21,7 @@
                     </div>
                     <div class="escondido" id="revelado">
 
-                        <h5 class="col"><br>Novas medidas</h5>
+                        <h5 class="col"><br>Novas medidas paciente 1</h5>
                         <h6 class="col"><br>Dados antropométricos<br><br></h6>
 
                         <div class="form-group">

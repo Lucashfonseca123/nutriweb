@@ -51,15 +51,15 @@ class Controller extends BaseController
         return view ('add_alimentos');
     }
 
-    public function edit_paciente(){
-        return view ('paciente_editar');
-    }
-
     public function info_paciente(){
         return view('paciente_info');
     }
 
     public function recuperar_senha(){
         return view ('recuperar_senha');
+    }
+
+    public function edit_paciente(){
+        return view('paciente_editar');
     }
 }

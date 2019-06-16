@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class=" col-md-12 mt-2" id="revelado" ><div>
-                   <h6>Legenda:</h6>
+                    <h6>Legenda:</h6>
                     <div><h6>Parâmetro 1/Parâmetro 2</h6></div>&ensp;&ensp;&ensp;&ensp;&ensp;
                     <div class="bolaazul">&ensp;</div>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
                     <div class="bolaverm">&ensp;</div>

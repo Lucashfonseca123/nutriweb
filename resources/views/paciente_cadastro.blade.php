@@ -7,7 +7,7 @@
     <form class="form-horizontal">
         <fieldset>
             <div class="panel panel-primary">
-                <div class="panel-heading col"><h4>Cadastro de Cliente</h4><br></div>
+                <div class="panel-heading col"><h4>Cadastro do paciente</h4><br></div>
                 <img class="logo3" src="img/logo.png">
                 <div class="panel-body">
                     <!-- NOME -->
