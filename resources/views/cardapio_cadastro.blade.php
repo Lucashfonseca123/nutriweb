@@ -6,9 +6,14 @@
             <fieldset>
                 <h3>Cardápio <br><br></h3>
                 <img class="logo5" src="img/logo.png">
-                <span style="cursor: pointer" onclick="window.open('/grupo_final', '', 'width=600,height=300')">
-                    <button class="btn btn-success" type="button">Salvar cardapio </button>
-                </span>
+                <div class="input-group">
+                    <input type="text" class="form-control col-md-6" id="pessoas" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-primary mostrar_sempre" type="button" alvo="revelado">Busca</button>
+                    &ensp;&ensp;
+                    <span style="cursor: pointer" onclick="window.open('/grupo_final', '', 'width=600,height=300')">
+                        <button class="btn btn-success" type="button">Salvar cardapio </button>
+                    </span>
+                </div>
                 <br><br>
                 <table class="table">
                     <thead>

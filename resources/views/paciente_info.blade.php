@@ -3,7 +3,7 @@
     <main class="page-content">
         <div class="container">
             <form class="form-horizontal">
-                <h4 class="col">Editar paciente</h4><br>
+                <h4 class="col">Nutriweb</h4><br>
                 <img class="logo3" src="img/logo.png">
                 <h6 class="col">Selecione paciente</h6>
                 <div class="form-group col-md-6">
@@ -41,14 +41,14 @@
                     <tr>
                         <th scope="row">2</th>
                         <td>André borato</td>
-                        <td>07/06</td>
+                        <td>28/07</td>
                         <td><button class="btn btn-danger" type="button" >Remover</button>
                             <button class="btn btn-dark" type="button" >Editar ficha</button></td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
                         <td>Marcos Henrique</td>
-                        <td>06/07</td>
+                        <td>04/09</td>
                         <td><button class="btn btn-danger" type="button" >Remover</button>
                             <button class="btn btn-dark" type="button" >Editar ficha</button></td>
                     </tr>
