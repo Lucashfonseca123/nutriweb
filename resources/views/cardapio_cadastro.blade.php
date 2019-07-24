@@ -12,9 +12,13 @@
                     &ensp;&ensp;
                     <span style="cursor: pointer" onclick="window.open('/grupo_final', '', 'width=600,height=300')">
                         <button class="btn btn-success" type="button">Salvar cardapio </button>
+                    </span>&ensp;&ensp;
+                    <span style="cursor: pointer" onclick="window.open('/resumo_paciente', '', 'width=600,height=300')">
+                        <button class="btn btn-dark" type="button">Gerar resumo</button>
                     </span>
                 </div>
                 <br><br>
+                <h4>Paciente 1</h4><br>
                 <table class="table">
                     <thead>
                         <tr>
