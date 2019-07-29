@@ -45,3 +45,5 @@ Route::get('/recuperar_senha', 'Controller@recuperar_senha');
 Route::get('/edit_paciente','Controller@edit_paciente');
 
 Route::get('/resumo_paciente', 'Controller@resumir_paciente');
+
+Route::post('/testerota', 'HomeController@store')->name('test');

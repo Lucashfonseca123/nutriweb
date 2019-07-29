@@ -62,8 +62,4 @@ class Controller extends BaseController
     public function edit_paciente(){
         return view('paciente_editar');
     }
-
-    public function resumir_paciente(){
-        return view ('resumo_paciente');
-    }
 }

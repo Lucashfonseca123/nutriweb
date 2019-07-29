@@ -23,21 +23,15 @@
         <div class="card">
             <div class="card-header text-center">
                 <h3>Nutriweb</h3>
-                <!--
-                <div class="d-flex justify-content-end social_icon">
-                    <span><i class="fab fa-facebook-square"></i></span>
-                    <span><i class="fab fa-google-plus-square"></i></span>
-                    <span><i class="fab fa-twitter-square"></i></span>
-                </div>
-                -->
             </div>
             <div class="card-body">
-                <form>
+                <form method="post" action="{{route('test')}}">
+                    {{csrf_field()}}
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="usuário">
+                        <input type="text" name="usuario" class="form-control" placeholder="usuário">
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
@@ -49,11 +43,14 @@
                         <input type="checkbox">Relembrar senha
                     </div>
                     <div class="form-group">
-                        <a href="relatorio"><br>
-                        <input type="" value="Entrar" class="btn float-right login_btn">
-                        </a>
+{{--                        <a href="relatorio"><br>--}}
+                        <input type="submit" value="Entrar" class="btn float-right login_btn">
+{{--                        </a>--}}
                     </div>
                 </form>
+                <div>
+
+                </div>
             </div>
             <div class="card-footer">
                 <div class="d-flex justify-content-center" >
