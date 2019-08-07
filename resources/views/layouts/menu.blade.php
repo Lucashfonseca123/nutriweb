@@ -33,8 +33,7 @@
                          alt="User picture" style="height: 80px; width: 60px">
                 </div>
                 <div class="user-info">
-                     <span class="user-name">Fernanda
-                        Fonseca
+                     <span class="user-name">{{ Auth::user()->name }}
                      </span>
                      <span class="user-role">Administrador</span>
                      <span class="user-status">
@@ -114,7 +113,7 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li title="Adicione grupos nas refeições, crie seu cardápio">
-                                    <a href="infopaciente">Relatório</a>
+                                    <a href="{{route('infopaciente')}}">Relatório</a>
                                 </li>
                                 {{--<li title="Adicione grupos nas refeições, crie seu cardápio">
                                     <a href="/editinfo">Editar informações</a>
@@ -128,9 +127,13 @@
         </div>
         <!-- sidebar-content  -->
         <div class="sidebar-footer">
-            <a href="#">
+            <a href="{{route('logout')}}" onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
                 <i class="fa fa-power-off"></i>
             </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </div>
     </nav>
     <!-- sidebar-wrapper  -->

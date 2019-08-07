@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-
+        $this->middleware('auth');
     }
 
     /**
@@ -25,14 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $teste = Teste2::all();
-        return view('welcome')->with($teste);
-    }
-
-    public function store(Request $request){
-        $teste = new Teste2;
-        $teste->nome = $request->usuario;
-        $teste->save();
-        return 'deu boa';
+        return view('home');
     }
 
 }

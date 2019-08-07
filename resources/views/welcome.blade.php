@@ -19,42 +19,59 @@
 </head>
 <body>
 <div class="container">
+
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <div class="card-header text-center">
                 <h3>Nutriweb</h3>
             </div>
             <div class="card-body">
-                <form method="post" action="{{route('test')}}">
+            <form method="POST" action="{{ route('login') }}">
                     {{csrf_field()}}
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" name="usuario" class="form-control" placeholder="usuário">
+                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="senha">
+                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="senha">
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
                     </div>
                     <div class="row align-items-center remember">
-                        <input type="checkbox">Relembrar senha
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;Relembrar senha
                     </div>
                     <div class="form-group">
-{{--                        <a href="relatorio"><br>--}}
-                        <input type="submit" value="Entrar" class="btn float-right login_btn">
-{{--                        </a>--}}
+                        <input type="submit" class="btn float-right login_btn" value="Entrar">
                     </div>
                 </form>
-                <div>
-
-                </div>
             </div>
             <div class="card-footer">
-                <div class="d-flex justify-content-center" >
-                    <a href="/recuperar_senha" style="color: white">Esqueceu sua senha?</a>
+                @if (Route::has('register'))
+                    <div class="text-white" style="text-align: center">
+                    Não tem conta?
+                        <a class="badge badge-warning" href="{{ route('register') }}">Crie uma!</a>
+                    </div>
+                @endif
+                <div class="d-flex justify-content-center">
+                    @if (Route::has('password.request'))
+                        <a class="btn btn-link" href="{{ route('password.request') }}" style="color: white">
+                            {{ __('Esqueceu sua senha?') }}
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
