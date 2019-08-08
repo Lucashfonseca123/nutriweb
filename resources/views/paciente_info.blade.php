@@ -23,9 +23,9 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Paciente</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">
-                        </th>
+                        <th scope="col">Data Consulta</th>
+                        <th scope="col">Data próxima consulta</th>
+                        <th scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>

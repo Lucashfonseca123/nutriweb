@@ -7,6 +7,8 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
+use App\Alimentos_taco;
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -36,7 +38,8 @@ class Controller extends BaseController
     }
 
     public function buscar_alimentos(){
-        return view ('alimentos_busca');
+            $var = Alimentos_taco::all();
+            return view('alimentos_busca')->with('teste', $var);
     }
 
     public function grupo_finalizar(){

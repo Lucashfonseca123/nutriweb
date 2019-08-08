@@ -37,10 +37,6 @@
                     <div id="home" class="">
                         <form action="#">
                             <div class="form-group">
-                                <label for="" style="font-size: 15px">Usuário:</label>
-                                <input type="text" class="form-control" id="email">
-                            </div>
-                            <div class="form-group">
                                 <label for="email" style="font-size: 15px">Email:</label>
                                 <input type="email" class="form-control" id="email">
                             </div>

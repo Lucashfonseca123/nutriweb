@@ -15,8 +15,10 @@
                         <label for="nome" class="col-md-5">Nome
                             <input type="text" class="form-control ">
                         </label>
+                        <label for="data_consulta" class="col-md-2">Data consulta
+                            <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" type="text" class="form-control" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+                        </label>
                     </div>
-
                     <!-- EMAIL -->
                     <div class="form-group">
                         <label class="col-md-3" for="prependedtext">Email
@@ -27,7 +29,6 @@
                                    OnKeyPress="formatar('## #####-####', this)" ">
                         </label>
                     </div>
-
                     <!-- CPF, NASCIMENTO E SEXO -->
                     <div class="form-group">
                         <label for="nome" class="col-md-3">Profissão
@@ -37,14 +38,14 @@
                             <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" type="text" class="form-control" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
                         </label>
                         <label class="" for="radios">Sexo </label>
-                            <label required="" class="radio-inline" for="radios-0" >
-                                <input name="sexo" id="sexo" value="feminino" type="radio" required>
-                                Feminino
-                            </label>
-                            <label class="radio-inline" for="radios-1">
-                                <input name="sexo" id="sexo" value="masculino" type="radio">
-                                Masculino
-                            </label>
+                        <label required="" class="radio-inline" for="radios-0" >
+                            <input name="sexo" id="sexo" value="feminino" type="radio" required>
+                            Feminino
+                        </label>
+                        <label class="radio-inline" for="radios-1">
+                            <input name="sexo" id="sexo" value="masculino" type="radio">
+                            Masculino
+                        </label>
                     </div>
                     <div class="col">
                       Trabalha quantas horas por dia:
