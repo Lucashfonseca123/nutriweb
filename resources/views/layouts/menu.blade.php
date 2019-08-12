@@ -46,14 +46,7 @@
             <div class="sidebar-search">
                 <div>
                     <div class="input-group">
-                        <input type="text" class="form-control search-menu" placeholder="Buscar alimentos...">
-                        <div class="input-group-append">
-                            <span class="input-group-text">
-                                <span style="cursor: pointer" onclick="window.open('/alimentos', '', 'width=600,height=300')">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </span>
-                            </span>
-                        </div>
+                        <button class="btn btn-success" type="button" style="cursor: pointer; margin: auto" onclick="window.open('/alimentos', '', 'width=600,height=300')">Buscar alimentos</button>
                     </div>
                 </div>
             </div>
