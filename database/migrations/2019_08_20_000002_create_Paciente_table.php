@@ -40,6 +40,7 @@ class CreatePacienteTable extends Migration
             $table->double('ConsumoAgua')->nullable();
             $table->char('UsouSuplem', 2)->nullable();
             $table->char('CozinhaCasa', 2)->nullable();
+            $table->integer('Estado_idEstado');
         });
     }
 
