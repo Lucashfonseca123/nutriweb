@@ -24,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $teste = Teste2::all();
-        return view('home');
+
+        return view('welcome');
     }
 
 }
