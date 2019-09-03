@@ -24,15 +24,6 @@ class CreateEstadoTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('idEstado');
             $table->string('Nome', 45)->nullable();
-            $table->unsignedInteger('Paciente_idPaciente');
-
-            $table->index(["Paciente_idPaciente"], 'fk_Estado_Paciente1_idx');
-
-
-            $table->foreign('Paciente_idPaciente')
-                ->references('idPaciente')->on('Paciente')
-                ->onDelete('no action')
-                ->onUpdate('no action');
         });
     }
 

@@ -40,7 +40,32 @@ class CreatePacienteTable extends Migration
             $table->double('ConsumoAgua')->nullable();
             $table->char('UsouSuplem', 2)->nullable();
             $table->char('CozinhaCasa', 2)->nullable();
-            $table->integer('Estado_idEstado');
+            $table->unsignedInteger('Cidade_idCidade');
+            $table->unsignedInteger('Estado_idEstado');
+            $table->unsignedInteger('Endereco_idEndereco');
+            $table->float('TrabalhaHoraDia')->nullable();
+
+            $table->index(["Estado_idEstado"], 'fk_Paciente_Estado1_idx');
+
+            $table->index(["Endereco_idEndereco"], 'fk_Paciente_Endereco1_idx');
+
+            $table->index(["Cidade_idCidade"], 'fk_Paciente_Cidade1_idx');
+
+
+            $table->foreign('Cidade_idCidade')
+                ->references('idCidade')->on('Cidade')
+                ->onDelete('no action')
+                ->onUpdate('no action');
+
+            $table->foreign('Estado_idEstado')
+                ->references('idEstado')->on('Estado')
+                ->onDelete('no action')
+                ->onUpdate('no action');
+
+            $table->foreign('Endereco_idEndereco')
+                ->references('idEndereco')->on('Endereco')
+                ->onDelete('no action')
+                ->onUpdate('no action');
         });
     }
 

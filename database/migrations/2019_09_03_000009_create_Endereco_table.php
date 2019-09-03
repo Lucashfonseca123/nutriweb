@@ -27,15 +27,6 @@ class CreateEnderecoTable extends Migration
             $table->integer('Numero')->nullable();
             $table->char('Cep', 8)->nullable();
             $table->string('Bairo')->nullable();
-            $table->unsignedInteger('Paciente_idPaciente');
-
-            $table->index(["Paciente_idPaciente"], 'fk_Endereco_Paciente1_idx');
-
-
-            $table->foreign('Paciente_idPaciente')
-                ->references('idPaciente')->on('Paciente')
-                ->onDelete('no action')
-                ->onUpdate('no action');
         });
     }
 
