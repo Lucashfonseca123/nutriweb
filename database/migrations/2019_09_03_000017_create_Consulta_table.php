@@ -39,8 +39,8 @@ class CreateConsultaTable extends Migration
             $table->integer('Tmb')->nullable();
             $table->integer('Body_age')->nullable();
             $table->integer('Gord_visceral')->nullable();
-            $table->integer('Cardapio_idCardapio');
-            $table->integer('Diagnostico_idDados Clinicos');
+            $table->unsignedInteger('Cardapio_idCardapio');
+            $table->unsignedInteger('Diagnostico_idDados Clinicos');
             $table->float('Circ_abdomen')->nullable();
             $table->float('Circ_braco_dir')->nullable();
             $table->float('Circ_braco_esq')->nullable();
