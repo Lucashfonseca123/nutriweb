@@ -20,6 +20,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/relatorio', 'Controller@consultar_relatorio');
 
+    Route::resource('/cadastrarpaciente', 'PacienteController')
+
     Route::get('/reconsulta', 'Controller@reconsulta');
 
     Route::get('/cardapio', 'Controller@cardapio');

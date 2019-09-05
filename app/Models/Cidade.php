@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 26 Aug 2019 19:53:55 +0000.
+ * Date: Wed, 04 Sep 2019 03:36:19 +0000.
  */
 
 namespace App\Models;
@@ -14,9 +14,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * 
  * @property int $idCidade
  * @property string $Nome
- * @property int $Paciente_idPaciente
  * 
- * @property \App\Models\Paciente $paciente
+ * @property \Illuminate\Database\Eloquent\Collection $pacientes
  *
  * @package App\Models
  */
@@ -26,17 +25,12 @@ class Cidade extends Eloquent
 	protected $primaryKey = 'idCidade';
 	public $timestamps = false;
 
-	protected $casts = [
-		'Paciente_idPaciente' => 'int'
-	];
-
 	protected $fillable = [
-		'Nome',
-		'Paciente_idPaciente'
+		'Nome'
 	];
 
-	public function paciente()
+	public function pacientes()
 	{
-		return $this->belongsTo(\App\Models\Paciente::class, 'Paciente_idPaciente');
+		return $this->hasMany(\App\Models\Paciente::class, 'Cidade_idCidade');
 	}
 }

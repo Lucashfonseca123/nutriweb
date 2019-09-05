@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 26 Aug 2019 19:53:55 +0000.
+ * Date: Wed, 04 Sep 2019 03:36:19 +0000.
  */
 
 namespace App\Models;
@@ -30,13 +30,16 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property float $ConsumoAgua
  * @property string $UsouSuplem
  * @property string $CozinhaCasa
+ * @property int $Cidade_idCidade
  * @property int $Estado_idEstado
+ * @property int $Endereco_idEndereco
+ * @property float $TrabalhaHoraDia
  * 
+ * @property \App\Models\Cidade $cidade
+ * @property \App\Models\Endereco $endereco
+ * @property \App\Models\Estado $estado
  * @property \Illuminate\Database\Eloquent\Collection $cardapios
- * @property \Illuminate\Database\Eloquent\Collection $cidades
  * @property \Illuminate\Database\Eloquent\Collection $consulta
- * @property \Illuminate\Database\Eloquent\Collection $enderecos
- * @property \Illuminate\Database\Eloquent\Collection $estados
  *
  * @package App\Models
  */
@@ -50,7 +53,10 @@ class Paciente extends Eloquent
 		'Telefone' => 'int',
 		'Tabagista' => 'int',
 		'ConsumoAgua' => 'float',
-		'Estado_idEstado' => 'int'
+		'Cidade_idCidade' => 'int',
+		'Estado_idEstado' => 'int',
+		'Endereco_idEndereco' => 'int',
+		'TrabalhaHoraDia' => 'float'
 	];
 
 	protected $dates = [
@@ -75,31 +81,34 @@ class Paciente extends Eloquent
 		'ConsumoAgua',
 		'UsouSuplem',
 		'CozinhaCasa',
-		'Estado_idEstado'
+		'Cidade_idCidade',
+		'Estado_idEstado',
+		'Endereco_idEndereco',
+		'TrabalhaHoraDia'
 	];
+
+	public function cidade()
+	{
+		return $this->belongsTo(\App\Models\Cidade::class, 'Cidade_idCidade');
+	}
+
+	public function endereco()
+	{
+		return $this->belongsTo(\App\Models\Endereco::class, 'Endereco_idEndereco');
+	}
+
+	public function estado()
+	{
+		return $this->belongsTo(\App\Models\Estado::class, 'Estado_idEstado');
+	}
 
 	public function cardapios()
 	{
 		return $this->hasMany(\App\Models\Cardapio::class, 'Paciente_idPaciente');
 	}
 
-	public function cidades()
-	{
-		return $this->hasMany(\App\Models\Cidade::class, 'Paciente_idPaciente');
-	}
-
 	public function consulta()
 	{
 		return $this->hasMany(\App\Models\Consultum::class, 'Paciente_idPaciente');
-	}
-
-	public function enderecos()
-	{
-		return $this->hasMany(\App\Models\Endereco::class, 'Paciente_idPaciente');
-	}
-
-	public function estados()
-	{
-		return $this->hasMany(\App\Models\Estado::class, 'Paciente_idPaciente');
 	}
 }

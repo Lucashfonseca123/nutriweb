@@ -36,14 +36,24 @@ class CreatePacienteTable extends Migration
             $table->string('PrefAlimentares', 45)->nullable();
             $table->string('AversaoAlimentar', 45)->nullable();
             $table->tinyInteger('Tabagista')->nullable();
-            $table->string('Etilista', 45)->nullable();
             $table->double('ConsumoAgua')->nullable();
-            $table->char('UsouSuplem', 2)->nullable();
-            $table->char('CozinhaCasa', 2)->nullable();
+            $table->string('UsouSuplem', 45)->nullable();
+            $table->tinyInteger('CozinhaCasa')->nullable();
             $table->unsignedInteger('Cidade_idCidade');
             $table->unsignedInteger('Estado_idEstado');
             $table->unsignedInteger('Endereco_idEndereco');
             $table->float('TrabalhaHoraDia')->nullable();
+            $table->string('Tempo_parou', 45)->nullable();
+            $table->float('ConsumoMedio')->nullable();
+            $table->integer('Cigar_dia')->nullable();
+            $table->tinyInteger('Etilista')->nullable();
+            $table->text('Desjejum')->nullable();
+            $table->text('Lanche1', 45)->nullable();
+            $table->text('Almoco')->nullable();
+            $table->text('Lanche2')->nullable();
+            $table->text('Jantar')->nullable();
+            $table->text('Ceia')->nullable();
+
 
             $table->index(["Estado_idEstado"], 'fk_Paciente_Estado1_idx');
 

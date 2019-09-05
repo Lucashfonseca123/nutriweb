@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 26 Aug 2019 19:53:55 +0000.
+ * Date: Wed, 04 Sep 2019 03:36:19 +0000.
  */
 
 namespace App\Models;
@@ -13,8 +13,12 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class AtividadeFisica
  * 
  * @property int $idAtividade_Fisica
- * @property string $Nome
+ * @property int $Pratica
  * @property string $Descricao
+ * @property string $TempParou
+ * @property \Carbon\Carbon $HorarioInicio
+ * @property \Carbon\Carbon $HorarioFinal
+ * @property int $FreqSemana
  * 
  * @property \Illuminate\Database\Eloquent\Collection $consulta
  *
@@ -26,9 +30,23 @@ class AtividadeFisica extends Eloquent
 	protected $primaryKey = 'idAtividade_Fisica';
 	public $timestamps = false;
 
+	protected $casts = [
+		'Pratica' => 'int',
+		'FreqSemana' => 'int'
+	];
+
+	protected $dates = [
+		'HorarioInicio',
+		'HorarioFinal'
+	];
+
 	protected $fillable = [
-		'Nome',
-		'Descricao'
+		'Pratica',
+		'Descricao',
+		'TempParou',
+		'HorarioInicio',
+		'HorarioFinal',
+		'FreqSemana'
 	];
 
 	public function consulta()

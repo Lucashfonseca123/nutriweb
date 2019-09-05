@@ -29,8 +29,8 @@ class CreateAltclinicasTable extends Migration
             $table->string('Outros', 45)->nullable();
             $table->tinyInteger('HabitosIntestinal')->nullable();
             $table->enum('Frequencia_urinaria', ['Muita', 'Normal', 'Pouca'])->nullable();
-            $table->string('Alteracoes clinicascol', 45)->nullable();
-            $table->string('Alteracoes clinicascol1', 45)->nullable();
+            $table->string('Passado_Cirurgico', 45)->nullable();
+            $table->string('Meidcamentos', 45)->nullable();
         });
     }
 
