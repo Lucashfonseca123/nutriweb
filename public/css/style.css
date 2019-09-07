@@ -520,7 +520,7 @@ body {
 
 
 body{
-    background-image: url("/img/MorangoDesfoque.jpg");
+ /*   background-image: url("/img/MorangoDesfoque.jpg"); */
     background-repeat:repeat;
     background-size: cover;
 }

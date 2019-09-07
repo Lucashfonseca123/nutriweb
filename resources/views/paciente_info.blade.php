@@ -3,6 +3,8 @@
     <main class="page-content">
         <div class="container">
             <form class="form-horizontal">
+            <div class="card">
+                <div class="card-header"><br>
                 <h4 class="col">Nutriweb</h4><br>
                 <img class="logo3" src="img/logo.png">
                 <h6 class="col">Selecione paciente</h6>
@@ -17,7 +19,7 @@
                 <div class="col">
                     <br><h5>Próximas consultas</h5>
             </form>
-            <div class="container mt-4 card-header">
+            <div class="container mt-4">
                 <table class="table">
                     <thead>
                     <tr>
@@ -54,6 +56,8 @@
                     </tr>
                     </tbody>
                 </table>
+            </div>
+            </div>
             </div>
     </main>
 @endsection

@@ -3,6 +3,8 @@
 <main class="page-content">
     <div class="container">
         <form class="form-horizontal">
+        <div class="card">
+            <div class="card-header text-center">
             <fieldset>
                 <h3>Cardápio <br><br></h3>
                 <img class="logo5" src="img/logo.png">
@@ -196,6 +198,8 @@
                     </tbody>
                 </table>
             </fieldset>
+           </div>
+           </div>
         </form>
     </div>
 </main>

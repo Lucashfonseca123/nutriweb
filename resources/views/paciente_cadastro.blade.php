@@ -141,7 +141,7 @@
                     <div class="form-group">
                         <label class="col-md-3" for="prependedtext">
                             <span class="input-group-addon"></span>
-                            <input type="radio" name="pratica" id="atv" value=0 onclick="desabilita('atv2')">
+                            <input type="radio" name="pratica" id="atv" value=0 >
                             Não
                             <input type="radio" name="pratica" id="atv" value=1 onclick="habilita('atv2')">
                             Sim <br>
@@ -283,11 +283,11 @@
                              Diabetes Melitus &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="hAsAF" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="hAsAF" id="filhos" value=1 >
                             HAS &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="avc" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="avc" id="filhos" value=1 >
                             AVC &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
