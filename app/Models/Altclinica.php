@@ -19,8 +19,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $Outros
  * @property int $HabitosIntestinal
  * @property string $Frequencia_urinaria
- * @property string $Alteracoes clinicascol
- * @property string $Alteracoes clinicascol1
+ * @property string $Alteracoes Passado_Cirurgico
+ * @property string $Alteracoes Meidcamentos
  * 
  * @property \Illuminate\Database\Eloquent\Collection $consulta
  *
@@ -45,8 +45,8 @@ class Altclinica extends Eloquent
 		'Outros',
 		'HabitosIntestinal',
 		'Frequencia_urinaria',
-		'Alteracoes clinicascol',
-		'Alteracoes clinicascol1'
+		'Passado_Cirurgico',
+		'Meidcamentos'
 	];
 
 	public function consulta()

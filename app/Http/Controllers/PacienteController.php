@@ -11,7 +11,10 @@ use App\Models\Endereco;
 use App\Models\Objetivo;
 use App\Models\Diagnostico;
 use App\Models\AtividadeFisica;
-
+use App\Models\Antfamiliare;
+use App\Models\Altgastrointestinai;
+use App\Models\Altclinica;
+use App\Models\Consultum;
 class PacienteController extends Controller
 {
     /**
@@ -47,9 +50,14 @@ class PacienteController extends Controller
         $varEst = new Estado;
         $varCid = new Cidade;
         $varDiag = new Diagnostico;
+        $varAnf= new Antfamiliare;
         $varAf = new AtividadeFisica;
         $varObj = new Objetivo;
-        /*$varp->Nome = $request->paciente;
+        $altg = new Altgastrointestinai;
+        $varAltC = new Altclinica;
+        $varCon = new Consultum;
+
+        $varp->Nome = $request->paciente;
         $varp->Email = $request->email;
         //$varp->Telefone = $request->telefone;
         $varp->Sexo = $request->sexo;
@@ -66,7 +74,6 @@ class PacienteController extends Controller
         $varEst->Nome = $request->estado;
         //Horário de rabalho e rotina diária
         //$varp->TrabalhaHoraDia = $request-> $horErotina;
-        
         $varCid->save();
         $varEnd->save();
         $varEst->save();
@@ -74,13 +81,11 @@ class PacienteController extends Controller
         $varp->cidade()->associate($varCid);
         $varp->endereco()->associate($varEnd);
         
-        $varp->save();*/
-        
         //Objetivo
+        
         $varObj->Nome = $request->objetivo;
         //$varObj->Descricao = $request->descricao
         $varObj->save();
-
         //Atividade fisica
         $varAf->Pratica = $request->pratica;
         $varAf->Descricao = $request->descricaoAf;
@@ -106,41 +111,72 @@ class PacienteController extends Controller
         $varDiag->Renite_sinusite = $request->renSin;
         $varDiag->Outras = $request->descreva;
         $varDiag->save();
-        /*
+
+        $altg->Disfagia = $request->disfagia;
+        $altg->Pirose = $request->pirose;
+        $altg->Nausea = $request->nausea;
+        $altg->Vomitos = $request->vomitos;
+        $altg->Diarreia = $request->diarreia;
+        $altg->Constipacao = $request->constipacao;
+        $altg->Anorexia = $request->anorexia;
+        $altg->Dispepsia = $request->dispepsia; 
+        $altg->Edema = $request->edema;
+        $altg->Flatulencias = $request->flatulencias;
+        $altg->Polidipsia = $request->polidipsia;
+        $altg->save();
+        
         //Antecedentes familiares
-        $varAf->Diabetes_melitus$request->diabetesAF;
-        $varAf->Has = $request->hAsAF;
-        $varAf->Avc = $request->avc;
-        $varAf->Displidemia = $request->displidemiaAF;
-        $varAf->Cardiopata = $request->cardiopataAF;
-        $varAf->Nefropatia = $request->nefropatiaAF;
-        $varAf->Hepatopatia = $request->hepatopatiaAF;
-        $varAf->Cancer = $request->cancer;
-        $varAf->Obesidade = $request->obesidade;
-        $varAf->Outras = $request->descrevaAF;
-        //Alterações gastrointestinais 
-        $varAltG->Disfagia = $request->disfagia;
-        $varAltG->Pirose = $request->pirose;
-        $varAltG->Nausea =$request->nausea;          
-        $varAltG->Vomitos = $request->vomitos;  
-        $varAltG->Diarreia = $request->diarreia;  
-        $varAltG->Constipacao = $request->constipacao;
-        $varAltG->Anorexia = $request->anorexia; 
-        $varAltG->Dispepsia = $request->dispepsia;   
-        $varAltG->Edema = $request->edema; 
-        $varAltG->Flatulencias$request->flatulencias;
-        $varAltG->Polidipsia = $request->polidipsia; 
+        
+        $varAnf->Diabetes_melitus = $request->diabetesAF;
+        $varAnf->Has = $request->hAsAF;
+        $varAnf->Avc = $request->avc;
+        $varAnf->Dislipedemia = $request->displidemiaAF;
+        $varAnf->Cardiopatia = $request->cardiopataAF;
+        $varAnf->Nefropatia = $request->nefropatiaAF;
+        $varAnf->Hepatopatia = $request->hepatopatiaAF;
+        $varAnf->Cancer = $request->cancer;
+        $varAnf->Obesidade = $request->obesidade;
+        $varAnf->Outras = $request->descrevaAF;
+        $varAnf->save();
+        
+
+        
         //Alterações clínicas
         $varAltC->Cabelo_quebradico = $request->cabelos;
         $varAltC->Unhas_fracas = $request->unhas;
         $varAltC->Palidez = $request->palidez;
         $varAltC->Outros = $request->descrevaAC;
-        $varAltC->HabitosIntestinail = $request->habitosIntestinais;
-        $varAltC->Frequencia_urinaria = $request->freUri;
+        $varAltC->HabitosIntestinal = $request->habitosIntestinais;
+        //$varAltC->Frequencia_urinaria = $request->freUri;
         $varAltC->Passado_Cirurgico = $request->passado;
-        $varAltC->Medicamentos = $request->descrevaMed;
+        $varAltC->Meidcamentos = $request->descrevaMed;
+        $varAltC->save();
+
+         //Hábitos alimentares e sociais
+        
+        $varp->IntoleranciaAlimentar = $request->descrevaIntolerancia;
+        $varp->Mastigacao = $request->mastigacao;
+        $varp->PrefAlimentares = $request->prefAlimentares;
+        $varp->AversaoAlimentar = $request->aversoesAlimentares;
+        $varp->Tabagista = $request->tabagista;
+        $varp->Tempo_parou = $request->parou;
+        $varp->Cigar_dia = $request->cigarDia;
+        $varp->Etilista = $request->etilista;
+        $varp->ConsumoMedio = $request->consumo;
+        $varp->ConsumoAgua = $request->consumoAgua;
+        $varp->UsouSuplem = $request->suplementos;
+        $varp->CozinhaCasa = $request->cozinha;
+        $varp->Desjejum = $request->desjejum;
+        $varp->Lanche1 = $request->lanche;
+        $varp->Almoco = $request->almoco;
+        $varp->Lanche2 =$request->lanche1;
+        $varp->Jantar = $request->jantar;
+        $varp->Ceia = $request->ceia;
+        $varp->save();
+        
         //Exames laboratoriais
         $varCon->Peso = $request->peso;
+        $varCon->Circ_pantu = $request->circ_pantu;
         $varCon->Estatura = $request->estatura; 
         $varCon->Circ_cintura = $request->cirCintura;
         $varCon->Circ_abdomen = $request->circAbd;
@@ -150,34 +186,29 @@ class PacienteController extends Controller
         $varCon->Circ_braco_dir = $request->cirBraDir;
         $varCon->Circ_braco_esq = $request->cirBraEsq;
         $varCon->Circ_punho = $request->cirPunho;
-        $varCon->Porc_gordura$request->gordura;
+        $varCon->Porc_gordura = $request->gordura;
         $varCon->Porc_muscular = $request->muscular;
         $varCon->Tmb = $request->tmb;
         $varCon->Body_age = $request->bodyAge;
         $varCon->Gord_visceral = $request->gordVisc;
-        //Hábitos alimentares e sociais
-        $varHab->IntoleranciaAlimentar = $request->descrevaIntolerancia;
-        $varHab->Mastigacao = $request->mastigacao;
-        $varHab->PrefAlimentares = $request->prefAlimentares;
-        $varHab->AversaoAlimentar = $request->aversoesAlimentares;
-        $varHab->Tabagista = $request->tabagista;
-        $varHab->Tempo_parou = $request->parou;
-        $varHab->Cigar_dia = $request->cigarDia;
-        $varHab->Etilista = $request->etilista;
-        $varHab->ConsumoMedio = $request->consumo;
-        $varHab->ConsumoAgua = $request->consumoAgua;
-        $varHab->UsouSuplem = $request->suplementos;
-        $varHab->CozinhaCasa = $request->cozinha;
-
-
-        $varHab->Desjejum = $request->desjejum;
-        $varHab->Lanche1 = $request->lanche;
-        $varHab->Almoco = $request->almoco
-        $varHab->Lanche2 =$request->lanche;
-        $varHab->Jantar = $request->jantar;
-        $varHab->Ceia = $request->ceia;*/
-
-
+        $varAltC->save();
+        $varAnf->save();
+        $varAf->save();
+        $altg->save();
+        $varDiag->save();
+        $varAf->save();
+        $varObj->save();
+        $varCon->altclinica()->associate($varAltC);
+        $varCon->altgastrointestinai()->associate($altg);
+        $varCon->antfamiliare()->associate($varAnf);
+        $varCon->atividade_fisica()->associate($varAf);
+        $varCon->diagnostico()->associate($varDiag);
+        $varCon->objetivo()->associate($varObj);
+        $varCon->paciente()->associate($varp);
+        $varCon->Nutricionista_idNutricionista = 1;
+        $varCon->Cardapio_idCardapio = 1;
+        $varCon->save();
+       
 
         
         return 'certo';
