@@ -24,6 +24,7 @@
         <div class="card">
             <div class="card-header text-center">
                 <h3>Nutriweb</h3>
+                <img src="img/logo.png" style="width: 50px;">   
             </div>
             <div class="card-body">
             <form method="POST" action="{{ route('login') }}">

@@ -2,6 +2,8 @@
 @section('content')
     <main class="page-content">
         <div class="container">
+        <div class="card">
+        <div class="card-header"><br>
             <form class="form-horizontal">
                 <h4 class="col">Adicionar alimentos</h4><br>
                 <img class="logo3" src="img/logo.png">
@@ -15,7 +17,7 @@
                     <div class=" col">
                         <button class="btn btn-success" id="btn1" type="button">Adicionar</button>
                     </div>
-                    <div class="container mt-4 card-header">
+                    <div class="container mt-4">
                         <h2>Alimentos cadastrados: </h2>
                         <table class="table">
                             <thead>
@@ -60,6 +62,8 @@
                         </label>
                 </div>
             </form>
+        </div>
+        </div>
         </div>
     </main>
 @endsection

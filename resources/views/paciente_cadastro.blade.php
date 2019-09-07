@@ -4,6 +4,8 @@
 
 <main class="page-content">
     <div class="container">
+    <div class="card">
+    <div class="card-header"><br>
     <form class="form-horizontal" method="post" action="{{route('cadastrarpaciente.store')}}">
         {{csrf_field()}}
         <fieldset>
@@ -740,7 +742,8 @@
                 </div>
             </div>
         </fieldset>
-    
+        </div>
+        </div>
     </div>
 </main>
 

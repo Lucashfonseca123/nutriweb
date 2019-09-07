@@ -2,6 +2,8 @@
 @section('content')
     <main class="page-content">
         <div class="container">
+        <div class="card">
+            <div class="card-header"><br>
             <h2 class="col">Situação paciente</h2><br>
             <h3 class="col">Relatórios</h3>
             <img class="logo" src="img/logo.png">
@@ -67,6 +69,8 @@
                     </div>
             </div>
             </div>
+        </div>
+        </div>
         </div>
     </main>
     <!-- page-content" -->

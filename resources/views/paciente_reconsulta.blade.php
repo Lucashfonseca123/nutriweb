@@ -2,6 +2,8 @@
 @section('content')
     <main class="page-content">
         <div class="container">
+        <div class="card">
+            <div class="card-header"><br>
             <form class="form-horizontal">
                 <h3>Reconsulta <br><br></h3>
                     <img class="logo4" src="img/logo.png">
@@ -14,7 +16,12 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" id="pessoas" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar_sempre" type="button" alvo="revelado">Busca</button>
+                                    <span>
+                                        <button class="btn btn-primary mostrar_sempre" type="button" alvo="revelado">Busca</button> &ensp;&ensp;
+                                    </span> 
+                                    <span>
+                                        <button class="btn btn-success" type="button">Salvar</button>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -87,11 +94,11 @@
                                 <input type="text" class="form-control col-md-4">
                             </label>
                         </div>
-                        <button class="btn btn-success" style="position: absolute; left: 74%; top: 135%" type="button">Salvar</button>
-                        <br><br><br>
+                       <br><br><br>
                     </div>
             </form>
-
+        </div>
+        </div>
         </div>
     </main>
 @endsection

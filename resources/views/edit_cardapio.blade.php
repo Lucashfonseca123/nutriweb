@@ -1,8 +1,12 @@
 @extends('layouts.menu')
 @section('content')
     <main class="page-content">
+    <div class="container">
+    <div class="card">
+        <div class="card-header"><br>
         <div class="container">
             <form class="form-horizontal">
+            <img class="logo7" src="img/logo.png">
             <h4 class="col">Alterações de cardápios</h4><br>
                 <div class="form-group col-md-8">
                     <div class="input-group">
@@ -13,7 +17,7 @@
                     </div>
                 </div>
                 <br>
-            <div class="card-header escondido" id="revelado">
+            <div class=" escondido" id="revelado">
                 <table class="table table-striped">
                     <thead>
                     <tr class="text-center">
@@ -26,7 +30,7 @@
                     <tr class="">
                         <th scope="row" style="vertical-align: middle"><h5>Café da manhã</h5></th>
                         <td>
-                            <div class="card-header col-md-12" style="vertical-align: middle">
+                            <div class=" col-md-12" style="vertical-align: middle">
                                {{-- <div class="form-group text-center">
                                     <li style="text-align: left">1 fatia de pão integral com ovo</li>
                                     <li style="text-align: left">1 xicara de café c/ leite desnatado</li>
@@ -35,7 +39,7 @@
                             </div>
                         </td>
                         <td>
-                            <div class="card-header col-md-10">
+                            <div class="col-md-10">
                                 <div class="form-group text-center">
                                     <li style="text-align: left">1 unidade  de tapioca com banana</li>
                                     <li style="text-align: left">1 copo de suco de limão</li>
@@ -52,14 +56,14 @@
                     <tr>
                         <th scope="row" style="vertical-align: middle"><h5>Lanche da manhã</h5></th>
                         <td>
-                            <div class="card-header col-md-12">
+                            <div class=" col-md-12">
                                 <div class="form-group text-center">
                                     <li style="text-align: left">1 unidade de fruta</li>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <div class="card-header col-md-10">
+                            <div class=" col-md-10">
                                 <div class="form-group text-center">
                                     <li style="text-align: left">1 unidade de iogurte natural</li>
                                     <li style="text-align: left">3 unidade de bolacha integral</li>
@@ -76,7 +80,7 @@
                     <tr>
                         <th scope="row" style="vertical-align: middle"><h5>Almoço</h5></th>
                         <td>
-                            <div class="card-header col-md-12">
+                            <div class=" col-md-12">
                                 <div class="form-group text-center">
                                     <li style="text-align: left">1 colher de arroz</li>
                                     <li style="text-align: left">1 concha de feijão</li>
@@ -85,7 +89,7 @@
                             </div>
                         </td>
                         <td>
-                            <div class="card-header col-md-10">
+                            <div class=" col-md-10">
                                 <div class="form-group text-center">
                                     <li style="text-align: left">1 unidade de batata salsa cozida</li>
                                     <li style="text-align: left">1 unidade de filé de batata cozida</li>
@@ -102,14 +106,14 @@
                     <tr>
                         <th scope="row" style="vertical-align: middle"><h5>Lanche da tarde 2</h5></th>
                         <td>
-                            <div class="card-header col-md-12">
+                            <div class="col-md-12">
                                 <div class="form-group text-center">
                                     <li style="text-align: left">1 unidade de sanduiche natural</li>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <div class="card-header col-md-10">
+                            <div class=" col-md-10">
                                 <div class="form-group text-center">
                                     <li style="text-align: left">5 unidades de bolachas integrais</li>
                                 </div>
@@ -125,7 +129,7 @@
                     <tr>
                         <th scope="row" style="vertical-align: middle"><h5>Jantar</h5></th>
                         <td>
-                            <div class="card-header col-md-12">
+                            <div class="col-md-12">
                                 <div class="form-group text-center">
                                     <li style="text-align: left">1 unidade de crepioca</li>
                                 </div>
@@ -148,7 +152,7 @@
                     <tr>
                         <th scope="row" style="vertical-align: middle"><h5>Ceia</h5></th>
                         <td>
-                            <div class="card-header col-md-12">
+                            <div class="col-md-12">
                                 <div class="form-group text-center">
                                     <li style="text-align: left">3 unidades de bolachas integrais</li>
                                     <li style="text-align: left">1 xicara de chá de camomila</li>
@@ -156,7 +160,7 @@
                             </div>
                         </td>
                         <td>
-                            <div class="card-header col-md-10">
+                            <div class="col-md-10">
                                 <div class="form-group text-center">
                                     <li style="text-align: left">1 porção de mix de cereais</li>
                                 </div>
@@ -175,6 +179,8 @@
                 <br>
             </div>
             </form>
+        </div>
+        </div>
         </div>
     </main>
 @endsection
