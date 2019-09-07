@@ -16,9 +16,6 @@
                         <label for="nome" class="col-md-5">Nome
                             <input type="text" name="paciente" class="form-control ">
                         </label>
-                        <label for="data_consulta" class="col-md-2">Data consulta
-                            <input id="dtnasc" name="dtcons" placeholder="DD/MM/AAAA" type="text" class="form-control" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
-                        </label>
                     </div>
                     <!-- EMAIL -->
                     <div class="form-group">
@@ -55,6 +52,10 @@
                         <label for="nome" class="col-md-1">
                             <input type="number" class="form-control " name="hrsDia">
                         </label>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="exampleFormControlTextarea3">Horário de trabalho e rotina diária</label>
+                        <textarea class="form-control" name="horErotina" id="exampleFormControlTextarea3" rows="7"></textarea>
                     </div>
                    
                    <!-- CEP -->
@@ -103,25 +104,21 @@
                      /*$varObj->Nome = $request->objetivo
                      $varObj->Descricao = $request->descricao-->
                     
-                    <div class="form-group col-md-4">
-                        <label for="exampleFormControlTextarea3">Horário de trabalho e rotina diária</label>
-                        <textarea class="form-control" name="horErotina" id="exampleFormControlTextarea3" rows="7"></textarea>
-                    </div>
                     <label class="radio-inline col" for="radios-1"><br>Objetivo da consulta <br><br>
-                        <input name="objetivo" id="sexo" value="Manutenção de peso" type="radio">
+                        <input name="objetivo" id="objetivo" value="Manutenção de peso" type="radio"onclick="desabilita('obj')">
                         Manutenção de peso <br>
-                        <input name="objetivo" id="sexo" value="Ganho de peso" type="radio">
+                        <input name="objetivo" id="objetivo" value="Ganho de peso" type="radio"onclick="desabilita('obj')">
                         Ganho de peso <br>
-                        <input name="objetivo" id="sexo" value="Eliminação de peso" type="radio">
+                        <input name="objetivo" id="objetivo" value="Eliminação de peso" type="radio"onclick="desabilita('obj')">
                         Eliminação de peso <br>
-                        <input name="objetivo" id="sexo" value="Hipertrofia" type="radio">
+                        <input name="objetivo" id="objetivo" value="Hipertrofia" type="radio"onclick="desabilita('obj')">
                         Hipertrofia <br>
-                        <input type="radio" name="obj2" id="obj2" value="outros" onclick="habilita('obj')">
+                        <input type="radio" name="objetivo" id="objetivo" value="outros" onclick="habilita('obj')">
                         Outros
                     </label>
                     <div class="form-group">
-                        <label class="col-md-2" for="prependedtext">
-                            <input id="obj" name="obj" placeholder="Descreva" class="form-control input-md" required="" value="" type="search" maxlength="8" pattern="[0-9]+$" disabled>
+                        <label class="col-md-4" for="prependedtext">
+                            <input id="obj" name="obj" placeholder="Descreva" class="form-control input-md" required="" value="" type="search"  pattern="[0-9]+$" disabled>
                         </label>
                     </div>
 
@@ -141,7 +138,7 @@
                     <div class="form-group">
                         <label class="col-md-3" for="prependedtext">
                             <span class="input-group-addon"></span>
-                            <input type="radio" name="pratica" id="atv" value=0 onclick="desabilita('atv2')">
+                            <input type="radio" name="pratica" id="atv" value=0 onclick="desabilita('atv2')" >
                             Não
                             <input type="radio" name="pratica" id="atv" value=1 onclick="habilita('atv2')">
                             Sim <br>
@@ -155,14 +152,14 @@
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-3">Horário ínicio
-                            <input type="time" class="form-control col-md-8" name="hrInicio">
+                            <input type="time" class="form-control col-md-8" id="hrInicio" name="hrInicio">
                         </label>
                         <label for="nome" class="col-md-2">Horário final
-                            <input type="time" class="form-control " name="hrFim">
+                            <input type="time" class="form-control " id="hrFim" name="hrFim">
                         </label>
                     </div>
                     <label for="nome" class="col-md-2">Frequência semanal
-                        <input type="text" class="form-control" name="frequencia">
+                        <input type="text" class="form-control"  id="frequencia" name="frequencia">
                     </label>
 
                     <!-- DADOS CLÍNICOS 
@@ -187,68 +184,68 @@
 
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="diabetes" id="filhos" value=1 onclick="desabilita('filhos_qtd')" required>
+                            <input type="radio" name="diabetes" id="doencas" value=1 onclick="desabilita('doencas_qtd')" >
                              Diabetes Melitus &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="hAs" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="hAs" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             HAS &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="ic" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="ic" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             IC &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="displidemia" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="displidemia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Dislipidemia &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="cardiopata" id="filhos" value=1 onclick="desabilita('filhos_qtd')" required>
+                            <input type="radio" name="cardiopata" id="doencas" value=1 onclick="desabilita('doencas_qtd')">
                              Cardiopata &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="nefropatia" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="nefropatia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Nefropatia &emsp;&emsp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="gastrite" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="gastrite" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Gastrite &emsp;&emsp;&emsp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="neoplasia" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="neoplasia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Neoplasia &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="ulcera" id="filhos" value=1 onclick="desabilita('filhos_qtd')" required>
+                            <input type="radio" name="ulcera" id="doencas" value=1 onclick="desabilita('doencas_qtd')" >
                              Úlcera &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="hepatopatia" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="hepatopatia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Hepatopatia &emsp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="ansiedade" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="ansiedade" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Ansiedade &emsp;&ensp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="irritabilidade" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="irritabilidade" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Irritabilidade &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="depressao" id="filhos" value=1 onclick="desabilita('filhos_qtd')" required>
+                            <input type="radio" name="depressao" id="doencas" value=1 onclick="desabilita('doencas_qtd')">
                              Depressão &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="renSin" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="renSin" id="doencas" value=1 onclick="habilita('filhos_qtd')">
                              Renite/Sinusite &emsp;&ensp;
                         </label>
                         <input type="radio" name="obj4" id="obj4" value=1 onclick="habilita('obj5')">
@@ -279,7 +276,7 @@
 
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="diabetesAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" required>
+                            <input type="radio" name="diabetesAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Diabetes Melitus &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
@@ -298,7 +295,7 @@
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="cardiopataAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" required>
+                            <input type="radio" name="cardiopataAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Cardiopatia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
@@ -317,7 +314,7 @@
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="obesidade" id="filhos" value=1 onclick="desabilita('filhos_qtd')" required>
+                            <input type="radio" name="obesidade" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Obesidade &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-0">
@@ -349,7 +346,7 @@
 
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="disfagia" id="filhos" value=1 onclick="desabilita('filhos_qtd')" required>
+                            <input type="radio" name="disfagia" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Disfagia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio-inline" for="radios-1">
@@ -368,7 +365,7 @@
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="diarreia" id="filhos" value=1 onclick="desabilita('filhos_qtd')" required>
+                            <input type="radio" name="diarreia" id="filhos" value=1 onclick="desabilita('filhos_qtd')">
                              Diarréia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
@@ -388,7 +385,7 @@
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="edema" id="filhos" value=1 onclick="desabilita('filhos_qtd')" required>
+                            <input type="radio" name="edema" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Edema &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
@@ -415,7 +412,7 @@
 
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="cabelos" id="filhos" value=1 onclick="desabilita('filhos_qtd')" required>
+                            <input type="radio" name="cabelos" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Cabelos clínicos &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
@@ -426,18 +423,22 @@
                             <input type="radio" name="palidez" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Palidez &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
+                        <label class="radio-inline" for="radios-1">
+                            <input type="radio" name="outros2" id="filhos" value=1 onclick="habilita('descrevaAC')">
+                            Outros &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        </label>
                     </span>
                     <br><br>
                     <div class="form-group">
-                        <label class="col-md-3" for="prependedtext">Outros
-                            <input id="profissao" name="descrevaAC" placeholder="Descreva..." class="form-control">
+                        <label class="col-md-3" for="prependedtext">
+                            <input id="descrevaAC" name="descrevaAC" placeholder="Descreva..." class="form-control" disabled>
                         </label>
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-3">Hábitos intestinais (Quantas vezes vai ao banheiros)
                             <input type="number"  name ="habitosIntestinais" class="form-control" col-md-3>
                         </label>
-                        <label for="nome" class="col-md-1">Frequência urinária
+                        <label for="nome" class="col-md-1">Frequência urinária(Vezes que urina ao dia)
                             <input type="number" name ="freUri" class="form-control ">
                         </label>
                         <label class="col" for="prependedtext">Passado cirurgico
@@ -489,7 +490,7 @@
 
                     <div class="form-group">
                         <label for="nome" class="col-md-3">Peso
-                            <input type="text" name="peso" class="form-control col-md-4">
+                            <input type="text" name="peso" class="form-control col-md-4" pattern="[0-9]+$">
                         </label>
                         <label for="nome" class="col-md-3">Estatura
                             <input type="text" name="estatura" class="form-control col-md-4">
@@ -576,11 +577,11 @@
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="int" id="int" value="nao" onclick="desabilita('int')" required>
+                                        <input type="radio" name="int" id="int" value="nao" onclick="desabilita('descrevaIntolerancia')" required>
                                         Não
                                     </label>
                                     <label class="radio-inline" for="radios-1">
-                                        <input type="radio" name="int" id="int" value="sim" onclick="habilita('int')">
+                                        <input type="radio" name="int" id="int" value="sim" onclick="habilita('descrevaIntolerancia')">
                                         Sim
                                     </label>
                                 </span>
@@ -589,7 +590,7 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-2" for="prependedtext">
-                            <input id="int" name="descrevaIntolerancia" placeholder="Descreva..." class="form-control input-md" required="" value="" type="search" maxlength="8" pattern="[0-9]+$" disabled>
+                            <input id="descrevaIntolerancia" name="descrevaIntolerancia" placeholder="Descreva..." class="form-control input-md" required="" value="" type="search"   >
                         </label>
                     </div>
                     <div class="form-group">
@@ -632,15 +633,15 @@
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="tabagista" id="filhos" value=0 onclick="desabilita('tabagista')"onclick="desabilita('parou')" onclick="desabilita('cigarDia')"required>
+                                        <input type="radio" name="tabagista" id="filhos" value=0 onclick="desabilita('parou')" onclick="desabilita('cigarDia')" required>
                                         Não
                                     </label>
                                     <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="tabagista" id="tab2" value=0 onclick="habilita('parou')"onclick="desabilita('tabagista')" onclick="desabilita('cigarDia')"required>
+                                        <input type="radio" name="tabagista" id="tab2" value=0 onclick="habilita('parou')" onclick="desabilita('cigarDia')" required>
                                         Parei
                                     </label>
                                     <label class="radio-inline" for="radios-1">
-                                        <input type="radio" name="tabagista" id="tab4" value=0 onclick="habilita('cigarDia')"onclick="desabilita('tabagista')"onclick="desabilita('parou')">
+                                        <input type="radio" name="tabagista" id="tab4" value=0 onclick="habilita('cigarDia')"onclick="desabilita('parou')">
                                         Sim
                                     </label>
                                 </span>
@@ -678,7 +679,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for="nome" class="col-md-4">Consumo de água
+                        <label for="nome" class="col-md-4">Consumo de água(L/dia)
                             <input type="text" id="agua" name="consumoAgua" class="form-control col-md-4">
                         </label>
                     </div>
