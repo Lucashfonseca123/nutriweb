@@ -51,10 +51,6 @@
                             </span>
                         @endif
                     </div>
-                    <div class="row align-items-center remember">
-                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;Relembrar senha
-                    </div>
                     <div class="form-group">
                         <input type="submit" class="btn float-right login_btn" value="Entrar">
                     </div>
@@ -64,7 +60,7 @@
                 @if (Route::has('register'))
                     <div class="text-white" style="text-align: center">
                     Não tem conta?
-                        <a class="badge badge-warning" href="{{ route('register') }}">Crie uma!</a>
+                        <a class="text-white badge badge-info" href="{{ route('register') }}">Crie uma!</a>
                     </div>
                 @endif
                 <div class="d-flex justify-content-center">

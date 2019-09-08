@@ -34,7 +34,7 @@ body{
 .social_icon span{
     font-size: 60px;
     margin-left: 10px;
-    color: #FFC312;
+    color: 	#ADFF2F;
 }
 
 .social_icon span:hover{
@@ -54,7 +54,7 @@ body{
 
 .input-group-prepend span{
     width: 50px;
-    background-color: #FFC312;
+    background-color: 	#ADFF2F;
     color: black;
     border:0 !important;
 }
@@ -79,7 +79,7 @@ input:focus{
 
 .login_btn{
     color: black;
-    background-color: #FFC312;
+    background-color: 	#ADFF2F;
     width: 100px;
 }
 
