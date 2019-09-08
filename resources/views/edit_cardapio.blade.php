@@ -12,12 +12,12 @@
                     <div class="input-group">
                         <input type="text" class="form-control" id="pessoas" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-primary mostrar_sempre" type="button" alvo="revelado">Busca</button>
+                            <button class="btn btn-primary mostrar" type="button" alvo="revelado">Busca</button>
                         </div>
                     </div>
                 </div>
                 <br>
-            <div class=" escondido" id="revelado">
+            <div class="escondido" id="revelado">
                 <table class="table table-striped">
                     <thead>
                     <tr class="text-center">

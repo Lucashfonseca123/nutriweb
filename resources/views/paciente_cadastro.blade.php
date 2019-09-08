@@ -6,12 +6,18 @@
     <div class="container">
     <div class="card">
     <div class="card-header"><br>
+  
     <form class="form-horizontal" method="post" action="{{route('cadastrarpaciente.store')}}">
         {{csrf_field()}}
         <fieldset>
+        <img class="logo3" src="img/logo.png">
+        <br>
             <div class="panel panel-primary">
+            <!-- Esconder campo até sexo --> 
+            <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado">Inscrição paciente</button>
+            <br> 
+            <div class="escondido" id="revelado">
                 <div class="panel-heading col"><h4>Cadastro do paciente</h4><br></div>
-                <img class="logo3" src="img/logo.png">
                 <div class="panel-body">
                     <!-- NOME -->
                     <div class="form-group">
@@ -50,6 +56,7 @@
                             Masculino
                         </label>
                     </div>
+                </div>
                     <div class="col">
                       Trabalha quantas horas por dia:
                     </div>
@@ -58,8 +65,12 @@
                             <input type="number" class="form-control " name="hrsDia">
                         </label>
                     </div>
-                   
-                   <!-- CEP -->
+                </div>   
+
+                <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado2">Inscrição endereço paciente</button>
+                <br>
+                <div class="escondido" id="revelado2">
+                <!-- CEP -->
                     <div class="form-group">
                         <label class="col-md-3" for="prependedtext">CEP
                             <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="8" pattern="[0-9]+$">
@@ -97,14 +108,14 @@
                             <input id="estado" name="estado" class="form-control" placeholder="UF" required=""  readonly="readonly" type="text" disabled>
                         </label>
                     </div>
-
-               
-        
+                </div>
         
                     <!-- HORARIO DE TRABALHO E ROTINA DIÁRIA 
                      /*$varObj->Nome = $request->objetivo
                      $varObj->Descricao = $request->descricao-->
-                    
+                <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado3">Rotina e objetivo</button>
+                <br>
+                <div class="escondido" id="revelado3">
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlTextarea3">Horário de trabalho e rotina diária</label>
                         <textarea class="form-control" name="horErotina" id="exampleFormControlTextarea3" rows="7"></textarea>
@@ -130,11 +141,11 @@
                     <h6 class="col">Atividade física <br><br></h6>
 
                     <!-- ATIVIDADE FÍSICA $varAf->Pratica = $request->pratica;
-        $varAf->Descricao = $request->descricaoAf;
-        $varAf->TempParou = $request->tempoParado;
-        $varAf->HorarioInicio = $request->hrInicio;
-        $varAf->HorarioFinal = $request->hrFim;
-        $varAf->FreqSemana = $request->frequencia;-->
+                    $varAf->Descricao = $request->descricaoAf;
+                    $varAf->TempParou = $request->tempoParado;
+                    $varAf->HorarioInicio = $request->hrInicio;
+                    $varAf->HorarioFinal = $request->hrFim;
+                    $varAf->FreqSemana = $request->frequencia;-->
 
                     <span class="input-group-addon col">Pratica atividade física</span>
                     <span class="input-group-addon">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tipo de atividade</span>
@@ -166,23 +177,26 @@
                     <label for="nome" class="col-md-2">Frequência semanal
                         <input type="text" class="form-control" name="frequencia">
                     </label>
-
+                </div>        
                     <!-- DADOS CLÍNICOS 
                     $varDiag->Diabetes_melitus = $request->diabetes;
-        $varDiag->Has = $request->hAs;
-        $varDiag->Ic = $request->ic;
-        $varDiag->Displidemia = $request->displidemia;
-        $varDiag->Cardiopata = $request->cardiopata;
-        $varDiag->Nefropatia =$request->nefropatia;
-        $varDiag->Gastrite = $request->gastrite;
-        $varDiag->Neoplasia =$request->neoplasia;
-        $varDiag->Ulcera = $request->ulcera;
-        $varDiag->Hepatopatia = $request->hepatopatia;
-        $varDiag->Ansiedade = $request->ansiedade;
-        $varDiag->Irritabilidade = $request->irritabilidade;
-        $varDiag->Depressao = $request->depressao;
-        $varDiag->Renite_sinusite = $request->renSin;
-        $varDiag->Outras = $request->descreva;-->
+                    $varDiag->Has = $request->hAs;
+                    $varDiag->Ic = $request->ic;
+                    $varDiag->Displidemia = $request->displidemia;
+                    $varDiag->Cardiopata = $request->cardiopata;
+                    $varDiag->Nefropatia =$request->nefropatia;
+                    $varDiag->Gastrite = $request->gastrite;
+                    $varDiag->Neoplasia =$request->neoplasia;
+                    $varDiag->Ulcera = $request->ulcera;
+                    $varDiag->Hepatopatia = $request->hepatopatia;
+                    $varDiag->Ansiedade = $request->ansiedade;
+                    $varDiag->Irritabilidade = $request->irritabilidade;
+                    $varDiag->Depressao = $request->depressao;
+                    $varDiag->Renite_sinusite = $request->renSin;
+                    $varDiag->Outras = $request->descreva;-->
+                <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado4">Dados clínicos</button>
+                <br>
+                <div class="escondido" id="revelado4">
 
                     <h5 class="col"> <br>Dados clínicos <br></h5>
                     <h6 class="col"> <br>Diagnóstico <br><br></h6>
@@ -267,15 +281,15 @@
                     <!-- ANTECEDENTES FAMILIARES -->
                     <!-- ANTECEDENTES FAMILIARES
                     $varAf->Diabetes_melitus$request->diabetesAF;
-        $varAf->Has = $request->hAsAF;
-        $varAf->Avc = $request->avc;
-        $varAf->Displidemia = $request->displidemiaAF;
-        $varAf->Cardiopata = $request->cardiopataAF;
-        $varAf->Nefropatia = $request->nefropatiaAF;
-        $varAf->Hepatopatia = $request->hepatopatiaAF;
-        $varAf->Cancer = $request->cancer;
-        $varAf->Obesidade = $request->obesidade;
-        $varAf->Outras = $request->descrevaAF; -->
+                $varAf->Has = $request->hAsAF;
+                $varAf->Avc = $request->avc;
+                $varAf->Displidemia = $request->displidemiaAF;
+                $varAf->Cardiopata = $request->cardiopataAF;
+                $varAf->Nefropatia = $request->nefropatiaAF;
+                $varAf->Hepatopatia = $request->hepatopatiaAF;
+                $varAf->Cancer = $request->cancer;
+                $varAf->Obesidade = $request->obesidade;
+                $varAf->Outras = $request->descrevaAF; -->
 
                     <h6 class="col"><br>Antecedentes familiares<br><br></h6>
 
@@ -336,16 +350,16 @@
 
                     <!-- ALTERAÇÕES GASTROINTESTINAIS
                     $varAltG->Disfagia = $request->disfagia;
-        $varAltG->Pirose = $request->pirose;
-        $varAltG->Nausea =$request->nausea;          
-        $varAltG->Vomitos = $request->vomitos;  
-        $varAltG->Diarreia = $request->diarreia;  
-        $varAltG->Constipacao = $request->constipacao;
-        $varAltG->Anorexia = $request->anorexia; 
-        $varAltG->Dispepsia = $request->dispepsia;   
-        $varAltG->Edema = $request->edema; 
-        $varAltG->Flatulencias$request->flatulencias;
-        $varAltG->Polidipsia = $request->polidipsia; -->
+                $varAltG->Pirose = $request->pirose;
+                $varAltG->Nausea =$request->nausea;          
+                $varAltG->Vomitos = $request->vomitos;  
+                $varAltG->Diarreia = $request->diarreia;  
+                $varAltG->Constipacao = $request->constipacao;
+                $varAltG->Anorexia = $request->anorexia; 
+                $varAltG->Dispepsia = $request->dispepsia;   
+                $varAltG->Edema = $request->edema; 
+                $varAltG->Flatulencias$request->flatulencias;
+                $varAltG->Polidipsia = $request->polidipsia; -->
 
                     <h6 class="col"><br>Alterações gastrointestinais <br><br></h6>
 
@@ -405,13 +419,13 @@
                     <br><br>
 
                     <!-- ALTERAÇÕES CLÍNICAS  $varAltC->Cabelo_quebradico = $request->cabelos;
-        $varAltC->Unhas_fracas = $request->unhas;
-        $varAltC->Palidez = $request->palidez;
-        $varAltC->Outros = $request->descrevaAC;
-        $varAltC->HabitosIntestinail = $request->habitosIntestinais;
-        $varAltC->Frequencia_urinaria = $request->freUri;
-        $varAltC->Passado_Cirurgico = $request->passado;
-        $varAltC->Medicamentos = $request->descrevaMed;-->
+                $varAltC->Unhas_fracas = $request->unhas;
+                $varAltC->Palidez = $request->palidez;
+                $varAltC->Outros = $request->descrevaAC;
+                $varAltC->HabitosIntestinail = $request->habitosIntestinais;
+                $varAltC->Frequencia_urinaria = $request->freUri;
+                $varAltC->Passado_Cirurgico = $request->passado;
+                $varAltC->Medicamentos = $request->descrevaMed;-->
 
                     <h6 class="col"><br>Alterações clínicas<br><br></h6>
 
@@ -468,23 +482,27 @@
                             <input id="med2" name="descrevaMed" placeholder="Descreva..." class="form-control input-md" required="" value="" type="search" disabled>
                         </label>
                     </div>
-
+                </div>
                     <!-- EXAMES LABORATORIAIS
                     $varCon->Peso = $request->peso;
-        $varCon->Estatura = $request->estatura; 
-        $varCon->Circ_cintura = $request->cirCintura;
-        $varCon->Circ_abdomen = $request->circAbd;
-        $varCon->Circ_quadril = $request->cirQuad;
-        $varCon->Circ_coxa_prox_dir = $request->cirCxDir;
-        $varCon->Circ_coxa_prox_esq = $request->cirCxEsq;
-        $varCon->Circ_braco_dir = $request->cirBraDir;
-        $varCon->Circ_braco_esq = $request->cirBraEsq;
-        $varCon->Circ_punho = $request->cirPunho;
-        $varCon->Porc_gordura$request->gordura;
-        $varCon->Porc_muscular = $request->muscular;
-        $varCon->Tmb = $request->tmb;
-        $varCon->Body_age = $request->bodyAge;
-        $varCon->Gord_visceral = $request->gordVisc;-->
+                $varCon->Estatura = $request->estatura; 
+                $varCon->Circ_cintura = $request->cirCintura;
+                $varCon->Circ_abdomen = $request->circAbd;
+                $varCon->Circ_quadril = $request->cirQuad;
+                $varCon->Circ_coxa_prox_dir = $request->cirCxDir;
+                $varCon->Circ_coxa_prox_esq = $request->cirCxEsq;
+                $varCon->Circ_braco_dir = $request->cirBraDir;
+                $varCon->Circ_braco_esq = $request->cirBraEsq;
+                $varCon->Circ_punho = $request->cirPunho;
+                $varCon->Porc_gordura$request->gordura;
+                $varCon->Porc_muscular = $request->muscular;
+                $varCon->Tmb = $request->tmb;
+                $varCon->Body_age = $request->bodyAge;
+                $varCon->Gord_visceral = $request->gordVisc;-->
+
+            <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado5">Exames laboratoriais</button>
+            <br>
+            <div class="escondido" id="revelado5">
 
                     <h5 class="col"><br>Exames laboratoriais</h5>
                     <h6 class="col"><br>Dados antropométricos<br><br></h6>
@@ -550,26 +568,30 @@
                             <input type="text" name="gordVisc" class="form-control col-md-4">
                         </label>
                     </div>
+                </div>
 
                     <!-- HÁBITOS ALIMENTARES E SOCIAIS 
                         $varp->IntoleranciaAlimentar = $request->descrevaIntolerancia;
-        $varp->Mastigacao = $request->mastigacao;
-        $varp->PrefAlimentares = $request->prefAlimentares;
-        $varp->AversaoAlimentar = $request->aversoesAlimentares;
-        $varp->Tabagista = $request->tabagista;
-        $varp->Tempo_parou = $request->parou;
-        $varp->Cigar_dia = $request->cigarDia;
-        $varp->Etilista = $request->etilista;
-        $varp->ConsumoMedio = $request->consumo;
-        $varp->ConsumoAgua = $request->consumoAgua;
-        $varp->UsouSuplem = $request->suplementos;
-        $varp->CozinhaCasa = $request->cozinha;
-        $varp->Desjejum = $request->desjejum;
-        $varp->Lanche1 = $request->lanche;
-        $varp->Almoco = $request->almoco
-        $varp->Lanche2 =$request->lanche;
-        $varp->Jantar = $request->jantar;
-        $varp->Ceia = $request->ceia;-->
+                $varp->Mastigacao = $request->mastigacao;
+                $varp->PrefAlimentares = $request->prefAlimentares;
+                $varp->AversaoAlimentar = $request->aversoesAlimentares;
+                $varp->Tabagista = $request->tabagista;
+                $varp->Tempo_parou = $request->parou;
+                $varp->Cigar_dia = $request->cigarDia;
+                $varp->Etilista = $request->etilista;
+                $varp->ConsumoMedio = $request->consumo;
+                $varp->ConsumoAgua = $request->consumoAgua;
+                $varp->UsouSuplem = $request->suplementos;
+                $varp->CozinhaCasa = $request->cozinha;
+                $varp->Desjejum = $request->desjejum;
+                $varp->Lanche1 = $request->lanche;
+                $varp->Almoco = $request->almoco
+                $varp->Lanche2 =$request->lanche;
+                $varp->Jantar = $request->jantar;
+                $varp->Ceia = $request->ceia;-->
+                <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado6">Hábitos alimentares e sociais</button>
+                <br>
+                <div class="escondido" id="revelado6">
                     <h5 class="col"><br>Hábitos alimentares e sociais</h5>
                     <br>
                     <div class="form-group">
@@ -703,7 +725,10 @@
                             <input id="profissao"  placeholder="Descreva..." class="form-control">
                         </label>
                     </div>
-
+                </div>
+                <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado7">Inquerito dietético</button>
+                <br>
+                <div class="escondido" id="revelado7">
                     <h6 class="col"><br>Inquérito dietético (Refeições nas ultimas 24 horas)</h6>
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlTextarea3">Desjejum/Horário</label>
@@ -728,9 +753,7 @@
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlTextarea3">Ceia/Horário</label>
                         <textarea class="form-control" name="ceia" id="exampleFormControlTextarea3" rows="5"></textarea>
-                    </div>-->
-
-                   
+                    </div>
                    <div class="form-group">
                         <label class="col-md-2 control-label" for="Cadastrar"></label>
                         <div class="col-md-8">
@@ -738,7 +761,8 @@
                             <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset">Cancelar</button>
                         </div>
                     </div>
-                    </form>
+                </div>
+                </form>
                 </div>
             </div>
         </fieldset>
@@ -748,3 +772,4 @@
 </main>
 
 @endsection
+

@@ -151,20 +151,24 @@ $('.escondido').hide();
 $('.mostrar').click(function(){
     let alvo = $(this).attr('alvo');
     $('#' + alvo).fadeToggle("slow", "linear");
-    $(this).hide();
+   // $(this).hide();
     $('.esconder').show();
 });
 
+/*
 $('.mostrar2').click(function(){
     let alvo = $(this).attr('alvo');
     $('#' + alvo).fadeToggle("slow", "linear");
 });
+*/
 
+/*
 $('.mostrar_sempre').click(function(){
     let alvo = $(this).attr('alvo');
     $('#' + alvo).fadeToggle("slow", "linear");
     $('.esconder').show();
 });
+*/
 
 $('.esconder').click(function(){
     let alvo = $(this).attr('alvo');

@@ -496,8 +496,10 @@ body {
 
 .logo3 {
     width: 70px;
-    float: right;
-    margin-top: -69px;
+    margin-top: -15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .logo4 {
