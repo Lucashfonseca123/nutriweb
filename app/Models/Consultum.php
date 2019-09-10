@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 04 Sep 2019 03:36:19 +0000.
+ * Date: Mon, 09 Sep 2019 23:20:04 +0000.
  */
 
 namespace App\Models;
@@ -39,6 +39,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $AltGastrointestinais_idAltGastrointestinais
  * @property int $AntFamiliares_idAntFamiliares
  * @property int $AltClinicas_idAltClinicas
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  * 
  * @property \App\Models\Altclinica $altclinica
  * @property \App\Models\Altgastrointestinai $altgastrointestinai
@@ -55,7 +57,6 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 class Consultum extends Eloquent
 {
 	protected $primaryKey = 'idConsulta';
-	public $timestamps = false;
 
 	protected $casts = [
 		'Paciente_idPaciente' => 'int',

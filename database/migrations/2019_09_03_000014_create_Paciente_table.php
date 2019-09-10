@@ -24,14 +24,14 @@ class CreatePacienteTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('idPaciente');
             $table->string('Nome', 45)->nullable();
-            $table->integer('Telefone')->nullable();
+            $table->bigInteger('Telefone')->nullable();
             $table->string('Email', 45)->nullable();
             $table->enum('Sexo', ['M', 'F', 'O'])->nullable();
             $table->date('DataDeNascimento')->nullable();
             $table->string('Endereco', 45)->nullable();
             $table->string('Profissao', 45)->nullable();
             $table->string('IntoleranciaAlimentar', 45)->nullable();
-            $table->string('Mastigacao', 45)->nullable();
+            $table->enum('Mastigacao', ['Lenta' ,'Normal', 'Rápida' ,'Muito Rápida'])->nullable();
             $table->string('Apetite', 45)->nullable();
             $table->string('PrefAlimentares', 45)->nullable();
             $table->string('AversaoAlimentar', 45)->nullable();
@@ -48,11 +48,16 @@ class CreatePacienteTable extends Migration
             $table->integer('Cigar_dia')->nullable();
             $table->tinyInteger('Etilista')->nullable();
             $table->text('Desjejum')->nullable();
-            $table->text('Lanche1', 45)->nullable();
+            $table->text('Lanche1')->nullable();
             $table->text('Almoco')->nullable();
             $table->text('Lanche2')->nullable();
             $table->text('Jantar')->nullable();
             $table->text('Ceia')->nullable();
+            $table->text('Rotina')->nullable();
+            
+
+
+
 
 
             $table->index(["Estado_idEstado"], 'fk_Paciente_Estado1_idx');

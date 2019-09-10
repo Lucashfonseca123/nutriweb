@@ -438,6 +438,7 @@
                         <label for="nome" class="col-md-3">Hábitos intestinais (Quantas vezes vai ao banheiros)
                             <input type="number"  name ="habitosIntestinais" class="form-control" col-md-3>
                         </label>
+                        <div class="form-group">
                         <label for="nome" class="col-md-1">Frequência urinária(Vezes que urina ao dia)
                             <input type="number" name ="freUri" class="form-control ">
                         </label>

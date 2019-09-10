@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 04 Sep 2019 03:36:19 +0000.
+ * Date: Mon, 09 Sep 2019 23:20:04 +0000.
  */
 
 namespace App\Models;
@@ -14,7 +14,6 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * 
  * @property int $idObjetivos
  * @property string $Nome
- * @property string $Descricao
  * 
  * @property \Illuminate\Database\Eloquent\Collection $consulta
  *
@@ -26,8 +25,7 @@ class Objetivo extends Eloquent
 	public $timestamps = false;
 
 	protected $fillable = [
-		'Nome',
-		'Descricao'
+		'Nome'
 	];
 
 	public function consulta()

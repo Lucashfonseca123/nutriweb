@@ -24,6 +24,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/reconsultarpaciente', 'ReconsultaController');
 
+    Route::get('/buscarreconsulta', 'ReconsultaController@busca');
+
     Route::get('/reconsulta', 'Controller@reconsulta');
 
     Route::get('/cardapio', 'Controller@cardapio');
