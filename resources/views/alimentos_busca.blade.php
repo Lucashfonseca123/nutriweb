@@ -7,7 +7,7 @@
         <img src="img/logo.png" style="width: 50px; float: right">
         <table class="tabela">
             <thead>
-    {{--        <th>Id</th>--}}
+    {{--    <th>Id</th>--}}
             <th>Categoria</th>
             <th>Descrição alimento</th>
             <th>Umidade</th>
