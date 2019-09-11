@@ -59,12 +59,12 @@ class PacienteController extends Controller
 
         $varp->Nome = $request->paciente;
         $varp->Email = $request->email;
-        //$varp->Telefone = $request->telefone;
+        $telefone = $request->telefone;
+        $telefone = intval($telefone);
+        $varp->Telefone = $telefone;
         $varp->Sexo = $request->sexo;
         //$varp->DataDeNascimento=$request->dtnasc;
         $varp->Profissao=$request->profissao;
-        $request->hrsDia;
-       //varp->Estado_idEstado=$varEst->idEstado;
         //Endereço
         $varEnd->Cep = $request->cep;
         $varEnd->Rua = $request->rua;
@@ -73,7 +73,8 @@ class PacienteController extends Controller
         $varCid->Nome = $request->cidade;
         $varEst->Nome = $request->estado;
         //Horário de rabalho e rotina diária
-        //$varp->TrabalhaHoraDia = $request-> $horErotina;
+        $varp->TrabalhaHoraDia = $request->hrsDia; 
+        $varp->Rotina = $request->horErotina;
         $varCid->save();
         $varEnd->save();
         $varEst->save();
@@ -84,7 +85,7 @@ class PacienteController extends Controller
         //Objetivo
         
         $varObj->Nome = $request->objetivo;
-        //$varObj->Descricao = $request->descricao
+        
         $varObj->save();
         //Atividade fisica
         $varAf->Pratica = $request->pratica;
@@ -147,7 +148,7 @@ class PacienteController extends Controller
         $varAltC->Palidez = $request->palidez;
         $varAltC->Outros = $request->descrevaAC;
         $varAltC->HabitosIntestinal = $request->habitosIntestinais;
-        //$varAltC->Frequencia_urinaria = $request->freUri;
+        $varAltC->Frequencia_urinaria = $request->freUri;
         $varAltC->Passado_Cirurgico = $request->passado;
         $varAltC->Meidcamentos = $request->descrevaMed;
         $varAltC->save();
@@ -205,8 +206,7 @@ class PacienteController extends Controller
         $varCon->diagnostico()->associate($varDiag);
         $varCon->objetivo()->associate($varObj);
         $varCon->paciente()->associate($varp);
-        $varCon->Nutricionista_idNutricionista = 1;
-        $varCon->Cardapio_idCardapio = 1;
+        $varCon->Nutricionista_idNutricionista = 2;
         $varCon->save();
        
 
@@ -223,8 +223,11 @@ class PacienteController extends Controller
     public function show($id)
     {
         //
+        
+        
     }
 
+   
     /**
      * Show the form for editing the specified resource.
      *

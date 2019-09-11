@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 04 Sep 2019 03:36:19 +0000.
+ * Date: Mon, 09 Sep 2019 23:20:04 +0000.
  */
 
 namespace App\Models;
@@ -18,9 +18,9 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $Palidez
  * @property string $Outros
  * @property int $HabitosIntestinal
- * @property string $Frequencia_urinaria
- * @property string $Alteracoes Passado_Cirurgico
- * @property string $Alteracoes Meidcamentos
+ * @property int $Frequencia_urinaria
+ * @property string $Passado_Cirurgico
+ * @property string $Meidcamentos
  * 
  * @property \Illuminate\Database\Eloquent\Collection $consulta
  *
@@ -35,7 +35,8 @@ class Altclinica extends Eloquent
 		'Cabelo_quebradico' => 'int',
 		'Unhas_fracas' => 'int',
 		'Palidez' => 'int',
-		'HabitosIntestinal' => 'int'
+		'HabitosIntestinal' => 'int',
+		'Frequencia_urinaria' => 'int'
 	];
 
 	protected $fillable = [

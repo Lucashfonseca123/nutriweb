@@ -24,8 +24,8 @@ class CreateConsultaTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('idConsulta');
             $table->unsignedInteger('Paciente_idPaciente');
-            $table->unsignedInteger('Objetivos_idObjetivos');
-            $table->unsignedInteger('Atividade_Fisica_idAtividade_Fisica');
+            $table->unsignedInteger('Objetivos_idObjetivos')->nullable();
+            $table->unsignedInteger('Atividade_Fisica_idAtividade_Fisica')->nullable();
             $table->unsignedInteger('Nutricionista_idNutricionista');
             $table->float('Porc_gordura')->nullable();
             $table->float('Porc_muscular')->nullable();
@@ -39,16 +39,17 @@ class CreateConsultaTable extends Migration
             $table->integer('Tmb')->nullable();
             $table->integer('Body_age')->nullable();
             $table->integer('Gord_visceral')->nullable();
-            $table->unsignedInteger('Cardapio_idCardapio');
-            $table->unsignedInteger('Diagnostico_idDados Clinicos');
+            $table->unsignedInteger('Cardapio_idCardapio')->nullable();
+            $table->unsignedInteger('Diagnostico_idDados Clinicos')->nullable();
             $table->float('Circ_abdomen')->nullable();
             $table->float('Circ_braco_dir')->nullable();
             $table->float('Circ_braco_esq')->nullable();
             $table->float('Circ_punho')->nullable();
             $table->date('Data_consulta')->nullable();
-            $table->unsignedInteger('AltGastrointestinais_idAltGastrointestinais');
-            $table->unsignedInteger('AntFamiliares_idAntFamiliares');
-            $table->unsignedInteger('AltClinicas_idAltClinicas');
+            $table->unsignedInteger('AltGastrointestinais_idAltGastrointestinais')->nullable();
+            $table->unsignedInteger('AntFamiliares_idAntFamiliares')->nullable();
+            $table->unsignedInteger('AltClinicas_idAltClinicas')->nullable();
+            $table->timestamps();
 
             $table->index(["AltGastrointestinais_idAltGastrointestinais"], 'fk_Consulta_AltGastrointestinais1_idx');
 

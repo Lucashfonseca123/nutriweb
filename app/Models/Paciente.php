@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 04 Sep 2019 03:36:19 +0000.
+ * Date: Mon, 09 Sep 2019 23:20:05 +0000.
  */
 
 namespace App\Models;
@@ -26,14 +26,24 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $PrefAlimentares
  * @property string $AversaoAlimentar
  * @property int $Tabagista
- * @property string $Etilista
  * @property float $ConsumoAgua
  * @property string $UsouSuplem
- * @property string $CozinhaCasa
+ * @property int $CozinhaCasa
  * @property int $Cidade_idCidade
  * @property int $Estado_idEstado
  * @property int $Endereco_idEndereco
  * @property float $TrabalhaHoraDia
+ * @property string $Tempo_parou
+ * @property float $ConsumoMedio
+ * @property int $Cigar_dia
+ * @property int $Etilista
+ * @property string $Desjejum
+ * @property string $Lanche1
+ * @property string $Almoco
+ * @property string $Lanche2
+ * @property string $Jantar
+ * @property string $Ceia
+ * @property string $Rotina
  * 
  * @property \App\Models\Cidade $cidade
  * @property \App\Models\Endereco $endereco
@@ -53,10 +63,14 @@ class Paciente extends Eloquent
 		'Telefone' => 'int',
 		'Tabagista' => 'int',
 		'ConsumoAgua' => 'float',
+		'CozinhaCasa' => 'int',
 		'Cidade_idCidade' => 'int',
 		'Estado_idEstado' => 'int',
 		'Endereco_idEndereco' => 'int',
-		'TrabalhaHoraDia' => 'float'
+		'TrabalhaHoraDia' => 'float',
+		'ConsumoMedio' => 'float',
+		'Cigar_dia' => 'int',
+		'Etilista' => 'int'
 	];
 
 	protected $dates = [
@@ -77,14 +91,24 @@ class Paciente extends Eloquent
 		'PrefAlimentares',
 		'AversaoAlimentar',
 		'Tabagista',
-		'Etilista',
 		'ConsumoAgua',
 		'UsouSuplem',
 		'CozinhaCasa',
 		'Cidade_idCidade',
 		'Estado_idEstado',
 		'Endereco_idEndereco',
-		'TrabalhaHoraDia'
+		'TrabalhaHoraDia',
+		'Tempo_parou',
+		'ConsumoMedio',
+		'Cigar_dia',
+		'Etilista',
+		'Desjejum',
+		'Lanche1',
+		'Almoco',
+		'Lanche2',
+		'Jantar',
+		'Ceia',
+		'Rotina'
 	];
 
 	public function cidade()

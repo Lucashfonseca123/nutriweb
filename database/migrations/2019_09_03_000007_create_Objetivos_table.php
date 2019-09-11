@@ -24,7 +24,7 @@ class CreateObjetivosTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('idObjetivos');
             $table->string('Nome', 45)->nullable();
-            $table->string('Descricao', 45)->nullable();
+            
         });
     }
 

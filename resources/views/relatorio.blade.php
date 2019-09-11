@@ -1,5 +1,6 @@
 @extends('layouts.menu')
 @section('content')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <main class="page-content">
         <div class="container">
         <div class="card">
@@ -30,48 +31,106 @@
                     <div class="row">
                     <div class="col-md-4  mt-4">
                         <h6>Peso/Estatura</h6>
-                        <img class="mt-4" src="img/graficos.jpg">
+                        <canvas id="imcChart"></canvas>
                     </div>
-                    <div class="col-md-4 mt-4">
-                        <h6>Circ. da cintura/Circ. do abdômen</h6>
-                        <img class="mt-4" src="img/graficos.jpg">
-                    </div>
-                    <div class="col-md-4 ">
-                        <h6>Circ. coxa prox. direita/Circ. coxa prox. esquerda</h6>
-                        <img class="mt-4" src="img/graficos.jpg">
-                    </div>
-                    <br>
-                    <div class="col-md-4 mt-4">
-                        <h6> Circ. do quadril/Circ. da panturrilha</h6>
-                        <img class="mt-4" src="img/graficos.jpg">
-                    </div>
-                    <div class="col-md-4 mt-4">
-                        <h6> Circ. braço direito/Circ braço esquerdo</h6>
-                        <img class="mt-4" src="img/graficos.jpg">
-                    </div>
-                    <div class="col-md-4 mt-4">
-                        <h6> Circ. do punho/IMC</h6>
-                        <img class="mt-4" src="img/graficos.jpg">
-                    </div>
-                    <br>
-                    <div class="col-md-4 mt-4">
-                        <h6> %Gordura/%Muscular</h6>
-                        <img class="mt-4" src="img/graficos.jpg">
-                    </div>
-                    <br>
-                    <div class="col-md-4 mt-4">
-                        <h6> TMB/Body Age</h6>
-                        <img class="mt-4" src="img/graficos.jpg">
-                    </div>
-                    <div class="col-md-4 mt-4">
-                        <h6> Gordura Visceral</h6>
-                        <img class="mt-4" src="img/graficos.jpg">
-                    </div>
+                    
             </div>
             </div>
         </div>
         </div>
         </div>
     </main>
+
+    <script>
+    
+    var b = [];
+    var d = [];
+    var b = <?php echo json_encode($consulta); 
+    ?>;
+
+
+  
+    console.log(b);
+    for (i = 0; i < b.length; i++) {
+         
+         p = parseFloat(b[i].Peso);
+         a =parseFloat(b[i].Estatura/100);
+         d[i] = p/(a*a);
+    }
+    d.push(0);
+    var c = [];
+    for (i = 0; i < d.length; i++) {
+    if (d[i] < 18.5)
+        { 
+            c[i] = "rgba(243,124,138,1.00)";
+            
+        }
+         else if (d[i] >= 18.5 && d[i] < 25) 
+        {
+            c[i] = "rgba(154,226,125,1.00)";
+        } 
+        else if (d[i] >= 25 && d[i]<30)
+        {
+
+            c[i] = "rgba(243,233,7,1.00)";
+            
+            
+            
+        }
+        else if (d[i] >= 30)
+        {
+            c[i] = "rgba(243,124,138,1.00)";
+            
+            
+        }
+         else 
+        {
+            c[i] = "rgba(255,255,255,1)";
+        }
+    }
+    let imcChart = document.getElementById('imcChart').getContext('2d');
+   
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+    let massPopChart = new Chart(imcChart, {
+      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['Março'],
+        datasets:[{
+          //label:['Abaixo','Normal','Acima','Obeso'],
+          data: d,
+          //backgroundColor:'green',
+          backgroundColor:c,
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+        title:{
+          display:false,
+          text:'IMC',
+          fontSize:25
+        },
+        layout:{
+          padding:{
+            left:0,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        legend: {
+            display: false
+         },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+     </script>
     <!-- page-content" -->
 @endsection
