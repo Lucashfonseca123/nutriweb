@@ -5,7 +5,7 @@
 
         <div class="card">
             <div class="card-header"><br>
-            <form class="form-horizontal">
+           <!-- <form class="form-horizontal"> -->
                 <h3>Reconsulta <br><br></h3>
                     <img class="logo4" src="img/logo.png">
                     <!-- EXAMES LABORATORIAIS -->
@@ -13,21 +13,31 @@
                         <div class="form-group col-md-12">
                             <h5>Selecione paciente:</h5>
                         </div>
-                        
-                        <div class="form-group col-md-8">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <div class="input-group-append">
-                                    <span>
-                                        <button class="btn btn-primary mostrar" type="button" alvo="revelado">Busca</button> &ensp;&ensp;
-                                    </span> 
-                                    <span>
-                                        <button class="btn btn-success" type="button">Salvar</button>
-                                    </span>
+                        <form action="/buscarreconsulta" method="post">
+                        {{csrf_field()}}
+                            <div class="form-group col-md-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <span>
+                                            <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
+                                        </span> 
+                                        <span>
+                                            <button class="btn btn-success" type="button">Salvar</button>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
+                        <div>
+                        @if(isset($lista_nome))             {{--Se a variavel foi previamente definida--}}
+                          @foreach($lista_nome as $nome_buscado)
+                                  {{$nome_buscado->nome}}
+                          @endforeach
+                        @endif
                     </div>
+                </div>
+               <!--
                     <form method="post" action="{{route('reconsultarpaciente.store')}}">
                     {{csrf_field()}}
                     <div class="escondido" id="revelado">
@@ -98,10 +108,12 @@
             </form>
             </div>
         </div>
-        </div>
-            <br><br>
-            </div>
-            </form>
-        </div>
-    </main>
+    </div>
+    <br><br>
+    -->
+    </div>
+    
+    
+</div>
+</main>
 @endsection

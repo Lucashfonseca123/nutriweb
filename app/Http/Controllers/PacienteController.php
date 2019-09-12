@@ -206,7 +206,7 @@ class PacienteController extends Controller
         $varCon->diagnostico()->associate($varDiag);
         $varCon->objetivo()->associate($varObj);
         $varCon->paciente()->associate($varp);
-        $varCon->Nutricionista_idNutricionista = 2;
+        $varCon->Nutricionista_idNutricionista = 1;
         $varCon->save();
        
 

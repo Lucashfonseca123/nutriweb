@@ -26,7 +26,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/reconsultarpaciente', 'ReconsultaController');
 
-    Route::get('/buscarreconsulta', 'ReconsultaController@busca');
+    Route::post('/buscarreconsulta', 'ReconsultaController@busca');
 
     Route::get('/reconsulta', 'Controller@reconsulta');
 
@@ -51,6 +51,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/resumo_paciente', 'Controller@resumir_paciente');
 
     Route::post('/testerota', 'HomeController@store')->name('test');
+
+    Route::post('/testar_consulta', 'ReconsultaController@busca');
+
+    Route::get('/retorne', 'ReconsultaController@retorne');
 });
 
 Auth::routes();
