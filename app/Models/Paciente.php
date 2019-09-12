@@ -55,7 +55,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class Paciente extends Eloquent
 {
-	protected $table = 'paciente';
+	protected $table = 'Paciente';
 	protected $primaryKey = 'idPaciente';
 	public $timestamps = false;
 

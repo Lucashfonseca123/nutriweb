@@ -52,7 +52,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/testerota', 'HomeController@store')->name('test');
 
-    Route::post('/testar_consulta', 'ReconsultaController@busca');
+    Route::get('/testar_consulta', 'ReconsultaController@busca');
 
     Route::get('/retorne', 'ReconsultaController@retorne');
 });

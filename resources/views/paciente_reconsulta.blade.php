@@ -13,7 +13,7 @@
                         <div class="form-group col-md-12">
                             <h5>Selecione paciente:</h5>
                         </div>
-                        <form action="/buscarreconsulta" method="post">
+                        <form action="/testar_consulta" method="get">
                         {{csrf_field()}}
                             <div class="form-group col-md-8">
                                 <div class="input-group">
@@ -32,7 +32,7 @@
                         <div>
                         @if(isset($lista_nome))             {{--Se a variavel foi previamente definida--}}
                           @foreach($lista_nome as $nome_buscado)
-                                  {{$nome_buscado->nome}}
+                                  {{$nome_buscado->Nome}}
                           @endforeach
                         @endif
                     </div>

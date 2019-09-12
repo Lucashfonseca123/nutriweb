@@ -11,9 +11,6 @@
                                         <span>
                                             <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
                                         </span> 
-                                        <span>
-                                            <button class="btn btn-success" type="button">Salvar</button>
-                                        </span>
                                     </div>
                                 </div>
                             </div>
