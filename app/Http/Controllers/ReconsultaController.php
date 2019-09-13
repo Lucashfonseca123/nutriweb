@@ -116,7 +116,6 @@ class ReconsultaController extends Controller
     public function busca(Request $request){
         $var = $request->busca;
         $lista_nome = Paciente::where('Nome', "like", "%".$var."%")->get();    
-     
         return view('paciente_reconsulta')->with('lista_nome', $lista_nome);
     }
 

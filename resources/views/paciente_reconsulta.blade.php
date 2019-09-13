@@ -5,7 +5,6 @@
 
         <div class="card">
             <div class="card-header"><br>
-           <!-- <form class="form-horizontal"> -->
                 <h3>Reconsulta <br><br></h3>
                     <img class="logo4" src="img/logo.png">
                     <!-- EXAMES LABORATORIAIS -->
@@ -15,9 +14,9 @@
                         </div>
                         <form action="/testar_consulta" method="get">
                         {{csrf_field()}}
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-12">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Digite aqui..." >
                                     <div class="input-group-append">
                                         <span>
                                             <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
@@ -30,13 +29,33 @@
                             </div>
                         </form>
                         <div>
+                      <br><br> 
                         @if(isset($lista_nome))             {{--Se a variavel foi previamente definida--}}
-                          @foreach($lista_nome as $nome_buscado)
-                                  {{$nome_buscado->Nome}}
-                          @endforeach
-                        @endif
+                          @foreach($lista_nome as $paciente)
                     </div>
+                    <div class="container mt-4">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Paciente</th>
+                                    <th scope="col">Email</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tr>
+                            <tbody>
+                                <th scope="row">  {{$paciente->idPaciente}}  </th>
+                                <td> {{$paciente->Nome}}</td>
+                                <td> {{$paciente->Email}}</td>
+                                <td><button class="btn btn-primary" value="busca" type="submit" alvo="revelado">Selecionar</button> &ensp;&ensp;
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
                 </div>
+                    @endforeach
+                @endif
                <!--
                     <form method="post" action="{{route('reconsultarpaciente.store')}}">
                     {{csrf_field()}}

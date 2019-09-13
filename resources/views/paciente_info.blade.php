@@ -30,15 +30,14 @@
                         <th scope="col"></th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <span>
+                    
                         <th scope="row" >1</th>
                         <td>João da Silva</td>
                         <td>15/07</td>
                         <td><button class="btn btn-danger" type="button" >Remover</button>
                             <span style="cursor: pointer" onclick="window.open('/edit_paciente', '', 'width=600,height=300')">
                             <button class="btn btn-dark" type="button" >Editar ficha</button></td>
-                    </span>
+                    
                     </tr>
                     <tr>
                         <th scope="row">2</th>
