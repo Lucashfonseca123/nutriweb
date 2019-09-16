@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 09 Sep 2019 23:20:05 +0000.
+ * Date: Mon, 16 Sep 2019 17:23:27 +0000.
  */
 
 namespace App\Models;
@@ -14,7 +14,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * 
  * @property int $idPaciente
  * @property string $Nome
- * @property int $Telefone
+ * @property string $Telefone
  * @property string $Email
  * @property string $Sexo
  * @property \Carbon\Carbon $DataDeNascimento
@@ -55,12 +55,11 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class Paciente extends Eloquent
 {
-	protected $table = 'Paciente';
+	protected $table = 'paciente';
 	protected $primaryKey = 'idPaciente';
 	public $timestamps = false;
 
 	protected $casts = [
-		'Telefone' => 'int',
 		'Tabagista' => 'int',
 		'ConsumoAgua' => 'float',
 		'CozinhaCasa' => 'int',

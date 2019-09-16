@@ -91,8 +91,8 @@ class PacienteController extends Controller
         $varAf->Pratica = $request->pratica;
         $varAf->Descricao = $request->descricaoAf;
         $varAf->TempParou = $request->tempoParado;
-        //$varAf->HorarioInicio = $request->hrInicio;
-        //$varAf->HorarioFinal = $request->hrFim;
+        $varAf->HorarioInicio = $request->hrInicio;
+        $varAf->HorarioFinal = $request->hrFim;
         $varAf->FreqSemana = $request->frequencia;
         $varAf->save();
         //Diagnostico

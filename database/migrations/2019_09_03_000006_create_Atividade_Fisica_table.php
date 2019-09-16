@@ -26,8 +26,8 @@ class CreateAtividadeFisicaTable extends Migration
             $table->tinyInteger('Pratica')->nullable();
             $table->string('Descricao', 45)->nullable();
             $table->string('TempParou', 45)->nullable();
-            $table->time('HorarioInicio')->nullable();
-            $table->time('HorarioFinal')->nullable();
+            $table->string('HorarioInicio')->nullable();
+            $table->string('HorarioFinal')->nullable();
             $table->integer('FreqSemana')->nullable();
         });
     }

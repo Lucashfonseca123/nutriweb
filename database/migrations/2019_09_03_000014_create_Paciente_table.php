@@ -24,7 +24,7 @@ class CreatePacienteTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('idPaciente');
             $table->string('Nome', 45)->nullable();
-            $table->bigInteger('Telefone')->nullable();
+            $table->string('Telefone', 20)->nullable();
             $table->string('Email', 45)->nullable();
             $table->enum('Sexo', ['M', 'F', 'O'])->nullable();
             $table->date('DataDeNascimento')->nullable();
