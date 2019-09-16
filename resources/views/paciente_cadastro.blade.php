@@ -19,6 +19,7 @@
             <div class="escondido" id="revelado">
                 <div class="panel-heading col"><h4>Cadastro do paciente</h4><br></div>
                 <div class="panel-body">
+                <input type="hidden" name='idnutricionista' value="{{Auth::user()->id}}">
                     <!-- NOME -->
                     <div class="form-group">
                         <label for="nome" class="col-md-5">Nome

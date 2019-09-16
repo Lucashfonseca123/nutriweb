@@ -135,6 +135,7 @@
 </div>
 <script src="js/script.js"></script>
 <script src="js/cadastro.js"></script>
+<script src="js/pop_up.js"></script>
 
 </body>
 </html>

@@ -83,17 +83,27 @@ let geraCard2 = function(id, header, btn){
 
 
 $('#btn1').click(function(){
-    let card = geraCard(id, 'Macarrão', 1);
+    let card = geraCard(id, 'Macarrão, 1550', 1);
     $('#cards').append(card);
     id++;
 });
 
+/*
 $('#btn1').click(function(){
     let card = geraCard2(id, '2 colheres', 1);
     $('#cards2').append(card);
     id++;
 });
+*/
 
+function adicionaElemento() {
+    var x = document.getElementById("adicionarElemento");
+    var option = document.createElement("option");
+    option.text = "Kiwi";
+    x.add(option);
+  }
+
+/*
 $('#btn2').click(function(){
     let card = $(this).attr("cardId");
     $('#'+(id-1)).remove();
@@ -111,40 +121,11 @@ $('#btn3').click(function(){
     $('#cards').append(card);
     id++;
 });
+*/
+
 
 //Fim novo grupo
 
-//Auto complete
-
-$(function() {
-    var alimentos = [
-        "Macarrão",
-        "Mamão",
-        "Melão",
-        "Mimosa"
-    ];
-    var pessoas = [
-        "André",
-        "José",
-        "Antonio",
-        "Jessé"
-    ];
-    var grupo = [
-        "Low Carb",
-        "High Carb",
-        "Cetogênica"
-    ];
-
-    $("#alimentos" ).autocomplete({
-        source: alimentos
-    });
-    $("#pessoas" ).autocomplete({
-        source: pessoas
-    });
-    $("#grupo" ).autocomplete({
-        source: grupo
-    });
-});
 
 $('.escondido').hide();
 
@@ -152,6 +133,13 @@ $('.mostrar').click(function(){
     let alvo = $(this).attr('alvo');
     $('#' + alvo).fadeToggle("slow", "linear");
    // $(this).hide();
+    $('.esconder').show();
+});
+
+$('.mostrar_esconder').click(function(){
+    let alvo = $(this).attr('alvo');
+    $('#' + alvo).fadeToggle("slow", "linear");
+    $(this).hide();
     $('.esconder').show();
 });
 

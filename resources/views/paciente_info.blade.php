@@ -6,13 +6,13 @@
             <div class="card">
                 <div class="card-header"><br>
                 <h4 class="col">Nutriweb</h4><br>
-                <img class="logo3" src="img/logo.png">
+                <img class="logo8" src="img/logo.png">
                 <h6 class="col">Selecione paciente</h6>
                 <div class="form-group col-md-6">
                     <div class="input-group">
                         <input type="text" class="form-control" id="pessoas" placeholder="Digite aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-primary mostrar_sempre" type="button" alvo="revelado">Busca</button>
+                            <button class="btn btn-primary" type="button">Busca</button>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                         <th scope="col"></th>
                     </tr>
                     </thead>
-                    
+                    <tbody>
                         <th scope="row" >1</th>
                         <td>João da Silva</td>
                         <td>15/07</td>

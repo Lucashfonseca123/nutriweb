@@ -55,6 +55,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/testar_consulta', 'ReconsultaController@busca');
 
     Route::get('/retorne', 'ReconsultaController@retorne');
+
+    Route::post('/reconsultarstore', 'ReconsultaController@store');
+
+    Route::get('buscar_id_reconsulta', 'ReconsultaController@buscaId');
+
+    Route::post('/buscarPessoa', 'CardapioController@busca');
+
+    Route::resource('/salvarAlimentos', 'AlimentoController');
 });
 
 Auth::routes();

@@ -1,0 +1,1 @@
+$(".selecionado").val($(this).data('id'));

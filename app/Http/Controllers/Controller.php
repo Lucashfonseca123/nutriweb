@@ -6,6 +6,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use App\Models\Paciente;
 
 use App\Alimentos_taco;
 
@@ -63,6 +64,10 @@ class Controller extends BaseController
     }
 
     public function edit_paciente(){
+      //  Request $request  
+      //  $var = $request->busca;
+      //  $paciente_selecionado = Paciente::where('id', $var)->get();    
+      //  return view('paciente_editar')->with('lista_nome', $paciente_selecionado);
         return view('paciente_editar');
     }
 }
