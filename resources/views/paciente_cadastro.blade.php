@@ -40,8 +40,8 @@
                         <label for="nome" class="col-md-3">Profissão
                             <input id="cpf" name="profissao" type="text" class="form-control" placeholder="Descreva.." maxlength="20">
                         </label>
-                        <label for="nome" class="col-md-2">Nascimento
-                            <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" type="text" class="form-control" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+                        <label for="nome" class="col-md-3">Data de nascimento
+                            <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" type="date" class="form-control" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
                         </label>
                         <label class="" for="radios">Sexo </label>
                         <label required="" class="radio-inline" for="radios-0" >
@@ -61,7 +61,9 @@
                         <label for="nome" class="col-md-1">
                             <input type="number" class="form-control " name="hrsDia">
                         </label>
+
                     </div>
+
                 </div>   
 
                 <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado2">Inscrição endereço paciente</button>
@@ -103,7 +105,7 @@
                         </label>
                         <label class="col-md-1" for="prependedtext">
                             <span class="input-group-addon">Estado</span>
-                            <input id="estado" name="estado" class="form-control" placeholder="UF" required=""  readonly="readonly" type="text" disabled>
+                            <input id="estado" name="estado" class="form-control" placeholder="UF" required=""  readonly="readonly" type="text" >
                         </label>
                     </div>
                 </div>
@@ -171,7 +173,7 @@
                         <label for="nome" class="col-md-3">Horário ínicio
                             <input type="time" class="form-control col-md-8" id="hrInicio" name="hrInicio">
                         </label>
-                        <label for="nome" class="col-md-2">Horário final
+                        <label for="nome" class="col-md-2">Horário fim
                             <input type="time" class="form-control " id="hrFim" name="hrFim">
                         </label>
                     </div>
@@ -433,7 +435,7 @@
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
                             <input type="radio" name="cabelos" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
-                             Cabelos clínicos &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                             Cabelos quebradiços &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
                             <input type="radio" name="unhas" id="filhos" value=1 onclick="habilita('filhos_qtd')">
@@ -459,7 +461,7 @@
                             <input type="number"  name ="habitosIntestinais" class="form-control" col-md-3>
                         </label>
                         <div class="form-group">
-                        <label for="nome" class="col-md-1">Frequência urinária(Vezes que urina ao dia)
+                        <label for="nome" class="col-md-3">Frequência urinária(Quantas vezes urina ao dia)
                             <input type="number" name ="freUri" class="form-control ">
                         </label>
                         <label class="col" for="prependedtext">Passado cirurgico
@@ -521,56 +523,56 @@
                         <label for="nome" class="col-md-3">Estatura
                             <input type="text" name="estatura" class="form-control col-md-4">
                         </label>
-                        <label for="nome" class="col-md-3">Circuferência da cintura
+                        <label for="nome" class="col-md-3">Circunferência da cintura
                             <input type="text" name="cirCintura" class="form-control col-md-4">
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for="nome" class="col-md-3">Circuferência do abdômen
+                        <label for="nome" class="col-md-3">Circunferência do abdômen
                             <input type="text" name="circAbd" class="form-control col-md-4">
                         </label>
-                        <label for="nome" class="col-md-3">Circuferência do quadril
+                        <label for="nome" class="col-md-3">Circunferência do quadril
                             <input type="text" name="cirQuad" class="form-control col-md-4">
                         </label>
-                        <label for="nome" class="col-md-3">Circuferência coxa proximal direita
+                        <label for="nome" class="col-md-3">Circunferência coxa proximal direita
                             <input type="text" name="cirCxDir" class="form-control col-md-4">
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for="nome" class="col-md-3">Circuferência coxa proximal esquerda
+                        <label for="nome" class="col-md-3">Circunferência coxa proximal esquerda
                             <input type="text" name="cirCxEsq" class="form-control col-md-4">
                         </label>
-                        <label for="nome" class="col-md-3">Circuferência da panturrilha
+                        <label for="nome" class="col-md-3">Circunferência da panturrilha
                             <input type="text" name="circ_pantu" class="form-control col-md-4">
                         </label>
-                        <label for="nome" class="col-md-3">Circuferência do braço direito
+                        <label for="nome" class="col-md-3">Circunferência do braço direito
                             <input type="text" name="cirBraDir" class="form-control col-md-4">
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for="nome" class="col-md-3">Circuferência do braço esquerdo
+                        <label for="nome" class="col-md-3">Circunferência do braço esquerdo
                             <input type="text" name="cirBraEsq" class="form-control col-md-4">
                         </label>
-                        <label for="nome" class="col-md-3">Circuferência do punho
+                        <label for="nome" class="col-md-3">Circunferência do punho
                             <input type="text" name="cirPunho" class="form-control col-md-4">
+                        </label>
+                         <label for="nome" class="col-md-3">% Gordura
+                            <input type="text" name="gordura" class="form-control col-md-4">
                         </label>
                         
                     </div>
                     <div class="form-group">
-                        <label for="nome" class="col-md-3">% Gordura
-                            <input type="text" name="gordura" class="form-control col-md-4">
-                        </label>
                         <label for="nome" class="col-md-3">% Muscular
                             <input type="text" name="muscular" class="form-control col-md-4">
                         </label>
                         <label for="nome" class="col-md-3">TMB
                             <input type="text" name="tmb" class="form-control col-md-4">
                         </label>
-                    </div>
-                    <div class="form-group">
                         <label for="nome" class="col-md-3">Body Age
                             <input type="text" name="bodyAge" class="form-control col-md-4">
                         </label>
+                    </div>
+                    <div class="form-group">    
                         <label for="nome" class="col-md-3">Gordura Viceral
                             <input type="text" name="gordVisc" class="form-control col-md-4">
                         </label>
@@ -625,7 +627,7 @@
                     </div>
                     <div class="form-group">
                         <label class="col" for="Filhos">Mastigação</label>
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <label class="radio-inline" for="radios-0">
@@ -658,7 +660,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-1" for="Filhos">Tabagista</label>
+                        <label class="col-md-2" for="Filhos">Tabagista</label>
                         <div class="col-md-3">
                             <div class="input-group">
                                 <span class="input-group-addon">

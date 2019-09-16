@@ -20,7 +20,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/relatorio', 'Controller@consultar_relatorio');
 
-    Route::resource('/buscarelatorio', 'RelatorioController');
+    Route::get('/buscarRelatorio', 'RelatorioController@busca');
 
     Route::resource('/cadastrarpaciente', 'PacienteController');
 

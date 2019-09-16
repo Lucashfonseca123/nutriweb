@@ -63,7 +63,7 @@ class PacienteController extends Controller
         $telefone = intval($telefone);
         $varp->Telefone = $telefone;
         $varp->Sexo = $request->sexo;
-        //$varp->DataDeNascimento=$request->dtnasc;
+        $varp->DataDeNascimento=$request->dtnasc;
         $varp->Profissao=$request->profissao;
         //Endereço
         $varEnd->Cep = $request->cep;
