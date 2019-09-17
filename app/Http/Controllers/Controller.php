@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Paciente;
-
+use App\Models\Grupo;
 use App\Alimentos_taco;
 
 class Controller extends BaseController
@@ -31,10 +31,12 @@ class Controller extends BaseController
     }
 
     public function cardapio(){
-        return view ('cardapio_cadastro');
+        $var = Grupo::all();
+        return view ('cardapio_cadastro')->with('group', $var);
     }
 
     public function grupos(){
+
         return view ('grupo_cadastro');
     }
 

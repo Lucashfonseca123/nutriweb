@@ -34,6 +34,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/grupos','Controller@grupos');
 
+    Route::resource('/grupoCadastro', 'GrupoController');
+
     Route::get('/alimentos', 'Controller@buscar_alimentos');
 
     Route::get('/grupo_final', 'Controller@grupo_finalizar');

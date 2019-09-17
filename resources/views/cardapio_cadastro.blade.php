@@ -23,7 +23,7 @@
                 <br><br>
                 @if(isset($lista_nome))
                     @forelse($lista_nome as $paciente)
-                    <div class="container mt-4 mostrar_esconder">
+                    <div class="container mt-4 mostrar">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -38,16 +38,18 @@
                                         <th scope="row">{{$paciente->idPaciente}}</th>
                                         <td> {{$paciente->Nome}}</td>
                                         <td> {{$paciente->Email}}</td>
-                                        <td><button class="btn btn-primary mostrar_esconder" data-id="{{$paciente->idPaciente}}" alvo="revelado">Selecionar</button>
+                                        <td><button class="btn btn-primary mostrar" alvo="{{$paciente->idPaciente}}">Selecionar</button>
                                         </td>
                                     </tr>
                                     </tbody>
                             </table>
                         </div>
-                <div class="table escondido" id="revelado">
+
+                <div class="table escondido" id="{{$paciente->idPaciente}}">
                 <table>
                 <h4>
                 Paciente: {{$paciente->Nome}}
+                <br><br>
                 </h4>
                     <thead>
                         <tr>
@@ -65,27 +67,17 @@
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
-                                 <div class="input-group-append">
-                                     <button class="btn btn-primary mostrar" alvo="revelado2" onclick="adicionaElemento()" type="button">Adicionar</button>
-                                 </div>
-                            </div>
-                            <!--    <label for="">
-                                    <div id="cards" style="width: 258px">
-                                    </div>
-                                </label>
-                            -->
-                            <!--
-                            <ul class="list-group" id="adicionaElemento">
-                                <li class="list-group-item">Cras justo odio</li>
-                            </ul>
-                            -->
-                            <form>
-                                <select id="adicionarElemento" class="browser-default custom-select custom-select-lg mb-3" size="4">
-                                    <li></li>
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" name="states[]" multiple="multiple">
+                                    <option value="AL">{{$paciente->Nome}}</option>
+                                    <option value="WY">Wyoming</option>
                                 </select>
-                            </form>
-                                <label for="">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
+                                </div>
+                            </div>
+                            </div>
+                                <label for="" class="escondido" id="revelado2">
                                     <div>
                                          <button class="btn btn-danger" id="btn2" type="button">Remover</button>
                                     </div>
@@ -94,19 +86,20 @@
                         </td>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                        
+                                    <option value="WY">Wyoming</option>
+                                </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar2" id="btn3" alvo="revelado" type="button">Adicionar</button>
+                                    <button class="btn btn-primary mostrar" alvo="revelado3" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            <label for="">
-                                <label for="">
-                                    <div id="cards" style="width: 258px">
-                                    </div>
-                                </label>
-                                <label for="">
-                                    <div >
-                                        <button class="btn btn-danger" id="btn2" type="button">Remover</button>
+                            </div>
+                                <label for="" class="escondido" id="revelado3">
+                                    <div>
+                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
                                     </div>
                                 </label>
                             </label>
@@ -119,21 +112,43 @@
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                        
+                                    <option value="WY">Wyoming</option>
+                                </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" id="btn3" type="button">Adicionar</button>
+                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            <div id="cards" style="width: 350px"></div>
+                            </div>
+                                <label for="" class="escondido" id="revelado2">
+                                    <div>
+                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
+                                    </div>
+                                </label>
+                            </label>
                         </td>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                        
+                                    <option value="WY">Wyoming</option>
+                                </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" id="btn3" type="button">Adicionar</button>
+                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            <div id="cards" style="width: 350px"></div>
+                            </div>
+                                <label for="" class="escondido" id="revelado2">
+                                    <div>
+                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
+                                    </div>
+                                </label>
+                            </label>
                         </td>
                     </tr>
                     <tr>
@@ -143,21 +158,43 @@
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                        
+                                    <option value="WY">Wyoming</option>
+                                </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" id="btn3" type="button">Adicionar</button>
+                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            <div id="cards" style="width: 350px"></div>
+                            </div>
+                                <label for="" class="escondido" id="revelado2">
+                                    <div>
+                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
+                                    </div>
+                                </label>
+                            </label>
                         </td>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                        
+                                    <option value="WY">Wyoming</option>
+                                </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" id="btn3" type="button">Adicionar</button>
+                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            <div id="cards" style="width: 350px"></div>
+                            </div>
+                                <label for="" class="escondido" id="revelado2">
+                                    <div>
+                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
+                                    </div>
+                                </label>
+                            </label>
                         </td>
                     </tr>
                     <tr>
@@ -167,21 +204,43 @@
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                        
+                                    <option value="WY">Wyoming</option>
+                                </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" id="btn3" type="button">Adicionar</button>
+                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            <div id="cards" style="width: 350px"></div>
+                            </div>
+                                <label for="" class="escondido" id="revelado2">
+                                    <div>
+                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
+                                    </div>
+                                </label>
+                            </label>
                         </td>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                        
+                                    <option value="WY">Wyoming</option>
+                                </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" id="btn3" type="button">Adicionar</button>
+                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            <div id="cards" style="width: 350px"></div>
+                            </div>
+                                <label for="" class="escondido" id="revelado2">
+                                    <div>
+                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
+                                    </div>
+                                </label>
+                            </label>
                         </td>
                     </tr>
                     <tr>
@@ -191,21 +250,43 @@
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                        
+                                    <option value="WY">Wyoming</option>
+                                </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" id="btn3" type="button">Adicionar</button>
+                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            <div id="cards" style="width: 350px"></div>
+                            </div>
+                                <label for="" class="escondido" id="revelado2">
+                                    <div>
+                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
+                                    </div>
+                                </label>
+                            </label>
                         </td>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                        
+                                    <option value="WY">Wyoming</option>
+                                </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" id="btn3" type="button">Adicionar</button>
+                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            <div id="cards" style="width: 350px"></div>
+                            </div>
+                                <label for="" class="escondido" id="revelado2">
+                                    <div>
+                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
+                                    </div>
+                                </label>
+                            </label>
                         </td>
                     </tr>
                     <tr>
@@ -215,27 +296,49 @@
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                        
+                                    <option value="WY">Wyoming</option>
+                                </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" id="btn3" type="button">Adicionar</button>
+                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            <div id="cards" style="width: 350px"></div>
+                            </div>
+                                <label for="" class="escondido" id="revelado2">
+                                    <div>
+                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
+                                    </div>
+                                </label>
+                            </label>
                         </td>
                         <td>
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" id="grupo" placeholder="Buscar grupo...">
+                                <div class="input-group" style="width: 350px">
+                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                        
+                                    <option value="WY">Wyoming</option>
+                                </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" id="btn3" type="button">Adicionar</button>
+                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            <div id="cards" style="width: 350px"></div>
+                            </div>
+                                <label for="" class="escondido" id="revelado2">
+                                    <div>
+                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
+                                    </div>
+                                </label>
+                            </label>
                         </td>
                     </tr>
                     </tbody>
                 </table>
            </div>
-           @empty
+                @empty
                         <div class="alert alert-danger">
                         Paciente não cadastrado
                         </div>
