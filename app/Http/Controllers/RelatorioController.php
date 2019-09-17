@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Consultum;
+use App\Models\Paciente;
 
 class RelatorioController extends Controller
 {
@@ -82,5 +83,11 @@ class RelatorioController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function busca(Request $request){
+        $var = $request->busca;
+        $consultaPaciente = Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->where('Nome', "like", "%".$var."%")->get();    
+        return view('relatorio')->with('consultaPaciente', $consultaPaciente);
     }
 }

@@ -24,7 +24,7 @@ class CreateRefeicaoTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('idRefeicao');
             $table->string('Descricao', 45)->nullable();
-            $table->time('Horario')->nullable();
+            $table->string('Horario',20)->nullable();
         });
     }
 

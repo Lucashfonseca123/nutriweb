@@ -18,9 +18,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/cadastro','Controller@cadastrar');
 
+    Route::post('/grafico', 'GraficoController@busca');
+
     Route::get('/relatorio', 'Controller@consultar_relatorio');
 
-    Route::resource('/buscarelatorio', 'RelatorioController');
+    Route::get('/buscarRelatorio', 'RelatorioController@busca');
 
     Route::resource('/cadastrarpaciente', 'PacienteController');
 
@@ -65,6 +67,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/buscarPessoa', 'CardapioController@busca');
 
     Route::resource('/salvarAlimentos', 'AlimentoController');
+
+    Route::get('selecionar_paciente', 'PacienteController@busca');
 });
 
 Auth::routes();

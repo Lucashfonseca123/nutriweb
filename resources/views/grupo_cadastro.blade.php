@@ -2,26 +2,32 @@
 @section('content')
     <main class="page-content">
         <div class="container">
-        <!-- <form method="post" action="{{route('grupoCadastro.store')}}">
-        {{csrf_field()}} -->
+        <form method="post" action="{{route('grupoCadastro.store')}}">
+        {{csrf_field()}} 
             <h3>Grupos <br><br></h3>
             <img class="logo4" src="img/logo.png">
             <button class="btn btn-primary mostrar" type="button" alvo="revelado3" title="Clique para selecionar grupo">Novo grupo</button>
-            <button class="btn btn-danger escondido esconder" type="button" alvo="revelado">Cancelar</button>
-            <button class="btn btn-success escondido esconder" type="submit">Salvar grupo</button>
+            <button class="btn btn-danger" type="button" alvo="revelado">Cancelar</button>
+            <button class="btn btn-success" type="submit">Salvar grupo</button>
             <br><br>
+                @if(isset($busca_alimentos))             {{--Se a variavel foi previamente definida--}}
+                    @foreach($busca_alimentos as $alimentos)
                     <div class="row">
                         <div class="col-md-5 card-header escondido" id="revelado3">
                             <div class="form-group">
                                 <label for=""><h6>Nome do grupo</h6></label>
                                 <input type="text" id="NomeGrupo" name="nomeGrupo" class="form-control" placeholder="Escreva o nome do grupo..">
-                            </div>
+                            </div> 
                             <div class="form-group">
                                 <label for="" class="form-group"><h6>Alimentos &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; Quantidade</h6>
                                     <div>
                                         <div class="input-group control-group after-add-more">
                                             <label for="">
-                                                <input type="text" style="width: 180px" id="buscarAlimentos" name="alimento" class="form-control" placeholder="Buscar alimento..">
+                                                <!-- <input type="text" style="width: 180px" id="buscarAlimentos" name="alimento" class="form-control" placeholder="Buscar alimento.."> -->
+                                                 <select class="js-example-basic-multiple" style="width: 180px" name="states[]" multiple="multiple">
+                                                    <option value="{{$alimentos->id}}">{{$alimentos->descricaoAlimento}}</option>
+                                                    <input type="hidden" value="{{$alimentos->id}}" name="id_alimento">
+                                                </select> 
                                             </label>
                                             &emsp;
                                             <label for="">
@@ -37,11 +43,11 @@
                                 <div class="copy hide">
                                     <div class="control-group input-group" style="margin-top:5px">
                                     <label for="">
-                                                <input type="text" style="width: 180px" id="buscarAlimentos" class="form-control" placeholder="Buscar alimento..">
+                                                <input type="text" style="width: 180px" id="buscarAlimentos" name="alimento" class="form-control" placeholder="Buscar alimentos..">
                                             </label>
                                             &emsp;
                                             <label for="">
-                                                <input type="text" style="width: 114px" id="quantidade" class="form-control" placeholder="Ex: 3 fatias..">
+                                                <input type="text" style="width: 114px" id="quantidade" name="quantidadeAlimento" class="form-control" placeholder="Ex: 3 fatias..">
                                             </label> 
                                             <div class="input-group-btn"> 
                                             &emsp;
@@ -52,7 +58,9 @@
                             </div>  
                         </div>
                     </div>
-                    <!-- </form> -->
+                    </form>
+                        @endforeach
+                    @endif
                     <br>
                         <div class="col-md-4 card-header text-center">
                             <div class="form-group text-center">
@@ -87,6 +95,7 @@
                             <button class="btn btn-danger" id="btn2">Remover grupo<br></button>
                             <button class="btn btn-dark" id="btn2" onclick="habilita('Atr1')">Editar grupo<br></button>
                         </div>
+                      
                     </div>
     </main>
 @endsection

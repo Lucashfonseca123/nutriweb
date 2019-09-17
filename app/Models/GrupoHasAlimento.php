@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 09 Sep 2019 23:20:04 +0000.
+ * Date: Tue, 17 Sep 2019 00:44:36 +0000.
  */
 
 namespace App\Models;
@@ -16,7 +16,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $Alimento_id
  * @property string $Qtde_Alimento
  * 
- * @property \App\Models\Alimento $alimento
+ * @property \App\Models\Cmvcoltaco3 $cmvcoltaco3
  * @property \App\Models\Grupo $grupo
  *
  * @package App\Models
@@ -36,9 +36,9 @@ class GrupoHasAlimento extends Eloquent
 		'Qtde_Alimento'
 	];
 
-	public function alimento()
+	public function cmvcoltaco3()
 	{
-		return $this->belongsTo(\App\Models\Alimento::class, 'Alimento_id');
+		return $this->belongsTo(\App\Models\Cmvcoltaco3::class, 'Alimento_id');
 	}
 
 	public function grupo()

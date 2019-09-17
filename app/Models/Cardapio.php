@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 09 Sep 2019 23:20:04 +0000.
+ * Date: Tue, 17 Sep 2019 00:44:36 +0000.
  */
 
 namespace App\Models;
@@ -13,7 +13,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Cardapio
  * 
  * @property int $idCardapio
- * @property \Carbon\Carbon $Data
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  * @property int $Paciente_idPaciente
  * 
  * @property \App\Models\Paciente $paciente
@@ -26,18 +27,12 @@ class Cardapio extends Eloquent
 {
 	protected $table = 'cardapio';
 	protected $primaryKey = 'idCardapio';
-	public $timestamps = false;
 
 	protected $casts = [
 		'Paciente_idPaciente' => 'int'
 	];
 
-	protected $dates = [
-		'Data'
-	];
-
 	protected $fillable = [
-		'Data',
 		'Paciente_idPaciente'
 	];
 

@@ -90,4 +90,5 @@ class CardapioController extends Controller
         $lista_nome = Paciente::where('Nome', "like", "%".$var."%")->get();    
         return view('cardapio_cadastro')->with('lista_nome', $lista_nome);
     }
+
 }

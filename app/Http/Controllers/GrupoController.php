@@ -39,14 +39,13 @@ class GrupoController extends Controller
         $var = new GrupoHasAlimento;
         $varG = new Grupo;
 
-        $var->Alimento_id = $request->alimento;
+        $var->Alimento_id = $request->id_alimento;
         $var->Qtde_Alimento = $request->quantidadeAlimento;
             
         $varG->Nome = $request->nomeGrupo;
         $varG->save();
-
         $var->grupo()->associate($varG);
-   
+        
         $var->save();
 
         return redirect()->back();

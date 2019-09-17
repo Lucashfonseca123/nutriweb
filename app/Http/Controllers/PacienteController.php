@@ -60,10 +60,9 @@ class PacienteController extends Controller
         $varp->Nome = $request->paciente;
         $varp->Email = $request->email;
         $telefone = $request->telefone;
-        $telefone = intval($telefone);
         $varp->Telefone = $telefone;
         $varp->Sexo = $request->sexo;
-        //$varp->DataDeNascimento=$request->dtnasc;
+        $varp->DataDeNascimento=$request->dtnasc;
         $varp->Profissao=$request->profissao;
         //Endereço
         $varEnd->Cep = $request->cep;
@@ -91,8 +90,8 @@ class PacienteController extends Controller
         $varAf->Pratica = $request->pratica;
         $varAf->Descricao = $request->descricaoAf;
         $varAf->TempParou = $request->tempoParado;
-        //$varAf->HorarioInicio = $request->hrInicio;
-        //$varAf->HorarioFinal = $request->hrFim;
+        $varAf->HorarioInicio = $request->hrInicio;
+        $varAf->HorarioFinal = $request->hrFim;
         $varAf->FreqSemana = $request->frequencia;
         $varAf->save();
         //Diagnostico
@@ -209,7 +208,7 @@ class PacienteController extends Controller
         $varCon->Nutricionista_idNutricionista = $request->idnutricionista;;
         $varCon->save();
         
-        return 'certo';
+        return redirect()->back();
     }
 
     /**
@@ -408,6 +407,12 @@ class PacienteController extends Controller
         $varCon->paciente()->associate($varp);
         $varCon->Nutricionista_idNutricionista = $request->idnutricionista;;
         $varCon->save();
+    }
+
+    public function busca(Request $request){
+        $var = $request->busca;
+        $seleciona = Paciente::where('Nome', "like", "%".$var."%")->get();    
+        return view('paciente_info')->with('lista_nome', $seleciona);
     }
 
     /**
