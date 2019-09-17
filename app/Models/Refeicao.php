@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 16 Sep 2019 17:23:27 +0000.
+ * Date: Tue, 17 Sep 2019 00:44:37 +0000.
  */
 
 namespace App\Models;
@@ -14,7 +14,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * 
  * @property int $idRefeicao
  * @property string $Descricao
- * @property \Carbon\Carbon $Horario
+ * @property string $Horario
  * 
  * @property \Illuminate\Database\Eloquent\Collection $itemcardapios
  *
@@ -25,10 +25,6 @@ class Refeicao extends Eloquent
 	protected $table = 'refeicao';
 	protected $primaryKey = 'idRefeicao';
 	public $timestamps = false;
-
-	protected $dates = [
-		'Horario'
-	];
 
 	protected $fillable = [
 		'Descricao',

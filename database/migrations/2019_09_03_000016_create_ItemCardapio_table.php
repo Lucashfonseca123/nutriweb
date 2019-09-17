@@ -24,7 +24,7 @@ class CreateItemcardapioTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('IdItemCardapio');
             $table->integer('Opcoes')->nullable();
-            $table->time('Horario')->nullable();
+            $table->string('Horario',20)->nullable();
             $table->unsignedInteger('Cardapio_idCardapio');
             $table->unsignedInteger('Grupo_idGrupo');
             $table->unsignedInteger('Refeicao_idRefeicao');

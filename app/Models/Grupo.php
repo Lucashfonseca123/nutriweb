@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 16 Sep 2019 17:23:27 +0000.
+ * Date: Tue, 17 Sep 2019 00:44:36 +0000.
  */
 
 namespace App\Models;
@@ -15,7 +15,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $idGrupo
  * @property string $Nome
  * 
- * @property \Illuminate\Database\Eloquent\Collection $alimentos
+ * @property \App\Models\GrupoHasAlimento $grupo_has_alimento
  * @property \Illuminate\Database\Eloquent\Collection $itemcardapios
  *
  * @package App\Models
@@ -30,10 +30,9 @@ class Grupo extends Eloquent
 		'Nome'
 	];
 
-	public function alimentos()
+	public function grupo_has_alimento()
 	{
-		return $this->belongsToMany(\App\Models\Alimento::class, 'grupo_has_alimento', 'Grupo_id', 'Alimento_id')
-					->withPivot('Qtde_Alimento');
+		return $this->hasOne(\App\Models\GrupoHasAlimento::class, 'Grupo_id');
 	}
 
 	public function itemcardapios()

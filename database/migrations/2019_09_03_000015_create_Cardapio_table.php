@@ -23,7 +23,7 @@ class CreateCardapioTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idCardapio');
-            $table->date('Data')->nullable();
+            $table->timestamps();
             $table->unsignedInteger('Paciente_idPaciente');
 
             $table->index(["Paciente_idPaciente"], 'fk_Cardapio_Paciente1_idx');

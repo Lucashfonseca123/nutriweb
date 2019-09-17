@@ -11,14 +11,15 @@ class ResetPassword extends Notification
 {
     use Queueable;
 
+public $token;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($token)
     {
-        //
+        $this->token = $token;
     }
 
     /**
@@ -41,10 +42,14 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-        ->subject('Redefinir senha' . config('app.name'))
+        ->greeting('Olá')
+        ->subject('Redefinir senha Nutriweb' )
         ->line('Você está recebendo esse email, pois recebemos um pedido de alteração de senha para a sua conta.')
-        ->action('Este link expira em 1 hora', url('password/reset', $this->token));
-        ->line('Se você não realizou um pedido de alteração de senha ignore esse email.');
+        ->action('Redefinir senha', url('password/reset', $this->token))
+        ->line('Obrigado por usar Nutriweb')
+        ->salutation(' ') ;
+
+        
     }
 
     /**

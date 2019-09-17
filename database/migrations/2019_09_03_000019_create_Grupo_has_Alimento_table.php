@@ -26,7 +26,7 @@ class CreateGrupoHasAlimentoTable extends Migration
             $table->unsignedInteger('Alimento_id');
             $table->string('Qtde_Alimento', 45)->nullable();
 
-            $table->index(["Alimento_id"], 'fk_Grupo_has_Alimento_Alimento1_idx');
+            $table->index(["Alimento_id"], 'fk_Grupo_has_Alimento_CMVColtaco31_idx');
 
             $table->index(["Grupo_id"], 'fk_Grupo_has_Alimento_Grupo1_idx');
 
@@ -37,7 +37,7 @@ class CreateGrupoHasAlimentoTable extends Migration
                 ->onUpdate('no action');
 
             $table->foreign('Alimento_id')
-                ->references('idAlimento')->on('Alimento')
+                ->references('id')->on('CMVColtaco3')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });

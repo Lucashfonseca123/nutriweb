@@ -18,6 +18,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/cadastro','Controller@cadastrar');
 
+    Route::post('/grafico', 'GraficoController@busca');
+
     Route::get('/relatorio', 'Controller@consultar_relatorio');
 
     Route::get('/buscarRelatorio', 'RelatorioController@busca');

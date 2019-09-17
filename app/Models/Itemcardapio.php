@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 16 Sep 2019 17:23:27 +0000.
+ * Date: Tue, 17 Sep 2019 00:44:36 +0000.
  */
 
 namespace App\Models;
@@ -14,7 +14,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * 
  * @property int $IdItemCardapio
  * @property int $Opcoes
- * @property \Carbon\Carbon $Horario
+ * @property string $Horario
  * @property int $Cardapio_idCardapio
  * @property int $Grupo_idGrupo
  * @property int $Refeicao_idRefeicao
@@ -36,10 +36,6 @@ class Itemcardapio extends Eloquent
 		'Cardapio_idCardapio' => 'int',
 		'Grupo_idGrupo' => 'int',
 		'Refeicao_idRefeicao' => 'int'
-	];
-
-	protected $dates = [
-		'Horario'
 	];
 
 	protected $fillable = [
