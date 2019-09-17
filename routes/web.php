@@ -18,7 +18,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/cadastro','Controller@cadastrar');
 
-    Route::post('/grafico', 'GraficoController@busca');
+    Route::get('/grafico', 'GraficoController@busca');
 
     Route::get('/relatorio', 'Controller@consultar_relatorio');
 
