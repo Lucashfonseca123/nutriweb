@@ -33,7 +33,6 @@
                         			<table class="table">
                             			<thead>
 			                                <tr>
-			                                    <th scope="col">Id</th>
 			                                    <th scope="col">Paciente</th>
 			                                    <th scope="col">Email</th>
 			                                    <th scope="col">Data</th>
@@ -42,11 +41,11 @@
                             			</thead>
                             				<tr>
 			                            <tbody>
-			                                <th scope="row">  {{$paciente->idPaciente}}  </th>
+			                               
 			                                <td> {{$paciente->Nome}}</td>
 			                                <td> {{$paciente->Email}}</td>
 			                                <td> {{$paciente->created_at}}</td>
-			                                <td><button class="btn btn-primary mostrar selecionar" value="busca" type="submit" data-id = "{{$paciente->idPaciente}}" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
+			                                <td><button class="btn btn-primary mostrar selecionar" value="busca" id = "btn-{{$paciente->idPaciente}}" type="submit" data-id = "{{$paciente->idPaciente}}" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
 			                                </td>
 			                            </tr>
 			                        	</tbody>
