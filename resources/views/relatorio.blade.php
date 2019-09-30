@@ -51,17 +51,21 @@
 			                        	</tbody>
                 					</table>
                 				</div>
+                            <div" class=" col-md-6  mt-6 escondido" id="{{$paciente->idPaciente}}" >
+                    <div class="row">
+                            <div class="col-md-6  mt-6">
+                                <h6>IMC</h6>
+                                <canvas id="mostrarGraficoid{{$paciente->idPaciente}}" ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                        
 
             			@endforeach
-            			<div class=" col-md-12 mt-2 escondido"  id="{{$paciente->idPaciente}}" >
-                		<div class="row">
-				                    <div class="col-md-6  mt-6">
-				                        <h6>IMC</h6>
-				                        <canvas id="imcChart"></canvas>
-				                    </div>
-				                </div>
-				            </div>
+
                 	@endif
+
+
                 	
         </div>
         </div>
@@ -74,16 +78,17 @@
     let consulta = [];
     		$(".selecionar").click(function(){
     		let id = $(this).data('id');
+        id = parseInt(id);
     		console.log(id);
 			$.ajax({
 				method: "GET",
 				url: '/grafico',
-				data: id,
+				data: {'id' : id},
 				success: function (response){
 					console.log(response);
 					peso = response[0].Peso;
 					altura = response[0].Estatura;
-					mostrarGrafico(peso, altura);
+					mostrarGrafico(peso, altura , id);
 
         			
             }
@@ -92,8 +97,9 @@
     </script>
 
     <script type="text/javascript">
-    function mostrarGrafico(peso , altura){
-    var d = [];    
+    function mostrarGrafico(peso , altura, id){
+    var d = [];  
+    var idp = id;  
     p = parseFloat(peso);
     console.log(p);
     a =parseFloat(altura/100);
@@ -130,7 +136,7 @@
             c[i] = "rgba(255,255,255,1)";
         }
     }
-    let imcChart = document.getElementById('imcChart').getContext('2d');
+    let imcChart = document.getElementById('mostrarGraficoid'+idp).getContext('2d');
    
     Chart.defaults.global.defaultFontFamily = 'Lato';
     Chart.defaults.global.defaultFontSize = 18;

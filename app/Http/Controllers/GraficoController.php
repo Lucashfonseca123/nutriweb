@@ -10,8 +10,10 @@ class GraficoController extends Controller
 {
     public function busca(Request $request){
         $var = $request->all();
-        dd($var);
-        $graficoPaciente = Consultum::where('Paciente_idPaciente','=', $var)->get();
+        $var = json_encode($var, true);
+        $var = json_decode($var, true);
+        $var = $var['id'];
+        $graficoPaciente = Consultum::where('Paciente_idPaciente','=', $var )->get();
         return response()->json($graficoPaciente);
     }
 }
