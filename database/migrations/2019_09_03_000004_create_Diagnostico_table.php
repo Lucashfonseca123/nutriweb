@@ -23,20 +23,20 @@ class CreateDiagnosticoTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idDadosClinicos');
-            $table->tinyInteger('Diabetes_melitus')->nullable();
-            $table->tinyInteger('Displidemia')->nullable();
-            $table->tinyInteger('Gastrite')->nullable();
-            $table->tinyInteger('Hepatopatia')->nullable();
-            $table->tinyInteger('Depressao')->nullable();
-            $table->tinyInteger('Has')->nullable();
-            $table->tinyInteger('Cardiopata')->nullable();
-            $table->tinyInteger('Neoplasia')->nullable();
-            $table->tinyInteger('Ansiedade')->nullable();
-            $table->tinyInteger('Renite_sinusite')->nullable();
-            $table->tinyInteger('Ic')->nullable();
-            $table->tinyInteger('Nefropatia')->nullable();
-            $table->tinyInteger('Ulcera')->nullable();
-            $table->tinyInteger('Irritabilidade')->nullable();
+            $table->tinyInteger('Diabetes_melitus')->default('0');
+            $table->tinyInteger('Displidemia')->default('0');
+            $table->tinyInteger('Gastrite')->default('0');
+            $table->tinyInteger('Hepatopatia')->default('0');
+            $table->tinyInteger('Depressao')->default('0');
+            $table->tinyInteger('Has')->default('0');
+            $table->tinyInteger('Cardiopata')->default('0');
+            $table->tinyInteger('Neoplasia')->default('0');
+            $table->tinyInteger('Ansiedade')->default('0');
+            $table->tinyInteger('Renite_sinusite')->default('0');
+            $table->tinyInteger('Ic')->default('0');
+            $table->tinyInteger('Nefropatia')->default('0');
+            $table->tinyInteger('Ulcera')->default('0');
+            $table->tinyInteger('Irritabilidade')->default('0');
             $table->string('Outras', 45)->nullable();
         });
     }

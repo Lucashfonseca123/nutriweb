@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Consultum;
+use App\Models\Paciente;
 
 class GraficoController extends Controller
 {
     public function busca(Request $request){
-        $var = $request->busca;
-        $consultaPaciente = Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->where('Paciente.idPaciente', "%".$var."%")->get();    
-        return view('relatorio')->with('consultaPaciente', $consultaPaciente);
+        $var = $request->all();
+        $var = json_encode($var, true);
+        $var = json_decode($var, true);
+        $var = $var['id'];
+        $graficoPaciente = Consultum::where('Paciente_idPaciente','=', $var )->get();
+        return response()->json($graficoPaciente);
     }
 }
