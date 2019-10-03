@@ -44,7 +44,7 @@
 			                               
 			                                <td> {{$paciente->Nome}}</td>
 			                                <td> {{$paciente->Email}}</td>
-			                                <td> {{$paciente->created_at}}</td>
+			                                <td> <?php echo date('d/m/Y', strtotime($paciente->created_at)); ?></td>
 			                                <td><button class="btn btn-primary mostrar selecionar" value="busca" id = "btn-{{$paciente->idPaciente}}" type="submit" data-id = "{{$paciente->idPaciente}}" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
 			                                </td>
 			                            </tr>

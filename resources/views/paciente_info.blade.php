@@ -17,9 +17,14 @@
                     </div>
                 </div>
                 <div class="col">
-                    <br><h5>Próximas consultas</h5>
+                    <br><h5>Cardápios pendentes</h5>
             </form>
             <div class="container mt-4">
+                @if(isset($consultaPaciente)) 
+                <input type="hidden" name="type" value="<?= $varp = 0?>" >
+                
+                        @foreach($consultaPaciente as $paciente)
+                    
                 <table class="table">
                     <thead>
                     <tr>
@@ -30,31 +35,19 @@
                         <th scope="col"></th>
                     </tr>
                     </thead>
+                        
+                        <th scope="row" >{{$varp = $varp+1}}</th>
+                        <td> {{$paciente->Nome}}</td>
+                        <td><?php echo date('d/m/Y', strtotime($paciente->created_at)); ?> </td>
+                        
+                        <td><button class="btn btn-dark" type="button" >Montar cardápio</button></td>
                     
-                        <th scope="row" >1</th>
-                        <td>João da Silva</td>
-                        <td>15/07</td>
-                        <td><button class="btn btn-danger" type="button" >Remover</button>
-                            <span style="cursor: pointer" onclick="window.open('/edit_paciente', '', 'width=600,height=300')">
-                            <button class="btn btn-dark" type="button" >Editar ficha</button></td>
-                    
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>André borato</td>
-                        <td>28/07</td>
-                        <td><button class="btn btn-danger" type="button" >Remover</button>
-                            <button class="btn btn-dark" type="button" >Editar ficha</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Marcos Henrique</td>
-                        <td>04/09</td>
-                        <td><button class="btn btn-danger" type="button" >Remover</button>
-                            <button class="btn btn-dark" type="button" >Editar ficha</button></td>
                     </tr>
                     </tbody>
                 </table>
+                @endforeach
+
+                    @endif
             </div>
             </div>
             </div>

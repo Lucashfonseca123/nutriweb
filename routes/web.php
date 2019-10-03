@@ -18,6 +18,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/cadastro','Controller@cadastrar');
 
+    Route::get('/cardapiosPendentes','TelaInicialController@busca');
+
     Route::get('/grafico', 'GraficoController@busca');
 
     Route::get('/relatorio', 'Controller@consultar_relatorio');

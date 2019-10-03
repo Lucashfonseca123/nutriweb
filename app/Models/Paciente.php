@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Tue, 17 Sep 2019 00:44:37 +0000.
+ * Date: Thu, 03 Oct 2019 17:56:41 +0000.
  */
 
 namespace App\Models;
@@ -18,22 +18,20 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $Email
  * @property string $Sexo
  * @property \Carbon\Carbon $DataDeNascimento
- * @property string $Endereco
  * @property string $Profissao
  * @property string $IntoleranciaAlimentar
  * @property string $Mastigacao
- * @property string $Apetite
  * @property string $PrefAlimentares
  * @property string $AversaoAlimentar
  * @property int $Tabagista
  * @property float $ConsumoAgua
  * @property string $UsouSuplem
- * @property int $CozinhaCasa
+ * @property string $CozinhaCasa
+ * @property string $Tempo_parou
  * @property int $Cidade_idCidade
  * @property int $Estado_idEstado
  * @property int $Endereco_idEndereco
  * @property float $TrabalhaHoraDia
- * @property string $Tempo_parou
  * @property float $ConsumoMedio
  * @property int $Cigar_dia
  * @property int $Etilista
@@ -44,6 +42,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $Jantar
  * @property string $Ceia
  * @property string $Rotina
+ * @property int $Excluido
  * 
  * @property \App\Models\Cidade $cidade
  * @property \App\Models\Endereco $endereco
@@ -62,14 +61,14 @@ class Paciente extends Eloquent
 	protected $casts = [
 		'Tabagista' => 'int',
 		'ConsumoAgua' => 'float',
-		'CozinhaCasa' => 'int',
 		'Cidade_idCidade' => 'int',
 		'Estado_idEstado' => 'int',
 		'Endereco_idEndereco' => 'int',
 		'TrabalhaHoraDia' => 'float',
 		'ConsumoMedio' => 'float',
 		'Cigar_dia' => 'int',
-		'Etilista' => 'int'
+		'Etilista' => 'int',
+		'Excluido' => 'int'
 	];
 
 	protected $dates = [
@@ -82,22 +81,20 @@ class Paciente extends Eloquent
 		'Email',
 		'Sexo',
 		'DataDeNascimento',
-		'Endereco',
 		'Profissao',
 		'IntoleranciaAlimentar',
 		'Mastigacao',
-		'Apetite',
 		'PrefAlimentares',
 		'AversaoAlimentar',
 		'Tabagista',
 		'ConsumoAgua',
 		'UsouSuplem',
 		'CozinhaCasa',
+		'Tempo_parou',
 		'Cidade_idCidade',
 		'Estado_idEstado',
 		'Endereco_idEndereco',
 		'TrabalhaHoraDia',
-		'Tempo_parou',
 		'ConsumoMedio',
 		'Cigar_dia',
 		'Etilista',
@@ -107,7 +104,8 @@ class Paciente extends Eloquent
 		'Lanche2',
 		'Jantar',
 		'Ceia',
-		'Rotina'
+		'Rotina',
+		'Excluido'
 	];
 
 	public function cidade()

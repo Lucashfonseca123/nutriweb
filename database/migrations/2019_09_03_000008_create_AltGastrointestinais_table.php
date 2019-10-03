@@ -23,17 +23,17 @@ class CreateAltgastrointestinaisTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idAltGastrointestinais');
-            $table->tinyInteger('Disfagia')->default('0');
-            $table->tinyInteger('Vomitos')->default('0');
-            $table->tinyInteger('Anorexia')->default('0');
-            $table->tinyInteger('Flatulencias')->default('0');
-            $table->tinyInteger('Pirose')->default('0');
-            $table->tinyInteger('Diarreia')->default('0');
-            $table->tinyInteger('Dispepsia')->default('0');
-            $table->tinyInteger('Polidipsia')->default('0');
-            $table->tinyInteger('Nausea')->default('0');
-            $table->tinyInteger('Constipacao')->default('0');
-            $table->tinyInteger('Edema')->default('0');
+            $table->tinyInteger('Disfagia')->nullable();
+            $table->tinyInteger('Vomitos')->nullable();
+            $table->tinyInteger('Anorexia')->nullable();
+            $table->tinyInteger('Flatulencias')->nullable();
+            $table->tinyInteger('Pirose')->nullable();
+            $table->tinyInteger('Diarreia')->nullable();
+            $table->tinyInteger('Dispepsia')->nullable();
+            $table->tinyInteger('Polidipsia')->nullable();
+            $table->tinyInteger('Nausea')->nullable();
+            $table->tinyInteger('Constipacao')->nullable();
+            $table->tinyInteger('Edema')->nullable();
             $table->string('Outras', 45)->nullable();
         });
     }

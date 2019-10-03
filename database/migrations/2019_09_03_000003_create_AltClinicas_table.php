@@ -23,9 +23,9 @@ class CreateAltclinicasTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idAltClinicas');
-            $table->tinyInteger('Cabelo_quebradico')->default('0');
-            $table->tinyInteger('Unhas_fracas')->default('0');
-            $table->tinyInteger('Palidez')->default('0');
+            $table->tinyInteger('Cabelo_quebradico')->nullable();
+            $table->tinyInteger('Unhas_fracas')->nullable();
+            $table->tinyInteger('Palidez')->nullable();
             $table->string('Outros', 45)->nullable();
             $table->integer('HabitosIntestinal')->nullable();
             $table->integer('Frequencia_urinaria')->nullable();

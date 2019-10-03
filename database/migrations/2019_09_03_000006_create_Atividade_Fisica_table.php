@@ -23,7 +23,7 @@ class CreateAtividadeFisicaTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idAtividade_Fisica');
-            $table->tinyInteger('Pratica')->default('0');
+            $table->tinyInteger('Pratica')->nullable();
             $table->string('Descricao', 45)->nullable();
             $table->string('TempParou', 45)->nullable();
             $table->string('HorarioInicio')->nullable();

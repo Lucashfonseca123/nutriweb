@@ -23,15 +23,15 @@ class CreateAntfamiliaresTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idAntFamiliares');
-            $table->tinyInteger('Diabetes_melitus')->default('0');
-            $table->tinyInteger('Dislipedemia')->default('0');
-            $table->tinyInteger('Hepatopatia')->default('0');
-            $table->tinyInteger('Has')->default('0');
-            $table->tinyInteger('Cardiopatia')->default('0');
-            $table->tinyInteger('Cancer')->default('0');
-            $table->tinyInteger('Avc')->default('0');
-            $table->tinyInteger('Nefropatia')->default('0');
-            $table->tinyInteger('Obesidade')->default('0');
+            $table->tinyInteger('Diabetes_melitus')->nullable();
+            $table->tinyInteger('Dislipedemia')->nullable();
+            $table->tinyInteger('Hepatopatia')->nullable();
+            $table->tinyInteger('Has')->nullable();
+            $table->tinyInteger('Cardiopatia')->nullable();
+            $table->tinyInteger('Cancer')->nullable();
+            $table->tinyInteger('Avc')->nullable();
+            $table->tinyInteger('Nefropatia')->nullable();
+            $table->tinyInteger('Obesidade')->nullable();
             $table->string('Outras', 45)->nullable();
         });
     }
