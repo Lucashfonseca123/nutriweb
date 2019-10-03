@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\GrupoHasAlimento;
+use App\Models\Grupo;
 
-use App\Models\Paciente;
-use App\Models\Consultum;
-
-class CardapioController extends Controller
+class GrupoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +36,20 @@ class CardapioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $var = new GrupoHasAlimento;
+        $varG = new Grupo;
+
+        $var->Alimento_id = $request->id_alimento;
+        $var->Qtde_Alimento = $request->quantidadeAlimento;
+            
+        $varG->Nome = $request->nomeGrupo;
+        $varG->save();
+        $var->grupo()->associate($varG);
+        
+        $var->save();
+
+        return redirect()->back();
+
     }
 
     /**
@@ -84,11 +96,4 @@ class CardapioController extends Controller
     {
         //
     }
-
-    public function busca(Request $request){
-        $var = $request->busca;
-        $lista_nome = Paciente::where('Nome', "like", "%".$var."%")->get();    
-        return view('cardapio_cadastro')->with('lista_nome', $lista_nome);
-    }
-
 }

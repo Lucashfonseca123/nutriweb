@@ -37,6 +37,7 @@ class ReconsultaController extends Controller
     public function store(Request $request)
     {
         $var = 1;
+        $var2 = (int)($request->idpaciente);
         $varCon = new Consultum;
         $varCon->Peso = $request->peso;
         $varCon->Circ_pantu = $request->circ_pantu;
@@ -54,20 +55,12 @@ class ReconsultaController extends Controller
         $varCon->Tmb = $request->tmb;
         $varCon->Body_age = $request->bodyAge;
         $varCon->Gord_visceral = $request->gordVisc;
-        $varCon->Paciente_idPaciente = 1;
-        $varCon->Objetivos_idObjetivos = 1;
-        $varCon->AltGastrointestinais_idAltGastrointestinais = 1;
-        $varCon->AntFamiliares_idAntFamiliares = 1;
-        $varCon->AltClinicas_idAltClinicas = 1;
-        $varCon->diagnostico()->associate($var);
-        $varCon->Atividade_Fisica_idAtividade_Fisica = 1;
-        $varCon->Nutricionista_idNutricionista = 1;
-        $varCon->Cardapio_idCardapio = 1;
+        $varCon->Paciente_idPaciente = $request->idpaciente;
+        $varCon->Nutricionista_idNutricionista = $request->idnutricionista;
         $varCon->save();
-        return 'certo';
-        
+        return redirect()->back();
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -122,4 +115,5 @@ class ReconsultaController extends Controller
     public function retorne(){
         return view('testar_consulta');
     }
+
 }

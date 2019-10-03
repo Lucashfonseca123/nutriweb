@@ -83,17 +83,27 @@ let geraCard2 = function(id, header, btn){
 
 
 $('#btn1').click(function(){
-    let card = geraCard(id, 'Macarrão', 1);
+    let card = geraCard(id, 'Macarrão, 1550', 1);
     $('#cards').append(card);
     id++;
 });
 
+/*
 $('#btn1').click(function(){
     let card = geraCard2(id, '2 colheres', 1);
     $('#cards2').append(card);
     id++;
 });
+*/
 
+function adicionaElemento() {
+    var x = document.getElementById("adicionarElemento");
+    var option = document.createElement("option");
+    option.text = "Kiwi";
+    x.add(option);
+  }
+
+/*
 $('#btn2').click(function(){
     let card = $(this).attr("cardId");
     $('#'+(id-1)).remove();
@@ -111,40 +121,11 @@ $('#btn3').click(function(){
     $('#cards').append(card);
     id++;
 });
+*/
+
 
 //Fim novo grupo
 
-//Auto complete
-
-$(function() {
-    var alimentos = [
-        "Macarrão",
-        "Mamão",
-        "Melão",
-        "Mimosa"
-    ];
-    var pessoas = [
-        "André",
-        "José",
-        "Antonio",
-        "Jessé"
-    ];
-    var grupo = [
-        "Low Carb",
-        "High Carb",
-        "Cetogênica"
-    ];
-
-    $("#alimentos" ).autocomplete({
-        source: alimentos
-    });
-    $("#pessoas" ).autocomplete({
-        source: pessoas
-    });
-    $("#grupo" ).autocomplete({
-        source: grupo
-    });
-});
 
 $('.escondido').hide();
 
@@ -152,6 +133,13 @@ $('.mostrar').click(function(){
     let alvo = $(this).attr('alvo');
     $('#' + alvo).fadeToggle("slow", "linear");
    // $(this).hide();
+    $('.esconder').show();
+});
+
+$('.mostrar_esconder').click(function(){
+    let alvo = $(this).attr('alvo');
+    $('#' + alvo).fadeToggle("slow", "linear");
+    $(this).hide();
     $('.esconder').show();
 });
 
@@ -176,3 +164,64 @@ $('.esconder').click(function(){
     $(this).hide();
     $('.mostrar').show();
 });
+
+$(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+
+$(document).ready(function() {
+    $("#somar").click(function() {
+    		var lastField = $("#buildyourform div:last");
+        var intId = (lastField && lastField.length && lastField.data("idx") + 1) || 1;
+        var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
+        fieldWrapper.data("idx", intId);
+        var fName = $("<input type=\"text\" class=\"fieldname\" />");
+        var fType = $("<select class=\"fieldtype\"><option value=\"checkbox\">Checked</option><option value=\"textbox\">Text</option><option value=\"textarea\">Paragraph</option></select>");
+        var removeButton = $("<input type=\"button\" class=\"remove\" value=\"-\" />");
+        removeButton.click(function() {
+            $(this).parent().remove();
+        });
+        fieldWrapper.append(fName);
+        fieldWrapper.append(fType);
+        fieldWrapper.append(removeButton);
+        $("#buildyourform").append(fieldWrapper);
+    });
+    
+    $("#preview").click(function() {
+        $("#yourform").remove();
+        var fieldSet = $("<fieldset id=\"yourform\"><legend>Your Form</legend></fieldset>");
+        $("#buildyourform div").each(function() {
+            var id = "input" + $(this).attr("id").replace("field","");
+            var label = $("<label for=\"" + id + "\">" + $(this).find("input.fieldname").first().val() + "</label>");
+            var input;
+            switch ($(this).find("select.fieldtype").first().val()) {
+                case "checkbox":
+                    input = $("<input type=\"checkbox\" id=\"" + id + "\" name=\"" + id + "\" />");
+                    break;
+                case "textbox":
+                    input = $("<input type=\"text\" id=\"" + id + "\" name=\"" + id + "\" />");
+                    break;
+                case "textarea":
+                    input = $("<textarea id=\"" + id + "\" name=\"" + id + "\" ></textarea>");
+                    break;    
+            }
+            fieldSet.append(label);
+            fieldSet.append(input);
+        });
+        $("body").append(fieldSet);
+    });
+});
+
+
+$(document).ready(function() {
+
+    $(".add-more").click(function(){ 
+        var html = $(".copy").html();
+        $(".after-add-more").after(html);
+    });
+
+    $("body").on("click",".remove",function(){ 
+        $(this).parents(".control-group").remove();
+    });
+
+  });

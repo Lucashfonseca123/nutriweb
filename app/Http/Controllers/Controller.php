@@ -8,8 +8,11 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Consultum;
 use App\Models\Paciente;
-
 use App\Alimentos_taco;
+use App\Models\Paciente;
+use App\Models\Grupo;
+use App\Models\Cmvcoltaco3;
+>>>>>>> Lucas
 
 class Controller extends BaseController
 {
@@ -32,11 +35,13 @@ class Controller extends BaseController
     }
 
     public function cardapio(){
-        return view ('cardapio_cadastro');
+        $var = Grupo::all();
+        return view ('cardapio_cadastro')->with('group', $var);
     }
 
     public function grupos(){
-        return view ('grupo_cadastro');
+        $var = Cmvcoltaco3::all();
+        return view('grupo_cadastro')->with('busca_alimentos', $var);
     }
 
     public function buscar_alimentos(){
@@ -67,6 +72,9 @@ class Controller extends BaseController
     }
 
     public function edit_paciente(){
-        return view('paciente_editar');
-    }
+      Request $request  
+      $var = $request->busca;
+      $paciente_selecionado = Paciente::where('id', $var)->get();    
+      return view('paciente_editar')->with('lista_nome', $paciente_selecionado);
+        
 }

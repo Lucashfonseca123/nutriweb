@@ -19,6 +19,7 @@
             <div class="escondido" id="revelado">
                 <div class="panel-heading col"><h4>Cadastro do paciente</h4><br></div>
                 <div class="panel-body">
+                <input type="hidden" name='idnutricionista' value="{{Auth::user()->id}}">
                     <!-- NOME -->
                     <div class="form-group">
                         <label for="nome" class="col-md-5">Nome
@@ -277,7 +278,7 @@
                     <br><br>
                     <div class="form-group">
                         <label class="col-md-6" for="prependedtext">
-                            <input id="obj5" name="descreva" placeholder="Descreva" class="form-control input-md" required="" value="" type="search" maxlength="8" pattern="[0-9]+$" disabled>
+                            <input id="obj5" name="descreva" placeholder="Descreva" class="form-control input-md" required="" value="" type="text" maxlength="8" pattern="[0-9]+$" disabled>
                         </label>
                     </div>
 
