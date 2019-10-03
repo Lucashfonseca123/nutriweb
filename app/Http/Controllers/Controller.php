@@ -9,10 +9,9 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Consultum;
 use App\Models\Paciente;
 use App\Alimentos_taco;
-use App\Models\Paciente;
 use App\Models\Grupo;
 use App\Models\Cmvcoltaco3;
->>>>>>> Lucas
+
 
 class Controller extends BaseController
 {
@@ -63,7 +62,7 @@ class Controller extends BaseController
 
     public function info_paciente(){
         $var  = " ";
-        $consultaPaciente = Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->where('Cardapio_idCardapio', "=", NULL)->get();    
+        $consultaPaciente = Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->where('Cardapio_idCardapio', "=", NULL)->get();   
         return view('paciente_info')->with('consultaPaciente', $consultaPaciente);
     }
 
@@ -72,9 +71,6 @@ class Controller extends BaseController
     }
 
     public function edit_paciente(){
-      Request $request  
-      $var = $request->busca;
-      $paciente_selecionado = Paciente::where('id', $var)->get();    
-      return view('paciente_editar')->with('lista_nome', $paciente_selecionado);
-        
+     return view('paciente_editar');
+     }   
 }

@@ -35,7 +35,6 @@
 			                                <tr>
 			                                    <th scope="col">Paciente</th>
 			                                    <th scope="col">Email</th>
-			                                    <th scope="col">Data</th>
 			                                    <th></th>
 			                                </tr>
                             			</thead>
@@ -44,7 +43,6 @@
 			                               
 			                                <td> {{$paciente->Nome}}</td>
 			                                <td> {{$paciente->Email}}</td>
-			                                <td> <?php echo date('d/m/Y', strtotime($paciente->created_at)); ?></td>
 			                                <td><button class="btn btn-primary mostrar selecionar" value="busca" id = "btn-{{$paciente->idPaciente}}" type="submit" data-id = "{{$paciente->idPaciente}}" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
 			                                </td>
 			                            </tr>
@@ -75,6 +73,7 @@
     <script type="text/javascript">
     let peso = [];
     let altura = [];
+    let data = [];
     let consulta = [];
     		$(".selecionar").click(function(){
     		let id = $(this).data('id');
@@ -86,9 +85,12 @@
 				data: {'id' : id},
 				success: function (response){
 					console.log(response);
-					peso = response[0].Peso;
-					altura = response[0].Estatura;
-					mostrarGrafico(peso, altura , id);
+                    for (var i = response.length - 1; i >= 0; i--) {
+                        peso[i] = response[i].Peso;
+                       altura[i] = response[i].Estatura;
+                       data[i] = response[i].created_at;
+                    }
+					mostrarGrafico(peso, altura , id , data);
 
         			
             }
@@ -97,14 +99,21 @@
     </script>
 
     <script type="text/javascript">
-    function mostrarGrafico(peso , altura, id){
+    function mostrarGrafico(peso , altura, id , datas){
     var d = [];  
+    var datasFormatadas = [];
     var idp = id;  
     p = parseFloat(peso);
-    console.log(p);
-    a =parseFloat(altura/100);
+    console.log(peso[0]);
+    a =parseFloat(altura);
     console.log(a);
-    d[0] = p/(a*a);
+    for (var i = peso.length - 1; i >= 0; i--) {
+        d[i] = parseFloat(peso[i])/(parseFloat(altura[i])*parseFloat(altura[i]));
+        var date_arr = datas[i].split(" ");
+        var date_aar2 = date_arr[0].split("-");
+        datasFormatadas[i] = date_aar2[2] + "/" + date_aar2[1] + "/" + date_aar2[0];
+        console.log(d);
+    }
     d.push(0);
     var c = [];
     for (i = 0; i < d.length; i++) {
@@ -145,7 +154,7 @@
     let massPopChart = new Chart(imcChart, {
       type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{
-        labels:['Março'],
+        labels:datasFormatadas,
         datasets:[{
           //label:['Abaixo','Normal','Acima','Obeso'],
           data: d,

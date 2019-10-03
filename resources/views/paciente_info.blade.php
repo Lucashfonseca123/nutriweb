@@ -21,34 +21,8 @@
                                 </div>
                             </form>
                 <div class="col">
-                    <br><h5>Cardápios pendentes</h5>
+                    <br><h5>Cardápios pendentes</h5> 
             </form>
-            @if(isset($lista_nome))            
-                    @forelse($lista_nome as $paciente)
-                        <div class="container mt-4">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Id</th>
-                                        <th scope="col">Paciente</th>
-                                        <th scope="col">Email</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tr>
-                                <form action=""></form>
-                                <tbody>
-                                    <th scope="row">  {{$paciente->idPaciente}}  </th>
-                                    <td> {{$paciente->Nome}}</td>
-                                    <td> {{$paciente->Email}}</td>
-                                    <td><span style="cursor: pointer" onclick="window.open('/edit_paciente', '', 'width=600,height=300')"><td>
-                                    <td><button class="btn btn-dark mostrar" alvo="{{$paciente->idPaciente}}">Editar</button> 
-                                    <button class="btn btn-danger" type="button" >Remover</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
             <div class="container mt-4">
                 @if(isset($consultaPaciente)) 
                 <input type="hidden" name="type" value="<?= $varp = 0?>" >
@@ -61,7 +35,6 @@
                         <th scope="col">#</th>
                         <th scope="col">Paciente</th>
                         <th scope="col">Data Consulta</th>
-                        <th scope="col">Data próxima consulta</th>
                         <th scope="col"></th>
                     </tr>
                     </thead>
@@ -74,7 +47,6 @@
                     
                     </tr>
                     </tbody>
->
                     </tr>
                     </tbody> 
                 </table>
@@ -82,6 +54,30 @@
 
                     @endif
             </div>
+            @if(isset($lista_nome))            
+                    @forelse($lista_nome as $paciente)
+                        <div class="container mt-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Paciente</th>
+                                        <th scope="col">Data Consulta</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                <form action=""></form>
+                                <tbody>
+                                    <td> {{$paciente->Nome}}</td>
+                                    <td> <?php echo date('d/m/Y', strtotime($paciente->created_at)); ?></td>
+                                    <td><span style="cursor: pointer" onclick="window.open('/edit_paciente', '', 'width=600,height=300')"><td>
+                                    <td><button class="btn btn-dark mostrar" alvo="{{$paciente->idPaciente}}">Montar Cardápio</button> 
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            
             </div>
             @empty
                 <div class="alert alert-danger">

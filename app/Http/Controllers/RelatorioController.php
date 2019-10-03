@@ -47,7 +47,7 @@ class RelatorioController extends Controller
      */
     public function show($id)
     {
-        $consulta = Consultum::where('Paciente_idPaciente', $id)->get();
+        $consulta = Paciente::where('Paciente_idPaciente', $id)->get();
         return view('relatorio',compact('consulta',$consulta));
     }
 
@@ -87,7 +87,8 @@ class RelatorioController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-        $consultaPaciente = Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->where('Nome', "like", "%".$var."%")->get();    
+        $consultaPaciente = Paciente::where('Nome', "like", "%".$var."%")->get();  
+        //Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->  
         return view('relatorio')->with('consultaPaciente', $consultaPaciente);
     }
 }
