@@ -18,6 +18,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/cadastro','Controller@cadastrar');
 
+    Route::get('/buscarPaciente', 'EditarInfoController@busca');
+
     Route::get('/cardapiosPendentes','TelaInicialController@busca');
 
     Route::get('/grafico', 'GraficoController@busca');
@@ -52,8 +54,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/recuperar_senha', 'Controller@recuperar_senha');
 
-    Route::get('/edit_paciente','Controller@edit_paciente');
-
     Route::get('/resumo_paciente', 'Controller@resumir_paciente');
 
     Route::post('/testerota', 'HomeController@store')->name('test');
@@ -71,6 +71,14 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/salvarAlimentos', 'AlimentoController');
 
     Route::get('selecionar_paciente', 'PacienteController@busca');
+
+    Route::get('/editarInfo', 'PacienteController@editarInfo');
+
+    Route::post('/edit_paciente', 'EditarInfoController@update');
+
+    Route::get('/hist_consultas' , 'Controller@hist_consultas');
+
+    Route::get('/buscar_consultas', 'HistoricoController@busca');
 });
 
 Auth::routes();

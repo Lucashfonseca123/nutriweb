@@ -108,13 +108,13 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li title="Adicione grupos nas refeições, crie seu cardápio">
+                                    <a href="editarInfo">Editar informações</a>
+                                </li>
+                                <li title="Adicione grupos nas refeições, crie seu cardápio">
                                     <a href="{{route('infopaciente')}}">Cardápios pendentes</a>
                                 </li>
                                 <li title="Adicione grupos nas refeições, crie seu cardápio">
-                                    <a href="{{route('infopaciente')}}">Editar informações</a>
-                                </li>
-                                <li title="Adicione grupos nas refeições, crie seu cardápio">
-                                    <a href="{{route('infopaciente')}}">Histórico de Consultas</a>
+                                    <a href="/hist_consultas">Histórico de Consultas</a>
                                 </li>
                             </ul>
                         </div>
