@@ -79,6 +79,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/hist_consultas' , 'Controller@hist_consultas');
 
     Route::get('/buscar_consultas', 'HistoricoController@busca');
+
+    Route::get('/buscar_consultas_id', 'HistoricoController@buscaId');
 });
 
 Auth::routes();

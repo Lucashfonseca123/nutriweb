@@ -2,13 +2,13 @@
 
 /**
  * Created by Reliese Model.
- * Date: Thu, 03 Oct 2019 17:56:41 +0000.
+ * Date: Sat, 19 Oct 2019 14:57:29 +0000.
  */
 
 namespace App\Models;
 
 use Reliese\Database\Eloquent\Model as Eloquent;
-  
+
 /**
  * Class Grupo
  * 

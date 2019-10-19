@@ -62,7 +62,7 @@
                                     <label for="nome" class="col-md-3">Peso
                                         <input type="text" name="peso" class="form-control col-md-4">
                                     </label>
-                                    <label for="nome" class="col-md-3">Estatura
+                                    <label for="nome" class="col-md-4">Estatura
                                         <input type="text" name="estatura" class="form-control col-md-4">
                                     </label>
                                     <label for="nome" class="col-md-3">Circuferência da cintura

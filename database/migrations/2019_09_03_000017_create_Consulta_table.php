@@ -49,6 +49,8 @@ class CreateConsultaTable extends Migration
             $table->unsignedInteger('AltGastrointestinais_idAltGastrointestinais')->nullable();
             $table->unsignedInteger('AntFamiliares_idAntFamiliares')->nullable();
             $table->unsignedInteger('AltClinicas_idAltClinicas')->nullable();
+            $table->tinyInteger('Alteracao');
+            $table->tinyInteger('Primeira');
             $table->timestamps();
 
             $table->index(["AltGastrointestinais_idAltGastrointestinais"], 'fk_Consulta_AltGastrointestinais1_idx');

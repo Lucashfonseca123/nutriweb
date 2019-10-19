@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Thu, 03 Oct 2019 17:56:41 +0000.
+ * Date: Sat, 19 Oct 2019 14:57:28 +0000.
  */
 
 namespace App\Models;
@@ -39,6 +39,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $AltGastrointestinais_idAltGastrointestinais
  * @property int $AntFamiliares_idAntFamiliares
  * @property int $AltClinicas_idAltClinicas
+ * @property int $Alteracao
+ * @property int $Primeira
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * 
@@ -83,7 +85,9 @@ class Consultum extends Eloquent
 		'Circ_punho' => 'float',
 		'AltGastrointestinais_idAltGastrointestinais' => 'int',
 		'AntFamiliares_idAntFamiliares' => 'int',
-		'AltClinicas_idAltClinicas' => 'int'
+		'AltClinicas_idAltClinicas' => 'int',
+		'Alteracao' => 'int',
+		'Primeira' => 'int'
 	];
 
 	protected $dates = [
@@ -116,7 +120,9 @@ class Consultum extends Eloquent
 		'Data_consulta',
 		'AltGastrointestinais_idAltGastrointestinais',
 		'AntFamiliares_idAntFamiliares',
-		'AltClinicas_idAltClinicas'
+		'AltClinicas_idAltClinicas',
+		'Alteracao',
+		'Primeira'
 	];
 
 	public function altclinica()

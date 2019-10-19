@@ -172,6 +172,7 @@ class PacienteController extends Controller
         $varp->Lanche2 =$request->lanche1;
         $varp->Jantar = $request->jantar;
         $varp->Ceia = $request->ceia;
+        $varp->Excluido = 0;
         $varp->save();
         
         //Exames laboratoriais

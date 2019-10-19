@@ -52,7 +52,7 @@ class CreatePacienteTable extends Migration
             $table->text('Jantar')->nullable();
             $table->text('Ceia')->nullable();
             $table->text('Rotina')->nullable();
-            $table->tinyInteger('Excluido')->nullable();
+            $table->tinyInteger('Excluido');
             
 
 
