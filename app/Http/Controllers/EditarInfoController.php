@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paciente;
-
+use App\Models\Endereco;
+use App\Models\Objetivo;
 class EditarInfoController extends Controller
 {
     /**
@@ -58,8 +59,9 @@ class EditarInfoController extends Controller
     public function edit($id)
     {
         $var = $id;
-        $pacientes = Paciente::where('idPaciente', $var)->get(); 
-        return view('editar_paciente')->with('pacientes',  $pacientes );
+        $pacientes = Paciente::join('Endereco','Paciente.idPaciente','=','Endereco.Paciente_idPaciente')->join('Objetivo','Paciente.idPaciente','=','Objetivo.Paciente_idPaciente')->where('idPaciente', $var)->get(); 
+        dd($pacientes);
+        return view('editar_info')->with('pacientes',  $pacientes );
     }
 
     /**
@@ -71,33 +73,32 @@ class EditarInfoController extends Controller
      */
     public function update(Request $request)
     {
-         $id = (int)($request->idpaciente);
-         $varp = Paciente::find($id);
+         $idp = (int)($request->idpaciente);
+         $varp = Paciente::find($idp);
 
-        //$varEnd = new Endereco;
+        $varEnd = new Endereco;
         //$varEst = new Estado;
         //$varCid = new Cidade;
        
-        $varp->Nome = $request->paciente;
-        $varp->Email = $request->email;
+        $varp->NomePaciente = $request->paciente;
+        $varp->EmailPaciente = $request->email;
         $telefone = $request->telefone;
-        $telefone = intval($telefone);
-        $varp->Telefone = $telefone;
-        $varp->Sexo = $request->sexo;
+        $varp->TelefonePaciente = $telefone;
+        $varp->SexoPaciente = $request->sexo;
         //$varp->DataDeNascimento=$request->dtnasc;
-        $varp->Profissao=$request->profissao;
+        $varp->ProfissaoPaciente=$request->profissao;
         //Endereço
-        //$varEnd->Cep = $request->cep;
-        //$varEnd->Rua = $request->rua;
-        //$varEnd->Numero = $request->numeroEndereco;
-        //$varEnd->Bairo = $request->bairro;
+        $varEnd->CepEndereco = $request->cep;
+        $varEnd->RuaEndereco = $request->rua;
+        $varEnd->NumeroEndereco = $request->numeroEndereco;
+        $varEnd->BairoEndereco = $request->bairro;
         //$varCid->Nome = $request->cidade;
         //$varEst->Nome = $request->estado;
         //Horário de rabalho e rotina diária
-        $varp->TrabalhaHoraDia = $request->hrsDia; 
+        $varp->TrabalhaHoraDiaPaciente = $request->hrsDia; 
         //$varp->Rotina = $request->horErotina;
         //$varCid->save();
-        //$varEnd->save();
+        $varEnd->update();
         //$varEst->save();
         //$varp->estado()->associate($varEst);
         //$varp->cidade()->associate($varCid);
@@ -141,7 +142,7 @@ class EditarInfoController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-        $consultaPaciente = Paciente::where('Nome', "like", "%".$var."%")->get();  
+        $consultaPaciente = Paciente::join('Endereco','Endereco_idEndereco','=','Endereco.idEndereco')->where('NomePaciente', "like", "%".$var."%")->get();  
         return view('editar_info')->with('consultaPaciente', $consultaPaciente);
     }
 }

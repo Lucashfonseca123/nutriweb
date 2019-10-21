@@ -39,24 +39,26 @@ class ReconsultaController extends Controller
         $var = 1;
         $var2 = (int)($request->idpaciente);
         $varCon = new Consultum;
-        $varCon->Peso = $request->peso;
-        $varCon->Circ_pantu = $request->circ_pantu;
-        $varCon->Estatura = $request->estatura; 
-        $varCon->Circ_cintura = $request->cirCintura;
-        $varCon->Circ_abdomen = $request->circAbd;
-        $varCon->Circ_quadril = $request->cirQuad;
-        $varCon->Circ_coxa_prox_dir = $request->cirCxDir;
-        $varCon->Circ_coxa_prox_esq = $request->cirCxEsq;
-        $varCon->Circ_braco_dir = $request->cirBraDir;
-        $varCon->Circ_braco_esq = $request->cirBraEsq;
-        $varCon->Circ_punho = $request->cirPunho;
-        $varCon->Porc_gordura = $request->gordura;
-        $varCon->Porc_muscular = $request->muscular;
-        $varCon->Tmb = $request->tmb;
-        $varCon->Body_age = $request->bodyAge;
-        $varCon->Gord_visceral = $request->gordVisc;
+        $varCon->PesoConsulta = $request->peso;
+        $varCon->Circ_pantuConsulta = $request->circ_pantu;
+        $varCon->EstaturaConsulta = $request->estatura; 
+        $varCon->Circ_cinturaConsulta = $request->cirCintura;
+        $varCon->Circ_abdomenConsulta = $request->circAbd;
+        $varCon->Circ_quadrilConsulta = $request->cirQuad;
+        $varCon->Circ_coxa_prox_dirConsulta = $request->cirCxDir;
+        $varCon->Circ_coxa_prox_esqConsulta = $request->cirCxEsq;
+        $varCon->Circ_braco_dirConsulta = $request->cirBraDir;
+        $varCon->Circ_braco_esqConsulta = $request->cirBraEsq;
+        $varCon->Circ_punhoConsulta = $request->cirPunho;
+        $varCon->Porc_gorduraConsulta = $request->gordura;
+        $varCon->Porc_muscularConsulta = $request->muscular;
+        $varCon->TmbConsulta = $request->tmb;
+        $varCon->Body_ageConsulta = $request->bodyAge;
+        $varCon->Gord_visceralConsulta = $request->gordVisc;
         $varCon->Paciente_idPaciente = $request->idpaciente;
         $varCon->Nutricionista_idNutricionista = $request->idnutricionista;
+        $varCon->AlteracaoConsulta = 0;
+        $varCon->PrimeiraConsulta = 0;
         $varCon->save();
         return redirect()->back();
     }
@@ -108,7 +110,7 @@ class ReconsultaController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-        $lista_nome = Paciente::where('Nome', "like", "%".$var."%")->get();    
+        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->get();    
         return view('paciente_reconsulta')->with('lista_nome', $lista_nome);
     }
 

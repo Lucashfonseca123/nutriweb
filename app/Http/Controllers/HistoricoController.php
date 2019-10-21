@@ -86,7 +86,7 @@ class HistoricoController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-      $consultaPaciente = Paciente::where('Nome', "like", "%".$var."%")->get();
+      $consultaPaciente = Paciente::where('NomePaciente', "like", "%".$var."%")->get();
       return view('historico_consultas')->with('consultaPaciente', $consultaPaciente);   
     }
 

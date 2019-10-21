@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 19 Oct 2019 14:57:29 +0000.
+ * Date: Mon, 21 Oct 2019 18:22:09 +0000.
  */
 
 namespace App\Models;
@@ -13,36 +13,36 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Paciente
  * 
  * @property int $idPaciente
- * @property string $Nome
- * @property string $Telefone
- * @property string $Email
- * @property string $Sexo
- * @property \Carbon\Carbon $DataDeNascimento
- * @property string $Profissao
- * @property string $IntoleranciaAlimentar
- * @property string $Mastigacao
- * @property string $PrefAlimentares
- * @property string $AversaoAlimentar
- * @property int $Tabagista
- * @property float $ConsumoAgua
- * @property string $UsouSuplem
- * @property string $CozinhaCasa
- * @property string $Tempo_parou
+ * @property string $NomePaciente
+ * @property string $TelefonePaciente
+ * @property string $EmailPaciente
+ * @property string $SexoPaciente
+ * @property \Carbon\Carbon $DataDeNascimentoPaciente
+ * @property string $ProfissaoPaciente
+ * @property string $IntoleranciaAlimentarPaciente
+ * @property string $MastigacaoPaciente
+ * @property string $PrefAlimentaresPaciente
+ * @property string $AversaoAlimentarPaciente
+ * @property int $TabagistaPaciente
+ * @property float $ConsumoAguaPaciente
+ * @property string $UsouSuplemPaciente
+ * @property string $CozinhaCasaPaciente
+ * @property string $Tempo_parouPaciente
  * @property int $Cidade_idCidade
  * @property int $Estado_idEstado
  * @property int $Endereco_idEndereco
- * @property float $TrabalhaHoraDia
- * @property float $ConsumoMedio
- * @property int $Cigar_dia
- * @property int $Etilista
- * @property string $Desjejum
- * @property string $Lanche1
- * @property string $Almoco
- * @property string $Lanche2
- * @property string $Jantar
- * @property string $Ceia
- * @property string $Rotina
- * @property int $Excluido
+ * @property float $TrabalhaHoraDiaPaciente
+ * @property float $ConsumoMedioPaciente
+ * @property int $Cigar_diaPaciente
+ * @property int $EtilistaPaciente
+ * @property string $DesjejumPaciente
+ * @property string $Lanche1Paciente
+ * @property string $AlmocoPaciente
+ * @property string $Lanche2Paciente
+ * @property string $JantarPaciente
+ * @property string $CeiaPaciente
+ * @property string $RotinaPaciente
+ * @property int $ExcluidoPaciente
  * 
  * @property \App\Models\Cidade $cidade
  * @property \App\Models\Endereco $endereco
@@ -59,53 +59,53 @@ class Paciente extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'Tabagista' => 'int',
-		'ConsumoAgua' => 'float',
+		'TabagistaPaciente' => 'int',
+		'ConsumoAguaPaciente' => 'float',
 		'Cidade_idCidade' => 'int',
 		'Estado_idEstado' => 'int',
 		'Endereco_idEndereco' => 'int',
-		'TrabalhaHoraDia' => 'float',
-		'ConsumoMedio' => 'float',
-		'Cigar_dia' => 'int',
-		'Etilista' => 'int',
-		'Excluido' => 'int'
+		'TrabalhaHoraDiaPaciente' => 'float',
+		'ConsumoMedioPaciente' => 'float',
+		'Cigar_diaPaciente' => 'int',
+		'EtilistaPaciente' => 'int',
+		'ExcluidoPaciente' => 'int'
 	];
 
 	protected $dates = [
-		'DataDeNascimento'
+		'DataDeNascimentoPaciente'
 	];
 
 	protected $fillable = [
-		'Nome',
-		'Telefone',
-		'Email',
-		'Sexo',
-		'DataDeNascimento',
-		'Profissao',
-		'IntoleranciaAlimentar',
-		'Mastigacao',
-		'PrefAlimentares',
-		'AversaoAlimentar',
-		'Tabagista',
-		'ConsumoAgua',
-		'UsouSuplem',
-		'CozinhaCasa',
-		'Tempo_parou',
+		'NomePaciente',
+		'TelefonePaciente',
+		'EmailPaciente',
+		'SexoPaciente',
+		'DataDeNascimentoPaciente',
+		'ProfissaoPaciente',
+		'IntoleranciaAlimentarPaciente',
+		'MastigacaoPaciente',
+		'PrefAlimentaresPaciente',
+		'AversaoAlimentarPaciente',
+		'TabagistaPaciente',
+		'ConsumoAguaPaciente',
+		'UsouSuplemPaciente',
+		'CozinhaCasaPaciente',
+		'Tempo_parouPaciente',
 		'Cidade_idCidade',
 		'Estado_idEstado',
 		'Endereco_idEndereco',
-		'TrabalhaHoraDia',
-		'ConsumoMedio',
-		'Cigar_dia',
-		'Etilista',
-		'Desjejum',
-		'Lanche1',
-		'Almoco',
-		'Lanche2',
-		'Jantar',
-		'Ceia',
-		'Rotina',
-		'Excluido'
+		'TrabalhaHoraDiaPaciente',
+		'ConsumoMedioPaciente',
+		'Cigar_diaPaciente',
+		'EtilistaPaciente',
+		'DesjejumPaciente',
+		'Lanche1Paciente',
+		'AlmocoPaciente',
+		'Lanche2Paciente',
+		'JantarPaciente',
+		'CeiaPaciente',
+		'RotinaPaciente',
+		'ExcluidoPaciente'
 	];
 
 	public function cidade()

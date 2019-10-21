@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 19 Oct 2019 14:57:29 +0000.
+ * Date: Mon, 21 Oct 2019 18:22:08 +0000.
  */
 
 namespace App\Models;
@@ -13,21 +13,21 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Diagnostico
  * 
  * @property int $idDadosClinicos
- * @property int $Diabetes_melitus
- * @property int $Displidemia
- * @property int $Gastrite
- * @property int $Hepatopatia
- * @property int $Depressao
- * @property int $Has
- * @property int $Cardiopata
- * @property int $Neoplasia
- * @property int $Ansiedade
- * @property int $Renite_sinusite
- * @property int $Ic
- * @property int $Nefropatia
- * @property int $Ulcera
- * @property int $Irritabilidade
- * @property string $Outras
+ * @property int $Diabetes_melitusDiagnostico
+ * @property int $DisplidemiaDiagnostico
+ * @property int $GastriteDiagnostico
+ * @property int $HepatopatiaDiagnostico
+ * @property int $DepressaoDiagnostico
+ * @property int $HasDiagnostico
+ * @property int $CardiopataDiagnostico
+ * @property int $NeoplasiaDiagnostico
+ * @property int $AnsiedadeDiagnostico
+ * @property int $Renite_sinusiteDiagnostico
+ * @property int $IcDiagnosticoDiagnostico
+ * @property int $NefropatiaDiagnostico
+ * @property int $UlceraDiagnostico
+ * @property int $IrritabilidadeDiagnostico
+ * @property string $OutrasDiagnostico
  * 
  * @property \Illuminate\Database\Eloquent\Collection $consulta
  *
@@ -40,38 +40,38 @@ class Diagnostico extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'Diabetes_melitus' => 'int',
-		'Displidemia' => 'int',
-		'Gastrite' => 'int',
-		'Hepatopatia' => 'int',
-		'Depressao' => 'int',
-		'Has' => 'int',
-		'Cardiopata' => 'int',
-		'Neoplasia' => 'int',
-		'Ansiedade' => 'int',
-		'Renite_sinusite' => 'int',
-		'Ic' => 'int',
-		'Nefropatia' => 'int',
-		'Ulcera' => 'int',
-		'Irritabilidade' => 'int'
+		'Diabetes_melitusDiagnostico' => 'int',
+		'DisplidemiaDiagnostico' => 'int',
+		'GastriteDiagnostico' => 'int',
+		'HepatopatiaDiagnostico' => 'int',
+		'DepressaoDiagnostico' => 'int',
+		'HasDiagnostico' => 'int',
+		'CardiopataDiagnostico' => 'int',
+		'NeoplasiaDiagnostico' => 'int',
+		'AnsiedadeDiagnostico' => 'int',
+		'Renite_sinusiteDiagnostico' => 'int',
+		'IcDiagnosticoDiagnostico' => 'int',
+		'NefropatiaDiagnostico' => 'int',
+		'UlceraDiagnostico' => 'int',
+		'IrritabilidadeDiagnostico' => 'int'
 	];
 
 	protected $fillable = [
-		'Diabetes_melitus',
-		'Displidemia',
-		'Gastrite',
-		'Hepatopatia',
-		'Depressao',
-		'Has',
-		'Cardiopata',
-		'Neoplasia',
-		'Ansiedade',
-		'Renite_sinusite',
-		'Ic',
-		'Nefropatia',
-		'Ulcera',
-		'Irritabilidade',
-		'Outras'
+		'Diabetes_melitusDiagnostico',
+		'DisplidemiaDiagnostico',
+		'GastriteDiagnostico',
+		'HepatopatiaDiagnostico',
+		'DepressaoDiagnostico',
+		'HasDiagnostico',
+		'CardiopataDiagnostico',
+		'NeoplasiaDiagnostico',
+		'AnsiedadeDiagnostico',
+		'Renite_sinusiteDiagnostico',
+		'IcDiagnosticoDiagnostico',
+		'NefropatiaDiagnostico',
+		'UlceraDiagnostico',
+		'IrritabilidadeDiagnostico',
+		'OutrasDiagnostico'
 	];
 
 	public function consulta()

@@ -23,21 +23,21 @@ class CreateDiagnosticoTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idDadosClinicos');
-            $table->tinyInteger('Diabetes_melitus')->nullable();
-            $table->tinyInteger('Displidemia')->nullable();
-            $table->tinyInteger('Gastrite')->nullable();
-            $table->tinyInteger('Hepatopatia')->nullable();
-            $table->tinyInteger('Depressao')->nullable();
-            $table->tinyInteger('Has')->nullable();
-            $table->tinyInteger('Cardiopata')->nullable();
-            $table->tinyInteger('Neoplasia')->nullable();
-            $table->tinyInteger('Ansiedade')->nullable();
-            $table->tinyInteger('Renite_sinusite')->nullable();
-            $table->tinyInteger('Ic')->nullable();
-            $table->tinyInteger('Nefropatia')->nullable();
-            $table->tinyInteger('Ulcera')->nullable();
-            $table->tinyInteger('Irritabilidade')->nullable();
-            $table->string('Outras', 45)->nullable();
+            $table->tinyInteger('Diabetes_melitusDiagnostico')->nullable();
+            $table->tinyInteger('DisplidemiaDiagnostico')->nullable();
+            $table->tinyInteger('GastriteDiagnostico')->nullable();
+            $table->tinyInteger('HepatopatiaDiagnostico')->nullable();
+            $table->tinyInteger('DepressaoDiagnostico')->nullable();
+            $table->tinyInteger('HasDiagnostico')->nullable();
+            $table->tinyInteger('CardiopataDiagnostico')->nullable();
+            $table->tinyInteger('NeoplasiaDiagnostico')->nullable();
+            $table->tinyInteger('AnsiedadeDiagnostico')->nullable();
+            $table->tinyInteger('Renite_sinusiteDiagnostico')->nullable();
+            $table->tinyInteger('IcDiagnosticoDiagnostico')->nullable();
+            $table->tinyInteger('NefropatiaDiagnostico')->nullable();
+            $table->tinyInteger('UlceraDiagnostico')->nullable();
+            $table->tinyInteger('IrritabilidadeDiagnostico')->nullable();
+            $table->string('OutrasDiagnostico', 45)->nullable();
         });
     }
 

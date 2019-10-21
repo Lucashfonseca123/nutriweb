@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 19 Oct 2019 14:57:29 +0000.
+ * Date: Mon, 21 Oct 2019 18:22:08 +0000.
  */
 
 namespace App\Models;
@@ -13,8 +13,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Nutricionistum
  * 
  * @property int $idNutricionista
- * @property string $Nome
- * @property string $Senha
+ * @property string $NomeNutricionista
+ * @property string $SenhaNutricionista
  * 
  * @property \Illuminate\Database\Eloquent\Collection $consulta
  *
@@ -26,8 +26,8 @@ class Nutricionistum extends Eloquent
 	public $timestamps = false;
 
 	protected $fillable = [
-		'Nome',
-		'Senha'
+		'NomeNutricionista',
+		'SenhaNutricionista'
 	];
 
 	public function consulta()

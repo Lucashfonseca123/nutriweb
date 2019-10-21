@@ -41,9 +41,9 @@
                                             <tr>
                                         <tbody>
                                            
-                                            <td> {{$pacientes->Nome}}</td>
-                                            <td> {{$pacientes->Email}}</td>
-                                            <td><?php echo date('d/m/Y', strtotime($pacientes->DataDeNascimento)); ?></td>
+                                            <td> {{$pacientes->NomePaciente}}</td>
+                                            <td> {{$pacientes->EmailPaciente}}</td>
+                                            <td><?php echo date('d/m/Y', strtotime($pacientes->DataDeNascimentoPaciente)); ?></td>
                                              <form action="/buscar_consultas_id" method="get">
                                             {{csrf_field()}}
                                             <input type="text" class="form-control escondido" id="pessoas" name="busca"  value = "{{$pacientes->idPaciente}}" >
@@ -63,73 +63,70 @@
                                 <h6 class="col">Dados antropométricos<br><br></h6>   
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">Peso
-                                        <input type="text" name="peso" value="{{$paciente->Peso}}" class="form-control col-md-4" readonly >
+                                        <input type="text" name="peso" value="{{$paciente->PesoConsulta}}" class="form-control col-md-4" readonly >
                                     </label>
      
                                     <label for="nome" class="col-md-3">Estatura
-                                        <input type="text" name="estatura" value="{{$paciente->Estatura}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="estatura" value="{{$paciente->EstaturaConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                     <label for="nome" class="col-md-3">Circuferência da cintura
-                                        <input type="text" name="cirCintura"  value="{{$paciente->Circ_cintura}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="cirCintura"  value="{{$paciente->Circ_cinturaConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                 </div>
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">Circuferência do abdômen
-                                        <input type="text" name="circAbd"  value="{{$paciente->Circ_abdomen}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="circAbd"  value="{{$paciente->Circ_abdomenConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                     <label for="nome" class="col-md-3">Circuferência do quadril
-                                        <input type="text" name="cirQuad"  value="{{$paciente->Circ_quadril}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="cirQuad"  value="{{$paciente->Circ_quadrilConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                     <label for="nome" class="col-md-3">Circuferência coxa proximal direita
-                                        <input type="text" name="cirCxDir"  value="{{$paciente->Circ_coxa_prox_dir}}"  class="form-control col-md-4" readonly >
+                                        <input type="text" name="cirCxDir"  value="{{$paciente->Circ_coxa_prox_dirConsulta}}"  class="form-control col-md-4" readonly >
                                     </label>
                                 </div>
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">Circuferência coxa proximal esquerda
-                                        <input type="text" name="cirCxEsq"  value="{{$paciente->Circ_coxa_prox_esq}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="cirCxEsq"  value="{{$paciente->Circ_coxa_prox_esqConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                     <label for="nome" class="col-md-3">Circuferência da panturrilha
-                                        <input type="text" name="circ_pantu"  value="{{$paciente->Circ_pantu}}"  class="form-control col-md-4" readonly>
+                                        <input type="text" name="circ_pantu"  value="{{$paciente->Circ_pantuConsulta}}"  class="form-control col-md-4" readonly>
                                     </label>
                                     <label for="nome" class="col-md-3">Circuferência do braço direito
-                                        <input type="text" name="cirBraDir"  value="{{$paciente->Circ_braco_dir}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="cirBraDir"  value="{{$paciente->Circ_braco_dirConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                 </div>
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">Circuferência do braço esquerdo
-                                        <input type="text" name="cirBraEsq"  value="{{$paciente->Circ_braco_esq}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="cirBraEsq"  value="{{$paciente->Circ_braco_esqConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                     <label for="nome" class="col-md-3">Circuferência do punho
-                                        <input type="text" name="cirPunho"  value="{{$paciente->Circ_punho}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="cirPunho"  value="{{$paciente->Circ_punhoConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                     <label for="nome" class="col-md-3">% Gordura
-                                        <input type="text" name="gordura"  value="{{$paciente->Porc_gordura}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="gordura"  value="{{$paciente->Porc_gorduraConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                 </div>
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">% Muscular
-                                        <input type="text" name="muscular"  value="{{$paciente->Porc_muscular}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="muscular"  value="{{$paciente->Porc_muscularConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                     <label for="nome" class="col-md-3">TMB
-                                        <input type="text" name="tmb"  value="{{$paciente->Tmb}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="tmb"  value="{{$paciente->TmbConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                     <label for="nome" class="col-md-3">Body Age
-                                        <input type="text" name="bodyAge"  value="{{$paciente->Body_age}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="bodyAge"  value="{{$paciente->Body_ageConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                 </div>
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">Gordura Viceral
-                                        <input type="text" name="gordVisc"  value="{{$paciente->Gord_visceral}}" class="form-control col-md-4" readonly>
+                                        <input type="text" name="gordVisc"  value="{{$paciente->Gord_visceralConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
                                 </div>
                                     <label>
                                         <label  class="col-me-6">
-                                        <button class="btn btn-success" type="submit">Anterior</button>
+                                        <button class="btn btn-dark" type="submit">Cardápio</button>
                                     </label>
-                                    <label class="col-md-6">
-                                        
-                                        <button class="btn btn-success" type="submit">Próxima</button>
-                                    </label>
+                                    
                             </div>
                              @endforeach
                               {{ $consultaPacientes->appends(Illuminate\Support\Facades\Input::except('page'))->links() }}

@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 19 Oct 2019 14:57:28 +0000.
+ * Date: Mon, 21 Oct 2019 18:22:08 +0000.
  */
 
 namespace App\Models;
@@ -17,30 +17,30 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $Objetivos_idObjetivos
  * @property int $Atividade_Fisica_idAtividade_Fisica
  * @property int $Nutricionista_idNutricionista
- * @property float $Porc_gordura
- * @property float $Porc_muscular
- * @property float $Peso
- * @property float $Estatura
- * @property float $Circ_cintura
- * @property float $Circ_quadril
- * @property float $Circ_coxa_prox_esq
- * @property float $Circ_coxa_prox_dir
- * @property float $Circ_pantu
- * @property int $Tmb
- * @property int $Body_age
- * @property int $Gord_visceral
+ * @property float $Porc_gorduraConsulta
+ * @property float $Porc_muscularConsulta
+ * @property float $PesoConsulta
+ * @property float $EstaturaConsulta
+ * @property float $Circ_cinturaConsulta
+ * @property float $Circ_quadrilConsulta
+ * @property float $Circ_coxa_prox_esqConsulta
+ * @property float $Circ_coxa_prox_dirConsulta
+ * @property float $Circ_pantuConsulta
+ * @property int $TmbConsulta
+ * @property int $Body_ageConsulta
+ * @property int $Gord_visceralConsulta
  * @property int $Cardapio_idCardapio
  * @property int $Diagnostico_idDados Clinicos
- * @property float $Circ_abdomen
- * @property float $Circ_braco_dir
- * @property float $Circ_braco_esq
- * @property float $Circ_punho
- * @property \Carbon\Carbon $Data_consulta
+ * @property float $Circ_abdomenConsulta
+ * @property float $Circ_braco_dirConsulta
+ * @property float $Circ_braco_esqConsulta
+ * @property float $Circ_punhoConsulta
+ * @property \Carbon\Carbon $Data_consultaConsulta
  * @property int $AltGastrointestinais_idAltGastrointestinais
  * @property int $AntFamiliares_idAntFamiliares
  * @property int $AltClinicas_idAltClinicas
- * @property int $Alteracao
- * @property int $Primeira
+ * @property int $AlteracaoConsulta
+ * @property int $PrimeiraConsulta
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * 
@@ -65,33 +65,33 @@ class Consultum extends Eloquent
 		'Objetivos_idObjetivos' => 'int',
 		'Atividade_Fisica_idAtividade_Fisica' => 'int',
 		'Nutricionista_idNutricionista' => 'int',
-		'Porc_gordura' => 'float',
-		'Porc_muscular' => 'float',
-		'Peso' => 'float',
-		'Estatura' => 'float',
-		'Circ_cintura' => 'float',
-		'Circ_quadril' => 'float',
-		'Circ_coxa_prox_esq' => 'float',
-		'Circ_coxa_prox_dir' => 'float',
-		'Circ_pantu' => 'float',
-		'Tmb' => 'int',
-		'Body_age' => 'int',
-		'Gord_visceral' => 'int',
+		'Porc_gorduraConsulta' => 'float',
+		'Porc_muscularConsulta' => 'float',
+		'PesoConsulta' => 'float',
+		'EstaturaConsulta' => 'float',
+		'Circ_cinturaConsulta' => 'float',
+		'Circ_quadrilConsulta' => 'float',
+		'Circ_coxa_prox_esqConsulta' => 'float',
+		'Circ_coxa_prox_dirConsulta' => 'float',
+		'Circ_pantuConsulta' => 'float',
+		'TmbConsulta' => 'int',
+		'Body_ageConsulta' => 'int',
+		'Gord_visceralConsulta' => 'int',
 		'Cardapio_idCardapio' => 'int',
 		'Diagnostico_idDados Clinicos' => 'int',
-		'Circ_abdomen' => 'float',
-		'Circ_braco_dir' => 'float',
-		'Circ_braco_esq' => 'float',
-		'Circ_punho' => 'float',
+		'Circ_abdomenConsulta' => 'float',
+		'Circ_braco_dirConsulta' => 'float',
+		'Circ_braco_esqConsulta' => 'float',
+		'Circ_punhoConsulta' => 'float',
 		'AltGastrointestinais_idAltGastrointestinais' => 'int',
 		'AntFamiliares_idAntFamiliares' => 'int',
 		'AltClinicas_idAltClinicas' => 'int',
-		'Alteracao' => 'int',
-		'Primeira' => 'int'
+		'AlteracaoConsulta' => 'int',
+		'PrimeiraConsulta' => 'int'
 	];
 
 	protected $dates = [
-		'Data_consulta'
+		'Data_consultaConsulta'
 	];
 
 	protected $fillable = [
@@ -99,30 +99,30 @@ class Consultum extends Eloquent
 		'Objetivos_idObjetivos',
 		'Atividade_Fisica_idAtividade_Fisica',
 		'Nutricionista_idNutricionista',
-		'Porc_gordura',
-		'Porc_muscular',
-		'Peso',
-		'Estatura',
-		'Circ_cintura',
-		'Circ_quadril',
-		'Circ_coxa_prox_esq',
-		'Circ_coxa_prox_dir',
-		'Circ_pantu',
-		'Tmb',
-		'Body_age',
-		'Gord_visceral',
+		'Porc_gorduraConsulta',
+		'Porc_muscularConsulta',
+		'PesoConsulta',
+		'EstaturaConsulta',
+		'Circ_cinturaConsulta',
+		'Circ_quadrilConsulta',
+		'Circ_coxa_prox_esqConsulta',
+		'Circ_coxa_prox_dirConsulta',
+		'Circ_pantuConsulta',
+		'TmbConsulta',
+		'Body_ageConsulta',
+		'Gord_visceralConsulta',
 		'Cardapio_idCardapio',
 		'Diagnostico_idDados Clinicos',
-		'Circ_abdomen',
-		'Circ_braco_dir',
-		'Circ_braco_esq',
-		'Circ_punho',
-		'Data_consulta',
+		'Circ_abdomenConsulta',
+		'Circ_braco_dirConsulta',
+		'Circ_braco_esqConsulta',
+		'Circ_punhoConsulta',
+		'Data_consultaConsulta',
 		'AltGastrointestinais_idAltGastrointestinais',
 		'AntFamiliares_idAntFamiliares',
 		'AltClinicas_idAltClinicas',
-		'Alteracao',
-		'Primeira'
+		'AlteracaoConsulta',
+		'PrimeiraConsulta'
 	];
 
 	public function altclinica()

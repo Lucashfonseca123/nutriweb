@@ -23,14 +23,14 @@ class CreateAltclinicasTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idAltClinicas');
-            $table->tinyInteger('Cabelo_quebradico')->nullable();
-            $table->tinyInteger('Unhas_fracas')->nullable();
-            $table->tinyInteger('Palidez')->nullable();
-            $table->string('Outros', 45)->nullable();
-            $table->integer('HabitosIntestinal')->nullable();
-            $table->integer('Frequencia_urinaria')->nullable();
-            $table->string('Passado_Cirurgico', 45)->nullable();
-            $table->string('Meidcamentos', 45)->nullable();
+            $table->tinyInteger('Cabelo_quebradicoAltCinicas')->nullable();
+            $table->tinyInteger('Unhas_fracasAltCinicas')->nullable();
+            $table->tinyInteger('PalidezAltCinicas')->nullable();
+            $table->string('OutrosAltCinicas', 45)->nullable();
+            $table->integer('HabitosIntestinalAltCinicas')->nullable();
+            $table->integer('Frequencia_urinariaAltCinicas')->nullable();
+            $table->string('Passado_CirurgicoAltCinicas', 45)->nullable();
+            $table->string('MedicamentosAltCinicas', 45)->nullable();
         });
     }
 

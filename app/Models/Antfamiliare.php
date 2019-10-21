@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 19 Oct 2019 14:57:28 +0000.
+ * Date: Mon, 21 Oct 2019 18:22:08 +0000.
  */
 
 namespace App\Models;
@@ -13,16 +13,16 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Antfamiliare
  * 
  * @property int $idAntFamiliares
- * @property int $Diabetes_melitus
- * @property int $Dislipedemia
- * @property int $Hepatopatia
- * @property int $Has
- * @property int $Cardiopatia
- * @property int $Cancer
- * @property int $Avc
- * @property int $Nefropatia
- * @property int $Obesidade
- * @property string $Outras
+ * @property int $Diabetes_melitusAntFamiliares
+ * @property int $DislipedemiaAntFamiliares
+ * @property int $HepatopatiaAntFamiliares
+ * @property int $HasAntFamiliares
+ * @property int $CardiopatiaAntFamiliares
+ * @property int $CancerAntFamiliares
+ * @property int $AvcAntFamiliares
+ * @property int $NefropatiaAntFamiliares
+ * @property int $ObesidadeAntFamiliares
+ * @property string $OutrasAntFamiliares
  * 
  * @property \Illuminate\Database\Eloquent\Collection $consulta
  *
@@ -34,28 +34,28 @@ class Antfamiliare extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'Diabetes_melitus' => 'int',
-		'Dislipedemia' => 'int',
-		'Hepatopatia' => 'int',
-		'Has' => 'int',
-		'Cardiopatia' => 'int',
-		'Cancer' => 'int',
-		'Avc' => 'int',
-		'Nefropatia' => 'int',
-		'Obesidade' => 'int'
+		'Diabetes_melitusAntFamiliares' => 'int',
+		'DislipedemiaAntFamiliares' => 'int',
+		'HepatopatiaAntFamiliares' => 'int',
+		'HasAntFamiliares' => 'int',
+		'CardiopatiaAntFamiliares' => 'int',
+		'CancerAntFamiliares' => 'int',
+		'AvcAntFamiliares' => 'int',
+		'NefropatiaAntFamiliares' => 'int',
+		'ObesidadeAntFamiliares' => 'int'
 	];
 
 	protected $fillable = [
-		'Diabetes_melitus',
-		'Dislipedemia',
-		'Hepatopatia',
-		'Has',
-		'Cardiopatia',
-		'Cancer',
-		'Avc',
-		'Nefropatia',
-		'Obesidade',
-		'Outras'
+		'Diabetes_melitusAntFamiliares',
+		'DislipedemiaAntFamiliares',
+		'HepatopatiaAntFamiliares',
+		'HasAntFamiliares',
+		'CardiopatiaAntFamiliares',
+		'CancerAntFamiliares',
+		'AvcAntFamiliares',
+		'NefropatiaAntFamiliares',
+		'ObesidadeAntFamiliares',
+		'OutrasAntFamiliares'
 	];
 
 	public function consulta()

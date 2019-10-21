@@ -23,8 +23,8 @@ class CreateRefeicaoTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idRefeicao');
-            $table->string('Descricao', 45)->nullable();
-            $table->string('Horario',20)->nullable();
+            $table->string('DescricaoRefeicao', 45)->nullable();
+            $table->string('HorarioRefeicao',20)->nullable();
         });
     }
 

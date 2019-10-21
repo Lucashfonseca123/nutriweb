@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 19 Oct 2019 14:57:29 +0000.
+ * Date: Mon, 21 Oct 2019 18:22:08 +0000.
  */
 
 namespace App\Models;
@@ -13,7 +13,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Grupo
  * 
  * @property int $idGrupo
- * @property string $Nome
+ * @property string $NomeGrupo
  * 
  * @property \App\Models\GrupoHasAlimento $grupo_has_alimento
  * @property \Illuminate\Database\Eloquent\Collection $itemcardapios
@@ -27,7 +27,7 @@ class Grupo extends Eloquent
 	public $timestamps = false;
 
 	protected $fillable = [
-		'Nome'
+		'NomeGrupo'
 	];
 
 	public function grupo_has_alimento()

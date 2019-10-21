@@ -20,8 +20,7 @@ define('LARAVEL_START', microtime(true));
 | loading any of our classes later on. It feels great to relax.
 |
 */
-
-
+require __DIR__.'/../vendor/autoload.php';
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
@@ -33,7 +32,6 @@ define('LARAVEL_START', microtime(true));
 | the responses back to the browser and delight our users.
 |
 */
-require __DIR__.'/../bootstrap/autoload.php';
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 

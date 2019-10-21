@@ -43,8 +43,8 @@
                                 <form action=""></form>
                                 <tbody>
                                     <th scope="row">  {{$paciente->idPaciente}}  </th>
-                                    <td> {{$paciente->Nome}}</td>
-                                    <td> {{$paciente->Email}}</td>
+                                    <td> {{$paciente->NomePaciente}}</td>
+                                    <td> {{$paciente->EmailPaciente}}</td>
                                     <td><button class="btn btn-primary mostrar" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
                                     </td>
                                 </tr>

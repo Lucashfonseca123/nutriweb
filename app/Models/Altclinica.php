@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 19 Oct 2019 14:57:28 +0000.
+ * Date: Mon, 21 Oct 2019 18:22:08 +0000.
  */
 
 namespace App\Models;
@@ -13,14 +13,14 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Altclinica
  * 
  * @property int $idAltClinicas
- * @property int $Cabelo_quebradico
- * @property int $Unhas_fracas
- * @property int $Palidez
- * @property string $Outros
- * @property int $HabitosIntestinal
- * @property int $Frequencia_urinaria
- * @property string $Passado_Cirurgico
- * @property string $Meidcamentos
+ * @property int $Cabelo_quebradicoAltCinicas
+ * @property int $Unhas_fracasAltCinicas
+ * @property int $PalidezAltCinicas
+ * @property string $OutrosAltCinicas
+ * @property int $HabitosIntestinalAltCinicas
+ * @property int $Frequencia_urinariaAltCinicas
+ * @property string $Passado_CirurgicoAltCinicas
+ * @property string $MedicamentosAltCinicas
  * 
  * @property \Illuminate\Database\Eloquent\Collection $consulta
  *
@@ -32,22 +32,22 @@ class Altclinica extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'Cabelo_quebradico' => 'int',
-		'Unhas_fracas' => 'int',
-		'Palidez' => 'int',
-		'HabitosIntestinal' => 'int',
-		'Frequencia_urinaria' => 'int'
+		'Cabelo_quebradicoAltCinicas' => 'int',
+		'Unhas_fracasAltCinicas' => 'int',
+		'PalidezAltCinicas' => 'int',
+		'HabitosIntestinalAltCinicas' => 'int',
+		'Frequencia_urinariaAltCinicas' => 'int'
 	];
 
 	protected $fillable = [
-		'Cabelo_quebradico',
-		'Unhas_fracas',
-		'Palidez',
-		'Outros',
-		'HabitosIntestinal',
-		'Frequencia_urinaria',
-		'Passado_Cirurgico',
-		'Meidcamentos'
+		'Cabelo_quebradicoAltCinicas',
+		'Unhas_fracasAltCinicas',
+		'PalidezAltCinicas',
+		'OutrosAltCinicas',
+		'HabitosIntestinalAltCinicas',
+		'Frequencia_urinariaAltCinicas',
+		'Passado_CirurgicoAltCinicas',
+		'MedicamentosAltCinicas'
 	];
 
 	public function consulta()

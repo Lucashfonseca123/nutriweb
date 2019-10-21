@@ -23,8 +23,8 @@ class CreateNutricionistaTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idNutricionista');
-            $table->string('Nome', 45)->nullable();
-            $table->string('Senha', 45)->nullable();
+            $table->string('NomeNutricionista', 45)->nullable();
+            $table->string('SenhaNutricionista', 45)->nullable();
         });
     }
 

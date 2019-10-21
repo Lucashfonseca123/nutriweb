@@ -23,10 +23,10 @@ class CreateEnderecoTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idEndereco');
-            $table->string('Rua', 45)->nullable();
-            $table->integer('Numero')->nullable();
-            $table->char('Cep', 8)->nullable();
-            $table->string('Bairo')->nullable();
+            $table->string('RuaEndereco', 45)->nullable();
+            $table->integer('NumeroEndereco')->nullable();
+            $table->char('CepEndereco', 8)->nullable();
+            $table->string('BairoEndereco')->nullable();
         });
     }
 

@@ -40,7 +40,7 @@
                     </thead>
                         
                         <th scope="row" >{{$varp = $varp+1}}</th>
-                        <td> {{$paciente->Nome}}</td>
+                        <td> {{$paciente->NomePaciente}}</td>
                         <td><?php echo date('d/m/Y', strtotime($paciente->created_at)); ?> </td>
                         
                         <td><button class="btn btn-dark" type="button" >Montar cardápio</button></td>
@@ -68,7 +68,7 @@
                                 <tr>
                                 <form action=""></form>
                                 <tbody>
-                                    <td> {{$paciente->Nome}}</td>
+                                    <td> {{$paciente->NomePaciente}}</td>
                                     <td> <?php echo date('d/m/Y', strtotime($paciente->created_at)); ?></td>
                                     <td><span style="cursor: pointer" onclick="window.open('/edit_paciente', '', 'width=600,height=300')"><td>
                                     <td><button class="btn btn-dark mostrar" alvo="{{$paciente->idPaciente}}">Montar Cardápio</button> 
