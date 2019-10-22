@@ -23,7 +23,7 @@ class CreateGrupoTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idGrupo');
-            $table->string('Nome', 45)->nullable();
+            $table->string('NomeGrupo', 45)->nullable();
         });
     }
 

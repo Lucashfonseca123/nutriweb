@@ -87,7 +87,7 @@ class TelaInicialController extends Controller
 
     public function busca(){
         $var  = " ";
-        $consultaPaciente = Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->where('Nome', "like", "%".$var."%")->get();    
+        $consultaPaciente = Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->where('NomePaciente', "like", "%".$var."%")->get();    
         return view('paciente_info')->with('consultaPaciente', $consultaPaciente);
     }
 }

@@ -23,8 +23,8 @@ class CreateItemcardapioTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('IdItemCardapio');
-            $table->integer('Opcoes')->nullable();
-            $table->string('Horario',20)->nullable();
+            $table->integer('OpcoesItemCardapio')->nullable();
+            $table->string('HorarioItemCardapio',20)->nullable();
             $table->unsignedInteger('Cardapio_idCardapio');
             $table->unsignedInteger('Grupo_idGrupo');
             $table->unsignedInteger('Refeicao_idRefeicao');

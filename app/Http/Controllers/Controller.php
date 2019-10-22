@@ -70,7 +70,11 @@ class Controller extends BaseController
         return view ('recuperar_senha');
     }
 
-    public function edit_paciente(){
-     return view('paciente_editar');
-     }   
+    public function editarInfo(){
+         return view('editar_info');
+    } 
+
+    public function hist_consultas(){
+        return view('historico_consultas');
+    }
 }

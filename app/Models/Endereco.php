@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Thu, 03 Oct 2019 17:56:41 +0000.
+ * Date: Mon, 21 Oct 2019 18:22:08 +0000.
  */
 
 namespace App\Models;
@@ -13,10 +13,10 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Endereco
  * 
  * @property int $idEndereco
- * @property string $Rua
- * @property int $Numero
- * @property string $Cep
- * @property string $Bairo
+ * @property string $RuaEndereco
+ * @property int $NumeroEndereco
+ * @property string $CepEndereco
+ * @property string $BairoEndereco
  * 
  * @property \Illuminate\Database\Eloquent\Collection $pacientes
  *
@@ -29,14 +29,14 @@ class Endereco extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'Numero' => 'int'
+		'NumeroEndereco' => 'int'
 	];
 
 	protected $fillable = [
-		'Rua',
-		'Numero',
-		'Cep',
-		'Bairo'
+		'RuaEndereco',
+		'NumeroEndereco',
+		'CepEndereco',
+		'BairoEndereco'
 	];
 
 	public function pacientes()

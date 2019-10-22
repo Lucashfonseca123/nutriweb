@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Consultum;
 use App\Models\Paciente;
 
-class RelatorioController extends Controller
+class HistoricoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -47,8 +47,7 @@ class RelatorioController extends Controller
      */
     public function show($id)
     {
-        $consulta = Paciente::where('Paciente_idPaciente', $id)->get();
-        return view('relatorio',compact('consulta',$consulta));
+        //
     }
 
     /**
@@ -87,8 +86,13 @@ class RelatorioController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-        $consultaPaciente = Paciente::where('NomePaciente', "like", "%".$var."%")->get();  
-        //Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->  
-        return view('relatorio')->with('consultaPaciente', $consultaPaciente);
+      $consultaPaciente = Paciente::where('NomePaciente', "like", "%".$var."%")->get();
+      return view('historico_consultas')->with('consultaPaciente', $consultaPaciente);   
+    }
+
+    public function buscaId(Request $request){
+      $var = $request->busca;
+      $consultaPacientes = Consultum::where('Paciente_idPaciente', '=', $var)->paginate(1);
+      return view('historico_consultas')->with('consultaPacientes', $consultaPacientes);   
     }
 }

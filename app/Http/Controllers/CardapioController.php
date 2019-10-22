@@ -87,7 +87,7 @@ class CardapioController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-        $lista_nome = Paciente::where('Nome', "like", "%".$var."%")->get();    
+        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->get();    
         return view('cardapio_cadastro')->with('lista_nome', $lista_nome);
     }
 

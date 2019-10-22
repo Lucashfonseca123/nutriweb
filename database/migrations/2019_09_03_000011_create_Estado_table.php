@@ -23,7 +23,7 @@ class CreateEstadoTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idEstado');
-            $table->string('Nome', 45)->nullable();
+            $table->string('NomeEstado', 45)->nullable();
         });
     }
 

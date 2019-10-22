@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Thu, 03 Oct 2019 17:56:41 +0000.
+ * Date: Mon, 21 Oct 2019 18:22:08 +0000.
  */
 
 namespace App\Models;
@@ -13,18 +13,18 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Altgastrointestinai
  * 
  * @property int $idAltGastrointestinais
- * @property int $Disfagia
- * @property int $Vomitos
- * @property int $Anorexia
- * @property int $Flatulencias
- * @property int $Pirose
- * @property int $Diarreia
- * @property int $Dispepsia
- * @property int $Polidipsia
- * @property int $Nausea
- * @property int $Constipacao
- * @property int $Edema
- * @property string $Outras
+ * @property int $DisfagiaAltGastrointestinais
+ * @property int $VomitosAltGastrointestinais
+ * @property int $AnorexiaAltGastrointestinais
+ * @property int $FlatulenciasAltGastrointestinais
+ * @property int $PiroseAltGastrointestinais
+ * @property int $DiarreiaAltGastrointestinais
+ * @property int $DispepsiaAltGastrointestinais
+ * @property int $PolidipsiaAltGastrointestinais
+ * @property int $NauseaAltGastrointestinais
+ * @property int $ConstipacaoAltGastrointestinais
+ * @property int $EdemaAltGastrointestinais
+ * @property string $OutrasAltGastrointestinais
  * 
  * @property \Illuminate\Database\Eloquent\Collection $consulta
  *
@@ -36,32 +36,32 @@ class Altgastrointestinai extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'Disfagia' => 'int',
-		'Vomitos' => 'int',
-		'Anorexia' => 'int',
-		'Flatulencias' => 'int',
-		'Pirose' => 'int',
-		'Diarreia' => 'int',
-		'Dispepsia' => 'int',
-		'Polidipsia' => 'int',
-		'Nausea' => 'int',
-		'Constipacao' => 'int',
-		'Edema' => 'int'
+		'DisfagiaAltGastrointestinais' => 'int',
+		'VomitosAltGastrointestinais' => 'int',
+		'AnorexiaAltGastrointestinais' => 'int',
+		'FlatulenciasAltGastrointestinais' => 'int',
+		'PiroseAltGastrointestinais' => 'int',
+		'DiarreiaAltGastrointestinais' => 'int',
+		'DispepsiaAltGastrointestinais' => 'int',
+		'PolidipsiaAltGastrointestinais' => 'int',
+		'NauseaAltGastrointestinais' => 'int',
+		'ConstipacaoAltGastrointestinais' => 'int',
+		'EdemaAltGastrointestinais' => 'int'
 	];
 
 	protected $fillable = [
-		'Disfagia',
-		'Vomitos',
-		'Anorexia',
-		'Flatulencias',
-		'Pirose',
-		'Diarreia',
-		'Dispepsia',
-		'Polidipsia',
-		'Nausea',
-		'Constipacao',
-		'Edema',
-		'Outras'
+		'DisfagiaAltGastrointestinais',
+		'VomitosAltGastrointestinais',
+		'AnorexiaAltGastrointestinais',
+		'FlatulenciasAltGastrointestinais',
+		'PiroseAltGastrointestinais',
+		'DiarreiaAltGastrointestinais',
+		'DispepsiaAltGastrointestinais',
+		'PolidipsiaAltGastrointestinais',
+		'NauseaAltGastrointestinais',
+		'ConstipacaoAltGastrointestinais',
+		'EdemaAltGastrointestinais',
+		'OutrasAltGastrointestinais'
 	];
 
 	public function consulta()

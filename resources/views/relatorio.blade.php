@@ -41,8 +41,8 @@
                             				<tr>
 			                            <tbody>
 			                               
-			                                <td> {{$paciente->Nome}}</td>
-			                                <td> {{$paciente->Email}}</td>
+			                                <td> {{$paciente->NomePaciente}}</td>
+			                                <td> {{$paciente->EmailPaciente}}</td>
 			                                <td><button class="btn btn-primary mostrar selecionar" value="busca" id = "btn-{{$paciente->idPaciente}}" type="submit" data-id = "{{$paciente->idPaciente}}" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
 			                                </td>
 			                            </tr>
@@ -84,13 +84,16 @@
 				url: '/grafico',
 				data: {'id' : id},
 				success: function (response){
-					console.log(response);
+					console.log(response.length);
                     for (var i = response.length - 1; i >= 0; i--) {
-                        peso[i] = response[i].Peso;
-                       altura[i] = response[i].Estatura;
+                        peso[i] = response[i].PesoConsulta;
+                       altura[i] = response[i].EstaturaConsulta;
                        data[i] = response[i].created_at;
                     }
 					mostrarGrafico(peso, altura , id , data);
+                    peso = [];
+                    altura = [];
+                    data = [];
 
         			
             }

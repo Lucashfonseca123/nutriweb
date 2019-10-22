@@ -59,8 +59,8 @@
                       Trabalha quantas horas por dia:
                     </div>
                     <div class="form-group">
-                        <label for="nome" class="col-md-1">
-                            <input type="number" class="form-control " name="hrsDia">
+                        <label for="nome" class="col-md-2">
+                            <input type="number" min="0" max= "23"class="form-control " name="hrsDia">
                         </label>
 
                     </div>
@@ -167,7 +167,7 @@
                             <input id="atv2" name="descricaoAf" placeholder="Descreva..." class="form-control input-md" disabled>
                         </label>
                         <label class="col-md-2" for="prependedtext">
-                            <input id="atv2" name="tempoParado" placeholder="Dias/Meses..." class="form-control input-md" disabled>
+                            <input id="atv3" name="tempoParado" placeholder="Dias/Meses..." class="form-control input-md" disabled>
                         </label>
                     </div>
                     <div class="form-group">
@@ -443,7 +443,7 @@
                             Unhas fracas &emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="palidez" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="radio" name="palidez" id="filhos" value=1 onclick="habilita('filhos_qtd') ">
                             Palidez &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
@@ -522,7 +522,7 @@
                             <input type="text" name="peso" class="form-control col-md-4" pattern="[0-9]+$">
                         </label>
                         <label for="nome" class="col-md-3">Estatura
-                            <input type="text" name="estatura" class="form-control col-md-4">
+                            <input type="text" name="estatura" OnKeyPress="formatar('#.##', this)" class="form-control col-md-4">
                         </label>
                         <label for="nome" class="col-md-3">Circunferência da cintura
                             <input type="text" name="cirCintura" class="form-control col-md-4">
