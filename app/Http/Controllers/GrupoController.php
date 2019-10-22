@@ -36,10 +36,12 @@ class GrupoController extends Controller
      */
     public function store(Request $request)
     {
+        dd(collect($request));
         $var = new GrupoHasAlimento;
         $varG = new Grupo;
 
         $var->Alimento_id = $request->id_alimento;
+
         $var->Qtde_Alimento = $request->quantidadeAlimento;
             
         $varG->Nome = $request->nomeGrupo;

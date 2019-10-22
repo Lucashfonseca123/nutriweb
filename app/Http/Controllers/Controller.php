@@ -44,7 +44,7 @@ class Controller extends BaseController
     }
 
     public function buscar_alimentos(){
-            $var = Alimentos_taco::all();
+            $var = Cmvcoltaco3::all();
             return view('alimentos_busca')->with('teste', $var);
     }
 

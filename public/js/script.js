@@ -1,5 +1,4 @@
 jQuery(function ($) {
-
     $(".sidebar-dropdown > a").click(function() {
         $(".sidebar-submenu").slideUp(200);
         if (
@@ -186,7 +185,7 @@ $(document).ready(function() {
         fieldWrapper.append(removeButton);
         $("#buildyourform").append(fieldWrapper);
     });
-    
+
     $("#preview").click(function() {
         $("#yourform").remove();
         var fieldSet = $("<fieldset id=\"yourform\"><legend>Your Form</legend></fieldset>");
@@ -203,7 +202,7 @@ $(document).ready(function() {
                     break;
                 case "textarea":
                     input = $("<textarea id=\"" + id + "\" name=\"" + id + "\" ></textarea>");
-                    break;    
+                    break;
             }
             fieldSet.append(label);
             fieldSet.append(input);
@@ -215,13 +214,66 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 
-    $(".add-more").click(function(){ 
-        var html = $(".copy").html();
-        $(".after-add-more").after(html);
+    $(".add-more").click(function(){
+        // var html = $(".copy").html();
+        // $(".after-add-more").after(html);
+        var alimento = $("#alimentoTaco").val();
+        var nomeAlimento = $(`#${alimento}`).html();
+        var quantiAlimento = $("#quantidadeAli").val();
+        var divAlimento = `<div id="div-${alimento}">
+             <label for="">
+                <input type="text" name="id_alimento" style="width: 180px" class="form-control" placeholder="${nomeAlimento}" disabled>
+             </label>  
+             &ensp;
+             <label for="">
+                <input type="text" id="Atr2" style="width: 114px" name="quantidadeAlimento" class="form-control" placeholder="${quantiAlimento}" disabled>
+             </label>  
+             &ensp;
+             <label for="">
+                <div class="remove btn btn-danger" target="#div-${alimento}" id="remove-${alimento}">-</div>
+            </label>
+            </div>`;
+
+        $(".copy").append(divAlimento);
+        chamaRemove();
     });
 
-    $("body").on("click",".remove",function(){ 
+    // $(".removeAppend").remove(alimento);
+
+    //id="alimentoTaco" id="quantidadeAli"
+    $("body").on("click",".remove",function(){
         $(this).parents(".control-group").remove();
     });
 
-  });
+    // $(".removes").remove();
+
+});
+
+function chamaRemove(){
+    $(".remove").click(function(){
+        $($(this).attr('target')).remove();
+    });
+}
+
+// var serialize = function (form) {
+//     var data = form.serializeArray();
+//     var json = {};
+//     data.forEach(function (item) {
+//         if (!json[item.name]) {
+//             json[item.name] = item.value;
+//             return;
+//         }
+//         if (!Array.isArray(json[item.name]))
+//             json[item.name] = [json[item.name]];
+//         json[item.name].push(item.value);
+//     });
+//     return json;
+// }
+//
+// var form = $("form");
+// var enviar = $("#enviado");
+// enviar.on("click", function (event) {
+//     event.preventDefault();
+//     var json = serialize(form);
+//     console.log(json);
+// });
