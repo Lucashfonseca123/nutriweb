@@ -182,22 +182,7 @@
                         <input type="text" class="form-control"  id="frequencia" name="frequencia">
                     </label>
                 </div>        
-                    <!-- DADOS CLÍNICOS 
-                    $varDiag->Diabetes_melitus = $request->diabetes;
-                    $varDiag->Has = $request->hAs;
-                    $varDiag->Ic = $request->ic;
-                    $varDiag->Displidemia = $request->displidemia;
-                    $varDiag->Cardiopata = $request->cardiopata;
-                    $varDiag->Nefropatia =$request->nefropatia;
-                    $varDiag->Gastrite = $request->gastrite;
-                    $varDiag->Neoplasia =$request->neoplasia;
-                    $varDiag->Ulcera = $request->ulcera;
-                    $varDiag->Hepatopatia = $request->hepatopatia;
-                    $varDiag->Ansiedade = $request->ansiedade;
-                    $varDiag->Irritabilidade = $request->irritabilidade;
-                    $varDiag->Depressao = $request->depressao;
-                    $varDiag->Renite_sinusite = $request->renSin;
-                    $varDiag->Outras = $request->descreva;-->
+                   
                 <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado4">Dados clínicos</button>
                 <br>
                 <div class="escondido" id="revelado4">
@@ -207,71 +192,72 @@
 
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="diabetes" id="doencas" value=1 onclick="desabilita('doencas_qtd')" >
+                            <input type="hidden" name="diabetes" value="0" />
+                            <input type="checkbox" name="diabetes" id="doencas" value=1 onclick="desabilita('doencas_qtd')" >
                              Diabetes Melitus &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="hAs" id="doencas" value=1 onclick="habilita('doencas_qtd')">
+                            <input type="checkbox" name="hAs" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             HAS &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="ic" id="doencas" value=1 onclick="habilita('doencas_qtd')">
+                            <input type="checkbox" name="ic" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             IC &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="displidemia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
+                            <input type="checkbox" name="displidemia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Dislipidemia &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="cardiopata" id="doencas" value=1 onclick="desabilita('doencas_qtd')">
+                            <input type="checkbox" name="cardiopata" id="doencas" value=1 onclick="desabilita('doencas_qtd')">
                              Cardiopata &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="nefropatia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
+                            <input type="checkbox" name="nefropatia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Nefropatia &emsp;&emsp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="gastrite" id="doencas" value=1 onclick="habilita('doencas_qtd')">
+                            <input type="checkbox" name="gastrite" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Gastrite &emsp;&emsp;&emsp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="neoplasia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
+                            <input type="checkbox" name="neoplasia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Neoplasia &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="ulcera" id="doencas" value=1 onclick="desabilita('doencas_qtd')" >
+                            <input type="checkbox" name="ulcera" id="doencas" value=1 onclick="desabilita('doencas_qtd')" >
                              Úlcera &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="hepatopatia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
+                            <input type="checkbox" name="hepatopatia" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Hepatopatia &emsp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="ansiedade" id="doencas" value=1 onclick="habilita('doencas_qtd')">
+                            <input type="checkbox" name="ansiedade" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Ansiedade &emsp;&ensp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="irritabilidade" id="doencas" value=1 onclick="habilita('doencas_qtd')">
+                            <input type="checkbox" name="irritabilidade" id="doencas" value=1 onclick="habilita('doencas_qtd')">
                             Irritabilidade &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="depressao" id="doencas" value=1 onclick="desabilita('doencas_qtd')">
+                            <input type="checkbox" name="depressao" id="doencas" value=1 onclick="desabilita('doencas_qtd')">
                              Depressão &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="renSin" id="doencas" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox" name="renSin" id="doencas" value=1 onclick="habilita('filhos_qtd')">
                              Renite/Sinusite &emsp;&ensp;
                         </label>
-                        <input type="radio" name="obj4" id="obj4" value=1 onclick="habilita('obj5')">
+                        <input type="checkbox" name="obj4" id="obj4" value=1 onclick="habilita('obj5')">
                         Outros
                         </label>
                     </span>
@@ -282,66 +268,56 @@
                         </label>
                     </div>
 
-                    <!-- ANTECEDENTES FAMILIARES -->
-                    <!-- ANTECEDENTES FAMILIARES
-                    $varAf->Diabetes_melitus$request->diabetesAF;
-                $varAf->Has = $request->hAsAF;
-                $varAf->Avc = $request->avc;
-                $varAf->Displidemia = $request->displidemiaAF;
-                $varAf->Cardiopata = $request->cardiopataAF;
-                $varAf->Nefropatia = $request->nefropatiaAF;
-                $varAf->Hepatopatia = $request->hepatopatiaAF;
-                $varAf->Cancer = $request->cancer;
-                $varAf->Obesidade = $request->obesidade;
-                $varAf->Outras = $request->descrevaAF; -->
+                    
+                <!--
 
                     <h6 class="col"><br>Antecedentes familiares<br><br></h6>
 
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="diabetesAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
+                            <input type="checkbox"  name="diabetesAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Diabetes Melitus &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="hAsAF" id="filhos" value=1 >
+                            <input type="checkbox"  name="hAsAF" id="filhos" value=1 >
                             HAS &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="avc" id="filhos" value=1 >
+                            <input type="checkbox"  name="avc" id="filhos" value=1 >
                             AVC &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="displidemiaAF" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox"  name="displidemiaAF" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Dislipidemia &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="cardiopataAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
+                            <input type="checkbox"  name="cardiopataAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Cardiopatia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="nefropatiaAF" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox"  name="nefropatiaAF" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Nefropatia &emsp;&emsp;&ensp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="hepatopatiaAF" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox"  name="hepatopatiaAF" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Hepatopatia &emsp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="cancer" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox"  name="cancer" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Câncer &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="obesidade" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
+                            <input type="checkbox"  name="obesidade" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Obesidade &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="obj6" id="obj6" value=1 onclick="habilita('descrevaAF')">
+                            <input type="checkbox" name="obj6" id="obj6" value=1 onclick="habilita('descrevaAF')">
                             Outros
                         </label>
                     </span>
@@ -352,85 +328,66 @@
                         </label>
                     </div>
 
-                    <!-- ALTERAÇÕES GASTROINTESTINAIS
-                    $varAltG->Disfagia = $request->disfagia;
-                $varAltG->Pirose = $request->pirose;
-                $varAltG->Nausea =$request->nausea;          
-                $varAltG->Vomitos = $request->vomitos;  
-                $varAltG->Diarreia = $request->diarreia;  
-                $varAltG->Constipacao = $request->constipacao;
-                $varAltG->Anorexia = $request->anorexia; 
-                $varAltG->Dispepsia = $request->dispepsia;   
-                $varAltG->Edema = $request->edema; 
-                $varAltG->Flatulencias$request->flatulencias;
-                $varAltG->Polidipsia = $request->polidipsia; -->
+                  
 
                     <h6 class="col"><br>Alterações gastrointestinais <br><br></h6>
 
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="disfagia" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
+                            <input type="checkbox" name="disfagia" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Disfagia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="pirose" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox"  name="pirose" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Pirose &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="nausea" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox"  name="nausea" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Náusea &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="vomitos" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox"  name="vomitos" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Vômitos &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="diarreia" id="filhos" value=1 onclick="desabilita('filhos_qtd')">
+                            <input type="checkbox"  name="diarreia" id="filhos" value=1 onclick="desabilita('filhos_qtd')">
                              Diarréia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="constipacao" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox" name="constipacao" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Constipação &emsp;&emsp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
                            &ensp;
-                            <input type="radio" name="anorexia" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox"  name="anorexia" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Anorexia &emsp;&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="dispepsia" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox"  name="dispepsia" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Dispepsia &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="edema" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
+                            <input type="checkbox"  name="edema" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Edema &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="flatulencias" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox"  name="flatulencias" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Flatulências &emsp;&emsp;&ensp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="polidipsia" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox"  name="polidipsia" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Polidipsia &emsp;&ensp;&ensp;&ensp;
                         </label>
                     </span>
                     <br><br>
 
-                    <!-- ALTERAÇÕES CLÍNICAS  $varAltC->Cabelo_quebradico = $request->cabelos;
-                $varAltC->Unhas_fracas = $request->unhas;
-                $varAltC->Palidez = $request->palidez;
-                $varAltC->Outros = $request->descrevaAC;
-                $varAltC->HabitosIntestinail = $request->habitosIntestinais;
-                $varAltC->Frequencia_urinaria = $request->freUri;
-                $varAltC->Passado_Cirurgico = $request->passado;
-                $varAltC->Medicamentos = $request->descrevaMed;-->
-
+                
                     <h6 class="col"><br>Alterações clínicas<br><br></h6>
 
                     <span class="input-group-addon col">
@@ -493,22 +450,7 @@
                     </div>
                 </div>
                 </div>
-                    <!-- EXAMES LABORATORIAIS
-                    $varCon->Peso = $request->peso;
-                $varCon->Estatura = $request->estatura; 
-                $varCon->Circ_cintura = $request->cirCintura;
-                $varCon->Circ_abdomen = $request->circAbd;
-                $varCon->Circ_quadril = $request->cirQuad;
-                $varCon->Circ_coxa_prox_dir = $request->cirCxDir;
-                $varCon->Circ_coxa_prox_esq = $request->cirCxEsq;
-                $varCon->Circ_braco_dir = $request->cirBraDir;
-                $varCon->Circ_braco_esq = $request->cirBraEsq;
-                $varCon->Circ_punho = $request->cirPunho;
-                $varCon->Porc_gordura$request->gordura;
-                $varCon->Porc_muscular = $request->muscular;
-                $varCon->Tmb = $request->tmb;
-                $varCon->Body_age = $request->bodyAge;
-                $varCon->Gord_visceral = $request->gordVisc;-->
+                  
 
             <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado5">Exames laboratoriais</button>
             <br>
@@ -580,25 +522,7 @@
                     </div>
                 </div>
 
-                    <!-- HÁBITOS ALIMENTARES E SOCIAIS 
-                        $varp->IntoleranciaAlimentar = $request->descrevaIntolerancia;
-                $varp->Mastigacao = $request->mastigacao;
-                $varp->PrefAlimentares = $request->prefAlimentares;
-                $varp->AversaoAlimentar = $request->aversoesAlimentares;
-                $varp->Tabagista = $request->tabagista;
-                $varp->Tempo_parou = $request->parou;
-                $varp->Cigar_dia = $request->cigarDia;
-                $varp->Etilista = $request->etilista;
-                $varp->ConsumoMedio = $request->consumo;
-                $varp->ConsumoAgua = $request->consumoAgua;
-                $varp->UsouSuplem = $request->suplementos;
-                $varp->CozinhaCasa = $request->cozinha;
-                $varp->Desjejum = $request->desjejum;
-                $varp->Lanche1 = $request->lanche;
-                $varp->Almoco = $request->almoco
-                $varp->Lanche2 =$request->lanche;
-                $varp->Jantar = $request->jantar;
-                $varp->Ceia = $request->ceia;-->
+                   
                 <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado6">Hábitos alimentares e sociais</button>
                 <br>
                 <div class="escondido" id="revelado6">
@@ -763,7 +687,7 @@
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlTextarea3">Ceia/Horário</label>
                         <textarea class="form-control" name="ceia" id="exampleFormControlTextarea3" rows="5"></textarea>
-                    </div>
+                    </div>-->
                    <div class="form-group">
                         <label class="col-md-2 control-label" for="Cadastrar"></label>
                         <div class="col-md-8">

@@ -143,6 +143,8 @@ class EditarInfoController extends Controller
     public function busca(Request $request){
         $var = $request->busca;
         $consultaPaciente = Paciente::join('Endereco','Endereco_idEndereco','=','Endereco.idEndereco')->where('NomePaciente', "like", "%".$var."%")->get();  
+        
+        //$pacientes = Consultum::join('Paciente''Paciente_idPaciente','=','Paciente.idPaciente')->join('Objetivo',)->where('Alteracao','=','1')->orWhere('Primeira','=','1')->latest('upload_time')->first();
         return view('editar_info')->with('consultaPaciente', $consultaPaciente);
     }
 }
