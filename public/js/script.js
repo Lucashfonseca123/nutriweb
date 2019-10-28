@@ -211,6 +211,7 @@ $(document).ready(function() {
     });
 });
 
+let contadorGrupo = 0;
 
 $(document).ready(function() {
 
@@ -222,11 +223,11 @@ $(document).ready(function() {
         var quantiAlimento = $("#quantidadeAli").val();
         var divAlimento = `<div id="div-${alimento}">
              <label for="">
-                <input type="text" name="id_alimento" style="width: 180px" class="form-control" placeholder="${nomeAlimento}" disabled>
+                <input type="text" name="id_alimento[${contadorGrupo}]" style="width: 180px" class="form-control" value="${alimento}" readonly>
              </label>  
              &ensp;
              <label for="">
-                <input type="text" id="Atr2" style="width: 114px" name="quantidadeAlimento" class="form-control" placeholder="${quantiAlimento}" disabled>
+                <input type="text" style="width: 114px" name="quantidadeAlimento[${contadorGrupo}]" class="form-control" value="${quantiAlimento}" readonly>
              </label>  
              &ensp;
              <label for="">
@@ -234,6 +235,7 @@ $(document).ready(function() {
             </label>
             </div>`;
 
+        contadorGrupo++;
         $(".copy").append(divAlimento);
         chamaRemove();
     });

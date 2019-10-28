@@ -14,8 +14,8 @@
                         <div class="col-md-5 card-header escondido" id="revelado3">
                             <div class="form-group">
                                 <label for=""><h6>Nome do grupo</h6></label>
-                                <input type="text" id="NomeGrupo" name="nomeGrupo" class="form-control" placeholder="Escreva o nome do grupo..">
-                            </div> 
+                                <input type="text" name="nomesGrupo" class="form-control" placeholder="Escreva o nome do grupo..">
+                            </div>
                             <div class="form-group">
                                 <label for="" class="form-group"><h6>Alimentos &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; Quantidade</h6>
                                     <div>
@@ -42,7 +42,7 @@
                                         </div>
                                     </div>
                                 </label>
-                                    <div class="copy">
+                                    <div class="copy" id="alimento">
 
                                     </div>
                             </div>  
@@ -50,39 +50,39 @@
                     </div>
                     </form>
                     <br>
-                        <div class="col-md-4 card-header text-center">
-                            <div class="form-group text-center">
-                                <label for=""><h6>Low carb</h6></label>
-                            </div>
-                            <div class="form-group text-center">
-                                <label for="">
-                                    <input type="text" id="Atr1" style="width: 150px" class="form-control" placeholder="Macarrão" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Atr2" style="width: 114px" class="form-control Atr1" placeholder="4 colheres" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Arroz" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="2 colheres" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Frango" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="2 filés" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Suco" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="1 copo" disabled>
-                                </label>
-                            </div>
-                            <button class="btn btn-danger" id="btn2">Remover grupo<br></button>
-                            <button class="btn btn-dark" id="btn2" onclick="habilita('Atr1')">Editar grupo<br></button>
-                        </div>
+                        {{--<div class="col-md-4 card-header text-center">--}}
+                            {{--<div class="form-group text-center">--}}
+                                {{--<label for=""><h6>Low carb</h6></label>--}}
+                            {{--</div>--}}
+                            {{--<div class="form-group text-center">--}}
+                                {{--<label for="">--}}
+                                    {{--<input type="text" id="Atr1" style="width: 150px" class="form-control" placeholder="Macarrão" disabled>--}}
+                                {{--</label>--}}
+                                {{--<label for="">--}}
+                                    {{--<input type="text" id="Atr2" style="width: 114px" class="form-control Atr1" placeholder="4 colheres" disabled>--}}
+                                {{--</label>--}}
+                                {{--<label for="">--}}
+                                    {{--<input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Arroz" disabled>--}}
+                                {{--</label>--}}
+                                {{--<label for="">--}}
+                                    {{--<input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="2 colheres" disabled>--}}
+                                {{--</label>--}}
+                                {{--<label for="">--}}
+                                    {{--<input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Frango" disabled>--}}
+                                {{--</label>--}}
+                                {{--<label for="">--}}
+                                    {{--<input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="2 filés" disabled>--}}
+                                {{--</label>--}}
+                                {{--<label for="">--}}
+                                    {{--<input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Suco" disabled>--}}
+                                {{--</label>--}}
+                                {{--<label for="">--}}
+                                    {{--<input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="1 copo" disabled>--}}
+                                {{--</label>--}}
+                            {{--</div>--}}
+                            {{--<button class="btn btn-danger" id="btn2">Remover grupo<br></button>--}}
+                            {{--<button class="btn btn-dark" id="btn2" onclick="habilita('Atr1')">Editar grupo<br></button>--}}
+                        {{--</div>--}}
                       
                     </div>
     </main>
