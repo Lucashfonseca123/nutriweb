@@ -141,11 +141,6 @@
                         </label>
                     </div> 
                     <div>
-                    <div class="form-group col-md-4">
-                        <label for="exampleFormControlTextarea3">Horário de trabalho e rotina diária</label>
-                        <textarea class="form-control" name="horErotina" id="exampleFormControlTextarea3" value="{{$paciente->RotinaPaciente}}" rows="7"></textarea>
-                    </div>
-                     <!--
                     <label class="radio-inline col" for="radios-1"><br>Objetivo da consulta <br><br>
                         <input name="objetivo" id="objetivo" value="Manutenção de peso"  type="radio"onclick="desabilita('obj')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}">
                         Manutenção de peso <br>
@@ -164,80 +159,79 @@
                         </label>
                     </div> 
                     <
-                <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado4">Dados clínicos</button>
+            
                 <br>
-                <div class="escondido" id="revelado4">
 
                     <h5 class="col"> <br>Dados clínicos <br></h5>
                     <h6 class="col"> <br>Diagnóstico <br><br></h6>
 
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="diabetes" id="doencas" value=1 onclick="desabilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}" >
+                            <input type="checkbox" name="diabetes" id="doencas" value=1 {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }} >
                              Diabetes Melitus &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="hAs" id="doencas" value=1 onclick="habilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="hAs" id="doencas" value=1 {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                             HAS &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="ic" id="doencas" value=1 onclick="habilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="ic" id="doencas" value=1  {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                             IC &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="displidemia" id="doencas" value=1 onclick="habilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="displidemia" id="doencas" value=1  {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                             Dislipidemia &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="cardiopata" id="doencas" value=1 onclick="desabilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
-                             Cardiopata &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;
+                            <input type="checkbox" name="cardiopata" id="doencas" value=1  {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
+                            Cardiopatia &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="nefropatia" id="doencas" value=1 onclick="habilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="nefropatia" id="doencas" value=1  {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                             Nefropatia &emsp;&emsp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="gastrite" id="doencas" value=1 onclick="habilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="gastrite" id="doencas" value=1  {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                             Gastrite &emsp;&emsp;&emsp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="neoplasia" id="doencas" value=1 onclick="habilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="neoplasia" id="doencas" value=1  {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                             Neoplasia &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="ulcera" id="doencas" value=1 onclick="desabilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }} >
+                            <input type="checkbox" name="ulcera" id="doencas" value=1  {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }} >
                              Úlcera &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="hepatopatia" id="doencas" value=1 onclick="habilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="hepatopatia" id="doencas" value=1  {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                             Hepatopatia &emsp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="ansiedade" id="doencas" value=1 onclick="habilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="ansiedade" id="doencas" value=1  {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                             Ansiedade &emsp;&ensp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="irritabilidade" id="doencas" value=1 onclick="habilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="irritabilidade" id="doencas" value=1  {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                             Irritabilidade &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="depressao" id="doencas" value=1 onclick="desabilita('doencas_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="depressao" id="doencas" value=1 {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                              Depressão &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="renSin" id="doencas" value=1 onclick="habilita('filhos_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="renSin" id="doencas" value=1 {{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                              Renite/Sinusite &emsp;&ensp;
                         </label>
-                        <input type="radio" name="obj4" id="obj4" value=1 onclick="habilita('obj5')">
+                        <input type="checkbox" name="obj4" id="obj4" value=1 onclick="habilita('obj5')"{{$paciente->consulta->first()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>
                         Outros
                         </label>
                     </span>
@@ -251,52 +245,52 @@
                   
 
                     <h6 class="col"><br>Antecedentes familiares<br><br></h6>
-
+                    <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="diabetesAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}" >
-                             Diabetes Melitus &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            <input type="checkbox"  name="diabetesAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" {{$paciente->consulta->first()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }}>
+                            Diabetes Meltius &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="hAsAF" id="filhos" value=1 >
+                            <input type="checkbox"  name="hAsAF" id="filhos" value=1 {{$paciente->consulta->first()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }} >
                             HAS &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="avc" id="filhos" value=1 >
+                            <input type="checkbox"  name="avc" id="filhos" value=1 {{$paciente->consulta->first()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }} >
                             AVC &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="displidemiaAF" id="filhos" value=1 onclick="habilita('filhos_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
-                            Dislipidemia &emsp;&emsp;
+                            <input type="checkbox"  name="displidemiaAF" id="filhos" value=1 {{$paciente->consulta->first()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }}>
+                            Dislipidemia &emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="cardiopataAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox"  name="cardiopataAF" id="filhos" value=1 {{$paciente->consulta->first()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }}>
                              Cardiopatia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="nefropatiaAF" id="filhos" value=1 onclick="habilita('filhos_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox"  name="nefropatiaAF" id="filhos" value=1 {{$paciente->consulta->first()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }}>
                             Nefropatia &emsp;&emsp;&ensp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="hepatopatiaAF" id="filhos" value=1 onclick="habilita('filhos_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox"  name="hepatopatiaAF" id="filhos" value=1 {{$paciente->consulta->first()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }}>
                             Hepatopatia &emsp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="cancer" id="filhos" value=1 onclick="habilita('filhos_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox"  name="cancer" id="filhos" value=1 {{$paciente->consulta->first()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }}>
                             Câncer &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="obesidade" id="filhos" value=1 onclick="desabilita('filhos_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }} >
+                            <input type="checkbox"  name="obesidade" id="filhos" value=1 {{$paciente->consulta->first()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }} >
                              Obesidade &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="obj6" id="obj6" value=1 onclick="habilita('descrevaAF')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox"  name="obj6" id="obj6" value=1 {{$paciente->consulta->first()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }}>
                             Outros
                         </label>
                     </span>
@@ -312,78 +306,78 @@
 
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="disfagia" id="filhos" value=1 onclick="desabilita('filhos_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox"  name="disfagia" id="filhos" value=1 {{$paciente->consulta->first()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>
                              Disfagia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="pirose" id="filhos" value=1 onclick="habilita('filhos_qtd')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox"  name="pirose" id="filhos" value=1 {{$paciente->consulta->first()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>
                             Pirose &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="nausea" id="filhos" value=1 onclick="habilita('filhos_qtd')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="nausea" id="filhos" value=1{{$paciente->consulta->first()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>
                             Náusea &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="vomitos" id="filhos" value=1 onclick="habilita('filhos_qtd')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="vomitos" id="filhos" value=1 {{$paciente->consulta->first()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>
                             Vômitos &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="diarreia" id="filhos" value=1 onclick="desabilita('filhos_qtd')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="diarreia" id="filhos" value=1 {{$paciente->consulta->first()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>
                              Diarréia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="constipacao" id="filhos" value=1 onclick="habilita('filhos_qtd')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="constipacao" id="filhos" value=1 {{$paciente->consulta->first()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>
                             Constipação &emsp;&emsp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
                            &ensp;
-                            <input type="radio" name="anorexia" id="filhos" value=1 onclick="habilita('filhos_qtd')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="anorexia" id="filhos" value=1 {{$paciente->consulta->first()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>
                             Anorexia &emsp;&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="dispepsia" id="filhos" value=1 onclick="habilita('filhos_qtd')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="dispepsia" id="filhos" value=1 {{$paciente->consulta->first()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>
                             Dispepsia &emsp;&emsp;
                         </label>
                     </span>
                     <br>
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="edema" id="filhos" value=1 onclick="desabilita('filhos_qtd')" {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="edema" id="filhos" value=1 {{$paciente->consulta->first()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>
                              Edema &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="flatulencias" id="filhos" value=1 onclick="habilita('filhos_qtd')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="flatulencias" id="filhos" value=1 {{$paciente->consulta->first()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>
                             Flatulências &emsp;&emsp;&ensp;&emsp;&ensp;
                         </label>
                         <label class="radio" for="radios-1">
-                            <input type="radio" name="polidipsia" id="filhos" value=1 onclick="habilita('filhos_qtd')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="polidipsia" id="filhos" value=1 {{$paciente->consulta->first()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>
                             Polidipsia &emsp;&ensp;&ensp;&ensp;
                         </label>
                     </span>
                     <br><br>
 
-                   
+                   altclinica
 
                     <h6 class="col"><br>Alterações clínicas<br><br></h6>
 
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="cabelos" id="filhos" value=1 onclick="desabilita('filhos_qtd')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }} >
+                            <input type="checkbox" name="cabelos" id="filhos" value=1 {{$paciente->consulta->first()->altclinica->Cabelo_quebradicoAltCinicas == 1 ? 'checked' : '' }}>
                              Cabelos quebradiços &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="unhas" id="filhos" value=1 onclick="habilita('filhos_qtd')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="unhas" id="filhos" value=1 {{$paciente->consulta->first()->altclinica->Cabelo_quebradicoAltCinicas == 1 ? 'checked' : '' }}>
                             Unhas fracas &emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="palidez" id="filhos" value=1 onclick="habilita('filhos_qtd') "{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="palidez" id="filhos" value=1 {{$paciente->consulta->first()->altclinica->Cabelo_quebradicoAltCinicas == 1 ? 'checked' : '' }}>
                             Palidez &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="outros2" id="filhos" value=1 onclick="habilita('descrevaAC')"{{$paciente->SexoPaciente == 'F' ? 'checked' : '' }}>
+                            <input type="checkbox" name="outros2" id="filhos" value=1 {{$paciente->consulta->first()->altclinica->Cabelo_quebradicoAltCinicas == 1 ? 'checked' : '' }}>
                             Outros &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                     </span>
@@ -396,14 +390,14 @@
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-3">Hábitos intestinais (Quantas vezes vai ao banheiros)
-                            <input type="number"  name ="habitosIntestinais" value="{{$paciente->habitosIntestinais}}" class="form-control" col-md-3>
+                            <input type="number"  name ="habitosIntestinais" value="{{$paciente->consulta->first()->altclinica->HabitosIntestinalAltCinicas}}" class="form-control" col-md-3>
                         </label>
                         <div class="form-group">
                         <label for="nome" class="col-md-3">Frequência urinária(Quantas vezes urina ao dia)
-                            <input type="number" name ="freUri" value="{{$paciente->habitosIntestinais}}" class="form-control ">
+                            <input type="number" name ="freUri" value="{{$paciente->consulta->first()->altclinica->Frequencia_urinariaAltCinicas}}" class="form-control ">
                         </label>
                         <label class="col" for="prependedtext">Passado cirurgico
-                            <input id="profissao" type="text" name="passado" value="{{$paciente->habitosIntestinais}}" placeholder="" class="form-control col-md-4">
+                            <input id="profissao" type="text" name="passado" value="{{$paciente->consulta->first()->altclinica->Passado_CirurgicoAltCinicas}}" placeholder="" class="form-control col-md-4">
                         </label>
                     </div>
                     <div class="form-group">
@@ -429,11 +423,6 @@
                         </label>
                     </div>
                 </div>
-                <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado6">Hábitos alimentares e sociais</button>
-                <br>
-        
-    -->
-             
                     <h5 class="col"><br>Hábitos alimentares e sociais</h5>
                     <br>
                     <div class="form-group">
