@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 21 Oct 2019 18:22:08 +0000.
+ * Date: Mon, 28 Oct 2019 23:36:20 +0000.
  */
 
 namespace App\Models;
@@ -14,6 +14,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * 
  * @property int $Grupo_id
  * @property int $Alimento_id
+ * @property int $idBuscado
  * @property string $Qtde_Alimento
  * 
  * @property \App\Models\Cmvcoltaco3 $cmvcoltaco3
@@ -28,11 +29,13 @@ class GrupoHasAlimento extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'Alimento_id' => 'int'
+		'Alimento_id' => 'int',
+		'idBuscado' => 'int'
 	];
 
 	protected $fillable = [
 		'Alimento_id',
+		'idBuscado',
 		'Qtde_Alimento'
 	];
 

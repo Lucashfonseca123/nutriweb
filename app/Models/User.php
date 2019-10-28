@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 21 Oct 2019 18:22:09 +0000.
+ * Date: Mon, 28 Oct 2019 23:36:21 +0000.
  */
 
 namespace App\Models;
@@ -15,6 +15,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $id
  * @property string $name
  * @property string $email
+ * @property int $Nutricionista_idNutricionista
  * @property \Carbon\Carbon $email_verified_at
  * @property string $password
  * @property string $remember_token
@@ -25,6 +26,10 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class User extends Eloquent
 {
+	protected $casts = [
+		'Nutricionista_idNutricionista' => 'int'
+	];
+
 	protected $dates = [
 		'email_verified_at'
 	];
@@ -37,6 +42,7 @@ class User extends Eloquent
 	protected $fillable = [
 		'name',
 		'email',
+		'Nutricionista_idNutricionista',
 		'email_verified_at',
 		'password',
 		'remember_token'

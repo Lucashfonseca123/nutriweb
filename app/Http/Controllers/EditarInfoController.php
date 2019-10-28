@@ -141,8 +141,29 @@ class EditarInfoController extends Controller
     }
 
     public function busca(Request $request){
+        //dd($request->all());
         $var = $request->busca;
-        $consultaPaciente = Paciente::join('Endereco','Endereco_idEndereco','=','Endereco.idEndereco')->where('NomePaciente', "like", "%".$var."%")->get();  
+        $consultaPaciente = Paciente::join('Endereco','Endereco_idEndereco','=','Endereco.idEndereco')->where('NomePaciente', "like", "%".$var."%")
+        ->with(['consulta' => function($query) {
+            $query->where('PrimeiraConsulta', 1)->orWhere('AlteracaoConsulta', 1)->with(['altClinica', 'altgastrointestinai', 'antfamiliare', 'atividade_fisica','diagnostico','objetivo']);
+        }])
+        ->get();  
+        
+  
+        //$pacientes = Consultum::join('Paciente''Paciente_idPaciente','=','Paciente.idPaciente')->join('Objetivo',)->where('Alteracao','=','1')->orWhere('Primeira','=','1')->latest('upload_time')->first();
         return view('editar_info')->with('consultaPaciente', $consultaPaciente);
     }
+    /*
+        ->with(['consulta' => function($query) {
+            $query->where('PrimeiraConsulta', 1)
+                ->orWhere('AlteracaoConsulta', 1)
+                ->orderBy('created_at', 'desc');
+        }])
+
+        ->get();  
+         return view('editar_info', [
+            'var' => $var,
+            'consultaPaciente' => $consultaPaciente
+
+        ]);*/
 }
