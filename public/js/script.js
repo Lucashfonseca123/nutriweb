@@ -223,7 +223,8 @@ $(document).ready(function() {
         var quantiAlimento = $("#quantidadeAli").val();
         var divAlimento = `<div id="div-${alimento}">
              <label for="">
-                <input type="text" name="id_alimento[${contadorGrupo}]" style="width: 180px" class="form-control" value="${alimento}" readonly>
+                <input type="hidden" name="id_alimento[${contadorGrupo}]" style="width: 180px" class="form-control" value="${alimento}" readonly>
+                <input type="text"  style="width: 180px" class="form-control" value="${nomeAlimento}" disabled>
              </label>  
              &ensp;
              <label for="">

@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email', 100)->unique();
-            $table->unsignedInteger('Nutricionista_idNutricionista')->nullabe();
+            $table->unsignedInteger('Nutricionista_idNutricionista')->nullabe()->default('0');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

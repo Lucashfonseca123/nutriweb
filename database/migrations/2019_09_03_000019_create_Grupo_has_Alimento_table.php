@@ -24,9 +24,8 @@ class CreateGrupoHasAlimentoTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('Grupo_id');
             $table->unsignedInteger('Alimento_id');
-            $table->integer('idBuscado');
+            $table->Integer('idBuscado');
             $table->string('Qtde_Alimento', 45)->nullable();
-            $table->unsignedInteger('idbuscado');
 
             $table->index(["Alimento_id"], 'fk_Grupo_has_Alimento_CMVColtaco31_idx');
 

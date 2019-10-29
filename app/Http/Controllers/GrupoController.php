@@ -36,34 +36,45 @@ class GrupoController extends Controller
      */
     public function store(Request $request)
     {
+////      dd(collect($request));
+//
+//        $var = new GrupoHasAlimento;
+//        $varG = new Grupo;
+//
+//        $alimentoid = $request->id_alimento;
+//        $qtdealimento = $request->quantidadeAlimento;
+//
+//        $varG->NomeGrupo = $request->nomesGrupo;
+//        $varG->save();
+//
+////        array_map(function($alimento, $quantidade, $grupoid){
+////            GrupoHasAlimento::create([
+////                'Alimento_id' => $alimento,
+////                'Qtde_Alimento' => $quantidade,
+////		        'idBuscado' => $grupoid
+////                ]);
+////        }, $alimentoid, $qtdealimento, $idgrupo );
+//
+//        $var->grupo()->associate($varG);
 
-//      dd(collect($request));
-
-//      $var = new GrupoHasAlimento;
-//      $varG = new Grupo;
+        $var = new GrupoHasAlimento;
+        $varG = new Grupo;
 
         $alimentoid = $request->id_alimento;
         $qtdealimento = $request->quantidadeAlimento;
 
-        $nomesgrupo = $request->nomesGrupo;
+        $varG->NomeGrupo = $request->nomesGrupo;
+        $varG->save();
+        $idgrupo = $varG->idGrupo;
 
-        dd($consulta);
-
-        array_map(function($alimento, $quantidade){
-            GrupoHasAlimento::create([
-                'Alimento_id' => $alimento,
-                'Qtde_Alimento' => $quantidade
-                ]);
-        }, $alimentoid, $qtdealimento );
-
-
-//        $varG->save();
-//        $var->grupo()->associate($varG);
-
-//        $var->save();
-
+        foreach($alimentoid as $key => $alimento){
+        GrupoHasAlimento::create([
+            'Alimento_id' => $alimentoid[$key],
+            'Qtde_Alimento' => $qtdealimento[$key],
+            'idBuscado' => $idgrupo
+        ]);
+    }
         return redirect()->back();
-
     }
 
     /**
