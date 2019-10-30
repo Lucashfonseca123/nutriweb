@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\GrupoHasAlimento;
 use App\Models\Grupo;
+use App\Models\Cmvcoltaco3;
 
 class GrupoController extends Controller
 {
@@ -15,7 +16,8 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        //
+        $var = Cmvcoltaco3::all();
+        return view('grupo_editar')->with('busca_alimentos', $var);
     }
 
     /**
@@ -101,5 +103,20 @@ class GrupoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function busca(Request $request){
+        $var = $request->busca;
+//        $lista_nome = Grupo::where('NomeGrupo', "like", "%".$var."%")->get();
+//        return view('grupo_editar')->with('lista_nome', $lista_nome);
+
+        $consultaGrupo = Grupo::join('Grupo_has_alimento','Grupo.idGrupo','=','Grupo_has_alimento.idBuscado')->where('NomeGrupo', $var)->get();
+        return view('grupo_editar')->with('lista_nome', $consultaGrupo);
+    }
+
+    public function alimentos(){
+        $var = Cmvcoltaco3::all();
+        dd($var);
+        return view('grupo_editar')->with('busca_alimentos', $var);
     }
 }

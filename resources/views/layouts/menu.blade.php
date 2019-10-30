@@ -94,6 +94,9 @@
                                 <li title="Revise ou edite seus cardápios">
                                     <a href="editcardapio">Editar cardapio</a>
                                 </li>
+                                <li title="Adicione grupos nas refeições, crie seu cardápio">
+                                    <a href="{{route('grupoEditar.index')}}">Editar grupo</a>
+                                </li>
                                 <li title="Adicionar alimentos">
                                     <a href="addalimentos">Adicionar alimentos</a>
                                 </li>

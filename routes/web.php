@@ -42,6 +42,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/grupoCadastro', 'GrupoController');
 
+    Route::resource('/grupoEditar', 'GrupoController');
+
+    Route::get('/grupoAlimentos', 'GrupoController@alimentos');
+
     Route::get('/alimentos', 'Controller@buscar_alimentos');
 
     Route::get('/grupo_final', 'Controller@grupo_finalizar');
@@ -59,6 +63,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/testerota', 'HomeController@store')->name('test');
 
     Route::get('/testar_consulta', 'ReconsultaController@busca');
+
+    Route::get('/testar_grupo', 'GrupoController@busca');
 
     Route::get('/retorne', 'ReconsultaController@retorne');
 

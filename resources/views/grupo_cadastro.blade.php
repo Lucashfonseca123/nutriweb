@@ -50,39 +50,7 @@
                     </div>
                     </form>
                     <br>
-                        {{--<div class="col-md-4 card-header text-center">--}}
-                            {{--<div class="form-group text-center">--}}
-                                {{--<label for=""><h6>Low carb</h6></label>--}}
-                            {{--</div>--}}
-                            {{--<div class="form-group text-center">--}}
-                                {{--<label for="">--}}
-                                    {{--<input type="text" id="Atr1" style="width: 150px" class="form-control" placeholder="Macarrão" disabled>--}}
-                                {{--</label>--}}
-                                {{--<label for="">--}}
-                                    {{--<input type="text" id="Atr2" style="width: 114px" class="form-control Atr1" placeholder="4 colheres" disabled>--}}
-                                {{--</label>--}}
-                                {{--<label for="">--}}
-                                    {{--<input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Arroz" disabled>--}}
-                                {{--</label>--}}
-                                {{--<label for="">--}}
-                                    {{--<input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="2 colheres" disabled>--}}
-                                {{--</label>--}}
-                                {{--<label for="">--}}
-                                    {{--<input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Frango" disabled>--}}
-                                {{--</label>--}}
-                                {{--<label for="">--}}
-                                    {{--<input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="2 filés" disabled>--}}
-                                {{--</label>--}}
-                                {{--<label for="">--}}
-                                    {{--<input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Suco" disabled>--}}
-                                {{--</label>--}}
-                                {{--<label for="">--}}
-                                    {{--<input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="1 copo" disabled>--}}
-                                {{--</label>--}}
-                            {{--</div>--}}
-                            {{--<button class="btn btn-danger" id="btn2">Remover grupo<br></button>--}}
-                            {{--<button class="btn btn-dark" id="btn2" onclick="habilita('Atr1')">Editar grupo<br></button>--}}
-                        {{--</div>--}}
+
                       
                     </div>
     </main>

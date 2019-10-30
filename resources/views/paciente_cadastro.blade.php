@@ -268,9 +268,6 @@
                         </label>
                     </div>
 
-                    
-                <!--
-
                     <h6 class="col"><br>Antecedentes familiares<br><br></h6>
 
                     <span class="input-group-addon col">
@@ -328,7 +325,7 @@
                         </label>
                     </div>
 
-                  
+
 
                     <h6 class="col"><br>Alterações gastrointestinais <br><br></h6>
 
@@ -387,7 +384,7 @@
                     </span>
                     <br><br>
 
-                
+
                     <h6 class="col"><br>Alterações clínicas<br><br></h6>
 
                     <span class="input-group-addon col">
@@ -450,7 +447,7 @@
                     </div>
                 </div>
                 </div>
-                  
+
 
             <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado5">Exames laboratoriais</button>
             <br>
@@ -502,7 +499,7 @@
                          <label for="nome" class="col-md-3">% Gordura
                             <input type="text" name="gordura" class="form-control col-md-4">
                         </label>
-                        
+
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-3">% Muscular
@@ -515,14 +512,14 @@
                             <input type="text" name="bodyAge" class="form-control col-md-4">
                         </label>
                     </div>
-                    <div class="form-group">    
+                    <div class="form-group">
                         <label for="nome" class="col-md-3">Gordura Viceral
                             <input type="text" name="gordVisc" class="form-control col-md-4">
                         </label>
                     </div>
                 </div>
 
-                   
+
                 <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado6">Hábitos alimentares e sociais</button>
                 <br>
                 <div class="escondido" id="revelado6">
@@ -575,7 +572,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label class="col-md-3" for="prependedtext">Preferência alimentares
                             <input id="profissao" name="prefAlimentares" placeholder="" class="form-control">
@@ -687,7 +684,7 @@
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlTextarea3">Ceia/Horário</label>
                         <textarea class="form-control" name="ceia" id="exampleFormControlTextarea3" rows="5"></textarea>
-                    </div>-->
+                    </div>
                    <div class="form-group">
                         <label class="col-md-2 control-label" for="Cadastrar"></label>
                         <div class="col-md-8">

@@ -290,7 +290,7 @@
                              Obesidade &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-0">
-                            <input type="checkbox"  name="obj6" id="obj6" value=1 {{$paciente->consulta->first()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }}>
+                            <input type="checkbox"  name="obj6" id="obj6" value=1 {{$paciente->consulta->first()->antfamiliare->OutrasAntFamiliares != '' ? 'checked' : '' }}>
                             Outros
                         </label>
                     </span>

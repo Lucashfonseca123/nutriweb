@@ -258,6 +258,19 @@ function chamaRemove(){
     });
 }
 
+$(document).ready(function(){
+    $("#enviaDados").on('click', function(){
+        $.ajax({
+            url: '/grupoAlimentos',
+            cache: false,
+            type: "GET",
+            success: function(){
+
+            }
+        })
+    });
+});
+
 // var serialize = function (form) {
 //     var data = form.serializeArray();
 //     var json = {};

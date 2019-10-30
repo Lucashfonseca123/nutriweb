@@ -50,7 +50,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                        </div>
                         <form method="post" action="{{route('reconsultarpaciente.store')}}">
                         <!-- <form method="post"  action="{{route('reconsultarpaciente.store', ['id' => $paciente->idPaciente])}}"> -->
                         {{csrf_field()}}
