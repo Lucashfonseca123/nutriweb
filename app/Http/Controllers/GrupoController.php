@@ -111,7 +111,8 @@ class GrupoController extends Controller
 //        return view('grupo_editar')->with('lista_nome', $lista_nome);
 
         $consultaGrupo = Grupo::join('Grupo_has_alimento','Grupo.idGrupo','=','Grupo_has_alimento.idBuscado')->where('NomeGrupo', $var)->get();
-        return view('grupo_editar')->with('lista_nome', $consultaGrupo);
+        $var = Cmvcoltaco3::all();
+        return view('grupo_editar')->with('lista_nome', $consultaGrupo)->with('busca_alimentos', $var);
     }
 
     public function alimentos(){

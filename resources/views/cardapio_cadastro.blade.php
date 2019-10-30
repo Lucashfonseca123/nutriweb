@@ -12,19 +12,13 @@
                         <input type="text" class="form-control col-md-6" name="busca" placeholder="Digite aqui...">
                         <button class="btn btn-primary" type="submit" value="busca">Busca</button>
                         &ensp;&ensp;
-                        <span style="cursor: pointer" onclick="window.open('/grupo_final', '', 'width=600,height=300')">
-                            <button class="btn btn-success" type="button">Salvar cardapio </button>
-                        </span>&ensp;&ensp;
-                        <span style="cursor: pointer" onclick="window.open('/resumo_paciente', '', 'width=600,height=300')">
-                            <button class="btn btn-dark" type="button">Gerar resumo</button>
-                        </span>
-                    </div>
                 </form>
+                    </div>
                 <br><br>
                 @if(isset($lista_nome))
                     @forelse($lista_nome as $paciente)
-                    <div class="container mt-4 mostrar">
-                            <table class="table">
+                    <div class="container mt-4 mostrar esconder">
+                            <table class="table menu">
                                 <thead>
                                     <tr>
                                         <th scope="col">Id</th>
@@ -36,19 +30,29 @@
                                 <tr>
                                     <tbody>
                                         <th scope="row">{{$paciente->idPaciente}}</th>
-                                        <td> {{$paciente->Nome}}</td>
-                                        <td> {{$paciente->Email}}</td>
-                                        <td><button class="btn btn-primary mostrar" alvo="{{$paciente->idPaciente}}">Selecionar</button>
-                                        </td>
+                                        <td> {{$paciente->NomePaciente}}</td>
+                                        <td> {{$paciente->EmailPaciente}}</td>
+                                        <td><button class="btn btn-primary mostrar_esconder" alvo="{{$paciente->idPaciente}}">Selecionar</button>
+
+                                        <span style="cursor: pointer" onclick="window.open('/resumo_paciente', '', 'width=600,height=300')">
+                                          <button class="btn btn-dark" type="button">Gerar resumo</button>
+                        </span></td>
                                     </tr>
                                     </tbody>
                             </table>
-                        </div>
-
+                    </div>
                 <div class="table escondido" id="{{$paciente->idPaciente}}">
                 <table>
+                <form action="{{route('cardapioCadastro.store')}}" method="post">
+                {{csrf_field()}}
                 <h4>
-                Paciente: {{$paciente->Nome}}
+                    <label for="">
+                        Paciente: {{$paciente->NomePaciente}}
+                    </label>
+                    &emsp;&emsp;
+                    <label for="">
+                        <button class="btn btn-success" id="btn2" type="input">Salvar cardápio</button>
+                    </label>
                 <br><br>
                 </h4>
                     <thead>
@@ -60,68 +64,55 @@
                         </tr>
                     </thead>
                     <tbody>
+
                     <tr>
                         <th scope="row" style="vertical-align: middle">Café da manhã</th>
                         <th class="col">
-                                <input type="time" class="form-control col-md-10">
+                                <input type="time" name="time[1]" class="form-control col-md-10">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" name="states[]" multiple="multiple">
-                                    <option value="AL">{{$paciente->Nome}}</option>
-                                    <option value="WY">Wyoming</option>
+                                <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[1]" id="idgrupo">
+                                    @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                        @foreach($group as $grupos)
+                                            <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                        @endforeach
+                                    @endif
                                 </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
                                 </div>
                             </div>
-                            </div>
-                                <label for="" class="escondido" id="revelado2">
-                                    <div>
-                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
-                                    </div>
-                                </label>
-                            </label>
                         </td>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
-                                    <option value="AL">Alabama</option>
-                                        
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado3" type="button">Adicionar</button>
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[2]" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
                             </div>
-                            </div>
-                                <label for="" class="escondido" id="revelado3">
-                                    <div>
-                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
-                                    </div>
-                                </label>
-                            </label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row" style="vertical-align: middle">Lanche da manhã</th>
                         <th class="col">
-                            <input type="time" class="form-control col-md-10">
+                            <input type="time" name="time[2]" class="form-control col-md-10">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
-                                    <option value="AL">Alabama</option>
-                                        
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[3]" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
-                            </div>
                             </div>
                                 <label for="" class="escondido" id="revelado2">
                                     <div>
@@ -133,210 +124,149 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
-                                    <option value="AL">Alabama</option>
-                                        
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[4]" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
                             </div>
-                            </div>
-                                <label for="" class="escondido" id="revelado2">
-                                    <div>
-                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
-                                    </div>
-                                </label>
-                            </label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row" style="vertical-align: middle">Almoço</th>
                         <th class="col">
-                            <input type="time" class="form-control col-md-10">
+                            <input type="time" name="time[3]" class="form-control col-md-10">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
-                                    <option value="AL">Alabama</option>
-                                        
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[5]" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
                             </div>
-                            </div>
-                                <label for="" class="escondido" id="revelado2">
-                                    <div>
-                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
-                                    </div>
-                                </label>
-                            </label>
                         </td>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
-                                    <option value="AL">Alabama</option>
-                                        
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[6]" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
                             </div>
-                            </div>
-                                <label for="" class="escondido" id="revelado2">
-                                    <div>
-                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
-                                    </div>
-                                </label>
-                            </label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row" style="vertical-align: middle">Lanche da tarde 2</th>
                         <th class="col">
-                            <input type="time" class="form-control col-md-10">
+                            <input type="time" name="time[4]" class="form-control col-md-10">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
-                                    <option value="AL">Alabama</option>
-                                        
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[7]" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
                             </div>
-                            </div>
-                                <label for="" class="escondido" id="revelado2">
-                                    <div>
-                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
-                                    </div>
-                                </label>
-                            </label>
                         </td>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
-                                    <option value="AL">Alabama</option>
-                                        
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[8]" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
                             </div>
-                            </div>
-                                <label for="" class="escondido" id="revelado2">
-                                    <div>
-                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
-                                    </div>
-                                </label>
-                            </label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row" style="vertical-align: middle">Jantar</th>
                         <th class="col">
-                            <input type="time" class="form-control col-md-10">
+                            <input type="time" name="time[5]" class="form-control col-md-10">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
-                                    <option value="AL">Alabama</option>
-                                        
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[9]" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
                             </div>
-                            </div>
-                                <label for="" class="escondido" id="revelado2">
-                                    <div>
-                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
-                                    </div>
-                                </label>
-                            </label>
                         </td>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
-                                    <option value="AL">Alabama</option>
-                                        
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[10]" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
                             </div>
-                            </div>
-                                <label for="" class="escondido" id="revelado2">
-                                    <div>
-                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
-                                    </div>
-                                </label>
-                            </label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row" style="vertical-align: middle">Ceia</th>
                         <th class="col">
-                            <input type="time" class="form-control col-md-10">
+                            <input type="time" name="time[6]" class="form-control col-md-10">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
-                                    <option value="AL">Alabama</option>
-                                        
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[11]" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
                             </div>
-                            </div>
-                                <label for="" class="escondido" id="revelado2">
-                                    <div>
-                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
-                                    </div>
-                                </label>
-                            </label>
                         </td>
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                <select class="js-example-basic-multiple" style="width: 250px" placeholder="Buscar grupo..." name="states[]" multiple="multiple">
-                                    <option value="AL">Alabama</option>
-                                        
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary mostrar" alvo="revelado2" type="button">Adicionar</button>
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[12]" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
                             </div>
-                            </div>
-                                <label for="" class="escondido" id="revelado2">
-                                    <div>
-                                         <button class="btn btn-danger" id="btn2" type="button">Remover</button>
-                                    </div>
-                                </label>
-                            </label>
                         </td>
                     </tr>
                     </tbody>
+                    </form>
                 </table>
+
            </div>
                 @empty
                         <div class="alert alert-danger">

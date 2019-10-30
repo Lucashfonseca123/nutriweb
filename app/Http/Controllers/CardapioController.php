@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Paciente;
 use App\Models\Consultum;
+use App\Models\Grupo;
 
 class CardapioController extends Controller
 {
@@ -16,7 +17,7 @@ class CardapioController extends Controller
      */
     public function index()
     {
-        //
+        echo 'To aqui';
     }
 
     /**
@@ -37,7 +38,7 @@ class CardapioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd(collect($request));
     }
 
     /**
@@ -71,7 +72,7 @@ class CardapioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        echo "To no store";
     }
 
     /**
@@ -87,8 +88,18 @@ class CardapioController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->get();    
-        return view('cardapio_cadastro')->with('lista_nome', $lista_nome);
+        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->get();
+
+        $var2 = Grupo::all();
+        return view('cardapio_cadastro')->with('lista_nome', $lista_nome)->with('group', $var2);
+    }
+
+    public function busca2(Request $request){
+        $var = $request->busca;
+        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->get();
+
+        $var2 = Grupo::all();
+        return view('edit_cardapio')->with('lista_nome', $lista_nome)->with('group', $var2);
     }
 
 }

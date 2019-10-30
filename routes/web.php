@@ -32,6 +32,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/reconsultarpaciente', 'ReconsultaController');
 
+    Route::resource('/cardapioCadastro', 'CardapioController');
+
     Route::post('/buscarreconsulta', 'ReconsultaController@busca');
 
     Route::get('/reconsulta', 'Controller@reconsulta');
@@ -43,8 +45,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/grupoCadastro', 'GrupoController');
 
     Route::resource('/grupoEditar', 'GrupoController');
-
-    Route::get('/grupoAlimentos', 'GrupoController@alimentos');
 
     Route::get('/alimentos', 'Controller@buscar_alimentos');
 
@@ -73,6 +73,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('buscar_id_reconsulta', 'ReconsultaController@buscaId');
 
     Route::post('/buscarPessoa', 'CardapioController@busca');
+
+    Route::post('/buscarEditPessoa', 'CardapioController@busca2');
 
     Route::resource('/salvarAlimentos', 'AlimentoController');
 

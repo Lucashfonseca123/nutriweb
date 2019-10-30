@@ -565,3 +565,12 @@ h2 {
     border: 1px solid #000000;
     background-color: #C0504C;
 }
+
+input[type=time]::-webkit-inner-spin-button,
+input[type=time]::-webkit-outer-spin-button,
+input[type=time]::-webkit-clear-button
+{
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+    display: none !important;
+}

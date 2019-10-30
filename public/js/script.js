@@ -139,6 +139,7 @@ $('.mostrar_esconder').click(function(){
     let alvo = $(this).attr('alvo');
     $('#' + alvo).fadeToggle("slow", "linear");
     $(this).hide();
+    $('.menu').hide();
     $('.esconder').show();
 });
 
@@ -257,19 +258,6 @@ function chamaRemove(){
         $($(this).attr('target')).remove();
     });
 }
-
-$(document).ready(function(){
-    $("#enviaDados").on('click', function(){
-        $.ajax({
-            url: '/grupoAlimentos',
-            cache: false,
-            type: "GET",
-            success: function(){
-
-            }
-        })
-    });
-});
 
 // var serialize = function (form) {
 //     var data = form.serializeArray();
