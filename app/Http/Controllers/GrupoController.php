@@ -38,7 +38,6 @@ class GrupoController extends Controller
      */
     public function store(Request $request)
     {
-
         $var = new GrupoHasAlimento;
         $varG = new Grupo;
 
@@ -91,7 +90,23 @@ class GrupoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $var = Grupo::find($id);
+        $var->NomeGrupo = $request->nomesGrupo;
+        $var->save();
+
+        $alimentoid = $request->id_alimento;
+        $qtdealimento = $request->quantidadeAlimento;
+
+
+        foreach ($alimentoid as $key => $alimento) {
+            GrupoHasAlimento::create([
+                'Alimento_id' => $alimentoid[$key],
+                'Qtde_Alimento' => $qtdealimento[$key],
+                'idBuscado' => $idgrupo
+            ])->grupo()->associate($var);
+        }
+
+        return redirect()->back();
     }
 
     /**
