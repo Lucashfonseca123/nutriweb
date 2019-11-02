@@ -137,7 +137,7 @@
                     </label>
                     <div class="form-group">
                         <label class="col-md-4" for="prependedtext">
-                            <input id="obj" name="obj" placeholder="Descreva" class="form-control input-md" required="" value="" type="search"  pattern="[0-9]+$" disabled>
+                            <input id="obj" name="objetivo" placeholder="Descreva" class="form-control input-md" required="" value="" type="search"  pattern="[0-9]+$" disabled>
                         </label>
                     </div>
 
@@ -267,9 +267,6 @@
                             <input id="obj5" name="descreva" placeholder="Descreva" class="form-control input-md" required="" value="" type="text" maxlength="8" pattern="[0-9]+$" disabled>
                         </label>
                     </div>
-
-                    
-                <!--
 
                     <h6 class="col"><br>Antecedentes familiares<br><br></h6>
 
@@ -590,15 +587,15 @@
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="tabagista" id="filhos" value=0 onclick="desabilita('parou')" onclick="desabilita('cigarDia')" required>
+                                        <input type="radio" name="tabagista" id="filhos" value='N' onclick="desabilita('parou')" onclick="desabilita('cigarDia')" required>
                                         Não
                                     </label>
                                     <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="tabagista" id="tab2" value=0 onclick="habilita('parou')" onclick="desabilita('cigarDia')" required>
+                                        <input type="radio" name="tabagista" id="tab2" value='P' onclick="habilita('parou')" onclick="desabilita('cigarDia')" required>
                                         Parei
                                     </label>
                                     <label class="radio-inline" for="radios-1">
-                                        <input type="radio" name="tabagista" id="tab4" value=0 onclick="habilita('cigarDia')"onclick="desabilita('parou')">
+                                        <input type="radio" name="tabagista" id="tab4" value='S' onclick="habilita('cigarDia')"onclick="desabilita('parou')">
                                         Sim
                                     </label>
                                 </span>

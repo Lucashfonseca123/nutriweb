@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 28 Oct 2019 23:36:20 +0000.
+ * Date: Sat, 02 Nov 2019 20:48:31 +0000.
  */
 
 namespace App\Models;
@@ -14,9 +14,11 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * 
  * @property int $IdItemCardapio
  * @property int $OpcoesItemCardapio
+ * @property int $OpcoesItemCardapio2
  * @property string $HorarioItemCardapio
  * @property int $Cardapio_idCardapio
  * @property int $Grupo_idGrupo
+ * @property int $Grupo_idGrupo2
  * @property int $Refeicao_idRefeicao
  * 
  * @property \App\Models\Cardapio $cardapio
@@ -33,16 +35,20 @@ class Itemcardapio extends Eloquent
 
 	protected $casts = [
 		'OpcoesItemCardapio' => 'int',
+		'OpcoesItemCardapio2' => 'int',
 		'Cardapio_idCardapio' => 'int',
 		'Grupo_idGrupo' => 'int',
+		'Grupo_idGrupo2' => 'int',
 		'Refeicao_idRefeicao' => 'int'
 	];
 
 	protected $fillable = [
 		'OpcoesItemCardapio',
+		'OpcoesItemCardapio2',
 		'HorarioItemCardapio',
 		'Cardapio_idCardapio',
 		'Grupo_idGrupo',
+		'Grupo_idGrupo2',
 		'Refeicao_idRefeicao'
 	];
 

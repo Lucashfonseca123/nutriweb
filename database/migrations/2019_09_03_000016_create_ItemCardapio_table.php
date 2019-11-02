@@ -24,12 +24,16 @@ class CreateItemcardapioTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('IdItemCardapio');
             $table->integer('OpcoesItemCardapio')->nullable();
+            $table->integer('OpcoesItemCardapio2')->nullable();
             $table->string('HorarioItemCardapio',20)->nullable();
             $table->unsignedInteger('Cardapio_idCardapio');
             $table->unsignedInteger('Grupo_idGrupo');
+            $table->unsignedInteger('Grupo_idGrupo2');
             $table->unsignedInteger('Refeicao_idRefeicao');
 
             $table->index(["Grupo_idGrupo"], 'fk_ItemCardapio_Grupo1_idx');
+
+            $table->index(["Grupo_idGrupo2"], 'fk_ItemCardapio_Grupo2_idx');
 
             $table->index(["Cardapio_idCardapio"], 'fk_ItemCardapio_Cardapio1_idx');
 
@@ -42,6 +46,11 @@ class CreateItemcardapioTable extends Migration
                 ->onUpdate('no action');
 
             $table->foreign('Grupo_idGrupo')
+                ->references('idGrupo')->on('Grupo')
+                ->onDelete('no action')
+                ->onUpdate('no action');
+
+            $table->foreign('Grupo_idGrupo2')
                 ->references('idGrupo')->on('Grupo')
                 ->onDelete('no action')
                 ->onUpdate('no action');

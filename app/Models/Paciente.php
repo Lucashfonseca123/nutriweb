@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 28 Oct 2019 23:36:21 +0000.
+ * Date: Sat, 02 Nov 2019 20:48:31 +0000.
  */
 
 namespace App\Models;
@@ -23,7 +23,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $MastigacaoPaciente
  * @property string $PrefAlimentaresPaciente
  * @property string $AversaoAlimentarPaciente
- * @property int $TabagistaPaciente
+ * @property string $TabagistaPaciente
  * @property float $ConsumoAguaPaciente
  * @property string $UsouSuplemPaciente
  * @property string $CozinhaCasaPaciente
@@ -59,7 +59,6 @@ class Paciente extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'TabagistaPaciente' => 'int',
 		'ConsumoAguaPaciente' => 'float',
 		'Cidade_idCidade' => 'int',
 		'Estado_idEstado' => 'int',

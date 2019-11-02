@@ -414,7 +414,7 @@ class PacienteController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-        $seleciona = Paciente::where('NomePaciente', "like", "%".$var."%")->get();    
+        $seleciona = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();    
         return view('paciente_info')->with('lista_nome', $seleciona);
     }
 

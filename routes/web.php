@@ -18,7 +18,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/cadastro','Controller@cadastrar');
 
-    Route::get('/buscarPaciente', 'EditarInfoController@busca');
+    Route::get('/buscarPaciente', 'EditarInfoController@edit');
 
     Route::get('/cardapiosPendentes','TelaInicialController@busca');
 
@@ -81,6 +81,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/buscar_consultas', 'HistoricoController@busca');
 
     Route::get('/buscar_consultas_id', 'HistoricoController@buscaId');
+
+    Route::get('/buscar_info', 'EditarInfoController@buscarInfo');
+
+    Route::post('/excluirPaciente', 'EditarInfoController@destroy');
+
 });
 
 Auth::routes();

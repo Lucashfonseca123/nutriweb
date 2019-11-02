@@ -26,7 +26,7 @@
                         <div>
                       <br><br>
                       @if(isset($consultaPaciente))  
-                        @foreach($consultaPaciente as $pacientes)
+                        @forelse($consultaPaciente as $pacientes)
                             </div>
                                 <div class="container mt-4">
                                     <table class="table">
@@ -52,8 +52,11 @@
                                         </tr>
                                         </tbody>
                                     </table>
-                             
-                                 @endforeach
+                                    @empty
+                                    <div class="alert alert-danger">
+                                        Paciente não cadastrado
+                                    </div>
+                                 @endforelse
 
                     @endif
                      @if(isset($consultaPacientes))  
@@ -121,12 +124,7 @@
                                     <label for="nome" class="col-md-3">Gordura Viceral
                                         <input type="text" name="gordVisc"  value="{{$paciente->Gord_visceralConsulta}}" class="form-control col-md-4" readonly>
                                     </label>
-                                </div>
-                                    <label>
-                                        <label  class="col-me-6">
-                                        <button class="btn btn-dark" type="submit">Cardápio</button>
-                                    </label>
-                                    
+                                </div>        
                             </div>
                              @endforeach
                               {{ $consultaPacientes->appends(Illuminate\Support\Facades\Input::except('page'))->links() }}
