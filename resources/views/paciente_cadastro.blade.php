@@ -90,7 +90,7 @@
                         </label>
                         <label class="col-md-3" for="prependedtext">
                             <span class="input-group-addon">Bairro</span>
-                            <input id="bairro" name="bairro" class="form-control" placeholder="Bairro" required="" readonly="readonly" type="text" disabled>
+                            <input id="bairro" name="bairro" class="form-control" placeholder="Bairro" required="" readonly="readonly" type="text" >
                         </label>
                         <label class="col-md-1" for="prependedtext">
                             <span class="input-group-addon">N °</span>

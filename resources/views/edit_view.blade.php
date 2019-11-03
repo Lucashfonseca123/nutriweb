@@ -436,15 +436,15 @@
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="tabagista" id="filhos" value=0 onclick="desabilita('parou')" onclick="desabilita('cigarDia')" required {{$paciente->TabagistaPaciente== 'N' ? 'checked' : '' }}>
+                                        <input type="radio" name="tabagista" id="filhos" value='N' onclick="desabilita('parou')" onclick="desabilita('cigarDia')" required {{$paciente->TabagistaPaciente== 'N' ? 'checked' : '' }}>
                                         Não
                                     </label>
                                     <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="tabagista" id="tab2" value=0 onclick="habilita('parou')" onclick="desabilita('cigarDia')" required {{$paciente->TabagistaPaciente == 'P' ? 'checked' : '' }}>
+                                        <input type="radio" name="tabagista" id="tab2" value='P' onclick="habilita('parou')" onclick="desabilita('cigarDia')" required {{$paciente->TabagistaPaciente == 'P' ? 'checked' : '' }}>
                                         Parei
                                     </label>
                                     <label class="radio-inline" for="radios-1">
-                                        <input type="radio" name="tabagista" id="tab4" value=0 onclick="habilita('cigarDia')"onclick="desabilita('parou')" {{$paciente->TabagistaPaciente == '1' ? 'checked' : 'S' }}>
+                                        <input type="radio" name="tabagista" id="tab4" value='S' onclick="habilita('cigarDia')"onclick="desabilita('parou')" {{$paciente->TabagistaPaciente == 'S' ? 'checked' : '' }}>
                                         Sim
                                     </label>
                                 </span>

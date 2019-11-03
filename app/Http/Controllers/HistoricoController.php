@@ -92,7 +92,7 @@ class HistoricoController extends Controller
 
     public function buscaId(Request $request){
       $var = $request->busca;
-      $consultaPacientes = Consultum::where('Paciente_idPaciente', '=', $var)->paginate(1);
+      $consultaPacientes = Consultum::where('Paciente_idPaciente', '=', $var)->where('AlteracaoConsulta','=','0')->paginate(1);
       return view('historico_consultas')->with('consultaPacientes', $consultaPacientes);   
     }
 }
