@@ -60,7 +60,7 @@ class ReconsultaController extends Controller
         $varCon->AlteracaoConsulta = 0;
         $varCon->PrimeiraConsulta = 0;
         $varCon->save();
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Reconsulta cadastrado com sucesso!');
     }
     
     /**

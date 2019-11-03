@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Paciente;
 use App\Models\Consultum;
 use App\Models\Grupo;
+use App\Models\Cardapio;
+use App\Models\Itemcardapio;
 
 class CardapioController extends Controller
 {
@@ -38,7 +40,61 @@ class CardapioController extends Controller
      */
     public function store(Request $request)
     {
-        dd(collect($request));
+
+        $varCardapio = new Cardapio();
+
+
+        $varCardapio->Paciente_idPaciente  = $request->idpaciente;
+        $varCardapio->save();
+
+        $varIdGrupo = $request->grupo;
+        $varHorario = $request->time;
+        $varIdRefeicao = $request->idrefeicao;
+        $varOpcaoCardapio = $request->opcaocardapio;
+
+        foreach($varIdRefeicao as $key => $cardapio){
+            Itemcardapio::create([
+//                 for ($i=0; $i<2; $i++){
+                     'OpcoesItemCardapio' => $varOpcaoCardapio[$key],
+                     'Grupo_IdGrupo' => $varIdGrupo[$key],
+//                 }
+
+                'HorarioItemCardapio' => $varHorario[$key],
+                'Refeicao_idRefeicao ' => $varIdRefeicao[key]
+            ])->itemcardapios()->associate($varCardapio);
+        }
+//
+        return redirect()->back();
+//        $varItemCardapio->HorarioItemCardapio = $request->time[1];
+//        $varItemCardapio->OpcoesItemCardapio = 1;
+//        $varIdGrupo = $request->grupo[1];
+//        $varIdGrupo = $request->grupo[2];
+//
+//        $varItemCardapio->HorarioItemCardapio = $request->time[2];
+//        $varItemCardapio->OpcoesItemCardapio = 2;
+//        $varIdGrupo = $request->grupo[3];
+//        $varIdGrupo = $request->grupo[4];
+//
+//        $varItemCardapio->HorarioItemCardapio = $request->time[3];
+//        $varItemCardapio->OpcoesItemCardapio = 1;
+//        $varIdGrupo = $request->grupo[5];
+//        $varIdGrupo = $request->grupo[6];
+//
+//        $varItemCardapio->HorarioItemCardapio = $request->time[4];
+//        $varItemCardapio->OpcoesItemCardapio = 2;
+//        $varIdGrupo = $request->grupo[7];
+//        $varIdGrupo = $request->grupo[8];
+//
+//        $varItemCardapio->HorarioItemCardapio = $request->time[5];
+//        $varItemCardapio->OpcoesItemCardapio = 1;
+//        $varIdGrupo = $request->grupo[9];
+//        $varIdGrupo = $request->grupo[10];
+//
+//        $varItemCardapio->HorarioItemCardapio = $request->time[6];
+//        $varItemCardapio->OpcoesItemCardapio = 2;
+//        $varIdGrupo = $request->grupo[11];
+//        $varIdGrupo = $request->grupo[12];
+
     }
 
     /**

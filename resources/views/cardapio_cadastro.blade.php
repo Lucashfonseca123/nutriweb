@@ -48,6 +48,7 @@
                 <h4>
                     <label for="">
                         Paciente: {{$paciente->NomePaciente}}
+                        <input type="hidden" name="idpaciente" value="{{$paciente->idPaciente}}">
                     </label>
                     &emsp;&emsp;
                     <label for="">
@@ -69,6 +70,15 @@
                         <th scope="row" style="vertical-align: middle">Café da manhã</th>
                         <th class="col">
                                 <input type="time" name="time[1]" class="form-control col-md-10">
+                                <input type="hidden" value="1" name="idrefeicao[1]">
+                                <input type="hidden" value="1" name="opcaocardapio[1]">
+                                <input type="hidden" value="2" name="opcaocardapio[2]">
+                                <input type="hidden" value="3" name="opcaocardapio[3]">
+                                <input type="hidden" value="4" name="opcaocardapio[4]">
+                                <input type="hidden" value="5" name="opcaocardapio[5]">
+                                <input type="hidden" value="6" name="opcaocardapio[6]">
+                                <input type="hidden" value="7" name="opcaocardapio[7]">
+                                <input type="hidden" value="8" name="opcaocardapio[8]">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
@@ -101,6 +111,7 @@
                         <th scope="row" style="vertical-align: middle">Lanche da manhã</th>
                         <th class="col">
                             <input type="time" name="time[2]" class="form-control col-md-10">
+                            <input type="hidden" value="2" name="idrefeicao[2]">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
@@ -139,6 +150,7 @@
                         <th scope="row" style="vertical-align: middle">Almoço</th>
                         <th class="col">
                             <input type="time" name="time[3]" class="form-control col-md-10">
+                            <input type="hidden" value="3" name="idrefeicao[3]">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
@@ -171,6 +183,7 @@
                         <th scope="row" style="vertical-align: middle">Lanche da tarde 2</th>
                         <th class="col">
                             <input type="time" name="time[4]" class="form-control col-md-10">
+                            <input type="hidden" value="4" name="idrefeicao[4]">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
@@ -203,6 +216,7 @@
                         <th scope="row" style="vertical-align: middle">Jantar</th>
                         <th class="col">
                             <input type="time" name="time[5]" class="form-control col-md-10">
+                            <input type="hidden" value="5" name="idrefeicao[5]">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
@@ -235,6 +249,7 @@
                         <th scope="row" style="vertical-align: middle">Ceia</th>
                         <th class="col">
                             <input type="time" name="time[6]" class="form-control col-md-10">
+                            <input type="hidden" value="6" name="idrefeicao[6]">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">

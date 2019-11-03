@@ -19,17 +19,17 @@
                                         <div class="input-group-append">
                                             <span>
                                                 <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
-                                            </span> 
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                             <div>
-                        <br><br> 
+                        <br><br>
+                            </div>
                         @if(isset($lista_nome))             {{--Se a variavel foi previamente definida--}}
                             @forelse($lista_nome as $paciente)
-                        </div>
-                        <div class="container mt-4">
+                        <div class="container mt-4 menu">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -40,12 +40,11 @@
                                     </tr>
                                 </thead>
                                 <tr>
-                                <form action=""></form>
                                 <tbody>
                                     <th scope="row">  {{$paciente->idPaciente}}  </th>
                                     <td> {{$paciente->NomePaciente}}</td>
                                     <td> {{$paciente->EmailPaciente}}</td>
-                                    <td><button class="btn btn-primary mostrar" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
+                                    <td><button class="btn btn-primary mostrar_esconder" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
                                     </td>
                                 </tr>
                             </tbody>
@@ -57,6 +56,9 @@
                         <input type="hidden" name="idpaciente" value="{{$paciente->idPaciente}}">
                         <input type="hidden" name='idnutricionista' value="{{Auth::user()->id}}">
                             <div class="escondido" id="{{$paciente->idPaciente}}">
+                                <br><br>
+                                <h4 class="col">Paciente: {{$paciente->NomePaciente}}</h4>
+                                <br><br>
                                 <h6 class="col">Dados antropométricos<br><br></h6>   
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">Peso
@@ -118,11 +120,13 @@
                                         <input type="text" name="gordVisc" class="form-control col-md-4">
                                     </label>
                                 </div>
+                                <div class="col">
                                     <label for="">
                                     <span>
-                                        <button class="btn btn-success" type="submit">Salvar</button>
+                                        <button class="btn btn-success col" type="submit">Salvar</button>
                                     </span>
                                     </label>
+                                </div>
                             </div>
                         </form>
                         @empty

@@ -6,16 +6,20 @@
     <div class="container">
     <div class="card">
     <div class="card-header"><br>
-  
-    <form class="form-horizontal" method="post" action="{{route('cadastrarpaciente.store')}}">
+        <form class="form-horizontal" method="post" action="{{route('cadastrarpaciente.store')}}">
         {{csrf_field()}}
         <fieldset>
         <img class="logo3" src="img/logo.png">
         <br>
             <div class="panel panel-primary">
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                     {{ session()->get('message') }}
+                </div>
+            @endif
             <!-- Esconder campo até sexo --> 
             <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado">Inscrição paciente</button>
-            <br> 
+            <br>
             <div class="escondido" id="revelado">
                 <div class="panel-heading col"><h4>Cadastro do paciente</h4><br></div>
                 <div class="panel-body">
@@ -65,7 +69,7 @@
 
                     </div>
 
-                </div>   
+                </div>
 
                 <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado2">Inscrição endereço paciente</button>
                 <br>
@@ -110,8 +114,8 @@
                         </label>
                     </div>
                 </div>
-        
-                    <!-- HORARIO DE TRABALHO E ROTINA DIÁRIA 
+
+                    <!-- HORARIO DE TRABALHO E ROTINA DIÁRIA
                      /*$varObj->Nome = $request->objetivo
                      $varObj->Descricao = $request->descricao-->
 
@@ -122,7 +126,7 @@
                         <label for="exampleFormControlTextarea3">Horário de trabalho e rotina diária</label>
                         <textarea class="form-control" name="horErotina" id="exampleFormControlTextarea3" rows="7"></textarea>
                     </div>
-                    
+
                     <label class="radio-inline col" for="radios-1"><br>Objetivo da consulta <br><br>
                         <input name="objetivo" id="objetivo" value="Manutenção de peso" type="radio"onclick="desabilita('obj')">
                         Manutenção de peso <br>
@@ -181,8 +185,8 @@
                     <label for="nome" class="col-md-2">Frequência semanal
                         <input type="text" class="form-control"  id="frequencia" name="frequencia">
                     </label>
-                </div>        
-                   
+                </div>
+
                 <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado4">Dados clínicos</button>
                 <br>
                 <div class="escondido" id="revelado4">
