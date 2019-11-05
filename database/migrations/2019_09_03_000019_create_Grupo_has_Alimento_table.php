@@ -24,21 +24,20 @@ class CreateGrupoHasAlimentoTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('Grupo_id');
             $table->unsignedInteger('Alimento_id');
-            $table->integer('idBuscado');
+            $table->unsignedInteger('idBuscado');
             $table->string('Qtde_Alimento', 45)->nullable();
 
             $table->index(["Alimento_id"], 'fk_Grupo_has_Alimento_CMVColtaco31_idx');
 
             $table->index(["Grupo_id"], 'fk_Grupo_has_Alimento_Grupo1_idx');
 
-
-            $table->foreign('Grupo_id')
-                ->references('idGrupo')->on('Grupo')
+            $table->foreign('Alimento_id')
+                ->references('id')->on('CMVColtaco3')
                 ->onDelete('no action')
                 ->onUpdate('no action');
 
-            $table->foreign('Alimento_id')
-                ->references('id')->on('CMVColtaco3')
+            $table->foreign('idBuscado')
+                ->references('idGrupo')->on('Grupo')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });

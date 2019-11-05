@@ -211,7 +211,7 @@ class PacienteController extends Controller
         $varCon->Nutricionista_idNutricionista = $request->idnutricionista;;
         $varCon->save();
         
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Consulta cadastrada com sucesso!');
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\GrupoHasAlimento;
 use App\Models\Grupo;
+use App\Models\Cmvcoltaco3;
 
 class GrupoController extends Controller
 {
@@ -15,7 +16,8 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        //
+        $var = Cmvcoltaco3::all();
+        return view('grupo_editar')->with('busca_alimentos', $var);
     }
 
     /**
@@ -39,17 +41,22 @@ class GrupoController extends Controller
         $var = new GrupoHasAlimento;
         $varG = new Grupo;
 
-        $var->Alimento_id = $request->id_alimento;
-        $var->Qtde_Alimento = $request->quantidadeAlimento;
-            
-        $varG->Nome = $request->nomeGrupo;
+        $alimentoid = $request->id_alimento;
+        $qtdealimento = $request->quantidadeAlimento;
+
+        $varG->NomeGrupo = $request->nomesGrupo;
         $varG->save();
-        $var->grupo()->associate($varG);
-        
-        $var->save();
+        $idgrupo = $varG->idGrupo;
+
+        foreach($alimentoid as $key => $alimento){
+        GrupoHasAlimento::create([
+            'Alimento_id' => $alimentoid[$key],
+            'Qtde_Alimento' => $qtdealimento[$key],
+            'idBuscado' => $idgrupo
+        ])->grupo()->associate($varG);
+    }
 
         return redirect()->back();
-
     }
 
     /**
@@ -83,7 +90,23 @@ class GrupoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $var = Grupo::find($id);
+        $var->NomeGrupo = $request->nomesGrupo;
+        $var->save();
+
+        $alimentoid = $request->id_alimento;
+        $qtdealimento = $request->quantidadeAlimento;
+
+
+        foreach ($alimentoid as $key => $alimento) {
+            GrupoHasAlimento::create([
+                'Alimento_id' => $alimentoid[$key],
+                'Qtde_Alimento' => $qtdealimento[$key],
+                'idBuscado' => $idgrupo
+            ])->grupo()->associate($var);
+        }
+
+        return redirect()->back();
     }
 
     /**
@@ -95,5 +118,21 @@ class GrupoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function busca(Request $request){
+        $var = $request->busca;
+//        $lista_nome = Grupo::where('NomeGrupo', "like", "%".$var."%")->get();
+//        return view('grupo_editar')->with('lista_nome', $lista_nome);
+
+        $consultaGrupo = Grupo::join('Grupo_has_alimento','Grupo.idGrupo','=','Grupo_has_alimento.idBuscado')->where('NomeGrupo', $var)->get();
+        $var = Cmvcoltaco3::all();
+        return view('grupo_editar')->with('lista_nome', $consultaGrupo)->with('busca_alimentos', $var);
+    }
+
+    public function alimentos(){
+        $var = Cmvcoltaco3::all();
+        dd($var);
+        return view('grupo_editar')->with('busca_alimentos', $var);
     }
 }

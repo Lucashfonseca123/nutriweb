@@ -8,94 +8,51 @@
             <img class="logo4" src="img/logo.png">
             <button class="btn btn-primary mostrar" type="button" alvo="revelado3" title="Clique para selecionar grupo">Novo grupo</button>
             <button class="btn btn-danger" type="button" alvo="revelado">Cancelar</button>
-            <button class="btn btn-success" type="submit">Salvar grupo</button>
+            <button class="btn btn-success" id="enviado" type="submit">Salvar grupo</button>
             <br><br>
-                @if(isset($busca_alimentos))             {{--Se a variavel foi previamente definida--}}
-                    @foreach($busca_alimentos as $alimentos)
                     <div class="row">
                         <div class="col-md-5 card-header escondido" id="revelado3">
                             <div class="form-group">
                                 <label for=""><h6>Nome do grupo</h6></label>
-                                <input type="text" id="NomeGrupo" name="nomeGrupo" class="form-control" placeholder="Escreva o nome do grupo..">
-                            </div> 
+                                <input type="text" name="nomesGrupo" class="form-control" placeholder="Escreva o nome do grupo..">
+                            </div>
                             <div class="form-group">
                                 <label for="" class="form-group"><h6>Alimentos &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; Quantidade</h6>
                                     <div>
                                         <div class="input-group control-group after-add-more">
                                             <label for="">
-                                                <!-- <input type="text" style="width: 180px" id="buscarAlimentos" name="alimento" class="form-control" placeholder="Buscar alimento.."> -->
-                                                 <select class="js-example-basic-multiple" style="width: 180px" name="states[]" multiple="multiple">
-                                                    <option value="{{$alimentos->id}}">{{$alimentos->descricaoAlimento}}</option>
-                                                    <input type="hidden" value="{{$alimentos->id}}" name="id_alimento">
-                                                </select> 
+                                                {{--<input type="text" style="width: 180px" id="buscarAlimentos" name="alimento" class="form-control" placeholder="Buscar alimento..">--}}
+                                                <select class="js-example-basic-single form-control" id="alimentoTaco" style="width: 180px" >
+                                                    @if(isset($busca_alimentos))             {{--Se a variavel foi previamente definida--}}
+                                                        @foreach($busca_alimentos as $alimentos)
+                                                            <option id="{{$alimentos->id}}" value="{{$alimentos->id}}" name="">{{$alimentos->descricaoAlimento}}</option>
+                                                            {{--<input type="hidden" value="{{$alimentos->id}}" name="id_alimento">--}}
+                                                        @endforeach
+                                                    @endif
+                                                </select>
                                             </label>
                                             &emsp;
                                             <label for="">
-                                                <input type="text" style="width: 114px" id="quantidade" name="quantidadeAlimento" class="form-control" placeholder="Ex: 3 fatias..">
+                                                <input type="text" style="width: 114px" id="quantidadeAli" name="" class="form-control" placeholder="Ex: 3 fatias..">
                                             </label>
-                                            <div class="input-group-btn"> 
+                                            <div class="input-group-btn">
                                                 &emsp;
-                                                <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i>+</button>
+                                                <button class="btn btn-success add-more" type="reset"><i class="glyphicon glyphicon-plus"></i>+</button>
                                             </div>
                                         </div>
                                     </div>
                                 </label>
-                                <div class="copy hide">
-                                    <div class="control-group input-group" style="margin-top:5px">
-                                    <label for="">
-                                                <input type="text" style="width: 180px" id="buscarAlimentos" name="alimento" class="form-control" placeholder="Buscar alimentos..">
-                                            </label>
-                                            &emsp;
-                                            <label for="">
-                                                <input type="text" style="width: 114px" id="quantidade" name="quantidadeAlimento" class="form-control" placeholder="Ex: 3 fatias..">
-                                            </label> 
-                                            <div class="input-group-btn"> 
-                                            &emsp;
-                                            <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i>-</button>
-                                        </div>
+                                    <div class="copy" id="alimento">
+
                                     </div>
-                                </div>
                             </div>  
                         </div>
                     </div>
                     </form>
-                        @endforeach
-                    @endif
                     <br>
-                        <div class="col-md-4 card-header text-center">
-                            <div class="form-group text-center">
-                                <label for=""><h6>Low carb</h6></label>
-                            </div>
-                            <div class="form-group text-center">
-                                <label for="">
-                                    <input type="text" id="Atr1" style="width: 150px" class="form-control" placeholder="Macarrão" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Atr2" style="width: 114px" class="form-control Atr1" placeholder="4 colheres" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Arroz" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="2 colheres" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Frango" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="2 filés" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 150px" class="form-control" placeholder="Suco" disabled>
-                                </label>
-                                <label for="">
-                                    <input type="text" id="Nome" style="width: 114px" class="form-control" placeholder="1 copo" disabled>
-                                </label>
-                            </div>
-                            <button class="btn btn-danger" id="btn2">Remover grupo<br></button>
-                            <button class="btn btn-dark" id="btn2" onclick="habilita('Atr1')">Editar grupo<br></button>
-                        </div>
+
                       
                     </div>
     </main>
+    <script src="js/grupo.js"></script>
 @endsection

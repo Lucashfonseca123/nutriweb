@@ -61,7 +61,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-
            
                 @empty
                 <div class="alert alert-danger">

@@ -8,14 +8,13 @@
             <h2 class="col">Situação paciente</h2><br>
             <h3 class="col">Relatórios</h3>
             <img class="logo" src="img/logo.png">
-            <div class="row col">
+            <div class="row">
                 <div class="form-group col-md-12">
-                    <h5>Selecione paciente:</h5>
-             <form action="/buscarRelatorio" method="get">
+                        <form action="/buscarRelatorio" method="get">
                         {{csrf_field()}}
                             <div class="form-group col-md-12">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Digite aqui..." >
+                                    <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Selecione paciente   ..." >
                                     <div class="input-group-append">
                                         <span>
                                             <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
@@ -24,11 +23,9 @@
                                 </div>
                             </div>
                         </form>
-                        <div>
                       <br><br>
                       @if(isset($consultaPaciente))  
                       	@foreach($consultaPaciente as $paciente)
-                    		</div>
                     			<div class="container mt-4">
                         			<table class="table">
                             			<thead>
@@ -39,14 +36,13 @@
 			                                </tr>
                             			</thead>
                             				<tr>
-			                            <tbody>
-			                               
-			                                <td> {{$paciente->NomePaciente}}</td>
-			                                <td> {{$paciente->EmailPaciente}}</td>
-			                                <td><button class="btn btn-primary mostrar selecionar" value="busca" id = "btn-{{$paciente->idPaciente}}" type="submit" data-id = "{{$paciente->idPaciente}}" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
-			                                </td>
-			                            </tr>
-			                        	</tbody>
+                                                <tbody>
+                                                    <td> {{$paciente->NomePaciente}}</td>
+                                                    <td> {{$paciente->EmailPaciente}}</td>
+                                                    <td><button class="btn btn-primary mostrar selecionar" value="busca" id = "btn-{{$paciente->idPaciente}}" type="submit" data-id = "{{$paciente->idPaciente}}" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
+                                                    </td>
+                                                </tbody>
+                                            </tr>
                 					</table>
                 				</div>
                             <div" class=" col-md-6  mt-6 escondido" id="{{$paciente->idPaciente}}" >
@@ -57,14 +53,8 @@
                             </div>
                         </div>
                     </div>
-                        
-
             			@endforeach
-
                 	@endif
-
-
-                	
         </div>
         </div>
         </div>

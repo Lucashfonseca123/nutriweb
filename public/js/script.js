@@ -1,5 +1,4 @@
 jQuery(function ($) {
-
     $(".sidebar-dropdown > a").click(function() {
         $(".sidebar-submenu").slideUp(200);
         if (
@@ -140,6 +139,7 @@ $('.mostrar_esconder').click(function(){
     let alvo = $(this).attr('alvo');
     $('#' + alvo).fadeToggle("slow", "linear");
     $(this).hide();
+    $('.menu').hide();
     $('.esconder').show();
 });
 
@@ -186,7 +186,7 @@ $(document).ready(function() {
         fieldWrapper.append(removeButton);
         $("#buildyourform").append(fieldWrapper);
     });
-    
+
     $("#preview").click(function() {
         $("#yourform").remove();
         var fieldSet = $("<fieldset id=\"yourform\"><legend>Your Form</legend></fieldset>");
@@ -203,7 +203,7 @@ $(document).ready(function() {
                     break;
                 case "textarea":
                     input = $("<textarea id=\"" + id + "\" name=\"" + id + "\" ></textarea>");
-                    break;    
+                    break;
             }
             fieldSet.append(label);
             fieldSet.append(input);
@@ -212,16 +212,72 @@ $(document).ready(function() {
     });
 });
 
+let contadorGrupo = 0;
 
 $(document).ready(function() {
 
-    $(".add-more").click(function(){ 
-        var html = $(".copy").html();
-        $(".after-add-more").after(html);
+    $(".add-more").click(function(){
+        // var html = $(".copy").html();
+        // $(".after-add-more").after(html);
+        var alimento = $("#alimentoTaco").val();
+        var nomeAlimento = $(`#${alimento}`).html();
+        var quantiAlimento = $("#quantidadeAli").val();
+        var divAlimento = `<div id="div-${alimento}">
+             <label for="">
+                <input type="hidden" name="id_alimento[${contadorGrupo}]" style="width: 180px" class="form-control" value="${alimento}" readonly>
+                <input type="text"  style="width: 180px" class="form-control" value="${nomeAlimento}" disabled>
+             </label>  
+             &ensp;
+             <label for="">
+                <input type="text" style="width: 114px" name="quantidadeAlimento[${contadorGrupo}]" class="form-control" value="${quantiAlimento}" readonly>
+             </label>  
+             &ensp;
+             <label for="">
+                <div class="remove btn btn-danger" target="#div-${alimento}" id="remove-${alimento}">-</div>
+            </label>
+            </div>`;
+
+        contadorGrupo++;
+        $(".copy").append(divAlimento);
+        chamaRemove();
     });
 
-    $("body").on("click",".remove",function(){ 
+    // $(".removeAppend").remove(alimento);
+
+    //id="alimentoTaco" id="quantidadeAli"
+    $("body").on("click",".remove",function(){
         $(this).parents(".control-group").remove();
     });
 
-  });
+    // $(".removes").remove();
+
+});
+
+function chamaRemove(){
+    $(".remove").click(function(){
+        $($(this).attr('target')).remove();
+    });
+}
+
+// var serialize = function (form) {
+//     var data = form.serializeArray();
+//     var json = {};
+//     data.forEach(function (item) {
+//         if (!json[item.name]) {
+//             json[item.name] = item.value;
+//             return;
+//         }
+//         if (!Array.isArray(json[item.name]))
+//             json[item.name] = [json[item.name]];
+//         json[item.name].push(item.value);
+//     });
+//     return json;
+// }
+//
+// var form = $("form");
+// var enviar = $("#enviado");
+// enviar.on("click", function (event) {
+//     event.preventDefault();
+//     var json = serialize(form);
+//     console.log(json);
+// });
