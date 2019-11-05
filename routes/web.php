@@ -18,7 +18,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/cadastro','Controller@cadastrar');
 
-    Route::get('/buscarPaciente', 'EditarInfoController@busca');
+    Route::get('/buscarPaciente', 'EditarInfoController@edit');
 
     Route::get('/cardapiosPendentes','TelaInicialController@busca');
 
@@ -58,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/recuperar_senha', 'Controller@recuperar_senha');
 
-    Route::get('/resumo_paciente', 'Controller@resumir_paciente');
+    Route::get('/resumo_paciente', 'CardapioController@resumo');
 
     Route::post('/testerota', 'HomeController@store')->name('test');
 
@@ -89,6 +89,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/buscar_consultas', 'HistoricoController@busca');
 
     Route::get('/buscar_consultas_id', 'HistoricoController@buscaId');
+
+    Route::get('/buscar_info', 'EditarInfoController@buscarInfo');
+
+    Route::post('/excluirPaciente', 'EditarInfoController@destroy');
+
 });
 
 Auth::routes();

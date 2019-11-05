@@ -10,6 +10,12 @@
             <button class="btn btn-danger" type="button" alvo="revelado">Cancelar</button>
             <button class="btn btn-success" id="enviado" type="submit">Salvar grupo</button>
             <br><br>
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
+            <br><br>
                     <div class="row">
                         <div class="col-md-5 card-header escondido" id="revelado3">
                             <div class="form-group">

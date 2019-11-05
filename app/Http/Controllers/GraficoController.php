@@ -13,7 +13,7 @@ class GraficoController extends Controller
         $var = json_encode($var, true);
         $var = json_decode($var, true);
         $var = $var['id'];
-        $graficoPaciente = Consultum::where('Paciente_idPaciente','=', $var )->get();
+        $graficoPaciente = Consultum::where('Paciente_idPaciente','=', $var )->where('AlteracaoConsulta','=','0')->get();
         return response()->json($graficoPaciente);
     }
 }

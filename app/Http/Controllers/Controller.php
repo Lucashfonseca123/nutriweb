@@ -62,7 +62,7 @@ class Controller extends BaseController
 
     public function info_paciente(){
         $var  = " ";
-        $consultaPaciente = Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->where('Cardapio_idCardapio', "=", NULL)->get();   
+        $consultaPaciente = Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->where('Cardapio_idCardapio', "=", NULL)->where('AlteracaoConsulta', '=', 0)->where('Paciente.ExcluidoPaciente','<>','1')->get();   
         return view('paciente_info')->with('consultaPaciente', $consultaPaciente);
     }
 

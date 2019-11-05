@@ -33,7 +33,7 @@ class CreatePacienteTable extends Migration
             $table->enum('MastigacaoPaciente', ['Lenta' ,'Normal', 'Rápida' ,'Muito Rápida'])->nullable();
             $table->string('PrefAlimentaresPaciente', 45)->nullable();
             $table->string('AversaoAlimentarPaciente', 45)->nullable();
-            $table->tinyInteger('TabagistaPaciente')->nullable();
+            $table->enum('TabagistaPaciente',['S', 'N', 'P'])->nullable();
             $table->double('ConsumoAguaPaciente')->nullable();
             $table->string('UsouSuplemPaciente', 45)->nullable();
             $table->string('CozinhaCasaPaciente', 45)->nullable();

@@ -15,6 +15,11 @@
                 </form>
                     </div>
                 <br><br>
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
                 @if(isset($lista_nome))
                     @forelse($lista_nome as $paciente)
                     <div class="container mt-4 mostrar esconder">
@@ -33,10 +38,16 @@
                                         <td> {{$paciente->NomePaciente}}</td>
                                         <td> {{$paciente->EmailPaciente}}</td>
                                         <td><button class="btn btn-primary mostrar_esconder" alvo="{{$paciente->idPaciente}}">Selecionar</button>
-
+                                        </td>
+                                        <td>
+                                        {{--<form target="_blank" action="/resumo_paciente" method="get">--}}
+                                            {{csrf_field()}}
                                         <span style="cursor: pointer" onclick="window.open('/resumo_paciente', '', 'width=600,height=300')">
-                                          <button class="btn btn-dark" type="button">Gerar resumo</button>
-                        </span></td>
+                                            <input type="hidden" name="idPaciente" value="{{$paciente->idPaciente}}">
+                                            <button class="btn btn-dark" type="submit">Gerar resumo</button>
+                                        </span>
+                                        {{--</form>--}}
+                                        </td>
                                     </tr>
                                     </tbody>
                             </table>
@@ -73,12 +84,12 @@
                                 <input type="hidden" value="1" name="idrefeicao[1]">
                                 <input type="hidden" value="1" name="opcaocardapio[1]">
                                 <input type="hidden" value="2" name="opcaocardapio[2]">
-                                <input type="hidden" value="3" name="opcaocardapio[3]">
-                                <input type="hidden" value="4" name="opcaocardapio[4]">
-                                <input type="hidden" value="5" name="opcaocardapio[5]">
-                                <input type="hidden" value="6" name="opcaocardapio[6]">
-                                <input type="hidden" value="7" name="opcaocardapio[7]">
-                                <input type="hidden" value="8" name="opcaocardapio[8]">
+                                <input type="hidden" value="1" name="opcaocardapio[3]">
+                                <input type="hidden" value="2" name="opcaocardapio[4]">
+                                <input type="hidden" value="1" name="opcaocardapio[5]">
+                                <input type="hidden" value="2" name="opcaocardapio[6]">
+                                <input type="hidden" value="1" name="opcaocardapio[7]">
+                                <input type="hidden" value="2" name="opcaocardapio[8]">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
@@ -86,7 +97,7 @@
                                 <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[1]" id="idgrupo">
                                     @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                         @foreach($group as $grupos)
-                                            <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            <option value="{{$grupos->idGrupo}}" nombre="{{$grupos->NomeGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                         @endforeach
                                     @endif
                                 </select>
@@ -96,7 +107,7 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[2]" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[1]" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
@@ -116,7 +127,7 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[3]" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[2]" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
@@ -135,7 +146,7 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[4]" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[2]" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
@@ -155,7 +166,7 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[5]" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[3]" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
@@ -168,7 +179,7 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[6]" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[3]" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
@@ -188,7 +199,7 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[7]" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[4]" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
@@ -201,7 +212,7 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[8]" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[4]" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
@@ -221,7 +232,7 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[9]" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[5]" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
@@ -234,7 +245,7 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[10]" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[5]" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
@@ -254,7 +265,7 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[11]" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[6]" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
@@ -267,7 +278,7 @@
                         <td>
                             <div class="input-group" style="width: 350px">
                                 <div class="input-group" style="width: 350px">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[12]" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[6]" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>

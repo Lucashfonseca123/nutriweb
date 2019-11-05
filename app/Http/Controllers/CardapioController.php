@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GrupoHasAlimento;
 use Illuminate\Http\Request;
 
 use App\Models\Paciente;
@@ -9,6 +10,9 @@ use App\Models\Consultum;
 use App\Models\Grupo;
 use App\Models\Cardapio;
 use App\Models\Itemcardapio;
+use App\Models\Refeicao;
+use App\Models\Cmvcoltaco3;
+use Illuminate\Support\Facades\Redirect;
 
 class CardapioController extends Controller
 {
@@ -40,61 +44,39 @@ class CardapioController extends Controller
      */
     public function store(Request $request)
     {
-
+//        dd(collect($request));
         $varCardapio = new Cardapio();
 
+//        $idcardapio = Cardapio::orderBy('idCardapio', 'desc')->first();
 
         $varCardapio->Paciente_idPaciente  = $request->idpaciente;
         $varCardapio->save();
 
         $varIdGrupo = $request->grupo;
+
+        $varIdGrupo2 = $request->grupo2;
         $varHorario = $request->time;
-        $varIdRefeicao = $request->idrefeicao;
-        $varOpcaoCardapio = $request->opcaocardapio;
+//        dd($varIdGrupo2);
 
-        foreach($varIdRefeicao as $key => $cardapio){
+//        foreach($varIdGrupo as $key => $alimentogrupo) {
+//            Refeicao::create([
+//                'DescricaoRefeicao' => $varIdGrupo[$key+1],
+//                'DescricaoRefeicao2' => $varIdGrupo2[$key+1],
+//                'HorarioRefeicao' => $varHorario[$key+1]
+//            ]);
+//        }
+//        dd();
+
+      foreach ($varIdGrupo as $key => $value){
             Itemcardapio::create([
-//                 for ($i=0; $i<2; $i++){
-                     'OpcoesItemCardapio' => $varOpcaoCardapio[$key],
-                     'Grupo_IdGrupo' => $varIdGrupo[$key],
-//                 }
-
+                'Grupo_idGrupo' => $varIdGrupo[$key],
+                'Grupo_idGrupo2' => $varIdGrupo2[$key],
                 'HorarioItemCardapio' => $varHorario[$key],
-                'Refeicao_idRefeicao ' => $varIdRefeicao[key]
-            ])->itemcardapios()->associate($varCardapio);
+                'Cardapio_idCardapio' => $varCardapio->idCardapio
+            ]);
         }
-//
-        return redirect()->back();
-//        $varItemCardapio->HorarioItemCardapio = $request->time[1];
-//        $varItemCardapio->OpcoesItemCardapio = 1;
-//        $varIdGrupo = $request->grupo[1];
-//        $varIdGrupo = $request->grupo[2];
-//
-//        $varItemCardapio->HorarioItemCardapio = $request->time[2];
-//        $varItemCardapio->OpcoesItemCardapio = 2;
-//        $varIdGrupo = $request->grupo[3];
-//        $varIdGrupo = $request->grupo[4];
-//
-//        $varItemCardapio->HorarioItemCardapio = $request->time[3];
-//        $varItemCardapio->OpcoesItemCardapio = 1;
-//        $varIdGrupo = $request->grupo[5];
-//        $varIdGrupo = $request->grupo[6];
-//
-//        $varItemCardapio->HorarioItemCardapio = $request->time[4];
-//        $varItemCardapio->OpcoesItemCardapio = 2;
-//        $varIdGrupo = $request->grupo[7];
-//        $varIdGrupo = $request->grupo[8];
-//
-//        $varItemCardapio->HorarioItemCardapio = $request->time[5];
-//        $varItemCardapio->OpcoesItemCardapio = 1;
-//        $varIdGrupo = $request->grupo[9];
-//        $varIdGrupo = $request->grupo[10];
-//
-//        $varItemCardapio->HorarioItemCardapio = $request->time[6];
-//        $varItemCardapio->OpcoesItemCardapio = 2;
-//        $varIdGrupo = $request->grupo[11];
-//        $varIdGrupo = $request->grupo[12];
 
+        return view('cardapio_cadastro')->with('message', 'Reconsulta cadastrado com sucesso!');
     }
 
     /**
@@ -144,7 +126,7 @@ class CardapioController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->get();
+        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();
 
         $var2 = Grupo::all();
         return view('cardapio_cadastro')->with('lista_nome', $lista_nome)->with('group', $var2);
@@ -152,10 +134,15 @@ class CardapioController extends Controller
 
     public function busca2(Request $request){
         $var = $request->busca;
-        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->get();
+        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();
 
         $var2 = Grupo::all();
         return view('edit_cardapio')->with('lista_nome', $lista_nome)->with('group', $var2);
     }
 
+    public function resumo(Request $request){
+//        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();
+            dd(collect($request));
+        return view('resumo_paciente');
+    }
 }

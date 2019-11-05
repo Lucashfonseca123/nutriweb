@@ -94,7 +94,7 @@
                         </label>
                         <label class="col-md-3" for="prependedtext">
                             <span class="input-group-addon">Bairro</span>
-                            <input id="bairro" name="bairro" class="form-control" placeholder="Bairro" required="" readonly="readonly" type="text" disabled>
+                            <input id="bairro" name="bairro" class="form-control" placeholder="Bairro" required="" readonly="readonly" type="text" >
                         </label>
                         <label class="col-md-1" for="prependedtext">
                             <span class="input-group-addon">N °</span>
@@ -141,7 +141,7 @@
                     </label>
                     <div class="form-group">
                         <label class="col-md-4" for="prependedtext">
-                            <input id="obj" name="obj" placeholder="Descreva" class="form-control input-md" required="" value="" type="search"  pattern="[0-9]+$" disabled>
+                            <input id="obj" name="objetivo" placeholder="Descreva" class="form-control input-md" required="" value="" type="search"  pattern="[0-9]+$" disabled>
                         </label>
                     </div>
 
@@ -453,11 +453,10 @@
                 </div>
 
 
-            <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado5">Exames laboratoriais</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado5">Avaliação antropométrica</button>
             <br>
             <div class="escondido" id="revelado5">
 
-                    <h5 class="col"><br>Exames laboratoriais</h5>
                     <h6 class="col"><br>Dados antropométricos<br><br></h6>
 
                     <div class="form-group">
@@ -591,15 +590,15 @@
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="tabagista" id="filhos" value=0 onclick="desabilita('parou')" onclick="desabilita('cigarDia')" required>
+                                        <input type="radio" name="tabagista" id="filhos" value='N' onclick="desabilita('parou')" onclick="desabilita('cigarDia')" required>
                                         Não
                                     </label>
                                     <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="tabagista" id="tab2" value=0 onclick="habilita('parou')" onclick="desabilita('cigarDia')" required>
+                                        <input type="radio" name="tabagista" id="tab2" value='P' onclick="habilita('parou')" onclick="desabilita('cigarDia')" required>
                                         Parei
                                     </label>
                                     <label class="radio-inline" for="radios-1">
-                                        <input type="radio" name="tabagista" id="tab4" value=0 onclick="habilita('cigarDia')"onclick="desabilita('parou')">
+                                        <input type="radio" name="tabagista" id="tab4" value='S' onclick="habilita('cigarDia')"onclick="desabilita('parou')">
                                         Sim
                                     </label>
                                 </span>

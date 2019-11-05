@@ -56,7 +56,7 @@ class GrupoController extends Controller
         ])->grupo()->associate($varG);
     }
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Grupo cadastrado com sucesso!');
     }
 
     /**

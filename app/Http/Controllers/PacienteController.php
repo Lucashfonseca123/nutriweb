@@ -410,11 +410,13 @@ class PacienteController extends Controller
         $varCon->paciente()->associate($varp);
         $varCon->Nutricionista_idNutricionista = $request->idnutricionista;;
         $varCon->save();
+
+        return view('welcome');
     }
 
     public function busca(Request $request){
         $var = $request->busca;
-        $seleciona = Paciente::where('NomePaciente', "like", "%".$var."%")->get();    
+        $seleciona = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();    
         return view('paciente_info')->with('lista_nome', $seleciona);
     }
 
