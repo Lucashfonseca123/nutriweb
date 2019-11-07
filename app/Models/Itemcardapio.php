@@ -62,8 +62,10 @@ class Itemcardapio extends Eloquent
 		return $this->belongsTo(\App\Models\Grupo::class, 'Grupo_idGrupo');
 	}
 
-	public function refeicao()
-	{
-		return $this->belongsTo(\App\Models\Refeicao::class, 'Refeicao_idRefeicao');
-	}
+
+	public function grupo2()
+    {
+        return $this->belongsTo(\App\Models\Grupo::class, 'Grupo_idGrupo2');
+    }
+
 }
