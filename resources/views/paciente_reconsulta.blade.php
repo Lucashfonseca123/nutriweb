@@ -54,50 +54,50 @@
                         <!-- <form method="post"  action="{{route('reconsultarpaciente.store', ['id' => $paciente->idPaciente])}}"> -->
                         {{csrf_field()}}
                         <input type="hidden" name="idpaciente" value="{{$paciente->idPaciente}}">
-                        <input type="hidden" name='idnutricionista' value="{{Auth::user()->id}}">
+                        <input type="hidden" name='idnutricionista' value="{{Auth::user()->Nutricionista_idNutricionista}}">
                             <div class="escondido" id="{{$paciente->idPaciente}}">
                                 <br><br>
                                 <h4 class="col">Paciente: {{$paciente->NomePaciente}}</h4>
                                 <br><br>
                                 <h6 class="col">Dados antropométricos<br><br></h6>   
                                 <div class="form-group">
-                                    <label for="nome" class="col-md-3">Peso
+                                    <label for="nome" class="col-md-3">Peso(kg)
                                         <input type="text" name="peso" class="form-control col-md-4">
                                     </label>
-                                    <label for="nome" class="col-md-4">Estatura
-                                        <input type="text" name="estatura" class="form-control col-md-4">
+                                    <label for="nome" class="col-md-3">Altura(m)
+                                        <input type="text" name="estatura" OnKeyPress="formatar('#.##', this)" class="form-control col-md-4">
                                     </label>
-                                    <label for="nome" class="col-md-3">Circuferência da cintura
+                                    <label for="nome" class="col-md-3">Circuferência da cintura(cm)
                                         <input type="text" name="cirCintura" class="form-control col-md-4">
                                     </label>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nome" class="col-md-3">Circuferência do abdômen
+                                    <label for="nome" class="col-md-3">Circuferência do abdômen(cm)
                                         <input type="text" name="circAbd" class="form-control col-md-4">
                                     </label>
-                                    <label for="nome" class="col-md-3">Circuferência do quadril
+                                    <label for="nome" class="col-md-3">Circuferência do quadril(cm)
                                         <input type="text" name="cirQuad" class="form-control col-md-4">
                                     </label>
-                                    <label for="nome" class="col-md-3">Circuferência coxa proximal direita
+                                    <label for="nome" class="col-md-3">Circuferência coxa proximal direita(cm)
                                         <input type="text" name="cirCxDir" class="form-control col-md-4">
                                     </label>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nome" class="col-md-3">Circuferência coxa proximal esquerda
+                                    <label for="nome" class="col-md-3">Circuferência coxa proximal esquerda(cm)
                                         <input type="text" name="cirCxEsq" class="form-control col-md-4">
                                     </label>
-                                    <label for="nome" class="col-md-3">Circuferência da panturrilha
+                                    <label for="nome" class="col-md-3">Circuferência da panturrilha(cm)
                                         <input type="text" name="circ_pantu" class="form-control col-md-4">
                                     </label>
-                                    <label for="nome" class="col-md-3">Circuferência do braço direito
+                                    <label for="nome" class="col-md-3">Circuferência do braço direito(cm)
                                         <input type="text" name="cirBraDir" class="form-control col-md-4">
                                     </label>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nome" class="col-md-3">Circuferência do braço esquerdo
+                                    <label for="nome" class="col-md-3">Circuferência do braço esquerdo(cm)
                                         <input type="text" name="cirBraEsq" class="form-control col-md-4">
                                     </label>
-                                    <label for="nome" class="col-md-3">Circuferência do punho
+                                    <label for="nome" class="col-md-3">Circuferência do punho(cm)
                                         <input type="text" name="cirPunho" class="form-control col-md-4">
                                     </label>
                                     <label for="nome" class="col-md-3">% Gordura
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">Gordura Viceral
-                                        <input type="text" name="gordVisc" class="form-control col-md-4">
+                                        <input type="number" min="1" max= "60" name="gordVisc" class="form-control col-md-4">
                                     </label>
                                 </div>
                                 <div class="col">

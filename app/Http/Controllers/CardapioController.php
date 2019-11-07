@@ -41,6 +41,7 @@ class CardapioController extends Controller
     public function store(Request $request)
     {
 
+        $varConsulta = Consultum::find($request->idconsulta);
         $varCardapio = new Cardapio();
 
 
@@ -63,8 +64,10 @@ class CardapioController extends Controller
                 'Refeicao_idRefeicao ' => $varIdRefeicao[key]
             ])->itemcardapios()->associate($varCardapio);
         }
-//
+        $varConsulta->cardapio()->associate($varCardapio);
+        $varConsulta->update();
         return redirect()->back();
+
 //        $varItemCardapio->HorarioItemCardapio = $request->time[1];
 //        $varItemCardapio->OpcoesItemCardapio = 1;
 //        $varIdGrupo = $request->grupo[1];
@@ -144,11 +147,23 @@ class CardapioController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->get();
+        $varId = $request->buscaId;
 
+        if ($varId == 0) {
+            $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->with(['consulta' => function($query) {
+            $query->where('AlteracaoConsulta', 0);
+        }])->get();
+        }
+        else{
+            $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->with(['consulta' => function($query) use($varId){
+            $query->where('idConsulta', $varId);
+        }])->get();
+
+        }
         $var2 = Grupo::all();
         return view('cardapio_cadastro')->with('lista_nome', $lista_nome)->with('group', $var2);
-    }
+        }
+    
 
     public function busca2(Request $request){
         $var = $request->busca;

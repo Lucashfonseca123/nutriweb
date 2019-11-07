@@ -37,7 +37,7 @@
                 <div class="user-info">
                      <span class="user-name">{{ Auth::user()->name }}
                      </span>
-                     <span class="user-role">Administrador</span>
+                     <span class="user-role">Nutricionista</span>
                      <span class="user-status">
                         <i class="fa fa-circle"></i>
                      <span>Online</span>

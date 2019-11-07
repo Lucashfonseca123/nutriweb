@@ -1,6 +1,7 @@
 @extends('layouts.menu')
 @section('content')
     <main class="page-content">
+
         <div class="container">
         <div class="card">
             <div class="card-header"><br>
