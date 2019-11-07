@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-header"><br>
             <h2 class="col">Edição Paciente</h2><br>
-            <img class="logo" src="img/logo.png">
+            <img class="logo4" src="img/logo.png">
             <div class="row col"> 
             @if(isset($consultaPaciente))  
                         @foreach($consultaPaciente as $paciente)         
@@ -488,7 +488,7 @@
                     </div>
                         
                      <label for="">
-                    <span>
+                    <span class="col">
                         <button class="btn btn-success" type="submit"> Salvar </button>
                     </span>
                 </label> 

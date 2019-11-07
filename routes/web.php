@@ -44,6 +44,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/grupoCadastro', 'GrupoController');
 
+//    Route::post('/grupoCadastro/{id}', 'GrupoController@update');
+
+    Route::post('/grupoCadastro2/{id}', 'GrupoController@update');
+
     Route::resource('/grupoEditar', 'GrupoController');
 
     Route::get('/alimentos', 'Controller@buscar_alimentos');

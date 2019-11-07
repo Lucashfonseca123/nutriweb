@@ -10,10 +10,17 @@
                         {{csrf_field()}}
                         <div class="form-group col-md-8">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="busca" placeholder="Digite aqui..." >
                                 <div class="input-group-append">
+                                    <select class="js-example-basic-single form-control" style="width: 250px" name="busca" id="idgrupo">
+                                        @if(isset($group))             {{--Se a variavel foi previamente definida--}}
+                                            @foreach($group as $grupos)
+                                                <option value="{{$grupos->NomeGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                    &ensp;&ensp;
                             <span>
-                                <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
+                                <button class="btn btn-primary" value="busca" type="submit">Selecionar</button> &ensp;&ensp;
                             </span>
                                 </div>
                             </div>
@@ -47,8 +54,9 @@
                             </div>
                                 <div class=" col escondido" id="{{$grupo->idGrupo}}" >
                                     &ensp;&ensp;
-                                    <form action="{{route('grupoCadastro.update', ['id'=> $grupo->idGrupo])}}" method="post">
-                                        {{csrf_field()}}
+                                    {{--<form action="{{route('grupoCadastro', ['id'=> $grupo->idGrupo])}}" method="post">--}}
+                                    <form action="/grupoCadastro2/{{$grupo->idGrupo}}" method="post">
+                                    {{csrf_field()}}
                                       <div class="row">
                                         <div class="col-md-5 card-header text-center">
                                             <div class="form-group text-center">
@@ -57,22 +65,22 @@
                                             <div class="form-group text-center">
                                                 @foreach($lista_nome as $grupo2)
                                                     <label for="">
-                                                        <select class="js-example-basic-single form-control" id="alimentoTaco" style="width: 180px" >
+                                                        <select class="js-example-basic-single form-control" id="alimentoTaco" style="width: 180px" name="id_alimento" >
                                                             @if(isset($busca_alimentos))             {{--Se a variavel foi previamente definida--}}
                                                                 @foreach($busca_alimentos as $alimentos)
-                                                                    <option id="{{$alimentos->id}}" value="{{$alimentos->id}}" name="">{{$alimentos->descricaoAlimento}}</option>
-                                                                    {{--<input type="hidden" value="{{$alimentos->id}}" name="id_alimento[{{}}]">--}}
-                                                                @endforeach
+                                                                    <option id="{{$alimentos->id}}" value="{{$alimentos->id}}" name="id_alimento[]">{{$alimentos->descricaoAlimento}}</option>
+                                                            @endforeach
                                                             @endif
                                                         </select>
                                                     </label>
                                                     <label for="">
-                                                        <input type="text" id="Atr2" style="width: 114px" class="form-control Atr1" name="qtde_alimento" value="{{$grupo2->Qtde_Alimento}}">
+                                                        <input type="text" id="Atr2" style="width: 114px" class="form-control Atr1" name="quantidadeAlimento[]" value="{{$grupo2->Qtde_Alimento}}">
                                                     </label>
                                                 @endforeach
-                                                    <br><button class="btn btn-success" type="input">Salvar</button>
+                                                <br><button class="btn btn-success" type="submit">Salvar</button>
                                             </div>
                                         </div>
+                                    </form>
                                     &emsp;&emsp;
                                         <div class="col-md-5 card-header text-center">
                                             <div class="form-group text-center">
@@ -92,7 +100,6 @@
                                     </div>
                                  </div>
                             </label>
-                            </form>
                             <?php $i++;
                             ?>
                         @endif

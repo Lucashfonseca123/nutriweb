@@ -67,7 +67,7 @@ class EditarInfoController extends Controller
      */
     public function edit(Request $request)
     {
-         $var = $request->busca;
+        $var = $request->busca;
         $consultaPaciente = Paciente::where('NomePaciente', "like", "%".$var."%")->where('ExcluidoPaciente','<>','1')->get(); 
         return view('editar_info')->with('consultaPaciente',  $consultaPaciente );
     }

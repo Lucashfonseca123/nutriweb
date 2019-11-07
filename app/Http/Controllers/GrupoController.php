@@ -17,7 +17,8 @@ class GrupoController extends Controller
     public function index()
     {
         $var = Cmvcoltaco3::all();
-        return view('grupo_editar')->with('busca_alimentos', $var);
+        $group = Grupo::all();
+        return view('grupo_editar')->with('busca_alimentos', $var)->with('group', $group);
     }
 
     /**
@@ -91,6 +92,7 @@ class GrupoController extends Controller
     public function update(Request $request, $id)
     {
         $var = Grupo::find($id);
+        dd(collect($var));
         $var->NomeGrupo = $request->nomesGrupo;
         $var->save();
 
@@ -99,7 +101,7 @@ class GrupoController extends Controller
 
 
         foreach ($alimentoid as $key => $alimento) {
-            GrupoHasAlimento::create([
+            GrupoHasAlimento::update([
                 'Alimento_id' => $alimentoid[$key],
                 'Qtde_Alimento' => $qtdealimento[$key],
                 'idBuscado' => $idgrupo
@@ -124,10 +126,11 @@ class GrupoController extends Controller
         $var = $request->busca;
 //        $lista_nome = Grupo::where('NomeGrupo', "like", "%".$var."%")->get();
 //        return view('grupo_editar')->with('lista_nome', $lista_nome);
+        $group = Grupo::all();
 
         $consultaGrupo = Grupo::join('Grupo_has_alimento','Grupo.idGrupo','=','Grupo_has_alimento.idBuscado')->where('NomeGrupo', $var)->get();
         $var = Cmvcoltaco3::all();
-        return view('grupo_editar')->with('lista_nome', $consultaGrupo)->with('busca_alimentos', $var);
+        return view('grupo_editar')->with('lista_nome', $consultaGrupo)->with('busca_alimentos', $var)->with('group', $group);
     }
 
     public function alimentos(){
