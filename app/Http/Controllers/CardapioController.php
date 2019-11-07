@@ -140,9 +140,10 @@ class CardapioController extends Controller
         return view('edit_cardapio')->with('lista_nome', $lista_nome)->with('group', $var2);
     }
 
-    public function resumo(Request $request){
-//        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();
-            dd(collect($request));
-        return view('resumo_paciente');
+    public function resumo($id){
+        $lista_nome = Paciente::where('idPaciente', $id)->where('Paciente.ExcluidoPaciente','<>','1')->get();
+//            dd($lista_nome);
+        $consulta = Consultum::where('Paciente_idPaciente', $id)->where('Paciente.ExcluidoPaciente','<>','1');
+        return view('resumo_paciente')->with('consultaPaciente', $lista_nome)->with('group', $consulta);
     }
 }

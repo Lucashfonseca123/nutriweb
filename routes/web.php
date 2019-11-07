@@ -58,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/recuperar_senha', 'Controller@recuperar_senha');
 
-    Route::get('/resumo_paciente', 'CardapioController@resumo');
+    Route::get('/resumo_paciente/{id}', 'CardapioController@resumo');
 
     Route::post('/testerota', 'HomeController@store')->name('test');
 

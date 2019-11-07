@@ -42,7 +42,7 @@
                                         <td>
                                         {{--<form target="_blank" action="/resumo_paciente" method="get">--}}
                                             {{csrf_field()}}
-                                        <span style="cursor: pointer" onclick="window.open('/resumo_paciente', '', 'width=600,height=300')">
+                                        <span style="cursor: pointer" onclick="window.open('/resumo_paciente/{{$paciente->idPaciente}}', '', 'width=600,height=300')">
                                             <input type="hidden" name="idPaciente" value="{{$paciente->idPaciente}}">
                                             <button class="btn btn-dark" type="submit">Gerar resumo</button>
                                         </span>

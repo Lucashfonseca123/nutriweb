@@ -1,252 +1,496 @@
 @extends('layouts.pop_up')
 @section('title', 'Nutriweb')
 @section('content')
-    <div class="panel panel-primary container">
-        <div class="panel-heading col mt-4 "><h4>Resumo paciente 1</h4><br></div>
-        <img class="logo3" src="img/logo.png">
-        <div class="panel-body">
+    <main class="page-content">
+        <div class="container">
+            <div class="card">
+                <div class="card-header"><br>
+                    <h2 class="col">Resumo Paciente</h2><br>
+                    <div class="row col">
+                        @if(isset($consultaPaciente))
+                            @foreach($consultaPaciente as $paciente)
+                                    <input type="hidden" name="idpaciente" value="{{$paciente->idPaciente}}">
+                                    <input type="hidden" name='idnutricionista' value="{{Auth::user()->id}}">
+                                    <div class="panel-body">
+                                        <!-- NOME -->
+                                        <div class="form-group">
+                                            <label for="nome" class="col-md-5">Nome
+                                                <input type="text" name="paciente" value="{{$paciente->NomePaciente}}" class="form-control " disabled>
+                                            </label>
+                                        </div>
+                                        <!-- EMAIL -->
+                                        <div class="form-group">
+                                            <label class="col-md-3" for="prependedtext">Email
+                                                <input id="prependedtext" name="email" value="{{$paciente->EmailPaciente}}" class="form-control" placeholder="email@email.com" required="" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" disabled>
+                                            </label>
+                                            <label for="prependedtext" class="col-md-3">Telefone
+                                                <input id="prependedtext" name="telefone" value="{{$paciente->TelefonePaciente}}" class="form-control" placeholder="XX XXXXX-XXXX" required="" type="text" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+                                                       OnKeyPress="formatar('## #####-####', this)" " disabled>
+                                            </label>
+                                        </div>
+                                        <!-- CPF, NASCIMENTO E SEXO -->
+                                        <div class="form-group">
+                                            <label for="nome" class="col-md-3">Profissão
+                                                <input id="cpf" name="profissao" type="text" value="{{$paciente->ProfissaoPaciente}}" class="form-control" placeholder="Descreva.." maxlength="20" disabled>
+                                                <br>
+                                                <label class="" for="radios">Sexo </label><br>
+                                                <input name="sexo" id="sexo" value='F' type="radio" required  {{$paciente->SexoPaciente == 'F' ? 'checked' : '' }} disabled>
+                                                Feminino
+                                                <input name="sexo" id="sexo" value='M' type="radio" {{$paciente->SexoPaciente == 'M' ? 'checked' : '' }} disabled>
+                                                Masculino
+                                                <br><br>
+                                                <div class="">
+                                                    Trabalha quantas horas por dia:
+                                                </div>
+                                                <div class="">
+                                                <input type="number" class="form-control col-md-4" value="{{$paciente->TrabalhaHoraDiaPaciente}}" name="hrsDia" disabled>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
 
-            <!-- EXAMES LABORATORIAIS -->
+                                    <!-- CEP -->
 
-            <h5 class="col"><br>Exames laboratoriais</h5>
-            <h6 class="col"><br>Dados antropométricos<br><br></h6>
+                                    <div class="form-group">
+                                        <label class="col-md-3" for="prependedtext">CEP
+                                            <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" required="" value="{{$group->CepEndereco}}" type="search" maxlength="8" pattern="[0-9]+$">
+                                        </label>
+                                        <label class="col-md-3" for="prependedtext">
+                                            <button type="button" class="btn btn-primary" onclick="pesquisacep(cep.value)">Pesquisar</button>
+                                        </label>
+                                    </div>
 
-            <div class="form-group">
-                <label for="nome" class="col-md-3">Peso (kg)
-                    <input type="text" class="form-control col-md-4" value="50,5" disabled>
-                </label>
-                <label for="nome" class="col-md-3">Estatura (m)
-                    <input type="text" class="form-control col-md-4" value="1,9" disabled>
-                </label>
-                <label for="nome" class="col-md-3">Circuferência da cintura (cm)
-                    <input type="text" class="form-control col-md-4" value="3,5" disabled>
-                </label>
-            </div>
-            <div class="form-group">
-                <label for="nome" class="col-md-3">Circuferência do abdômen (cm)
-                    <input type="text" class="form-control col-md-4" value="3,2" disabled>
-                </label>
-                <label for="nome" class="col-md-3">Circuferência do quadril (cm)
-                    <input type="text" class="form-control col-md-4" value="2,9" disabled>
-                </label>
-                <label for="nome" class="col-md-3">Circuferência coxa proximal direita (cm)
-                    <input type="text" class="form-control col-md-4" value="8,2" disabled>
-                </label>
-            </div>
-            <div class="form-group">
-                <label for="nome" class="col-md-3">Circuferência coxa proximal esquerda (cm)
-                    <input type="text" class="form-control col-md-4" value="10,5" disabled>
-                </label>
-                <label for="nome" class="col-md-3">Circuferência da panturrilha (cm)
-                    <input type="text" class="form-control col-md-4" value="13,2" disabled>
-                </label>
-                <label for="nome" class="col-md-3">Circuferência do braço direito (cm)
-                    <input type="text" class="form-control col-md-4" value="8,3" disabled>
-                </label>
-            </div>
-            <div class="form-group">
-                <label for="nome" class="col-md-3">Circuferência do braço esquerdo (cm)
-                    <input type="text" class="form-control col-md-4">
-                </label>
-                <label for="nome" class="col-md-3">Circuferência do punho
-                    <input type="text" class="form-control col-md-4">
-                </label>
-                <label for="nome" class="col-md-3">IMC
-                    <input type="text" class="form-control col-md-4">
-                </label>
-            </div>
-            <div class="form-group">
-                <label for="nome" class="col-md-3">% Gordura
-                    <input type="text" class="form-control col-md-4">
-                </label>
-                <label for="nome" class="col-md-3">% Muscular
-                    <input type="text" class="form-control col-md-4">
-                </label>
-                <label for="nome" class="col-md-3">TMB
-                    <input type="text" class="form-control col-md-4">
-                </label>
-            </div>
-            <div class="form-group">
-                <label for="nome" class="col-md-3">Body Age
-                    <input type="text" class="form-control col-md-4">
-                </label>
-                <label for="nome" class="col-md-3">Gordura Viceral
-                    <input type="text" class="form-control col-md-4">
-                </label>
-            </div>
+                                    <!-- ENDEREÇO -->
+                                    <div class="form-group">
+                                        <h6 class="col-md-3">Enredeço</h6>
+                                        <label class="col-md-3" for="prependedtext">
+                                            <span class="input-group-addon">Rua</span>
+                                            <input id="rua" name="rua" class="form-control"  required="" value="{{$paciente->RuaEndereco}}" readonly="readonly" type="text">
+                                        </label>
+                                        <label class="col-md-3" for="prependedtext">
+                                            <span class="input-group-addon">Bairro</span>
+                                            <input id="bairro" name="bairro" class="form-control" value="{{$paciente->BairoEndereco}}" required="" readonly="readonly" type="text">
+                                        </label>
+                                        <label class="col-md-1" for="prependedtext">
+                                            <span class="input-group-addon">N °</span>
+                                            <input id="numero" name="numeroEndereco" class="form-control" value="{{$paciente->NumeroEndereco}}" required=""  type="text">
+                                        </label>
+                                    </div>
 
-            <!-- HÁBITOS ALIMENTARES E SOCIAIS -->
-            <h5 class="col"><br>Hábitos alimentares e sociais</h5>
-            <br>
-            <div class="form-group">
-                <label class="col" for="Filhos">Intolerância ou alergia alimentar</label>
-                <div class="col-md-3">
-                    <div class="input-group">
-                                <span class="input-group-addon">
-                                    <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="int" id="int" value="nao" onclick="desabilita('int')" required>
-                                        Não
-                                    </label>
-                                    <label class="radio-inline" for="radios-1">
-                                        <input type="radio" name="int" id="int" value="sim" onclick="habilita('int')">
-                                        Sim
-                                    </label>
-                                </span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2" for="prependedtext">
-                    <input id="int" name="int" placeholder="Descreva..." class="form-control input-md" required="" value="" type="search" maxlength="8" pattern="[0-9]+$" disabled>
-                </label>
-            </div>
-            <div class="form-group">
-                <label class="col" for="Filhos">Mastigação</label>
-                <div class="col-md-3">
-                    <div class="input-group">
-                                <span class="input-group-addon">
-                                    <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="int" id="int" value="nao" onclick="desabilita('int')" required>
-                                        Lenta
-                                    </label>
-                                    <label class="radio-inline" for="radios-1">
-                                        <input type="radio" name="int" id="int" value="sim" onclick="habilita('int')">
-                                        Rápida
-                                    </label>
-                                </span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 " for="Estado Civil">Mastigação</label>
-                <div class="col-md-2">
-                    <select required id="Estado Civil" name="Estado Civil" class="form-control">
-                        <option value=""></option>
-                        <option value="lenta ">Lenta</option>
-                        <option value="normal">Normal</option>
-                        <option value="rapida">Rápida</option>
-                        <option value="muito_rapida">Muito rápida</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3" for="prependedtext">Preferência alimentares
-                    <input id="profissao" name="profissao" placeholder="" class="form-control">
-                </label>
-                <label class="col-md-3" for="prependedtext">Aversões alimentares
-                    <input id="profissao" name="profissao" placeholder="" class="form-control">
-                </label>
-            </div>
-            <div class="form-group">
-                <label class="col-md-1" for="Filhos">Tabagista</label>
-                <div class="col-md-3">
-                    <div class="input-group">
-                                <span class="input-group-addon">
-                                    <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="filhos" id="filhos" value="nao" onclick="desabilita('filhos_qtd')" required>
-                                        Não
-                                    </label>
-                                    <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="tab2" id="tab2" value="nao" onclick="habilita('tab')" required>
-                                        Parei
-                                    </label>
-                                    <label class="radio-inline" for="radios-1">
-                                        <input type="radio" name="tab4" id="tab4" value="sim" onclick="habilita('tab3')">
-                                        Sim
-                                    </label>
-                                </span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="nome" class="col-md-3">Parou há quanto tempo?
-                    <input type="text" id="tab" name="tab" class="form-control col-md-4" disabled>
-                </label>
-                <label for="nome" class="col-md-3">Cigarro por dia
-                    <input type="number" id="tab3" name="tab3" class="form-control col-md-4" disabled>
-                </label>
-            </div>
-            <div class="form-group">
-                <label class="col-md-1" for="Filhos">Etilista</label>
-                <div class="col-md-3">
-                    <div class="input-group">
-                                <span class="input-group-addon">
-                                    <label class="radio-inline" for="radios-0">
-                                        <input type="radio" name="filhos" id="filhos" value="nao" onclick="desabilita('eti')" required>
-                                        Não
-                                    </label>
-                                    <label class="radio-inline" for="radios-1">
-                                        <input type="radio" name="eti1" id="eti1" value="sim" onclick="habilita('eti')">
-                                        Sim
-                                    </label>
-                                </span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="nome" class="col-md-3">Consumo médio
-                    <input type="text" id="eti" name="eti" class="form-control col-md-4" disabled>
-                </label>
-            </div>
-            <div class="form-group">
-                <label for="nome" class="col-md-4">Consumo de água
-                    <input type="text" id="agua" name="agua" class="form-control col-md-4">
-                </label>
-            </div>
-            <div class="form-group">
-                <label class="" style="vertical-align: top;" for="radios">&emsp;Usou suplementos</label><br>
-                <label required="" class="radio-inline" for="radios-0" >&emsp;
-                    <input type="radio" name="sup" id="sup" value="nao" onclick="desabilita('sup1')" required>
-                    Não
-                </label>
-                <label class="radio-inline col-md-2" for="radios-1">
-                    <input type="radio" name="sup" id="sup" value="nao" onclick="habilita('sup1')" required>
-                    Sim
-                </label>
-                <label for="nome" class="col-md-8">Quais?
-                    <input type="text" id="sup1" name="sup1" class="form-control col-md-4" disabled>
-                </label>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3" for="prependedtext">Quem cozinha em casa?
-                    <input id="profissao" name="profissao" placeholder="Descreva..." class="form-control">
-                </label>
-            </div>
+                                    <!-- CIDADE, ESTADO -->
+                                    <div class="form-group">
+                                        <label class="col-md-3" for="prependedtext">
+                                            <span class="input-group-addon">Cidade</span>
+                                            <input id="cidade" name="cidade" class="form-control"  value="{{$paciente->NomeCidade}}"  required=""  readonly="readonly" type="text">
+                                        </label>
+                                        <label class="col-md-2" for="prependedtext">
+                                            <span class="input-group-addon">Estado</span>
+                                            <input id="estado" name="estado" class="form-control" value="{{$paciente->NomeEstado}}" required=""  readonly="readonly" type="text" >
+                                        </label>
+                                    </div>
+                                    <div>
+                                        {{--<label class="radio-inline col" for="radios-1"><br>Objetivo da consulta <br><br>--}}
+                                            {{--<input name="objetivo" id="objetivo" value="Manutenção de peso"  type="radio"onclick="desabilita('obj')" {{$paciente->consulta->last()->objetivo->NomeObjetivos == 'Manutenção de peso' ? 'checked' : '' }}">--}}
+                                            {{--Manutenção de peso <br>--}}
+                                            {{--<input name="objetivo" id="objetivo" value="Ganho de peso" value="{{$paciente->RotinaPaciente}}" type="radio"onclick="desabilita('obj')" {{$paciente->consulta->last()->objetivo->NomeObjetivos == 'Ganho de peso' ? 'checked' : '' }}>--}}
+                                            {{--Ganho de peso <br>--}}
+                                            {{--<input name="objetivo" id="objetivo" value="Eliminação de peso" type="radio"onclick="desabilita('obj')" {{$paciente->consulta->last()->objetivo->NomeObjetivos == 'Eliminação de peso' ? 'checked' : '' }}>--}}
+                                            {{--Eliminação de peso <br>--}}
+                                            {{--<input name="objetivo" id="objetivo" value="Hipertrofia" type="radio"onclick="desabilita('obj')" {{$paciente->consulta->last()->objetivo->NomeObjetivos == 'Hipertrofia' ? 'checked' : '' }}>--}}
+                                            {{--Hipertrofia <br>--}}
+                                            {{--<input type="radio" name="objetivo" id="objetivo"  onclick="habilita('obj')" {{$paciente->consulta->last()->objetivo->NomeObjetivos== '' ? 'checked' : '' }}>--}}
+                                            {{--Outros--}}
+                                        {{--</label>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-4" for="prependedtext">--}}
+                                                {{--<input id="obj" name="objetivo" placeholder="Descreva" class="form-control input-md" required="" value="{{$paciente->consulta->last()->objetivo->NomeObjetivos}}" type="search"  pattern="[0-9]+$" disabled>--}}
+                                            {{--</label>--}}
+                                        {{--</div>--}}
 
-            <h6 class="col"><br>Inquérito dietético (Refeições nas ultimas 24 horas)</h6>
-            <div class="form-group col-md-4">
-                <label for="exampleFormControlTextarea3">Desjejum/Horário</label>
-                <textarea class="form-control" id="exampleFormControlTextarea3" rows="5"></textarea>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="exampleFormControlTextarea3">Lanche/Horário</label>
-                <textarea class="form-control" id="exampleFormControlTextarea3" rows="5"></textarea>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="exampleFormControlTextarea3">Almoço/Horário</label>
-                <textarea class="form-control" id="exampleFormControlTextarea3" rows="5"></textarea>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="exampleFormControlTextarea3">Lanche/Horário</label>
-                <textarea class="form-control" id="exampleFormControlTextarea3" rows="5"></textarea>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="exampleFormControlTextarea3">Jantar/Horário</label>
-                <textarea class="form-control" id="exampleFormControlTextarea3" rows="5"></textarea>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="exampleFormControlTextarea3">Ceia/Horário</label>
-                <textarea class="form-control" id="exampleFormControlTextarea3" rows="5"></textarea>
-            </div>
-            <!-- Cadastrar -->
-            <div class="form-group">
-                <label class="col-md-2 control-label" for="Cadastrar"></label>
-                <div class="col-md-8">
-                    <button id="Cadastrar" name="Cadastrar" class="btn btn-success" type="Submit">Salvar</button>
-                    <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset">Cancelar</button>
+                                        {{--<br>--}}
+
+                                        {{--<h5 class="col"> <br>Dados clínicos <br></h5>--}}
+                                        {{--<h6 class="col"> <br>Diagnóstico <br><br></h6>--}}
+
+                                        {{--<span class="input-group-addon col">--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox" name="diabetes" id="doencas" value=1 {{$paciente->consulta->last()->diagnostico->Diabetes_melitusDiagnostico == 1 ? 'checked' : '' }} >--}}
+                             {{--Diabetes Melitus &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox" name="hAs" id="doencas" value=1 {{$paciente->consulta->last()->diagnostico->HasDiagnostico == 1 ? 'checked' : '' }}>--}}
+                            {{--HAS &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox" name="ic" id="doencas" value=1  {{$paciente->consulta->last()->diagnostico->IcDiagnosticoDiagnostico == 1 ? 'checked' : '' }}>--}}
+                            {{--IC &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox" name="displidemia" id="doencas" value=1  {{$paciente->consulta->last()->diagnostico->DisplidemiaDiagnostico == 1 ? 'checked' : '' }}>--}}
+                            {{--Dislipidemia &emsp;&emsp;--}}
+                        {{--</label>--}}
+                    {{--</span>--}}
+                                        {{--<br>--}}
+                                        {{--<span class="input-group-addon col">--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox" name="cardiopata" id="doencas" value=1  {{$paciente->consulta->last()->diagnostico->CardiopataDiagnostico == 1 ? 'checked' : '' }}>--}}
+                            {{--Cardiopatia &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox" name="nefropatia" id="doencas" value=1  {{$paciente->consulta->last()->diagnostico->NefropatiaDiagnostico == 1 ? 'checked' : '' }}>--}}
+                            {{--Nefropatia &emsp;&emsp;&ensp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox" name="gastrite" id="doencas" value=1  {{$paciente->consulta->last()->diagnostico->GastriteDiagnostico == 1 ? 'checked' : '' }}>--}}
+                            {{--Gastrite &emsp;&emsp;&emsp;&ensp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox" name="neoplasia" id="doencas" value=1  {{$paciente->consulta->last()->diagnostico->NeoplasiaDiagnostico == 1 ? 'checked' : '' }}>--}}
+                            {{--Neoplasia &emsp;&emsp;--}}
+                        {{--</label>--}}
+                    {{--</span>--}}
+                                        {{--<br>--}}
+                                        {{--<span class="input-group-addon col">--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox" name="ulcera" id="doencas" value=1  {{$paciente->consulta->last()->diagnostico->UlceraDiagnostico == 1 ? 'checked' : '' }} >--}}
+                             {{--Úlcera &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox" name="hepatopatia" id="doencas" value=1  {{$paciente->consulta->last()->diagnostico->HepatopatiaDiagnostico == 1 ? 'checked' : '' }}>--}}
+                            {{--Hepatopatia &emsp;&emsp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox" name="ansiedade" id="doencas" value=1  {{$paciente->consulta->last()->diagnostico->AnsiedadeDiagnostico == 1 ? 'checked' : '' }}>--}}
+                            {{--Ansiedade &emsp;&ensp;&ensp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox" name="irritabilidade" id="doencas" value=1  {{$paciente->consulta->last()->diagnostico->IrritabilidadeDiagnostico == 1 ? 'checked' : '' }}>--}}
+                            {{--Irritabilidade &emsp;&emsp;--}}
+                        {{--</label>--}}
+                    {{--</span>--}}
+                                        {{--<br>--}}
+                                        {{--<span class="input-group-addon col">--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox" name="depressao" id="doencas" value=1 {{$paciente->consulta->last()->diagnostico->DepressaoDiagnostico == 1 ? 'checked' : '' }}>--}}
+                             {{--Depressão &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox" name="renSin" id="doencas" value=1 {{$paciente->consulta->last()->diagnostico->Renite_sinusiteDiagnostico == 1 ? 'checked' : '' }}>--}}
+                             {{--Renite/Sinusite &emsp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<input type="checkbox" name="obj4" id="obj4" value=1 onclick="habilita('obj5')"{{$paciente->consulta->last()->diagnostico->OutrasDiagnostico != '' ? 'checked' : '' }}>--}}
+                        {{--Outros--}}
+                                            {{--</label>--}}
+                    {{--</span>--}}
+                                        {{--<br><br>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-6" for="prependedtext">--}}
+                                                {{--<input id="obj5" name="descreva" placeholder="Descreva" class="form-control input-md" required="" value="{{$paciente->consulta->last()->diagnostico->OutrasDiagnostico}}" type="text" maxlength="8" pattern="[0-9]+$" disabled>--}}
+                                            {{--</label>--}}
+                                        {{--</div>--}}
+
+
+
+                                        {{--<h6 class="col"><br>Antecedentes familiares<br><br></h6>--}}
+                                        {{--<br>--}}
+                                        {{--<span class="input-group-addon col">--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox"  name="diabetesAF" id="filhos" value=1 onclick="desabilita('filhos_qtd')" {{$paciente->consulta->last()->antfamiliare->Diabetes_melitusAntFamiliares == 1 ? 'checked' : '' }}>--}}
+                            {{--Diabetes Meltius &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox"  name="hAsAF" id="filhos" value=1 {{$paciente->consulta->last()->antfamiliare->HasAntFamiliares == 1 ? 'checked' : '' }} >--}}
+                            {{--HAS &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox"  name="avc" id="filhos" value=1 {{$paciente->consulta->last()->antfamiliare->AvcAntFamiliares == 1 ? 'checked' : '' }} >--}}
+                            {{--AVC &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox"  name="displidemiaAF" id="filhos" value=1 {{$paciente->consulta->last()->antfamiliare->DislipedemiaAntFamiliares == 1 ? 'checked' : '' }}>--}}
+                            {{--Dislipidemia &emsp;--}}
+                        {{--</label>--}}
+                    {{--</span>--}}
+                                        {{--<br>--}}
+                                        {{--<span class="input-group-addon col">--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox"  name="cardiopataAF" id="filhos" value=1 {{$paciente->consulta->last()->antfamiliare->CardiopatiaAntFamiliares == 1 ? 'checked' : '' }}>--}}
+                             {{--Cardiopatia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox"  name="nefropatiaAF" id="filhos" value=1 {{$paciente->consulta->last()->antfamiliare->NefropatiaAntFamiliares == 1 ? 'checked' : '' }}>--}}
+                            {{--Nefropatia &emsp;&emsp;&ensp;&ensp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox"  name="hepatopatiaAF" id="filhos" value=1 {{$paciente->consulta->last()->antfamiliare->HepatopatiaAntFamiliares == 1 ? 'checked' : '' }}>--}}
+                            {{--Hepatopatia &emsp;&emsp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox"  name="cancer" id="filhos" value=1 {{$paciente->consulta->last()->antfamiliare->CancerAntFamiliares == 1 ? 'checked' : '' }}>--}}
+                            {{--Câncer &emsp;&emsp;--}}
+                        {{--</label>--}}
+                    {{--</span>--}}
+                                        {{--<br>--}}
+                                        {{--<span class="input-group-addon col">--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox"  name="obesidade" id="filhos" value=1 {{$paciente->consulta->last()->antfamiliare->ObesidadeAntFamiliares == 1 ? 'checked' : '' }} >--}}
+                             {{--Obesidade &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox"  name="obj6" id="obj6" value=1 {{$paciente->consulta->last()->antfamiliare->OutrasAntFamiliares != '' ? 'checked' : '' }}>--}}
+                            {{--Outros--}}
+                        {{--</label>--}}
+                    {{--</span>--}}
+                                        {{--<br><br>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-6" for="prependedtext">--}}
+                                                {{--<input id="descrevaAF" name="descrevaAF" placeholder="Descreva" class="form-control input-md" required="" value="{{$paciente->consulta->last()->antfamiliare->OutrasAntFamiliares}}" type="search" disabled>--}}
+                                            {{--</label>--}}
+                                        {{--</div>--}}
+
+
+                                        {{--<h6 class="col"><br>Alterações gastrointestinais <br><br></h6>--}}
+
+                                        {{--<span class="input-group-addon col">--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox"  name="disfagia" id="filhos" value=1 {{$paciente->consulta->last()->altgastrointestinai->DisfagiaAltGastrointestinais == 1 ? 'checked' : '' }}>--}}
+                             {{--Disfagia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox"  name="pirose" id="filhos" value=1 {{$paciente->consulta->last()->altgastrointestinai->PiroseAltGastrointestinais == 1 ? 'checked' : '' }}>--}}
+                            {{--Pirose &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox" name="nausea" id="filhos" value=1{{$paciente->consulta->last()->altgastrointestinai->NauseaAltGastrointestinais == 1 ? 'checked' : '' }}>--}}
+                            {{--Náusea &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox" name="vomitos" id="filhos" value=1 {{$paciente->consulta->last()->altgastrointestinai->VomitosAltGastrointestinais == 1 ? 'checked' : '' }}>--}}
+                            {{--Vômitos &emsp;&emsp;--}}
+                        {{--</label>--}}
+                    {{--</span>--}}
+                                        {{--<br>--}}
+                                        {{--<span class="input-group-addon col">--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox" name="diarreia" id="filhos" value=1 {{$paciente->consulta->last()->altgastrointestinai->DiarreiaAltGastrointestinais == 1 ? 'checked' : '' }}>--}}
+                             {{--Diarréia &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox" name="constipacao" id="filhos" value=1 {{$paciente->consulta->last()->altgastrointestinai->ConstipacaoAltGastrointestinais == 1 ? 'checked' : '' }}>--}}
+                            {{--Constipação &emsp;&emsp;&ensp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                           {{--&ensp;--}}
+                            {{--<input type="checkbox" name="anorexia" id="filhos" value=1 {{$paciente->consulta->last()->altgastrointestinai->AnorexiaAltGastrointestinais == 1 ? 'checked' : '' }}>--}}
+                            {{--Anorexia &emsp;&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox" name="dispepsia" id="filhos" value=1 {{$paciente->consulta->last()->altgastrointestinai->DispepsiaAltGastrointestinais == 1 ? 'checked' : '' }}>--}}
+                            {{--Dispepsia &emsp;&emsp;--}}
+                        {{--</label>--}}
+                    {{--</span>--}}
+                                        {{--<br>--}}
+                                        {{--<span class="input-group-addon col">--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox" name="edema" id="filhos" value=1 {{$paciente->consulta->last()->altgastrointestinai->EdemaAltGastrointestinais == 1 ? 'checked' : '' }}>--}}
+                             {{--Edema &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox" name="flatulencias" id="filhos" value=1 {{$paciente->consulta->last()->altgastrointestinai->FlatulenciasAltGastrointestinais == 1 ? 'checked' : '' }}>--}}
+                            {{--Flatulências &emsp;&emsp;&ensp;&emsp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio" for="radios-1">--}}
+                            {{--<input type="checkbox" name="polidipsia" id="filhos" value=1 {{$paciente->consulta->last()->altgastrointestinai->PolidipsiaAltGastrointestinais == 1 ? 'checked' : '' }}>--}}
+                            {{--Polidipsia &emsp;&ensp;&ensp;&ensp;--}}
+                        {{--</label>--}}
+                    {{--</span>--}}
+                                        {{--<br><br>--}}
+
+                                        {{--altclinica--}}
+
+                                        {{--<h6 class="col"><br>Alterações clínicas<br><br></h6>--}}
+
+                                        {{--<span class="input-group-addon col">--}}
+                        {{--<label class="radio-inline" for="radios-0">--}}
+                            {{--<input type="checkbox" name="cabelos" id="filhos" value=1 {{$paciente->consulta->last()->altclinica->Cabelo_quebradicoAltCinicas == 1 ? 'checked' : '' }}>--}}
+                             {{--Cabelos quebradiços &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox" name="unhas" id="filhos" value=1 {{$paciente->consulta->last()->altclinica->Unhas_fracasAltCinicas == 1 ? 'checked' : '' }}>--}}
+                            {{--Unhas fracas &emsp;&emsp;&emsp;&ensp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox" name="palidez" id="filhos" value=1 {{$paciente->consulta->last()->altclinica->PalidezAltCinicas == 1 ? 'checked' : '' }}>--}}
+                            {{--Palidez &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                        {{--<label class="radio-inline" for="radios-1">--}}
+                            {{--<input type="checkbox" name="outros2" id="filhos" value=1 {{$paciente->consulta->last()->altclinica->Cabelo_quebradicoAltCinicas == 1 ? 'checked' : '' }}>--}}
+                            {{--Outros &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;--}}
+                        {{--</label>--}}
+                    {{--</span>--}}
+                                        {{--<br><br>--}}
+
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-3" for="prependedtext">--}}
+                                                {{--<input id="descrevaAC" name="descrevaAC" value = "{{$paciente->consulta->last()->altclinica->OutrosAltCinicas}}" placeholder="Descreva..." class="form-control" disabled>--}}
+                                            {{--</label>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="nome" class="col-md-3">Hábitos intestinais (Quantas vezes vai ao banheiros)--}}
+                                                {{--<input type="number"  name ="habitosIntestinais" value="{{$paciente->consulta->last()->altclinica->HabitosIntestinalAltCinicas}}" class="form-control" col-md-3>--}}
+                                            {{--</label>--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label for="nome" class="col-md-3">Frequência urinária(Quantas vezes urina ao dia)--}}
+                                                    {{--<input type="number" name ="freUri" value="{{$paciente->consulta->last()->altclinica->Frequencia_urinariaAltCinicas}}" class="form-control ">--}}
+                                                {{--</label>--}}
+                                                {{--<label class="col" for="prependedtext">Passado cirurgico--}}
+                                                    {{--<input id="profissao" type="text" name="passado" value="{{$paciente->consulta->last()->altclinica->Passado_CirurgicoAltCinicas}}" placeholder="" class="form-control col-md-4">--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label class="col-md-3" for="Filhos">Uso de medicamentos</label>--}}
+                                                {{--<div class="col-md-3">--}}
+                                                    {{--<div class="input-group">--}}
+                                {{--<span class="input-group-addon">--}}
+                                    {{--<label class="radio-inline" for="radios-0">--}}
+                                        {{--<input type="radio" name="med" id="med" value="nao" onclick="desabilita('med2')" {{$paciente->consulta->last()->altclinica->MedicamentosAltCinicas == '' ? 'checked' : '' }} >--}}
+                                        {{--Não--}}
+                                    {{--</label>--}}
+                                    {{--<label class="radio-inline" for="radios-1">--}}
+                                        {{--<input type="radio" name="med" id="med" value="sim" onclick="habilita('med2')" {{$paciente->consulta->last()->altclinica->MedicamentosAltCinicas != '' ? 'checked' : '' }}>--}}
+                                        {{--Sim--}}
+                                    {{--</label>--}}
+                                {{--</span>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label class="col-md-2" for="prependedtext">--}}
+                                                    {{--<input id="med2" name="descrevaMed" placeholder="Descreva..." class="form-control input-md" required="" value="{{$paciente->consulta->last()->altclinica->MedicamentosAltCinicas}}" type="search" disabled>--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<h5 class="col"><br>Hábitos alimentares e sociais</h5>--}}
+                                        {{--<br>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col" for="Filhos">Intolerância ou alergia alimentar</label>--}}
+                                            {{--<div class="col-md-3">--}}
+                                                {{--<div class="input-group">--}}
+                                {{--<span class="input-group-addon">--}}
+                                    {{--<label class="radio-inline" for="radios-0">--}}
+                                        {{--<input type="radio" name="int" id="int" value="nao" onclick="desabilita('descrevaIntolerancia')" required {{$paciente->IntoleranciaAlimentarPaciente != 1 ? 'checked' : '' }}>--}}
+                                        {{--Não--}}
+                                    {{--</label>--}}
+                                    {{--<label class="radio-inline" for="radios-1">--}}
+                                        {{--<input type="radio" name="int" id="int" value="sim" onclick="habilita('descrevaIntolerancia')" {{$paciente->IntoleranciaAlimentarPaciente == '1' ? 'checked' : '' }}>--}}
+                                        {{--Sim--}}
+                                    {{--</label>--}}
+                                {{--</span>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-2" for="prependedtext">--}}
+                                                {{--<input id="descrevaIntolerancia" name="descrevaIntolerancia" placeholder="Descreva..." class="form-control input-md" value="{{$paciente->IntoleranciaAlimentarPaciente}}" type="search"   >--}}
+                                            {{--</label>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col" for="Filhos">Mastigação</label>--}}
+                                            {{--<div class="col-md-5">--}}
+                                                {{--<div class="input-group">--}}
+                                {{--<span class="input-group-addon">--}}
+                                    {{--<label class="radio-inline" for="radios-0">--}}
+                                        {{--<input type="radio" name="mastigacao" id="int" value="Lenta" onclick="desabilita('mastigacao')" required {{$paciente->MastigacaoPaciente == 'Lenta' ? 'checked' : '' }}>--}}
+                                        {{--Lenta--}}
+                                    {{--</label>--}}
+                                    {{--<label class="radio-inline" for="radios-0">--}}
+                                        {{--<input type="radio" name="mastigacao" id="int" value="Normal" onclick="desabilita('mastigacao')" required {{$paciente->MastigacaoPaciente == 'Normal' ? 'checked' : '' }}>--}}
+                                        {{--Normal--}}
+                                    {{--</label>--}}
+                                    {{--<label class="radio-inline" for="radios-1">--}}
+                                        {{--<input type="radio" name="mastigacao" id="int" value="Rápida" onclick="desabilita('mastigacao')" {{$paciente->MastigacaoPaciente == 'Rápida' ? 'checked' : '' }}>--}}
+                                        {{--Rápida--}}
+                                    {{--</label>--}}
+                                    {{--<label class="radio-inline" for="radios-1">--}}
+                                        {{--<input type="radio" name="mastigacao" id="int" value="Muito Rápida" onclick="desabilita('mastigacao')" {{$paciente->MastigacaoPaciente == 'Muito Rápida' ? 'checked' : '' }}>--}}
+                                    {{--Muito Rápida--}}
+                                    {{--</label>--}}
+                                {{--</span>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<label class="col-md-3" for="prependedtext">Aversões alimentares--}}
+                                            {{--<input id="profissao" name="aversoesAlimentares" value="{{$paciente->AversaoAlimentarPaciente}}" placeholder="" class="form-control">--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label class="col-md-2" for="Filhos">Tabagista *</label>--}}
+                                        {{--<div class="col-md-3">--}}
+                                            {{--<div class="input-group">--}}
+                                {{--<span class="input-group-addon">--}}
+                                    {{--<label class="radio-inline" for="radios-0">--}}
+                                        {{--<input type="radio" name="tabagista" id="filhos" value='N' onclick="desabilita('parou')" onclick="desabilita('cigarDia')" required {{$paciente->TabagistaPaciente== 'N' ? 'checked' : '' }}>--}}
+                                        {{--Não--}}
+                                    {{--</label>--}}
+                                    {{--<label class="radio-inline" for="radios-0">--}}
+                                        {{--<input type="radio" name="tabagista" id="tab2" value='P' onclick="habilita('parou')" onclick="desabilita('cigarDia')" required {{$paciente->TabagistaPaciente == 'P' ? 'checked' : '' }}>--}}
+                                        {{--Parei--}}
+                                    {{--</label>--}}
+                                    {{--<label class="radio-inline" for="radios-1">--}}
+                                        {{--<input type="radio" name="tabagista" id="tab4" value='S' onclick="habilita('cigarDia')"onclick="desabilita('parou')" {{$paciente->TabagistaPaciente == 'S' ? 'checked' : '' }}>--}}
+                                        {{--Sim--}}
+                                    {{--</label>--}}
+                                {{--</span>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="nome" class="col-md-3">Parou há quanto tempo?--}}
+                                            {{--<input type="text" id="parou" name="parou" value = "{{$paciente->Tempo_parouPaciente}}" class="form-control col-md-4" disabled>--}}
+                                        {{--</label>--}}
+                                        {{--<label for="nome" class="col-md-3">Cigarro por dia--}}
+                                            {{--<input type="number" id="cigarDia" name="cigarDia" value = "{{$paciente->Cigar_diaPaciente}}" class="form-control col-md-4" disabled>--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label class="col-md-1" for="Filhos">Etilista</label>--}}
+                                        {{--<div class="col-md-3">--}}
+                                            {{--<div class="input-group">--}}
+                                {{--<span class="input-group-addon">--}}
+                                    {{--<label class="radio-inline" for="radios-0">--}}
+                                        {{--<input type="radio" name="etilista" id="etilista" value=0 onclick="desabilita('eti')" required {{$paciente->EtilistaPaciente == '0' ? 'checked' : '' }}>--}}
+                                        {{--Não--}}
+                                    {{--</label>--}}
+                                    {{--<label class="radio-inline" for="radios-1">--}}
+                                        {{--<input type="radio" name="etilista" id="etilista" value=1 onclick="habilita('eti')" {{$paciente->EtilistaPaciente == '1' ? 'checked' : '' }}>--}}
+                                        {{--Sim--}}
+                                    {{--</label>--}}
+                                {{--</span>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="nome" class="col-md-3">Consumo médio--}}
+                                            {{--<input type="text" id="eti" name="consumo" value = "{{$paciente->ConsumoMedioPaciente}} " class="form-control col-md-4" disabled>--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="nome" class="col-md-4">Consumo de água(L/dia)--}}
+                                            {{--<input type="text" id="agua" name="consumoAgua" value = "{{$paciente->ConsumoAguaPaciente}}" class="form-control col-md-4">--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+
+                                    {{--<label for="">--}}
+                    {{--<span>--}}
+                        {{--<button class="btn btn-success" type="submit"> Salvar </button>--}}
+                    {{--</span>--}}
+                                    {{--</label>--}}
+                    {{--</div>--}}
+                    @endforeach
+                    @endif
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 @endsection
 
