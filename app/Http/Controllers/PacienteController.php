@@ -89,10 +89,6 @@ class PacienteController extends Controller
         //Atividade fisica
         $varAf->PraticaAtividade_Fisica = $request->pratica;
         $varAf->DescricaoAtividade_Fisica = $request->descricaoAf;
-        $varAf->TempParouAtividade_Fisica = $request->tempoParado;
-        $varAf->HorarioInicioAtividade_Fisica = $request->hrInicio;
-        $varAf->HorarioFinalAtividade_Fisica = $request->hrFim;
-        $varAf->FreqSemanaAtividade_Fisica = $request->frequencia;
         $varAf->save();
         //Diagnostico
         $varDiag->Diabetes_melitusDiagnostico = $request->diabetes;

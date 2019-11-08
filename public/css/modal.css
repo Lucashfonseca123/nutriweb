@@ -1,0 +1,54 @@
+body {
+       background-color:#999999;
+       font-family: 'Oswald',sans-serif;
+       margin:0px;
+       padding:0px;
+      }
+
+.navBar
+{
+  height:50px;
+  background-color:wheat;
+  padding-right:80px;
+}
+
+#helpIcon
+{
+  cursor: pointer;
+  padding-top:12px;
+}
+
+.more
+{
+  font-size:20px;
+}
+
+.pageDesc
+{
+  color:wheat;
+  font-size:55px;
+  text-align:center;
+  padding-top:10px;
+}
+
+.briefDesc
+{
+  font-size:20px;
+  text-align:center;
+  padding:10px 20% 0 20%;
+}
+
+a {
+       text-decoration: none;
+  }
+
+a:hover {
+       text-decoration: none;
+        }
+          
+a:visited {
+       text-decoration: none;
+        }
+a:active {
+       text-decoration: none;
+       }

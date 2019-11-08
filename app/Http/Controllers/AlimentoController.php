@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Alimentos_taco;
+use App\Cmvcoltaco3;
 
 class AlimentoController extends Controller
 {
@@ -35,40 +35,16 @@ class AlimentoController extends Controller
      */
     public function store(Request $request)
     {
-        $var = new Alimentos_taco;
-        $var->id = $request->id;
-        $var->categoria = 1;
-        $var->numeroAlimento =1;
+        $var = new Cmvcoltaco3;
+       
         $var->descricaoAlimento = $request->nomealimento;
-        $var->umidade = 1;
         $var->energiaKcal = $request->qtd_calorica;
-        $var->energiaKj = 1;
-        $var->proteina = 1;
-        $var->lipideos = 1;
-        $var->colesterol = 1;
-        $var->carboidrato = 1;
-        $var->fibraAlimentar = 1;
-        $var->cinzas = 1;
-        $var->calcio = 1;
-        $var->magnesio = 1;
-        $var->manganes = 1;
-        $var->fosforo = 1;
-        $var->ferro = 1;
-        $var->sodio = 1;
-        $var->potassio = 1;
-        $var->cobre = 1;
-        $var->zinco = 1;
-        $var->retinol = 1;
-        $var->re = 1;
-        $var->rae = 1;
-        $var->tiamina = 1;
-        $var->riboflavina = 1;
-        $var->piridoxina = 1;
-        $var->niacina = 1;
-        $var->vitaminaC = 1;
-        $var->created_at = 1;
-        $var->updated_at = 1;
-
+        $var->proteina = $request->proteina;
+        $var->lipideos = $request->lipideos;
+        $var->carboidrato = $request->carboidratos;
+        $var->fibraAlimentar = $request->fibra;
+        $var->calcio = $request->calcio;
+        $var->ferro = $request->ferro;
         $var->save();
         return redirect()->back();
 //        return "certo";

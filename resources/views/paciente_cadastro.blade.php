@@ -9,6 +9,7 @@
         <form class="form-horizontal" method="post" action="{{route('cadastrarpaciente.store')}}">
         {{csrf_field()}}
         <fieldset>
+
         <img class="logo3" src="img/logo.png">
         <br>
             <div class="panel panel-primary">
@@ -18,38 +19,41 @@
                 </div>
             @endif
             <!-- Esconder campo até sexo --> 
+            <div>
+        <img src="img/ajuda.png" class="help" >
+        </div>
             <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado">Inscrição paciente</button>
             <br>
             <div class="escondido" id="revelado">
                 <div class="panel-heading col"><h4>Cadastro do paciente</h4><br></div>
                 <div class="panel-body">
-                <input type="hidden" name='idnutricionista' value="{{Auth::user()->id}}">
+                <input type="hidden" name='idnutricionista' value="{{Auth::user()->Nutricionista_idNutricionista}}">
                     <!-- NOME -->
                     <div class="form-group">
-                        <label for="nome" class="col-md-5">Nome
-                            <input type="text" name="paciente" class="form-control ">
+                        <label for="nome" class="col-md-5">Nome *
+                            <input type="text" required name="paciente" class="form-control ">
                         </label>
                     </div>
                     <!-- EMAIL -->
                     <div class="form-group">
-                        <label class="col-md-3" for="prependedtext">Email
-                            <input id="prependedtext" name="email" class="form-control" placeholder="email@email.com" required="" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+                        <label class="col-md-3" for="prependedtext">Email *
+                            <input id="prependedtext" name="email" class="form-control" placeholder="email@email.com"  required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
                         </label>
-                        <label for="prependedtext" class="col-md-3">Telefone
-                            <input id="prependedtext" name="telefone" class="form-control" placeholder="XX XXXXX-XXXX" required="" type="text" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
+                        <label for="prependedtext" class="col-md-3">Telefone *
+                            <input id="prependedtext" name="telefone" class="form-control" placeholder="XX XXXXX-XXXX" required="" type="text" maxlength="13" required pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
                                    OnKeyPress="formatar('## #####-####', this)" ">
                         </label>
                     </div>
                     <!-- CPF, NASCIMENTO E SEXO -->
                     <div class="form-group">
-                        <label for="nome" class="col-md-3">Profissão
-                            <input id="cpf" name="profissao" type="text" class="form-control" placeholder="Descreva.." maxlength="20">
+                        <label for="nome" class="col-md-3 ">Profissão
+                            <input id="cpf"  name="profissao" type="text" class="form-control" placeholder="Descreva.." maxlength="20">
                         </label>
-                        <label for="nome" class="col-md-3">Data de nascimento
-                            <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" type="date" class="form-control" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+                        <label for="nome" class="col-md-3 ">Data de nascimento *
+                            <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA"  type="date" class="form-control selecionarData" required maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
                         </label>
-                        <label class="" for="radios">Sexo </label>
-                        <label required="" class="radio-inline" for="radios-0" >
+                        <label class="" for="radios">Sexo * </label>
+                        <label  class="radio-inline" for="radios-0" >
                             <input name="sexo" id="sexo" value='F' type="radio" required>
                             Feminino
                         </label>
@@ -64,7 +68,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-2">
-                            <input type="number" min="0" max= "23"class="form-control " name="hrsDia">
+                            <input type="number" min="0" max= "23" class="form-control " name="hrsDia">
                         </label>
 
                     </div>
@@ -77,8 +81,8 @@
                 <!-- CEP -->
 
                     <div class="form-group">
-                        <label class="col-md-3" for="prependedtext">CEP
-                            <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="8" pattern="[0-9]+$">
+                        <label class="col-md-3" for="prependedtext">CEP *
+                            <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" required value="" type="search" maxlength="8" pattern="[0-9]+$">
                         </label>
                         <label class="col-md-3" for="prependedtext">
                             <button type="button" class="btn btn-primary" onclick="pesquisacep(cep.value)">Pesquisar</button>
@@ -127,7 +131,7 @@
                         <textarea class="form-control" name="horErotina" id="exampleFormControlTextarea3" rows="7"></textarea>
                     </div>
 
-                    <label class="radio-inline col" for="radios-1"><br>Objetivo da consulta <br><br>
+                    <label class="radio-inline col" required for="radios-1"><br>Objetivo da consulta <br><br>
                         <input name="objetivo" id="objetivo" value="Manutenção de peso" type="radio"onclick="desabilita('obj')">
                         Manutenção de peso <br>
                         <input name="objetivo" id="objetivo" value="Ganho de peso" type="radio"onclick="desabilita('obj')">
@@ -154,37 +158,24 @@
                     $varAf->HorarioFinal = $request->hrFim;
                     $varAf->FreqSemana = $request->frequencia;-->
 
-                    <span class="input-group-addon col">Pratica atividade física</span>
-                    <span class="input-group-addon">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tipo de atividade</span>
-                    <span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp; Há quanto tempo parou?</span>
-
+                    <span class="input-group-addon col">Pratica atividade física *</span>
+                    
                     <div class="form-group">
                         <label class="col-md-3" for="prependedtext">
-                            <span class="input-group-addon"></span>
+                            <span class="input-group-addon" required></span>
 
                             <input type="radio" name="pratica" id="atv" value=0 onclick="desabilita('atv2')" >
                             Não
                             <input type="radio" name="pratica" id="atv" value=1 onclick="habilita('atv2')">
                             Sim <br>
+
                         </label>
-                        <label class="col-md-3" for="prependedtext">
-                            <input id="atv2" name="descricaoAf" placeholder="Descreva..." class="form-control input-md" disabled>
-                        </label>
-                        <label class="col-md-2" for="prependedtext">
-                            <input id="atv3" name="tempoParado" placeholder="Dias/Meses..." class="form-control input-md" disabled>
-                        </label>
+                        <div class="form-group col-md-4">
+                        <label for="exampleFormControlTextarea3">Descrição atividade física</label>
+                        <textarea class="form-control" name="descricaoAf" id="atv2" rows="7"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="nome" class="col-md-3">Horário ínicio
-                            <input type="time" class="form-control col-md-8" id="hrInicio" name="hrInicio">
-                        </label>
-                        <label for="nome" class="col-md-2">Horário fim
-                            <input type="time" class="form-control " id="hrFim" name="hrFim">
-                        </label>
+                        
                     </div>
-                    <label for="nome" class="col-md-2">Frequência semanal
-                        <input type="text" class="form-control"  id="frequencia" name="frequencia">
-                    </label>
                 </div>
 
                 <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado4">Dados clínicos</button>
@@ -393,19 +384,19 @@
 
                     <span class="input-group-addon col">
                         <label class="radio-inline" for="radios-0">
-                            <input type="radio" name="cabelos" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
+                            <input type="checkbox" name="cabelos" id="filhos" value=1 onclick="desabilita('filhos_qtd')" >
                              Cabelos quebradiços &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="unhas" id="filhos" value=1 onclick="habilita('filhos_qtd')">
+                            <input type="checkbox" name="unhas" id="filhos" value=1 onclick="habilita('filhos_qtd')">
                             Unhas fracas &emsp;&emsp;&emsp;&ensp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="palidez" id="filhos" value=1 onclick="habilita('filhos_qtd') ">
+                            <input type="checkbox" name="palidez" id="filhos" value=1 onclick="habilita('filhos_qtd') ">
                             Palidez &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                         <label class="radio-inline" for="radios-1">
-                            <input type="radio" name="outros2" id="filhos" value=1 onclick="habilita('descrevaAC')">
+                            <input type="checkbox" name="outros2" id="filhos" value=1 onclick="habilita('descrevaAC')">
                             Outros &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         </label>
                     </span>
@@ -460,10 +451,10 @@
                     <h6 class="col"><br>Dados antropométricos<br><br></h6>
 
                     <div class="form-group">
-                        <label for="nome" class="col-md-3">Peso
+                        <label for="nome" class="col-md-3">Peso(kg)
                             <input type="text" name="peso" class="form-control col-md-4" pattern="[0-9]+$">
                         </label>
-                        <label for="nome" class="col-md-3">Estatura
+                        <label for="nome" class="col-md-3">Altura(m)
                             <input type="text" name="estatura" OnKeyPress="formatar('#.##', this)" class="form-control col-md-4">
                         </label>
                         <label for="nome" class="col-md-3">Circunferência da cintura
@@ -471,32 +462,32 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for="nome" class="col-md-3">Circunferência do abdômen
+                        <label for="nome" class="col-md-3">Circunferência do abdômen(cm)
                             <input type="text" name="circAbd" class="form-control col-md-4">
                         </label>
-                        <label for="nome" class="col-md-3">Circunferência do quadril
+                        <label for="nome" class="col-md-3">Circunferência do quadril(cm)
                             <input type="text" name="cirQuad" class="form-control col-md-4">
                         </label>
-                        <label for="nome" class="col-md-3">Circunferência coxa proximal direita
+                        <label for="nome" class="col-md-3">Circunferência coxa proximal direita(cm)
                             <input type="text" name="cirCxDir" class="form-control col-md-4">
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for="nome" class="col-md-3">Circunferência coxa proximal esquerda
+                        <label for="nome" class="col-md-3">Circunferência coxa proximal esquerda(cm)
                             <input type="text" name="cirCxEsq" class="form-control col-md-4">
                         </label>
-                        <label for="nome" class="col-md-3">Circunferência da panturrilha
+                        <label for="nome" class="col-md-3">Circunferência da panturrilha(cm)
                             <input type="text" name="circ_pantu" class="form-control col-md-4">
                         </label>
-                        <label for="nome" class="col-md-3">Circunferência do braço direito
+                        <label for="nome" class="col-md-3">Circunferência do braço direito(cm)
                             <input type="text" name="cirBraDir" class="form-control col-md-4">
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for="nome" class="col-md-3">Circunferência do braço esquerdo
+                        <label for="nome" class="col-md-3">Circunferência do braço esquerdo(cm)
                             <input type="text" name="cirBraEsq" class="form-control col-md-4">
                         </label>
-                        <label for="nome" class="col-md-3">Circunferência do punho
+                        <label for="nome" class="col-md-3">Circunferência do punho(cm)
                             <input type="text" name="cirPunho" class="form-control col-md-4">
                         </label>
                          <label for="nome" class="col-md-3">% Gordura
@@ -517,7 +508,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-3">Gordura Viceral
-                            <input type="text" name="gordVisc" class="form-control col-md-4">
+                            <input type="number" min="1" max= "60" name="gordVisc" class="form-control col-md-4">
                         </label>
                     </div>
                 </div>
@@ -529,11 +520,11 @@
                     <h5 class="col"><br>Hábitos alimentares e sociais</h5>
                     <br>
                     <div class="form-group">
-                        <label class="col" for="Filhos">Intolerância ou alergia alimentar</label>
+                        <label class="col" for="Filhos">Intolerância ou alergia alimentar *</label>
                         <div class="col-md-3">
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                    <label class="radio-inline" for="radios-0">
+                                    <label class="radio-inline" required for="radios-0">
                                         <input type="radio" name="int" id="int" value="nao" onclick="desabilita('descrevaIntolerancia')" required>
                                         Não
                                     </label>
@@ -631,7 +622,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="nome" class="col-md-3">Consumo médio
+                        <label for="nome" class="col-md-3">Consumo médio(L/dia)
                             <input type="text" id="eti" name="consumo" class="form-control col-md-4" disabled>
                         </label>
                     </div>

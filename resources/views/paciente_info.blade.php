@@ -42,9 +42,12 @@
                         <th scope="row" >{{$varp = $varp+1}}</th>
                         <td> {{$paciente->NomePaciente}}</td>
                         <td><?php echo date('d/m/Y', strtotime($paciente->created_at)); ?> </td>
-                        
-                        <td><button class="btn btn-dark" type="button" >Montar cardápio</button></td>
-                    
+                        <form action="/buscarPessoa" method="post">
+                            {{csrf_field()}}
+                        <td><input type="hidden" name="busca" value="{{$paciente->NomePaciente}}">
+                            <input type="hidden" name="buscaId" value="{{$paciente->idConsulta}}">
+                            <button class="btn btn-dark" type="submit" >Montar cardápio</button></td>
+                        </form>
                     </tr>
                     </tbody>
                     </tr>

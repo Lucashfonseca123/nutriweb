@@ -530,10 +530,15 @@ body {
 .logo8 {
     width: 70px;
     float: right;
-    margin-top: -70px;
+    margin-top: 0px;
     margin-right: -10px;
 }
-
+.help{
+    width:20px;
+    float: right;
+    margin-top: -100px;
+    margin-right: -10px;
+}
 body{
  /*   background-image: url("/img/MorangoDesfoque.jpg"); */
     background-repeat:repeat;

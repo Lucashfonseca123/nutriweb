@@ -24,11 +24,7 @@ class CreateAtividadeFisicaTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('idAtividade_Fisica');
             $table->tinyInteger('PraticaAtividade_Fisica')->nullable();
-            $table->string('DescricaoAtividade_Fisica', 45)->nullable();
-            $table->string('TempParouAtividade_Fisica', 45)->nullable();
-            $table->string('HorarioInicioAtividade_Fisica')->nullable();
-            $table->string('HorarioFinalAtividade_Fisica')->nullable();
-            $table->integer('FreqSemanaAtividade_Fisica')->nullable();
+            $table->string('DescricaoAtividade_Fisica', 255)->nullable();
         });
     }
 

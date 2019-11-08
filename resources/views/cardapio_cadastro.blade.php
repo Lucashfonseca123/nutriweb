@@ -10,6 +10,7 @@
                 {{csrf_field()}}
                     <div class="input-group">
                         <input type="text" class="form-control col-md-6" name="busca" placeholder="Digite aqui...">
+                        <input type="hidden" name="buscaId" value = "0">
                         <button class="btn btn-primary" type="submit" value="busca">Busca</button>
                         &ensp;&ensp;
                 </form>
@@ -60,6 +61,7 @@
                     <label for="">
                         Paciente: {{$paciente->NomePaciente}}
                         <input type="hidden" name="idpaciente" value="{{$paciente->idPaciente}}">
+                        <input type="hidden" name="idconsulta" value="{{$paciente->consulta->last()->idConsulta}}">
                     </label>
                     &emsp;&emsp;
                     <label for="">

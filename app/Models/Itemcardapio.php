@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 02 Nov 2019 20:48:31 +0000.
+ * Date: Thu, 07 Nov 2019 22:08:16 +0000.
  */
 
 namespace App\Models;
@@ -56,7 +56,12 @@ class Itemcardapio extends Eloquent
 		return $this->belongsTo(\App\Models\Grupo::class, 'Grupo_idGrupo');
 	}
 
+<<<<<<< HEAD
     public function grupo2()
+=======
+
+	public function grupo2()
+>>>>>>> Bueno
     {
         return $this->belongsTo(\App\Models\Grupo::class, 'Grupo_idGrupo2');
     }
