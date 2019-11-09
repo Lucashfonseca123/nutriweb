@@ -24,6 +24,7 @@
                                     </div>
                                 </div>
                             </form>
+                            <img src="img/ajuda.png" id="2" class="help4">
                             <div>
                         <br><br>
                             </div>

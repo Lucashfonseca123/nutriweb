@@ -14,6 +14,9 @@
                         <button class="btn btn-primary" type="submit" value="busca">Busca</button>
                         &ensp;&ensp;
                 </form>
+                    {{--<a href="/cardapio">--}}
+                        {{--<img src="img/ajuda.png" id="1" class="help3">--}}
+                    {{--</a>--}}
                     </div>
                 <br><br>
                 @if(session()->has('message'))
@@ -49,6 +52,12 @@
                                         </span>
                                         {{--</form>--}}
                                         </td>
+                                        <td>
+                                            <span style="cursor: pointer" onclick="window.open('/cardapioFinal/{{$paciente->idPaciente}}', '', 'width=600,height=300')">
+                                            <input type="hidden" name="idPaciente" value="{{$paciente->idPaciente}}">
+                                            <button class="btn btn-success" type="submit">Gerar PDF</button>
+                                        </span>
+                                        </td>
                                     </tr>
                                     </tbody>
                             </table>
@@ -83,15 +92,6 @@
                         <th scope="row" style="vertical-align: middle">Café da manhã</th>
                         <th class="col">
                                 <input type="time" name="time[1]" class="form-control col-md-10">
-                                <input type="hidden" value="1" name="idrefeicao[1]">
-                                <input type="hidden" value="1" name="opcaocardapio[1]">
-                                <input type="hidden" value="2" name="opcaocardapio[2]">
-                                <input type="hidden" value="1" name="opcaocardapio[3]">
-                                <input type="hidden" value="2" name="opcaocardapio[4]">
-                                <input type="hidden" value="1" name="opcaocardapio[5]">
-                                <input type="hidden" value="2" name="opcaocardapio[6]">
-                                <input type="hidden" value="1" name="opcaocardapio[7]">
-                                <input type="hidden" value="2" name="opcaocardapio[8]">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">

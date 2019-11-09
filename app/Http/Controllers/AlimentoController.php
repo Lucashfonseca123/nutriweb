@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cmvcoltaco3;
+use App\Models\Cmvcoltaco3;
 
 class AlimentoController extends Controller
 {
@@ -36,7 +36,29 @@ class AlimentoController extends Controller
     public function store(Request $request)
     {
         $var = new Cmvcoltaco3;
-       
+        $var->categoria = 0;
+        $var->numeroAlimento = 0;
+        $var->umidade = 0;
+        $var->energiaKj = 0;
+        $var->colesterol = 0;
+        $var->cinzas = 0;
+        $var->magnesio = 0;
+        $var->manganes = 0;
+        $var->fosforo = 0;
+        $var->sodio = 0;
+        $var->potassio = 0;
+        $var->cobre = 0;
+        $var->zinco = 0;
+        $var->retinol = 0;
+        $var->re = 0;
+        $var->rae = 0;
+        $var->tiamina = 0;
+        $var->riboflavina = 0;
+        $var->piridoxina = 0;
+        $var->niacina = 0;
+        $var->vitaminaC = 0;
+        $var->vitaminaC = 0;
+
         $var->descricaoAlimento = $request->nomealimento;
         $var->energiaKcal = $request->qtd_calorica;
         $var->proteina = $request->proteina;
@@ -46,6 +68,7 @@ class AlimentoController extends Controller
         $var->calcio = $request->calcio;
         $var->ferro = $request->ferro;
         $var->save();
+
         return redirect()->back();
 //        return "certo";
     }

@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-header"><br>
                 <h4 class="col">Nutriweb</h4><br>
-                <img class="logo8" src="img/logo.png">
+                <img class="logo5" src="img/logo.png">
                 <h6 class="col">Selecione paciente</h6>
                 <form action="/selecionar_paciente" method="get">
                             {{csrf_field()}}
@@ -17,9 +17,10 @@
                                                 <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
                                             </span> 
                                         </div>
+                                        <img src="img/ajuda.png" id="1" class="help5">
                                     </div>
                                 </div>
-                            </form>
+                </form>
                 <div class="col">
                     <br><h5>Cardápios pendentes</h5> 
             </form>

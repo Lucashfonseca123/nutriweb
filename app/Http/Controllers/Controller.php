@@ -77,4 +77,8 @@ class Controller extends BaseController
     public function hist_consultas(){
         return view('historico_consultas');
     }
+
+    public function help(){
+        return view ("help");
+    }
 }

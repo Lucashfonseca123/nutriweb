@@ -4,13 +4,16 @@
         <div class="container">
         <div class="card">
             <div class="card-header"><br>
-            <h2 class="col">Situação paciente</h2><br>
-            <h3 class="col">Relatórios</h3>
+            <h2 class="col">Editar informações</h2><br>
+            <h3 class="col">Pacientes</h3>
             <img class="logo" src="img/logo.png">
+                <a href="/help">
+                    <img src="img/ajuda.png" id="1" class="help5">
+                </a>
             <div class="row col">
                 <div class="form-group col-md-12">
                     <br>
-             <form action="/buscarPaciente" method="get">
+                <form action="/buscarPaciente" method="get">
                         {{csrf_field()}}
                             <div class="form-group">
                                 <div class="input-group">

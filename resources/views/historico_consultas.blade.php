@@ -7,9 +7,10 @@
             <h2 class="col">Situação paciente</h2><br>
             <h3 class="col">Histórico de Consultas</h3>
             <img class="logo" src="img/logo.png">
-            <div class="row col">
+            <div class="row ">
                 <div class="form-group col-md-12">
-                    <h5>Selecione paciente:</h5>
+                    <h5 class="col">Selecione paciente:</h5>
+                    <br>
              <form action="/buscar_consultas" method="get">
                         {{csrf_field()}}
                             <div class="form-group col-md-12">
@@ -20,6 +21,7 @@
                                             <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
                                         </span> 
                                     </div>
+                                    <img src="img/ajuda.png" id="1" class="help5">
                                 </div>
                             </div>
                         </form>

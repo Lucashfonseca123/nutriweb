@@ -56,12 +56,8 @@ class Itemcardapio extends Eloquent
 		return $this->belongsTo(\App\Models\Grupo::class, 'Grupo_idGrupo');
 	}
 
-<<<<<<< HEAD
-    public function grupo2()
-=======
-
 	public function grupo2()
->>>>>>> Bueno
+
     {
         return $this->belongsTo(\App\Models\Grupo::class, 'Grupo_idGrupo2');
     }

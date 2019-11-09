@@ -9,6 +9,7 @@
             <button class="btn btn-primary mostrar" type="button" alvo="revelado3" title="Clique para selecionar grupo">Novo grupo</button>
             <button class="btn btn-danger" type="button" alvo="revelado">Cancelar</button>
             <button class="btn btn-success" id="enviado" type="submit">Salvar grupo</button>
+            <img src="img/ajuda.png" id="1" class="help5">
             <br><br>
             @if(session()->has('message'))
                 <div class="alert alert-success">
@@ -49,7 +50,6 @@
                                     </div>
                                 </label>
                                     <div class="copy" id="alimento">
-
                                     </div>
                             </div>  
                         </div>

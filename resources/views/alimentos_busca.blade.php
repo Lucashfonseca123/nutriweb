@@ -42,7 +42,7 @@
     {{--                <td> {{$nome_buscado->id}}</td>--}}
                     <td> {{$nome_buscado->categoria}}</td>
                     <td> {{$nome_buscado->descricaoAlimento}}</td>
-                    {{--<td> {{ number_format($nome_buscado->umidade, 2, ',', '.') }}</td>--}}
+{{--                    <td> {{ number_format($nome_buscado->umidade, 2, ",", ".") }}</td>--}}
                     <td> {{$nome_buscado->umidade}}</td>
                     <td> {{$nome_buscado->energiaKcal}}</td>
                     <td> {{$nome_buscado->energiaKj}}</td>

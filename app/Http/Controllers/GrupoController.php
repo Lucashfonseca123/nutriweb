@@ -92,23 +92,26 @@ class GrupoController extends Controller
     public function update(Request $request, $id)
     {
         $var = Grupo::find($id);
-        dd(collect($var));
-        $var->NomeGrupo = $request->nomesGrupo;
+        $var->NomeGrupo = $request->nomesGrupos;
         $var->save();
+
+        $varHasAlimento = GrupoHasAlimento::where('idBuscado', $id)->get();
 
         $alimentoid = $request->id_alimento;
         $qtdealimento = $request->quantidadeAlimento;
 
-
-        foreach ($alimentoid as $key => $alimento) {
-            GrupoHasAlimento::update([
-                'Alimento_id' => $alimentoid[$key],
-                'Qtde_Alimento' => $qtdealimento[$key],
-                'idBuscado' => $idgrupo
-            ])->grupo()->associate($var);
+        foreach ($varHasAlimento as $grupo){
+            $grupo->delete();
         }
 
-        return redirect()->back();
+        foreach($alimentoid as $key => $alimento) {
+            GrupoHasAlimento::create([
+                'Alimento_id' => $alimentoid[$key],
+                'Qtde_Alimento' => $qtdealimento[$key],
+                'idBuscado' => $id
+            ])->grupo()->associate($var);
+        }
+            return view('grupo_editar');
     }
 
     /**
@@ -130,7 +133,16 @@ class GrupoController extends Controller
 
         $consultaGrupo = Grupo::join('Grupo_has_alimento','Grupo.idGrupo','=','Grupo_has_alimento.idBuscado')->where('NomeGrupo', $var)->get();
         $var = Cmvcoltaco3::all();
-        return view('grupo_editar')->with('lista_nome', $consultaGrupo)->with('busca_alimentos', $var)->with('group', $group);
+        foreach ($consultaGrupo as $grupo){
+            $alimento = $grupo->Alimento_id;
+            $elementoAlimento = Cmvcoltaco3::where('id', $alimento)->get();
+            foreach ($elementoAlimento as $nome){
+                $nomeAlimento[] = $nome->descricaoAlimento;
+            }
+        }
+//        dd($nomeAlimento);
+
+        return view('grupo_editar')->with('lista_nome', $consultaGrupo)->with('busca_alimentos', $var)->with('group', $group)->with('alimento', $nomeAlimento);
     }
 
     public function alimentos(){

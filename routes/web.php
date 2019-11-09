@@ -34,6 +34,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/cardapioCadastro', 'CardapioController');
 
+    Route::post('/cardapioCadastro2', 'CardapioController@update');
+
+    Route::get('/cardapioFinal/{id}', 'CardapioController@final');
+
     Route::post('/buscarreconsulta', 'ReconsultaController@busca');
 
     Route::get('/reconsulta', 'Controller@reconsulta');
@@ -97,6 +101,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/buscar_info', 'EditarInfoController@buscarInfo');
 
     Route::post('/excluirPaciente', 'EditarInfoController@destroy');
+
+    Route::get('/help/', 'Controller@help');
 
 });
 

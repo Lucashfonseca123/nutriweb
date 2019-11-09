@@ -534,11 +534,43 @@ body {
     margin-right: -10px;
 }
 .help{
-    width:20px;
+    width:40px;
     float: right;
     margin-top: -100px;
     margin-right: -10px;
 }
+
+.help2{
+    width:40px;
+    float: right;
+    margin-top: 0px;
+    margin-right: 13px;
+}
+
+.help3{
+    width:40px;
+    float: right;
+    margin-top: 0px;
+    margin-right: 13px;
+}
+
+.help4{
+    width:40px;
+    object-fit: scale-down;
+    margin-top: -14px;
+}
+.help5{
+    width:40px;
+    object-fit: scale-down;
+}
+
+.help6{
+    width:40px;
+    object-fit: scale-down;
+    margin-left: 13px;
+}
+
+
 body{
  /*   background-image: url("/img/MorangoDesfoque.jpg"); */
     background-repeat:repeat;

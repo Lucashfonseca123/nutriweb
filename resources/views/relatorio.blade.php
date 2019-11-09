@@ -8,6 +8,7 @@
             <h2 class="col">Situação paciente</h2><br>
             <h3 class="col">Relatórios</h3>
             <img class="logo" src="img/logo.png">
+            {{--<img src="img/ajuda.png" id="1" class="help2">--}}
             <div class="row">
                 <div class="form-group col-md-12">
                         <form action="/buscarRelatorio" method="get">
@@ -16,6 +17,7 @@
                                 <div class="input-group">
                                     <input type="hidden" name="idnutricionista" value="{{Auth::user()->Nutricionista_idNutricionista}}">
                                     <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Selecione paciente   ..." >
+
                                     <div class="input-group-append">
                                         <span>
                                             <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
@@ -80,8 +82,8 @@
                                 <canvas id="mostrarGraficoBA{{$paciente->idPaciente}}" ></canvas>
                             </div>
                     </div>
-                    <div class="row">     
-                    <button class="btn btn-primary selecionar"  type="submit" >Imprimir</button> 
+                    <div class="row col">
+                    <button class="btn btn-primary selecionar"  type="submit" >Imprimir</button>
                     </div>
                     </div>
 

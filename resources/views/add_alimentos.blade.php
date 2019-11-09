@@ -5,10 +5,13 @@
         <div class="card">
         <div class="card-header"><br>
             <h4 class="col">Adicionar alimentos</h4><br>
-            <img class="logo8" src="img/logo.png">
+            <img src="img/ajuda.png" id="1" class="help6">
+            <img class="logo5" src="img/logo.png">
                 <form action="{{route('salvarAlimentos.store')}}" method="post">
                 {{csrf_field()}}
                     <div class="form-group">
+                                <div>
+                                    <br>
                                     <label for="nome" class="col-md-3">Nome Alimento
                                         <input type="text" name="nomealimento" class="form-control col-md-4">
                                     </label>
@@ -38,8 +41,9 @@
                                         <input type="text" name="carboidratos" class="form-control col-md-4">
                                     </label>
                                 </div>
-                            <button class="btn btn-success" id="" type="submit">Adicionar</button>
-                        </div>
+                            <div class="col">
+                                <button class="btn btn-success" id="" type="submit">Adicionar</button>
+                            </div>
                     </div>
                 </form>
         </div>

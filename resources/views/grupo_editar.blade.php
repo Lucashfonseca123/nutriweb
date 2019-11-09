@@ -22,6 +22,7 @@
                             <span>
                                 <button class="btn btn-primary" value="busca" type="submit">Selecionar</button> &ensp;&ensp;
                             </span>
+                                    <img src="img/ajuda.png" id="1" class="help5">
                                 </div>
                             </div>
                         </div>
@@ -55,46 +56,58 @@
                                 <div class=" col escondido" id="{{$grupo->idGrupo}}" >
                                     &ensp;&ensp;
                                     {{--<form action="{{route('grupoCadastro', ['id'=> $grupo->idGrupo])}}" method="post">--}}
-                                    <form action="/grupoCadastro2/{{$grupo->idGrupo}}" method="post">
-                                    {{csrf_field()}}
+
                                       <div class="row">
                                         <div class="col-md-5 card-header text-center">
+                                            <form action="/grupoCadastro2/{{$grupo->idGrupo}}" method="post">
+                                                {{csrf_field()}}
                                             <div class="form-group text-center">
                                                 <input type="text" id="Atr2" style="display: inline; width: 114px" class="form-control Atr1" name="nomesGrupos" value="{{$grupo->NomeGrupo}}">
                                             </div>
                                             <div class="form-group text-center">
+                                                <label for="">
                                                 @foreach($lista_nome as $grupo2)
-                                                    <label for="">
-                                                        <select class="js-example-basic-single form-control" id="alimentoTaco" style="width: 180px" name="id_alimento" >
-                                                            @if(isset($busca_alimentos))             {{--Se a variavel foi previamente definida--}}
+                                                        <select class="js-example-basic-single form-control" id="alimentoTaco" name="id_alimento[]" style="width: 180px" >
+                                                            @if(isset($busca_alimentos))             Se a variavel foi previamente definida
                                                                 @foreach($busca_alimentos as $alimentos)
-                                                                    <option id="{{$alimentos->id}}" value="{{$alimentos->id}}" name="id_alimento[]">{{$alimentos->descricaoAlimento}}</option>
-                                                            @endforeach
+                                                                <option id="{{$alimentos->id}}" value="{{$alimentos->id}}" >{{$alimentos->descricaoAlimento}}</option>
+                                                                @endforeach
                                                             @endif
                                                         </select>
-                                                    </label>
-                                                    <label for="">
-                                                        <input type="text" id="Atr2" style="width: 114px" class="form-control Atr1" name="quantidadeAlimento[]" value="{{$grupo2->Qtde_Alimento}}">
-                                                    </label>
                                                 @endforeach
+                                                </label>
+                                                <label for="">
+                                                    @foreach($lista_nome as $grupo2)
+                                                        <input type="text" id="Atr2" style="width: 114px" class="form-control Atr1" name="quantidadeAlimento[]" value="{{$grupo2->Qtde_Alimento}}">
+                                                    @endforeach
+                                                </label>
+                                                {{--<label for="">--}}
+                                                {{--@foreach($alimento as $nomeAlimento)--}}
+                                                        {{--<input type="text" style="width: 174px" class="form-control" value="{{$nomeAlimento}}" name="nomeElemento[]">--}}
+                                                {{--@endforeach--}}
+                                                {{--</label>--}}
+
                                                 <br><button class="btn btn-success" type="submit">Salvar</button>
                                             </div>
+                                            </form>
                                         </div>
-                                    </form>
+
                                     &emsp;&emsp;
                                         <div class="col-md-5 card-header text-center">
                                             <div class="form-group text-center">
                                                 <label for=""><h6>{{$grupo->NomeGrupo}} antigo</h6></label>
                                             </div>
                                             <div class="form-group text-center">
-                                                @foreach($lista_nome as $grupo2)
-                                                    <label for="">
-                                                        <input type="text" id="Atr1" style="width: 150px" class="form-control" value="{{$grupo2->Alimento_id}}" disabled>
-                                                    </label>
-                                                    <label for="">
-                                                        <input type="text" id="Atr2" style="width: 114px" class="form-control Atr1" value="{{$grupo2->Qtde_Alimento}}" disabled>
-                                                    </label>
+                                                <label for="">
+                                                @foreach($alimento as $nomeAlimento)
+                                                    <input type="text" style="width: 174px" class="form-control" value="{{$nomeAlimento}}" name="nomeElemento" disabled>
                                                 @endforeach
+                                                </label>
+                                                <label for="">
+                                                @foreach($lista_nome as $grupo2)
+                                                    <input type="text" id="Atr2" style="width: 114px" class="form-control Atr1" name="quantidadeAlimento[]" value="{{$grupo2->Qtde_Alimento}}" disabled>
+                                                @endforeach
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
@@ -111,4 +124,4 @@
                     @endif
                 </div>
     </main>
-@endsection
+  @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nutricionistum;
 use Illuminate\Http\Request;
 use Illuminate\database\migrations;
 use App\Models\Paciente;
@@ -15,6 +16,8 @@ use App\Models\Antfamiliare;
 use App\Models\Altgastrointestinai;
 use App\Models\Altclinica;
 use App\Models\Consultum;
+
+
 class PacienteController extends Controller
 {
     /**
@@ -56,6 +59,7 @@ class PacienteController extends Controller
         $altg = new Altgastrointestinai;
         $varAltC = new Altclinica;
         $varCon = new Consultum;
+        $varNutri = new Nutricionistum;
 
         $varp->NomePaciente = $request->paciente;
         $varp->EmailPaciente = $request->email;
@@ -190,6 +194,7 @@ class PacienteController extends Controller
         $varCon->Gord_visceralConsulta = $request->gordVisc;
         $varCon->AlteracaoConsulta = 0;
         $varCon->PrimeiraConsulta = 1;
+
         $varAltC->save();
         $varAnf->save();
         $varAf->save();
@@ -204,7 +209,9 @@ class PacienteController extends Controller
         $varCon->diagnostico()->associate($varDiag);
         $varCon->objetivo()->associate($varObj);
         $varCon->paciente()->associate($varp);
-        $varCon->Nutricionista_idNutricionista = $request->idnutricionista;;
+//        $varCon->nutricionistum()->associate($varNutri);
+//dd($request->idnutricionista);
+        $varCon->Nutricionista_idNutricionista = $request->idnutricionista;
         $varCon->save();
         
         return redirect()->back()->with('message', 'Consulta cadastrada com sucesso!');
@@ -404,7 +411,7 @@ class PacienteController extends Controller
         $varCon->diagnostico()->associate($varDiag);
         $varCon->objetivo()->associate($varObj);
         $varCon->paciente()->associate($varp);
-        $varCon->Nutricionista_idNutricionista = $request->idnutricionista;;
+        $varCon->Nutricionista_idNutricionista = $request->idnutricionista;
         $varCon->save();
 
         return view('welcome');
