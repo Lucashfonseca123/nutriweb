@@ -6,7 +6,8 @@
                 <div class="card-header"><br>
                 <h4 class="col">Nutriweb</h4><br>
                 <img class="logo5" src="img/logo.png">
-                <h6 class="col">Selecione paciente</h6>
+                <h5 class="col">Selecione paciente</h5>
+                    <br>
                 <form action="/selecionar_paciente" method="get">
                             {{csrf_field()}}
                                 <div class="form-group col-md-8">

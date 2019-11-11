@@ -55,7 +55,7 @@
                                         <td>
                                             <span style="cursor: pointer" onclick="window.open('/cardapioFinal/{{$paciente->idPaciente}}', '', 'width=600,height=300')">
                                             <input type="hidden" name="idPaciente" value="{{$paciente->idPaciente}}">
-                                            <button class="btn btn-success" type="submit">Gerar PDF</button>
+                                            <button class="btn btn-success" type="" >Gerar PDF</button>
                                         </span>
                                         </td>
                                     </tr>

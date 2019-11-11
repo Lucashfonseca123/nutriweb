@@ -189,6 +189,8 @@ class CardapioController extends Controller
     }
 
     public function final($id){
+        $var = Cardapio::where('Paciente_idPaciente', $id);
+//        dd(collect($var));
         return view('cardapioCadastrado');
     }
 }

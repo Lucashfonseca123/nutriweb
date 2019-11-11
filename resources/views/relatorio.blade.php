@@ -83,7 +83,7 @@
                             </div>
                     </div>
                     <div class="row col">
-                    <button class="btn btn-primary selecionar"  type="submit" >Imprimir</button>
+                    <button class="btn btn-primary selecionar" onClick="window.print()" type="submit" >Imprimir</button>
                     </div>
                     </div>
 

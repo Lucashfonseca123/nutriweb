@@ -57,12 +57,12 @@
                 </form>
             </div>
             <div class="card-footer">
-                @if (Route::has('register'))
-                    <div class="text-white" style="text-align: center">
-                    Não tem conta?
-                        <a class="text-white badge" href="{{ route('register') }}">Crie uma!</a>
-                    </div>
-                @endif
+                {{--@if (Route::has('register'))--}}
+                    {{--<div class="text-white" style="text-align: center">--}}
+                    {{--Não tem conta?--}}
+                        {{--<a class="text-white badge" href="{{ route('register') }}">Crie uma!</a>--}}
+                    {{--</div>--}}
+                {{--@endif--}}
                 <div class="d-flex justify-content-center">
                     @if (Route::has('password.request'))
                         <a class="btn btn-link" href="{{ route('password.request') }}" style="color: white">

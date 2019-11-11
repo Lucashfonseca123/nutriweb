@@ -47,8 +47,15 @@
                                     <tr>
                                         <th scope="row">  {{$grupo->idGrupo}}  </th>
                                         <td><h6>{{$grupo->NomeGrupo}}</h6> </td>
-                                        <td><button class="btn btn-dark mostrar" alvo="{{$grupo->idGrupo}}">Editar</button> &ensp;&ensp;
-                                        <button class="btn btn-danger " alvo="{{$grupo->idGrupo}}">Remover</button> &ensp;&ensp;
+                                        <td>
+                                            <label for="">
+                                                <button class="btn btn-dark mostrar" alvo="{{$grupo->idGrupo}}">Editar</button> &ensp;&ensp;
+                                            </label>
+                                            <label for="">
+                                                <form action="/grupoCadastro3/{{$grupo->idGrupo}}">
+                                                    <button class="btn btn-danger " value="{{$grupo->idGrupo}}" alvo="{{$grupo->idGrupo}}">Remover</button> &ensp;&ensp;
+                                                </form>
+                                            </label>
                                         </td>
                                     </tr>
                                 </table>

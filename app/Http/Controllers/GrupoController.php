@@ -111,7 +111,7 @@ class GrupoController extends Controller
                 'idBuscado' => $id
             ])->grupo()->associate($var);
         }
-            return view('grupo_editar');
+        return view('paciente_info');
     }
 
     /**
@@ -122,7 +122,22 @@ class GrupoController extends Controller
      */
     public function destroy($id)
     {
-        //
+//        dd($id);
+
+
+        $varHasAlimento = GrupoHasAlimento::where('idBuscado', $id)->get();
+
+        foreach ($varHasAlimento as $grupo){
+            $grupo->delete();
+        }
+
+        $var = Grupo::find($id);
+        $var->delete();
+
+        $var = Cmvcoltaco3::all();
+        $group = Grupo::all();
+        return view('paciente_info');
+
     }
 
     public function busca(Request $request){
