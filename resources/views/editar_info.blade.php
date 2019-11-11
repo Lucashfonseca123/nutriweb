@@ -7,9 +7,6 @@
             <h2 class="col">Editar informações</h2><br>
             <h3 class="col">Pacientes</h3>
             <img class="logo" src="img/logo.png">
-                <a href="/help">
-                    <img src="img/ajuda.png" id="1" class="help5">
-                </a>
             <div class="row col">
                 <div class="form-group col-md-12">
                     <br>
@@ -23,6 +20,9 @@
                                             <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
                                         </span> 
                                     </div>
+                                    <span style="cursor: pointer" onclick="window.open('/help#9', '', 'width=600,height=300')">
+                                      <img src="img/ajuda.png" class="help5">
+                                  </span>
                                 </div>
                             </div>
                         </form>

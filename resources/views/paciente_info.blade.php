@@ -18,7 +18,9 @@
                                                 <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
                                             </span> 
                                         </div>
-                                        <img src="img/ajuda.png" id="1" class="help5">
+                                        <span style="cursor: pointer" onclick="window.open('/help#10', '', 'width=600,height=300')">
+                                            <img src="img/ajuda.png" id="1" class="help5">
+                                        </span>
                                     </div>
                                 </div>
                 </form>

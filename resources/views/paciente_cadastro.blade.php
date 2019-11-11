@@ -20,12 +20,7 @@
             @endif
             <!-- Esconder campo até sexo --> 
             <div>
-
-                {{--<a href="/cardapio">--}}
-                    {{--<img src="img/ajuda.png" id="1" class="help">--}}
-                {{--</a>--}}
-
-                <span style="cursor: pointer" onclick="window.open('/help/', '', 'width=600,height=300')">
+                <span style="cursor: pointer" onclick="window.open('/help#1', '', 'width=600,height=300')">
                     <img src="img/ajuda.png" id="1" class="help">
                 </span>
         </div>

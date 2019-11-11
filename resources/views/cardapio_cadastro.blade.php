@@ -14,9 +14,9 @@
                         <button class="btn btn-primary" type="submit" value="busca">Busca</button>
                         &ensp;&ensp;
                 </form>
-                    {{--<a href="/cardapio">--}}
-                        {{--<img src="img/ajuda.png" id="1" class="help3">--}}
-                    {{--</a>--}}
+                    <span style="cursor: pointer" onclick="window.open('/help#4', '', 'width=600,height=300')">
+                                      <img src="img/ajuda.png" class="help3">
+                                  </span>
                     </div>
                 <br><br>
                 @if(session()->has('message'))
