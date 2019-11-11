@@ -111,7 +111,11 @@ class GrupoController extends Controller
                 'idBuscado' => $id
             ])->grupo()->associate($var);
         }
-        return view('paciente_info');
+
+        $var = Cmvcoltaco3::all();
+        $group = Grupo::all();
+
+        return view('grupo_editar')->with('busca_alimentos', $var)->with('group', $group);
     }
 
     /**

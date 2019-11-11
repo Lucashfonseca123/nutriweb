@@ -126,7 +126,7 @@ class CardapioController extends Controller
             ]);
         }
 
-        echo "To no update";
+       return view('edit_cardapio');
     }
 
     /**
@@ -195,8 +195,11 @@ class CardapioController extends Controller
             ->with(['grupo.grupo_has_alimentos.cmvcoltaco3', 'grupo2.grupo_has_alimentos.cmvcoltaco3'])
             ->get();
 
+        $varPaciente = Paciente::find($id);
+//        dd(collect($varRefeicao));
         return view('cardapioCadastrado', [
-            'nomeAlimento'  => $varRefeicao
+            'nomeAlimento'  => $varRefeicao,
+            'paciente' => $varPaciente
         ]);
     }
 }
