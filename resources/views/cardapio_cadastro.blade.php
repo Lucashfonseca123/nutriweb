@@ -53,10 +53,10 @@
                                         {{--</form>--}}
                                         </td>
                                         <td>
-                                            <span style="cursor: pointer" onclick="window.open('/cardapioFinal/{{$paciente->idPaciente}}', '', 'width=600,height=300')">
-                                            <input type="hidden" name="idPaciente" value="{{$paciente->idPaciente}}">
-                                            <button class="btn btn-success" type="" >Gerar PDF</button>
-                                        </span>
+                                            {{--<span style="cursor: pointer" onclick="window.open('/cardapioFinal/{{$paciente->idPaciente}}', '', 'width=600,height=300')">--}}
+                                            {{--<input type="hidden" name="idPaciente" value="{{$paciente->idPaciente}}">--}}
+                                            {{--<button class="btn btn-success" type="" >Gerar PDF</button>--}}
+                                            {{--</span>--}}
                                         </td>
                                     </tr>
                                     </tbody>
@@ -74,7 +74,9 @@
                     </label>
                     &emsp;&emsp;
                     <label for="">
-                        <button class="btn btn-success" id="btn2" type="input">Salvar cardápio</button>
+                           <span style="cursor: pointer" onclick="window.open('/cardapioFinal/{{$paciente->idPaciente}}', '', 'width=600,height=300')">
+                               <button class="btn btn-success" id="btn2" type="input">Salvar cardápio</button>
+                           </span>
                     </label>
                 <br><br>
                 </h4>
