@@ -189,8 +189,14 @@ class CardapioController extends Controller
     }
 
     public function final($id){
-        $var = Cardapio::where('Paciente_idPaciente', $id);
-//        dd(collect($var));
-        return view('cardapioCadastrado');
+        $varId = (int) $id;
+        $var = Cardapio::where('Paciente_idPaciente', $varId)->orderBy('updated_at', 'DESC')->first();
+        $varRefeicao = Itemcardapio::where('Cardapio_idCardapio', $var->idCardapio)
+            ->with(['grupo.grupo_has_alimentos.cmvcoltaco3', 'grupo2.grupo_has_alimentos.cmvcoltaco3'])
+            ->get();
+
+        return view('cardapioCadastrado', [
+            'nomeAlimento'  => $varRefeicao
+        ]);
     }
 }

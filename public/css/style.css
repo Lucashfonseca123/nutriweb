@@ -615,3 +615,7 @@ input[type=time]::-webkit-clear-button
     margin: 0 !important;
     display: none !important;
 }
+
+.table td, .table th {
+    vertical-align: inherit;
+}
