@@ -28,7 +28,7 @@
                                     <label for="nome" class="col-md-3">Quantidade de fibras
                                         <input type="text" name="fibra" class="form-control col-md-4">
                                     </label>
-                                    <label for="nome" class="col-md-3">Quantida de Cálcio
+                                    <label for="nome" class="col-md-3">Quantidade de Cálcio
                                         <input type="text" name="calcio" class="form-control col-md-4">
                                     </label>
                                 </div>
