@@ -12,7 +12,9 @@
                             <input type="text" class="form-control col-md-6" name="busca" placeholder="Digite aqui...">
                             <button class="btn btn-primary" type="submit" value="busca">Busca</button>
                             &ensp;&ensp;
-                            {{--<img src="img/ajuda.png" id="1" class="help5">--}}
+                            <span style="cursor: pointer" onclick="window.open('/help#6', '', 'width=600,height=300')">
+                                      <img src="img/ajuda.png" class="help5">
+                                  </span>
                             &ensp;&ensp;
                     </form>
                 </div>

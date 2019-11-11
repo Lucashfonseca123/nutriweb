@@ -13,7 +13,7 @@
                 <div class="form-group col-md-12">
                         <form action="/buscarRelatorio" method="get">
                         {{csrf_field()}}
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-md-5">
                                 <div class="input-group">
                                     <input type="hidden" name="idnutricionista" value="{{Auth::user()->Nutricionista_idNutricionista}}">
                                     <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Selecione paciente   ..." >
@@ -23,6 +23,10 @@
                                             <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
                                         </span> 
                                     </div>
+                                    <span style="cursor: pointer" onclick="window.open('/help#div3', '', 'width=600,height=300')">
+                                      <img src="img/ajuda.png" class="help5">
+                                  </span>
+                                   
                                 </div>
                             </div>
                         </form>

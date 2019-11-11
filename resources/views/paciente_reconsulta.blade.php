@@ -24,7 +24,9 @@
                                     </div>
                                 </div>
                             </form>
-                            <img src="img/ajuda.png" id="2" class="help4">
+                            <span style="cursor: pointer" onclick="window.open('/help#2', '', 'width=600,height=300')">
+                                      <img src="img/ajuda.png" class="help5">
+                                  </span>
                             <div>
                         <br><br>
                             </div>

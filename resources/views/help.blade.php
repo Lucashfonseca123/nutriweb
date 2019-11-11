@@ -3,7 +3,7 @@
    <div class="container">
       <div class="card">
          <div class="card-header text-center">
-            <img src="img/logo.png" style="width: 50px; float: right">
+            <img src="\img\logo.png" style="width: 50px; float: right">
                <h3>Ajuda sistema Nutriweb</h3>
             <br>
          <div class="" id="1">
@@ -33,7 +33,8 @@
                e uma página com os campos de reconsulta será aberta, inclua valores nesses campos e
                selecione Salvar.</p>
          </div>
-         <div class="" id="3">
+         <div id="div3"></div>
+         <div class="div3" >
             <h3>Relatório paciente</h3>
             <h5>Destinado a gerar gráficos para melhor visualização do desenvolvimento do paciente.</h5>
             <p>Faça a busca do paciente no campo "Selecione paciente...", irá retornar todos os paciente
