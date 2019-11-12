@@ -124,23 +124,22 @@ class GrupoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-//        dd($id);
 
 
-        $varHasAlimento = GrupoHasAlimento::where('idBuscado', $id)->get();
+        $varHasAlimento = GrupoHasAlimento::where('idBuscado', $request->id)->get();
 
         foreach ($varHasAlimento as $grupo){
             $grupo->delete();
         }
-
-        $var = Grupo::find($id);
+        $idg = (int)$request->id;
+        $var = Grupo::find($idg);
         $var->delete();
 
         $var = Cmvcoltaco3::all();
         $group = Grupo::all();
-        return view('paciente_info');
+        return view('grupo_editar');
 
     }
 

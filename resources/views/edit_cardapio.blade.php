@@ -9,7 +9,7 @@
                     <form action="/buscarEditPessoa" method="post">
                         {{csrf_field()}}
                         <div class="col input-group">
-                            <input type="text" class="form-control col-md-6" name="busca" placeholder="Digite aqui...">
+                            <input type="text" class="form-control col-md-6" name="busca" title = "Insira o nome do paciente desejado" placeholder="Digite aqui...">
                             <button class="btn btn-primary" type="submit" value="busca">Busca</button>
                             &ensp;&ensp;
                             <span style="cursor: pointer" onclick="window.open('/help#6', '', 'width=600,height=300')">

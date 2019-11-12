@@ -15,7 +15,7 @@
                             {{csrf_field()}}
                                 <div class="form-group col-md-12">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" name="busca" placeholder="Digite aqui..." >
+                                        <input type="text" class="form-control" title = "Insira o nome do paciente desejado" name="busca" placeholder="Digite aqui..." >
                                         <div class="input-group-append">
                                             <span>
                                                 <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;

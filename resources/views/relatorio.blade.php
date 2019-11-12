@@ -15,7 +15,7 @@
                         {{csrf_field()}}
                             <div class="form-group col-md-5">
                                 <div class="input-group">
-                                    <input type="hidden" name="idnutricionista" value="{{Auth::user()->Nutricionista_idNutricionista}}">
+                                    <input type="hidden" name="idnutricionista" title = "Insira o nome do paciente desejado" value="{{Auth::user()->Nutricionista_idNutricionista}}">
                                     <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Selecione paciente   ..." >
 
                                     <div class="input-group-append">

@@ -11,7 +11,7 @@
                         <div class="form-group col-md-8">
                             <div class="input-group">
                                 <div class="input-group-append">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="busca" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" title = "Insira o nome do grupo desejado" style="width: 250px" name="busca" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group as $grupos)
                                                 <option value="{{$grupos->NomeGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
@@ -57,8 +57,9 @@
                                                 <button class="btn btn-dark mostrar" alvo="{{$grupo->idGrupo}}">Editar</button> &ensp;&ensp;
                                             </label>
                                             <label for="">
-                                                <form action="/grupoCadastro3/{{$grupo->idGrupo}}">
-                                                    <button class="btn btn-danger " value="{{$grupo->idGrupo}}" alvo="{{$grupo->idGrupo}}">Remover</button> &ensp;&ensp;
+                                                <form action="/grupoCadastro3/">
+                                                    {{csrf_field()}}
+                                                    <button class="btn btn-danger " name = "id" value="{{$grupo->idGrupo}}" alvo="{{$grupo->idGrupo}}">Remover</button> &ensp;&ensp;
                                                 </form>
                                             </label>
                                         </td>

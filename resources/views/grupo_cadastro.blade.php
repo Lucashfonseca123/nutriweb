@@ -22,7 +22,7 @@
                         <div class="col-md-5 card-header escondido" id="revelado3">
                             <div class="form-group">
                                 <label for=""><h6>Nome do grupo</h6></label>
-                                <input type="text" name="nomesGrupo" class="form-control" placeholder="Escreva o nome do grupo..">
+                                <input type="text" name="nomesGrupo" title = "Insira o nome desejado" class="form-control" placeholder="Escreva o nome do grupo..">
                             </div>
                             <div class="form-group">
                                 <label for="" class="form-group"><h6>Alimentos &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; Quantidade</h6>
@@ -30,7 +30,7 @@
                                         <div class="input-group control-group after-add-more">
                                             <label for="">
                                                 {{--<input type="text" style="width: 180px" id="buscarAlimentos" name="alimento" class="form-control" placeholder="Buscar alimento..">--}}
-                                                <select class="js-example-basic-single form-control" id="alimentoTaco" style="width: 180px" >
+                                                <select class="js-example-basic-single form-control" title = "Busque o alimento desejado" id="alimentoTaco" style="width: 180px" >
                                                     @if(isset($busca_alimentos))             {{--Se a variavel foi previamente definida--}}
                                                         @foreach($busca_alimentos as $alimentos)
                                                             <option id="{{$alimentos->id}}" value="{{$alimentos->id}}" name="">{{$alimentos->descricaoAlimento}}</option>

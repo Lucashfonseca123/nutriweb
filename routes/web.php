@@ -52,7 +52,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/grupoCadastro2/{id}', 'GrupoController@update');
 
-    Route::get('/grupoCadastro3/{id}', 'GrupoController@destroy');
+    Route::get('/grupoCadastro3/', 'GrupoController@destroy');
 
     Route::resource('/grupoEditar', 'GrupoController');
 

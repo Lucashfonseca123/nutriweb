@@ -139,7 +139,7 @@
                 <div class="escondido" id="revelado3">
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlTextarea3">Horário de trabalho e rotina diária</label>
-                        <textarea class="form-control" name="horErotina" id="exampleFormControlTextarea3" rows="7"></textarea>
+                        <textarea class="form-control" title = "Descrever o horário de inicio e fim de expediente, além de outros aspectos que formam a rotina" name="horErotina" id="exampleFormControlTextarea3" rows="7"></textarea>
                     </div>
 
                     <label class="radio-inline col" required for="radios-1"><br>Objetivo da consulta <br><br>
@@ -183,7 +183,7 @@
                         </label>
                         <div class="form-group col-md-4">
                         <label for="exampleFormControlTextarea3">Descrição atividade física</label>
-                        <textarea class="form-control" name="descricaoAf" id="atv2" rows="7"></textarea>
+                        <textarea class="form-control" title = "Descrever os horários, a frequência e quais atividades físicas realiza" name="descricaoAf" id="atv2" rows="7"></textarea>
                     </div>
                         
                     </div>
