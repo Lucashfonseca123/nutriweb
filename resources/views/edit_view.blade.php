@@ -79,7 +79,7 @@
                             <span class="input-group-addon">Bairro</span>
                             <input id="bairro" name="bairro" class="form-control" value="{{$paciente->BairoEndereco}}" required="" readonly="readonly" type="text">
                         </label>
-                        <label class="col-md-1" for="prependedtext">
+                        <label class="col-md-2" for="prependedtext">
                             <span class="input-group-addon">N °</span>
                             <input id="numero" name="numeroEndereco" class="form-control" value="{{$paciente->NumeroEndereco}}" required=""  type="text">
                         </label>

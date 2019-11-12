@@ -126,7 +126,7 @@ class CardapioController extends Controller
             ]);
         }
 
-       return view('edit_cardapio');
+       return view('edit_cardapio')->with('message', 'Cardapio alterado com sucesso!');
     }
 
     /**

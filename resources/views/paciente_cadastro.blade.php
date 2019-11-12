@@ -27,7 +27,7 @@
             <button type="button" class="btn btn-secondary btn-lg btn-block mostrar" type="button" alvo="revelado">Inscrição paciente</button>
             <br>
             <div class="escondido" id="revelado">
-                <div class="panel-heading col"><h4>Cadastro do paciente</h4><br></div>
+                <div class="panel-heading col"></div>
                 <div class="panel-body">
                 <input type="hidden" name='idnutricionista' value="{{Auth::user()->Nutricionista_idNutricionista}}">
                     <!-- NOME -->
@@ -193,7 +193,7 @@
                 <br>
                 <div class="escondido" id="revelado4">
 
-                    <h5 class="col"> <br>Dados clínicos <br></h5>
+                    
                     <h6 class="col"> <br>Diagnóstico <br><br></h6>
 
                     <span class="input-group-addon col">
@@ -430,7 +430,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-1" for="Filhos">Uso de medicamentos</label>
+                        <label class="col-md-3" for="Filhos">Uso de medicamentos</label>
                         <div class="col-md-3">
                             <div class="input-group">
                                 <span class="input-group-addon">

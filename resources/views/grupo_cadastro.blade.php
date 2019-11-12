@@ -7,7 +7,6 @@
             <h3>Grupos <br><br></h3>
             <img class="logo4" src="img/logo.png">
             <button class="btn btn-primary mostrar" type="button" alvo="revelado3" title="Clique para selecionar grupo">Novo grupo</button>
-            <button class="btn btn-danger" type="button" alvo="revelado">Cancelar</button>
             <button class="btn btn-success" id="enviado" type="submit">Salvar grupo</button>
             <span style="cursor: pointer" onclick="window.open('/help#5', '', 'width=600,height=300')">
                                       <img src="img/ajuda.png" class="help5">

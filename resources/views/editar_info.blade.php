@@ -32,11 +32,10 @@
                         </div>
                         <br>
                     @endif
-                        <div>
+                        
                       <br><br>
                       @if(isset($consultaPaciente))
                         @forelse($consultaPaciente as $paciente)
-                            </div>
                                 <div class="container mt-4">
                                     <table class="table">
                                         <thead>

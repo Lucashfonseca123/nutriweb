@@ -115,7 +115,7 @@ class GrupoController extends Controller
         $var = Cmvcoltaco3::all();
         $group = Grupo::all();
 
-        return view('grupo_editar')->with('busca_alimentos', $var)->with('group', $group);
+        return view('grupo_editar')->with('busca_alimentos', $var)->with('group', $group)->with('message', 'Grupo editado com sucesso');
     }
 
     /**

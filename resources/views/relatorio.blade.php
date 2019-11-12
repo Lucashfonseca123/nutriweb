@@ -52,8 +52,8 @@
                                             </tr>
                 					</table>
                 				</div>
+                    <div class=" col-md-12  mt-12 escondido" id="{{$paciente->idPaciente}}" >
 
-                <div" class=" col-md-12  mt-12 escondido" id="{{$paciente->idPaciente}}" >
                     <h3>{{$paciente->NomePaciente}}</h3>
                     <div class="row">
                         <div class="col-md-12  mt-12">
@@ -93,10 +93,15 @@
                     </div>
             			@endforeach
                 	@endif
-            </div>
 
-        </div>
-        </div>
+       </div>
+       </div>
+       </div>
+       </div>
+      </div>
+       
+
+
     </main>
     
     <script type="text/javascript">
@@ -277,7 +282,15 @@
          },
         tooltips:{
           enabled:true
-        }
+        },
+        scales: {
+                yAxes : [{
+                    ticks : {
+                           
+                        min : 0
+                    }
+                }]
+            }
       }
     });
 
@@ -314,7 +327,15 @@
          },
         tooltips:{
           enabled:true
-        }
+        },
+        scales: {
+                yAxes : [{
+                    ticks : {
+                           
+                        min : 0
+                    }
+                }]
+            }
       }
     });
 
@@ -352,12 +373,20 @@
          },
         tooltips:{
           enabled:true
-        }
+        },
+        scales: {
+                yAxes : [{
+                    ticks : {
+                           
+                        min : 0
+                    }
+                }]
+            }
       }
     });
 
     let gorduraVisceralChart = new Chart(gordViscChart, {
-      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      type:'bar', 
       data:{
         labels:datasFormatadas,
         datasets:[{
@@ -390,7 +419,15 @@
          },
         tooltips:{
           enabled:true
-        }
+        },
+        scales: {
+                yAxes : [{
+                    ticks : {
+                           
+                        min : 0
+                    }
+                }]
+            }
       }
     });
 
@@ -427,7 +464,15 @@
          },
         tooltips:{
           enabled:true
-        }
+        },
+        scales: {
+                yAxes : [{
+                    ticks : {
+                           
+                        min : 0
+                    }
+                }]
+            }
       }
     });
 
@@ -464,7 +509,15 @@
          },
         tooltips:{
           enabled:true
-        }
+        },
+        scales: {
+                yAxes : [{
+                    ticks : {
+                           
+                        min : 0
+                    }
+                }]
+            }
       }
     });
 

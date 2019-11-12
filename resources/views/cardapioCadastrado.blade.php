@@ -3,8 +3,8 @@
     <br><br>
     <div class="container">
         <div class="card">
-            <div class="card-header text-center">
-                <h3>Cardápio {{$paciente->NomePaciente}}<br></h3><br>
+            <div class="card-header text-center"><br>
+                <h3 style="font-family: sans-serif">Cardápio {{$paciente->NomePaciente}}<br></h3><br>
                 <img class="logo9" src="\img\logo.png"><br><br>
                 <h5 class="col" style="font-family: sans-serif">Olá {{$paciente->NomePaciente}} !!! Abaixo o cardápio você seguirá durante 30 dias após isso faremos algumas
 

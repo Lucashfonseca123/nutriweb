@@ -89,8 +89,6 @@
                             </tbody>
                         </table>
                     </div>
-            
-            </div>
             @empty
                 <div class="alert alert-danger">
                     Paciente não cadastrado
