@@ -41,7 +41,6 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Id</th>
                                         <th scope="col">Paciente</th>
                                         <th scope="col">Email</th>
                                         <th></th>
@@ -49,7 +48,6 @@
                                 </thead>
                                 <tr>
                                 <tbody>
-                                    <th scope="row">  {{$paciente->idPaciente}}  </th>
                                     <td> {{$paciente->NomePaciente}}</td>
                                     <td> {{$paciente->EmailPaciente}}</td>
                                     <td><button class="btn btn-primary mostrar_esconder" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;

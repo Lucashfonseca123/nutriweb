@@ -45,14 +45,12 @@
                                 <table class="table">
                                     <thead>
                                     <tr>
-                                        <th scope="col">Id</th>
                                         <th scope="col">Grupo</th>
                                         <th></th>
                                         <th></th>
                                     </tr>
                                     </thead>
                                     <tr>
-                                        <th scope="row">  {{$grupo->idGrupo}}  </th>
                                         <td><h6>{{$grupo->NomeGrupo}}</h6> </td>
                                         <td>
                                             <label for="">

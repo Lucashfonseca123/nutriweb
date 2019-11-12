@@ -66,6 +66,7 @@
                      @if(isset($consultaPacientes))  
                         @foreach($consultaPacientes as $paciente)
                        </div>
+                       <h3>{{$paciente->NomePaciente}}</h3>
                                  <div>
                                 <h6 class="col">Dados antropométricos<br><br></h6>   
                                 <div class="form-group">

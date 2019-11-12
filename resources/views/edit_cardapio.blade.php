@@ -31,7 +31,6 @@
                             <table class="table menu">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Id</th>
                                     <th scope="col">Paciente</th>
                                     <th scope="col">Email</th>
                                     <th></th>
@@ -39,7 +38,6 @@
                                 </thead>
                                 <tr>
                                     <tbody>
-                                    <th scope="row">{{$paciente->idPaciente}}</th>
                                     <td> {{$paciente->NomePaciente}}</td>
                                     <td> {{$paciente->EmailPaciente}}</td>
                                     <td><button class="btn btn-primary mostrar_esconder" alvo="{{$paciente->idPaciente}}">Editar</button>
@@ -177,7 +175,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" style="vertical-align: middle">Lanche da tarde 2</th>
+                                        <th scope="row" style="vertical-align: middle">Lanche da tarde </th>
                                         <th class="col">
                                             <input type="time" name="time[4]" class="form-control col-md-10">
                                         </th>
