@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PacienteRequest;
 use App\Models\Nutricionistum;
 use Illuminate\Http\Request;
 use Illuminate\database\migrations;
@@ -46,7 +47,7 @@ class PacienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PacienteRequest $request)
     {
         $varp = new Paciente;
         $varEnd = new Endereco;
@@ -419,8 +420,11 @@ class PacienteController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-        $seleciona = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();    
-        return view('paciente_info')->with('lista_nome', $seleciona);
+//        $seleciona = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();
+//        return view('paciente_info')->with('lista_nome', $seleciona);
+
+        $consultaPaciente = Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->where('Paciente.NomePaciente',"like", "%".$var."%")->where('Cardapio_idCardapio', "=", NULL)->where('AlteracaoConsulta', '=', 0)->where('Paciente.ExcluidoPaciente','<>','1')->get();
+        return view('paciente_info')->with('lista_nome', $consultaPaciente);
     }
 
     /**

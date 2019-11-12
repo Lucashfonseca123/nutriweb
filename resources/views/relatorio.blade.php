@@ -51,16 +51,16 @@
                                                 </tbody>
                                             </tr>
                 					</table>
-                
-                    </div>
+                				</div>
                     <div class=" col-md-12  mt-12 escondido" id="{{$paciente->idPaciente}}" >
+
                     <h3>{{$paciente->NomePaciente}}</h3>
                     <div class="row">
-                            <div class="col-md-12  mt-12">
-                                <h6>Circunferencias (cm)</h6>
-                                <canvas id="mostrarGraficoid{{$paciente->idPaciente}}" ></canvas>
-                            </div>
+                        <div class="col-md-12  mt-12">
+                             <h6>Circunferencias (cm)</h6>
+                             <canvas id="mostrarGraficoid{{$paciente->idPaciente}}" ></canvas>
                         </div>
+                    </div>
                     <div class="row">
                             <div class="col-md-6  mt-12">
                                 <h6>%Gordura </h6>
@@ -88,21 +88,19 @@
                             </div>
                     </div>
                     <div class="row col">
-                    <button class="btn btn-primary selecionar" onClick="window.print()" type="submit" >Imprimir</button>
+                        <button class="btn btn-primary selecionar" onClick="window.print()" type="submit" >Imprimir</button>
                     </div>
-                </div>
-
+                    </div>
             			@endforeach
                 	@endif
-               
 
-       
        </div>
        </div>
        </div>
        </div>
       </div>
        
+
 
     </main>
     
@@ -302,7 +300,7 @@
         labels:datasFormatadas,
         datasets:[{
           data: g,
-          backgroundColor:'green',
+          backgroundColor:['green','blue','red','brown','gray'],
           borderWidth:1,
           borderColor:'#777',
           hoverBorderWidth:3,
@@ -347,7 +345,7 @@
         labels:datasFormatadas,
         datasets:[{
           data: m,
-          backgroundColor:'green',
+          backgroundColor:['green','blue','red','brown','gray'],
           borderWidth:1,
           borderColor:'#777',
           hoverBorderWidth:3,
@@ -393,7 +391,7 @@
         labels:datasFormatadas,
         datasets:[{
           data: gv,
-          backgroundColor:'green',
+          backgroundColor:['green','blue','red','brown','gray'],
           borderWidth:1,
           borderColor:'#777',
           hoverBorderWidth:3,
@@ -439,7 +437,7 @@
         labels:datasFormatadas,
         datasets:[{
           data: t,
-          backgroundColor:'green',
+          backgroundColor:['green','blue','red','brown','gray'],
           borderWidth:1,
           borderColor:'#777',
           hoverBorderWidth:3,
@@ -484,7 +482,7 @@
         labels:datasFormatadas,
         datasets:[{
           data: b,
-          backgroundColor:'green',
+          backgroundColor:['green','blue','red','brown','gray'],
           borderWidth:1,
           borderColor:'#777',
           hoverBorderWidth:3,

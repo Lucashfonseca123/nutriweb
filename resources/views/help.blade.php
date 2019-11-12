@@ -25,7 +25,9 @@
             <h6>Menu 7 - Inquérito Dietético</h6>
             <p>O último menu refere-se ao comportamento alimento do paciente nas últimas 24 horas, considerando 6 refeições. E é nesse menu que a consulta é finalizada. </p>
          </div>
-         <div class="" id="2">
+            ______________________________________________________________________________
+
+         <div class="" id="2"><br>
             <h3>Reconsulta paciente</h3>
             <h5>Esse página é destinada para após a primeira consulta do paciente.</h5>
             <p>Faça a busca do paciente no campo "Digite aqui...", irá retornar todos os paciente
@@ -33,14 +35,16 @@
                e uma página com os campos de reconsulta será aberta, inclua valores nesses campos e
                selecione Salvar.</p>
          </div>
+            ______________________________________________________________________________
          <div id="div3"></div>
-         <div class="div3" >
+         <div class="div3" ><br>
             <h3>Relatório paciente</h3>
             <h5>Destinado a gerar gráficos para melhor visualização do desenvolvimento do paciente.</h5>
             <p>Faça a busca do paciente no campo "Selecione paciente...", irá retornar todos os paciente
                com nomes iguais ou parecidos com o pesquisado. Após isso, selecione o paciente desejado, e irá ser retornado gráficos com as últimas consulas do paciente. </p>
          </div>
-         <div class="" id="4">
+            ______________________________________________________________________________
+         <div class="" id="4"><br>
             <h3>Cardápio paciente</h3>
             <h5>Destinado a gerar Cardápios para os paciente selecionados</h5>
             <p>Faça a busca do paciente no campo "Digite aqui...", irá retornar todos os paciente
@@ -48,21 +52,24 @@
                e irá abrir os campos para a seleção de grupos e adição de horários, complete de acordo
                com sua preferência e clique em Salvar cardápio.</p>
          </div>
-         <div class="" id="5">
+            ______________________________________________________________________________
+         <div class="" id="5"><br>
             <h3>Grupo alimentares</h3>
             <h5>Destinado para a criação de grupos, de forma que fique mais fácil montar um cardápio.</h5>
             <p>Selecione Novo Grupo, irá abrir uma tela com 3 campos, adicione os alimentos e
                quantidade clicando no botão em verde de acordo com o modelo de grupo desejado,
                selecione quantos alimentos forem necessários. Após finalizado clique em Salvar grupo.</p>
          </div>
-         <div class="" id="6">
+            ______________________________________________________________________________
+         <div class="" id="6"><br>
             <h3>Editar cardápio</h3>
             <h5>Destinado para edições em cardápios já finalizados.</h5>
                <p>Faça a busca do paciente no campo "Digite aqui...", irá retornar todos os paciente
                com nomes iguais ou parecidos com o pesquisado. O paciente será retornado com o cardápio
                carregado, faça as alterações necessárias e clique em Salvar cardápio.</p>
          </div>
-         <div class="" id="7">
+            ______________________________________________________________________________
+         <div class="" id="7"><br>
             <h3>Editar grupo</h3>
             <h5>Destinado para edições em grupos já finzalidos.</h5>
             <p>Selecione o grupo desejado clicando em cima do campo.
@@ -71,14 +78,16 @@
                e o novo grupo habilitado para fazer mudanças necessárias. Após editado
                clique em salvar.</p>
          </div>
-         <div class="" id="8">
+            ______________________________________________________________________________
+         <div class="" id="8"><br>
             <h3>Adicionar alimento</h3>
             <h5>Destinado para fazer a adição de alimentos não inscritos na tabela taco.</h5>
             <p>A tela se inicia com os campos necessários para inscrever outro alimento na tabela
                taco, lembrando que no menu esquerdo é possível fazer uma busca em todos os alimentos
                da tabela taco, clicando em "Buscar Alimento"</p>
          </div>
-         <div class="" id="9">
+            ______________________________________________________________________________
+         <div class="" id="9"><br>
             <h3>Editar informação paciente</h3>
             <h5>Destinado para edições de paciente, já cadastrados.</h5>
             <p>Faça a busca do paciente no campo "Digite aqui...", irá retornar todos os paciente
@@ -87,7 +96,8 @@
                necessário e clique em salvar. Ou caso não queira editar, é possível excluir o
                paciente, clicando no botão "Excluir".</p>
          </div>
-         <div class="" id="10">
+            ______________________________________________________________________________
+         <div class="" id="10"><br>
             <h3>Cardápio pendentes</h3>
             <h5>Essa é a tela inicial no programa, destinada a verificar cardápios ainda não formulados.</h5>
             <p>A tela inicia-se com os pacientes com cadastro pendente, ou caso você queira procurar por um caso específico,
@@ -95,7 +105,8 @@
                com nomes iguais ou parecidos com o pesquisado. E caso queira, é possível montar o cardápio do Paciente seleionado,
                clicando em "Montar cardápio".</p>
          </div>
-         <div class="" id="11">
+            ______________________________________________________________________________
+         <div class="" id="11"><br>
             <h3>Histórico de consultas</h3>
             <h5>Destinado para verificar as consultas do paciente selecionado.</h5>
             <p>Faça a busca do paciente no campo "Digite aqui...", irá retornar todos os paciente

@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-header"><br>
                 <h4 class="col">Nutriweb</h4><br>
-                <img class="logo5" src="img/logo.png">
+                <img class="logo5" src="\img\logo.png">
                 <h5 class="col">Selecione paciente</h5>
                     <br>
                 <form action="/selecionar_paciente" method="get">
@@ -19,14 +19,14 @@
                                             </span> 
                                         </div>
                                         <span style="cursor: pointer" onclick="window.open('/help#10', '', 'width=600,height=300')">
-                                            <img src="img/ajuda.png" id="1" class="help5">
+                                            <img src="\img\ajuda.png" id="1" class="help5">
                                         </span>
                                     </div>
                                 </div>
                 </form>
                 <div class="col">
                     <br><h5>Cardápios pendentes</h5> 
-            </form>
+
             <div class="container mt-4">
                 @if(isset($consultaPaciente)) 
                 <input type="hidden" name="type" value="<?= $varp = 0?>" >
@@ -78,7 +78,12 @@
                                     <td> {{$paciente->NomePaciente}}</td>
                                     <td> <?php echo date('d/m/Y', strtotime($paciente->created_at)); ?></td>
                                     <td><span style="cursor: pointer" onclick="window.open('/edit_paciente', '', 'width=600,height=300')"><td>
-                                    <td><button class="btn btn-dark mostrar" alvo="{{$paciente->idPaciente}}">Montar Cardápio</button> 
+                                    <td><form action="/buscarPessoa" method="post">
+                                    {{csrf_field()}}
+                                    <td><input type="hidden" name="busca" value="{{$paciente->NomePaciente}}">
+                                        <input type="hidden" name="buscaId" value="{{$paciente->idConsulta}}">
+                                        <button class="btn btn-dark" type="submit" >Montar cardápio</button></td>
+                                    </form>
                                     </td>
                                 </tr>
                             </tbody>

@@ -18,7 +18,13 @@
                             &ensp;&ensp;
                     </form>
                 </div>
-                <br><br>
+                <br>
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+                <br>
                 @if(isset($lista_nome))
                     @forelse($lista_nome as $paciente)
                         <div class="container mt-4 mostrar esconder">

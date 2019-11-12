@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-header"><br>
                     <h3 class="col">Editar grupo <br><br></h3>
-                    <img class="logo4" src="img/logo.png">
+                    <img class="logo4" src="\img\logo.png">
                     <form action="/testar_grupo" method="get">
                         {{csrf_field()}}
                         <div class="form-group col-md-8">
@@ -23,12 +23,17 @@
                                 <button class="btn btn-primary" value="busca" type="submit">Selecionar</button> &ensp;&ensp;
                             </span>
                                     <span style="cursor: pointer" onclick="window.open('/help#7', '', 'width=600,height=300')">
-                                      <img src="img/ajuda.png" class="help5">
+                                      <img src="\img\ajuda.png" class="help5">
                                   </span>
                                 </div>
                             </div>
                         </div>
                     </form>
+                    @if(session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
                     <br><br>
                     <?php
                     $i = 1;

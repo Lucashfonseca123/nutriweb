@@ -24,11 +24,16 @@
                                     </div>
                                 </div>
                             </form>
-                            <span style="cursor: pointer" onclick="window.open('/help#2', '', 'width=600,height=300')">
+                            <span style="cursor: pointer"   onclick="window.open('/help#2', '', 'width=600,height=300')">
                                       <img src="img/ajuda.png" class="help5">
                                   </span>
                             <div>
                         <br><br>
+                                @if(session()->has('message'))
+                                    <div class="alert alert-success">
+                                        {{ session()->get('message') }}
+                                    </div>
+                                @endif
                             </div>
                         @if(isset($lista_nome))             {{--Se a variavel foi previamente definida--}}
                             @forelse($lista_nome as $paciente)

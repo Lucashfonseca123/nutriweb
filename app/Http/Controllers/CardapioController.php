@@ -126,7 +126,7 @@ class CardapioController extends Controller
             ]);
         }
 
-        echo "To no update";
+       return view('edit_cardapio')->with('message', 'Cardapio alterado com sucesso!');
     }
 
     /**
@@ -189,8 +189,17 @@ class CardapioController extends Controller
     }
 
     public function final($id){
-        $var = Cardapio::where('Paciente_idPaciente', $id);
-//        dd(collect($var));
-        return view('cardapioCadastrado');
+        $varId = (int) $id;
+        $var = Cardapio::where('Paciente_idPaciente', $varId)->orderBy('updated_at', 'DESC')->first();
+        $varRefeicao = Itemcardapio::where('Cardapio_idCardapio', $var->idCardapio)
+            ->with(['grupo.grupo_has_alimentos.cmvcoltaco3', 'grupo2.grupo_has_alimentos.cmvcoltaco3'])
+            ->get();
+
+        $varPaciente = Paciente::find($id);
+//        dd(collect($varRefeicao));
+        return view('cardapioCadastrado', [
+            'nomeAlimento'  => $varRefeicao,
+            'paciente' => $varPaciente
+        ]);
     }
 }
