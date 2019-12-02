@@ -142,21 +142,27 @@ class CardapioController extends Controller
 
     public function busca(Request $request){
         $var = $request->busca;
-
-        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();
+        $varIds = $request->idPac;
+//        dd($var);
+//        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();
 
         $varId = $request->buscaId;
 
         if ($varId == 0) {
-            $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('ExcluidoPaciente','0')->with(['consulta' => function($query) {
+//          $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('ExcluidoPaciente','0')->with(['consulta' => function($query) {
+            $lista_nome = Paciente::where('idPaciente', $varIds)->where('ExcluidoPaciente','0')->with(['consulta' => function($query) {
+
             $query->where('AlteracaoConsulta', 0);
         }])->get();
         }
         else{
-            $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('ExcluidoPaciente','0')->with(['consulta' => function($query) use($varId){
+//            $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('ExcluidoPaciente','0')->with(['consulta' => function($query) use($varId){
+            $lista_nome = Paciente::where('idPaciente', $varIds)->where('ExcluidoPaciente','0')->with(['consulta' => function($query) use($varId){
+
             $query->where('idConsulta', $varId);
         }])->get();
         }
+//        dd($lista_nome);
         $var2 = Grupo::all();
         return view('cardapio_cadastro')->with('lista_nome', $lista_nome)->with('group', $var2);
         }

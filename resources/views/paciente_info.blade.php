@@ -46,6 +46,7 @@
                         <form action="/buscarPessoa" method="post">
                             {{csrf_field()}}
                         <td><input type="hidden" name="busca" value="{{$paciente->NomePaciente}}">
+                            <input type="hidden" name="idPac" value="{{$paciente->idPaciente}}">
                             <input type="hidden" name="buscaId" value="{{$paciente->idConsulta}}">
                             <button class="btn btn-dark" type="submit" >Montar cardápio</button></td>
                         </form>
