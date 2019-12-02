@@ -11,6 +11,12 @@
 |
 */
 
+use App\Models\Cardapio;
+use App\Models\Itemcardapio;
+use App\Models\Paciente;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/inicio', 'Controller@iniciar');
@@ -52,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/grupoCadastro2/{id}', 'GrupoController@update');
 
-    Route::get('/grupoCadastro3/{id}', 'GrupoController@destroy');
+    Route::get('/grupoCadastro3/', 'GrupoController@destroy');
 
     Route::resource('/grupoEditar', 'GrupoController');
 
@@ -106,6 +112,24 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/help/', 'Controller@help');
 
+    Route::get('/busca_cardapio/{paciente_id}', 'CardapioController@buscaCardapio');
+
+    Route::get('reativa_paciente', 'PacienteController@reativar');
+
+    Route::post('ativarPaciente', 'PacienteController@ativar');
+
+    Route::get('teste/{id}', function($id){
+        $varId = (int) $id;
+
+        $var = Cardapio::where('Paciente_idPaciente', $varId)->orderBy('updated_at', 'DESC')->first();
+
+        dd($var->idCardapio);
+        $varRefeicao = Itemcardapio::where('Cardapio_idCardapio', $var->idCardapio)
+            ->with(['grupo.grupo_has_alimentos.cmvcoltaco3', 'grupo2.grupo_has_alimentos.cmvcoltaco3'])
+            ->get();
+
+        $varPaciente = Paciente::find($id);
+    });
 });
 
 Auth::routes();

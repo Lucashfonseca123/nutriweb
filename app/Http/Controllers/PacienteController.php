@@ -44,7 +44,7 @@ class PacienteController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(PacienteRequest $request)
@@ -54,7 +54,7 @@ class PacienteController extends Controller
         $varEst = new Estado;
         $varCid = new Cidade;
         $varDiag = new Diagnostico;
-        $varAnf= new Antfamiliare;
+        $varAnf = new Antfamiliare;
         $varAf = new AtividadeFisica;
         $varObj = new Objetivo;
         $altg = new Altgastrointestinai;
@@ -67,8 +67,8 @@ class PacienteController extends Controller
         $telefone = $request->telefone;
         $varp->TelefonePaciente = $telefone;
         $varp->SexoPaciente = $request->sexo;
-        $varp->DataDeNascimentoPaciente=$request->dtnasc;
-        $varp->ProfissaoPaciente=$request->profissao;
+        $varp->DataDeNascimentoPaciente = $request->dtnasc;
+        $varp->ProfissaoPaciente = $request->profissao;
         //Endereço
         $varEnd->CepEndereco = $request->cep;
         $varEnd->RuaEndereco = $request->rua;
@@ -77,7 +77,7 @@ class PacienteController extends Controller
         $varCid->NomeCidade = $request->cidade;
         $varEst->NomeEstado = $request->estado;
         //Horário de rabalho e rotina diária
-        $varp->TrabalhaHoraDiaPaciente = $request->hrsDia; 
+        $varp->TrabalhaHoraDiaPaciente = $request->hrsDia;
         $varp->RotinaPaciente = $request->horErotina;
         $varCid->save();
         $varEnd->save();
@@ -85,11 +85,11 @@ class PacienteController extends Controller
         $varp->estado()->associate($varEst);
         $varp->cidade()->associate($varCid);
         $varp->endereco()->associate($varEnd);
-        
+
         //Objetivo
-        
+
         $varObj->NomeObjetivos = $request->objetivo;
-        
+
         $varObj->save();
         //Atividade fisica
         $varAf->PraticaAtividade_Fisica = $request->pratica;
@@ -101,9 +101,9 @@ class PacienteController extends Controller
         $varDiag->IcDiagnosticoDiagnostico = $request->ic;
         $varDiag->DisplidemiaDiagnostico = $request->displidemia;
         $varDiag->CardiopataDiagnostico = $request->cardiopata;
-        $varDiag->NefropatiaDiagnostico =$request->nefropatia;
+        $varDiag->NefropatiaDiagnostico = $request->nefropatia;
         $varDiag->GastriteDiagnostico = $request->gastrite;
-        $varDiag->NeoplasiaDiagnostico =$request->neoplasia;
+        $varDiag->NeoplasiaDiagnostico = $request->neoplasia;
         $varDiag->UlceraDiagnostico = $request->ulcera;
         $varDiag->HepatopatiaDiagnostico = $request->hepatopatia;
         $varDiag->AnsiedadeDiagnostico = $request->ansiedade;
@@ -120,14 +120,14 @@ class PacienteController extends Controller
         $altg->DiarreiaAltGastrointestinais = $request->diarreia;
         $altg->ConstipacaoAltGastrointestinais = $request->constipacao;
         $altg->AnorexiaAltGastrointestinais = $request->anorexia;
-        $altg->DispepsiaAltGastrointestinais = $request->dispepsia; 
+        $altg->DispepsiaAltGastrointestinais = $request->dispepsia;
         $altg->EdemaAltGastrointestinais = $request->edema;
         $altg->FlatulenciasAltGastrointestinais = $request->flatulencias;
         $altg->PolidipsiaAltGastrointestinais = $request->polidipsia;
         $altg->save();
-        
+
         //Antecedentes familiares
-        
+
         $varAnf->Diabetes_melitusAntFamiliares = $request->diabetesAF;
         $varAnf->HasAntFamiliares = $request->hAsAF;
         $varAnf->AvcAntFamiliares = $request->avc;
@@ -139,9 +139,8 @@ class PacienteController extends Controller
         $varAnf->ObesidadeAntFamiliares = $request->obesidade;
         $varAnf->OutrasAntFamiliares = $request->descrevaAF;
         $varAnf->save();
-        
 
-        
+
         //Alterações clínicas
         $varAltC->Cabelo_quebradicoAltCinicas = $request->cabelos;
         $varAltC->Unhas_fracasAltCinicas = $request->unhas;
@@ -153,8 +152,8 @@ class PacienteController extends Controller
         $varAltC->MedicamentosAltCinicas = $request->descrevaMed;
         $varAltC->save();
 
-         //Hábitos alimentares e sociais
-        
+        //Hábitos alimentares e sociais
+
         $varp->IntoleranciaAlimentarPaciente = $request->descrevaIntolerancia;
         $varp->MastigacaoPaciente = $request->mastigacao;
         $varp->PrefAlimentaresPaciente = $request->prefAlimentares;
@@ -170,16 +169,16 @@ class PacienteController extends Controller
         $varp->DesjejumPaciente = $request->desjejum;
         $varp->Lanche1Paciente = $request->lanche;
         $varp->AlmocoPaciente = $request->almoco;
-        $varp->Lanche2Paciente =$request->lanche1;
+        $varp->Lanche2Paciente = $request->lanche1;
         $varp->JantarPaciente = $request->jantar;
         $varp->CeiaPaciente = $request->ceia;
         $varp->ExcluidoPaciente = 0;
         $varp->save();
-        
+
         //Exames laboratoriais
         $varCon->PesoConsulta = $request->peso;
         $varCon->Circ_pantuConsulta = $request->circ_pantu;
-        $varCon->EstaturaConsulta = $request->estatura; 
+        $varCon->EstaturaConsulta = $request->estatura;
         $varCon->Circ_cinturaConsulta = $request->cirCintura;
         $varCon->Circ_abdomenConsulta = $request->circAbd;
         $varCon->Circ_quadrilConsulta = $request->cirQuad;
@@ -214,25 +213,25 @@ class PacienteController extends Controller
 //dd($request->idnutricionista);
         $varCon->Nutricionista_idNutricionista = $request->idnutricionista;
         $varCon->save();
-        
+
         return redirect()->back()->with('message', 'Consulta cadastrada com sucesso!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         //
     }
-   
+
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -243,8 +242,8 @@ class PacienteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -256,7 +255,7 @@ class PacienteController extends Controller
         $varEst = new Estado;
         $varCid = new Cidade;
         $varDiag = new Diagnostico;
-        $varAnf= new Antfamiliare;
+        $varAnf = new Antfamiliare;
         $varAf = new AtividadeFisica;
         $varObj = new Objetivo;
         $altg = new Altgastrointestinai;
@@ -270,7 +269,7 @@ class PacienteController extends Controller
         $varp->Telefone = $telefone;
         $varp->Sexo = $request->sexo;
         //$varp->DataDeNascimento=$request->dtnasc;
-        $varp->Profissao=$request->profissao;
+        $varp->Profissao = $request->profissao;
         //Endereço
         $varEnd->Cep = $request->cep;
         $varEnd->Rua = $request->rua;
@@ -279,7 +278,7 @@ class PacienteController extends Controller
         $varCid->Nome = $request->cidade;
         $varEst->Nome = $request->estado;
         //Horário de rabalho e rotina diária
-        $varp->TrabalhaHoraDia = $request->hrsDia; 
+        $varp->TrabalhaHoraDia = $request->hrsDia;
         $varp->Rotina = $request->horErotina;
         $varCid->save();
         $varEnd->save();
@@ -287,11 +286,11 @@ class PacienteController extends Controller
         $varp->estado()->associate($varEst);
         $varp->cidade()->associate($varCid);
         $varp->endereco()->associate($varEnd);
-        
+
         //Objetivo
-        
+
         $varObj->Nome = $request->objetivo;
-        
+
         $varObj->save();
         //Atividade fisica
         $varAf->Pratica = $request->pratica;
@@ -307,9 +306,9 @@ class PacienteController extends Controller
         $varDiag->Ic = $request->ic;
         $varDiag->Displidemia = $request->displidemia;
         $varDiag->Cardiopata = $request->cardiopata;
-        $varDiag->Nefropatia =$request->nefropatia;
+        $varDiag->Nefropatia = $request->nefropatia;
         $varDiag->Gastrite = $request->gastrite;
-        $varDiag->Neoplasia =$request->neoplasia;
+        $varDiag->Neoplasia = $request->neoplasia;
         $varDiag->Ulcera = $request->ulcera;
         $varDiag->Hepatopatia = $request->hepatopatia;
         $varDiag->Ansiedade = $request->ansiedade;
@@ -326,14 +325,14 @@ class PacienteController extends Controller
         $altg->Diarreia = $request->diarreia;
         $altg->Constipacao = $request->constipacao;
         $altg->Anorexia = $request->anorexia;
-        $altg->Dispepsia = $request->dispepsia; 
+        $altg->Dispepsia = $request->dispepsia;
         $altg->Edema = $request->edema;
         $altg->Flatulencias = $request->flatulencias;
         $altg->Polidipsia = $request->polidipsia;
         $altg->save();
-        
+
         //Antecedentes familiares
-        
+
         $varAnf->Diabetes_melitus = $request->diabetesAF;
         $varAnf->Has = $request->hAsAF;
         $varAnf->Avc = $request->avc;
@@ -345,9 +344,8 @@ class PacienteController extends Controller
         $varAnf->Obesidade = $request->obesidade;
         $varAnf->Outras = $request->descrevaAF;
         $varAnf->save();
-        
 
-        
+
         //Alterações clínicas
         $varAltC->Cabelo_quebradico = $request->cabelos;
         $varAltC->Unhas_fracas = $request->unhas;
@@ -359,8 +357,8 @@ class PacienteController extends Controller
         $varAltC->Meidcamentos = $request->descrevaMed;
         $varAltC->save();
 
-         //Hábitos alimentares e sociais
-        
+        //Hábitos alimentares e sociais
+
         $varp->IntoleranciaAlimentar = $request->descrevaIntolerancia;
         $varp->Mastigacao = $request->mastigacao;
         $varp->PrefAlimentares = $request->prefAlimentares;
@@ -376,15 +374,15 @@ class PacienteController extends Controller
         $varp->Desjejum = $request->desjejum;
         $varp->Lanche1 = $request->lanche;
         $varp->Almoco = $request->almoco;
-        $varp->Lanche2 =$request->lanche1;
+        $varp->Lanche2 = $request->lanche1;
         $varp->Jantar = $request->jantar;
         $varp->Ceia = $request->ceia;
         $varp->save();
-        
+
         //Exames laboratoriais
         $varCon->Peso = $request->peso;
         $varCon->Circ_pantu = $request->circ_pantu;
-        $varCon->Estatura = $request->estatura; 
+        $varCon->Estatura = $request->estatura;
         $varCon->Circ_cintura = $request->cirCintura;
         $varCon->Circ_abdomen = $request->circAbd;
         $varCon->Circ_quadril = $request->cirQuad;
@@ -418,23 +416,46 @@ class PacienteController extends Controller
         return view('welcome');
     }
 
-    public function busca(Request $request){
+    public function busca(Request $request)
+    {
         $var = $request->busca;
 //        $seleciona = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();
 //        return view('paciente_info')->with('lista_nome', $seleciona);
 
-        $consultaPaciente = Consultum::join('Paciente','Consulta.Paciente_idPaciente','=','Paciente.idPaciente')->where('Paciente.NomePaciente',"like", "%".$var."%")->where('Cardapio_idCardapio', "=", NULL)->where('AlteracaoConsulta', '=', 0)->where('Paciente.ExcluidoPaciente','<>','1')->get();
+        $consultaPaciente = Consultum::join('Paciente', 'Consulta.Paciente_idPaciente', '=', 'Paciente.idPaciente')->where('Paciente.NomePaciente', "like", "%" . $var . "%")->where('Cardapio_idCardapio', "=", NULL)->where('AlteracaoConsulta', '=', 0)->where('Paciente.ExcluidoPaciente', '<>', '1')->get();
         return view('paciente_info')->with('lista_nome', $consultaPaciente);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
+    }
+
+    public function reativar(Request $request)
+    {
+        $var = $request->busca;
+        $lista_nome = Paciente::where('NomePaciente', "like", "%" . $var . "%")->where('Paciente.ExcluidoPaciente', '1')->get();
+//        dd($lista_nome);
+        return view('reativarPaciente')->with('consultaPaciente', $lista_nome);
+    }
+
+    public function ativar(Request $request)
+    {
+//        dd($request->idp);
+
+        $paciente_ativado = Paciente::where('idPaciente', $request->idp)->get();
+
+        foreach ($paciente_ativado as $paciente) {
+            $paciente->ExcluidoPaciente = 0;
+            $paciente->update();
+        }
+
+        return redirect()->back()->with('message', 'Paciente ativado com sucesso!');
     }
 }

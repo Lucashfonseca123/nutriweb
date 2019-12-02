@@ -66,8 +66,8 @@ class CardapioController extends Controller
 
         $varCon->cardapio()->associate($varCardapio);
         $varCon->update();
-
-        return view('cardapio_cadastro')->with('message', 'Reconsulta cadastrado com sucesso!');
+//        return $this->final($request->idPaciente);
+        return view('cardapio_cadastro')->with('message', 'Cardapio cadastrado com sucesso!');
     }
 
     /**
@@ -148,12 +148,12 @@ class CardapioController extends Controller
         $varId = $request->buscaId;
 
         if ($varId == 0) {
-            $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->with(['consulta' => function($query) {
+            $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('ExcluidoPaciente','0')->with(['consulta' => function($query) {
             $query->where('AlteracaoConsulta', 0);
         }])->get();
         }
         else{
-            $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->with(['consulta' => function($query) use($varId){
+            $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('ExcluidoPaciente','0')->with(['consulta' => function($query) use($varId){
             $query->where('idConsulta', $varId);
         }])->get();
         }
@@ -173,7 +173,37 @@ class CardapioController extends Controller
             ->get();
 //        dd($lista_nome);
         $var2 = Grupo::all();
+//        dd(collect($lista_nome));
+        foreach ($lista_nome as $paciente){
+            $idPaciente = $paciente->idPaciente;
+//            var_dump($idPaciente);
+            $idCardapio = Cardapio::where('Paciente_idPaciente', $idPaciente)->get();
+        }
+
+//        foreach ($idCardapio as $horaCardapio) {
+//            $horarioItemCardapio = Itemcardapio::where('Cardapio_idCardapio', $horaCardapio->idCardapio)->get();
+//        }
+//
+//            dd(collect($horarioItemCardapio));
+
         return view('edit_cardapio')->with('lista_nome', $lista_nome)->with('group', $var2);
+    }
+
+    public function buscaCardapio(Request $request, $paciente_id)
+    {
+//        dump($paciente_id);
+        $var = $request->busca;
+
+        $paciente = Paciente::where('idPaciente', $paciente_id)->with(['cardapios' => function($query) {
+            $query->orderBy('created_at', 'desc')->limit(1);
+            $query->with('itemcardapios');
+        }])->first();
+
+        return response()->json([
+           'data' => [
+               'paciente_cardapio' => $paciente,
+           ]
+        ]);
     }
 
     public function resumo($id){

@@ -13,7 +13,7 @@
                                 <div class="input-group-append">
                                     <select class="js-example-basic-single form-control" style="width: 250px" name="busca" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                            @foreach($group as $grupos)
+                                            @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                 <option value="{{$grupos->NomeGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                             @endforeach
                                         @endif
@@ -30,7 +30,12 @@
                         </div>
                     </form>
                     @if(session()->has('message'))
-                        <div class="alert alert-success">
+                        <div class="alert alert-danger col-md-6">
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
+                    @if(session()->has('message2'))
+                        <div class="alert alert-success col-md-6">
                             {{ session()->get('message') }}
                         </div>
                     @endif
@@ -45,22 +50,21 @@
                                 <table class="table">
                                     <thead>
                                     <tr>
-                                        <th scope="col">Id</th>
                                         <th scope="col">Grupo</th>
                                         <th></th>
                                         <th></th>
                                     </tr>
                                     </thead>
                                     <tr>
-                                        <th scope="row">  {{$grupo->idGrupo}}  </th>
                                         <td><h6>{{$grupo->NomeGrupo}}</h6> </td>
                                         <td>
                                             <label for="">
                                                 <button class="btn btn-dark mostrar" alvo="{{$grupo->idGrupo}}">Editar</button> &ensp;&ensp;
                                             </label>
                                             <label for="">
-                                                <form action="/grupoCadastro3/{{$grupo->idGrupo}}">
-                                                    <button class="btn btn-danger " value="{{$grupo->idGrupo}}" alvo="{{$grupo->idGrupo}}">Remover</button> &ensp;&ensp;
+                                                <form action="/grupoCadastro3/">
+                                                    {{csrf_field()}}
+                                                    <button class="btn btn-danger " name = "id" value="{{$grupo->idGrupo}}" alvo="{{$grupo->idGrupo}}">Remover</button> &ensp;&ensp;
                                                 </form>
                                             </label>
                                         </td>

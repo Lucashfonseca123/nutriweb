@@ -8,7 +8,7 @@
             <br>
          <div class="" id="1">
             <h3>Inscrição paciente</h3>
-            <h5>Essa é a página composta por 7 menus, destinada para fazer a avaliação completa do paciente, para iniciar a avaliação clique em cima do menu proposto. Os itens com * são obrigatórios.</h5>
+            <h5>Essa página é composta por 7 menus, destinada para fazer a avaliação completa do paciente, para iniciar a avaliação clique em cima do menu proposto. Os itens com * são obrigatórios.</h5>
             <br>
             <h6>Menu 1 - Inscrição paciente:</h6>
             <p>Esse menu é destinado para iniciar a avaliação do paciente, com dados básicos como Nome, Email, Telefone etc.</p>
@@ -114,6 +114,15 @@
                abrir uma página com os dados antropométricos do paciente. Caso o paciente tenha mais
                que 1 consulta, é possível navegar por tela sobre cada consulta.</p>
          </div>
+            ______________________________________________________________________________
+            <div class="" id="12"><br>
+               <h3>Reativar paciente</h3>
+               <h5>Destinado para reativar pacientes após excluidos.</h5>
+               <p>Faça a busca do paciente no campo "Digite aqui...", irá retornar todos os paciente
+                  com nomes iguais ou parecidos com o pesquisado. Selecione o paciente desejado, e selecione
+                  o botão "Ativar" para reativar o paciente desejado.
+                  .</p>
+            </div>
       </div>
       </div>
    </div>

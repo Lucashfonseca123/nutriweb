@@ -134,7 +134,6 @@ $('.mostrar').click(function(){
    // $(this).hide();
     $('.esconder').show();
 });
-
 $('.mostrar_esconder').click(function(){
     let alvo = $(this).attr('alvo');
     $('#' + alvo).fadeToggle("slow", "linear");
@@ -142,6 +141,9 @@ $('.mostrar_esconder').click(function(){
     $('.menu').hide();
     $('.esconder').show();
 });
+
+
+
 
 /*
 $('.mostrar2').click(function(){

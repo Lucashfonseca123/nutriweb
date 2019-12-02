@@ -65,7 +65,7 @@
                                                 {{csrf_field()}}
                                                     <input type="hidden" name="idp" value="{{$paciente->idPaciente}}">
                                                     <input type="hidden" name='idnutricionista' value="{{Auth::user()->id}}">
-                                                <button class="btn btn-danger" type="submit" > Excluir</button>
+                                                <button class="btn btn-danger" type="submit" > Inativar</button>
                                                </form>
                                                 </label>
                                             </td>

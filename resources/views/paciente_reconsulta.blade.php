@@ -41,7 +41,6 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Id</th>
                                         <th scope="col">Paciente</th>
                                         <th scope="col">Email</th>
                                         <th></th>
@@ -49,7 +48,6 @@
                                 </thead>
                                 <tr>
                                 <tbody>
-                                    <th scope="row">  {{$paciente->idPaciente}}  </th>
                                     <td> {{$paciente->NomePaciente}}</td>
                                     <td> {{$paciente->EmailPaciente}}</td>
                                     <td><button class="btn btn-primary mostrar_esconder" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
@@ -114,7 +112,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">% Muscular
-                                        <input type="text" name="muscular" class="form-control col-md-4">
+                                        <input type="text" name="muscular" min="0" max="99" class="form-control col-md-4">
                                     </label>
                                     <label for="nome" class="col-md-3">TMB
                                         <input type="text" name="tmb" class="form-control col-md-4">

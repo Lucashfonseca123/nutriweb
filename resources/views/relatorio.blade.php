@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-header"><br>
             <h2 class="col">Situação paciente</h2><br>
-            <h3 class="col">Relatórios</h3>
+            <h3 class="col">Gráficos</h3><br>
             <img class="logo" src="img/logo.png">
             {{--<img src="img/ajuda.png" id="1" class="help2">--}}
             <div class="row">
