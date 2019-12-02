@@ -54,7 +54,7 @@
                         <label for="nome" class="col-md-3 ">Data de nascimento *
                             <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA"
                                    value="{{ old('dtnasc') }}"
-                                   type="date" class="form-control selecionarData" required maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+                                   type="date" class="form-control selecionarData" min="1900-04-01" max="2019-11-19" required maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
                         </label>
 
                         @if($errors->has('dtnasc'))
@@ -430,7 +430,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3" for="Filhos">Uso de medicamentos</label>
+                        <label class="col-md-3" for="Filhos">Uso de medicamentos *</label>
                         <div class="col-md-3">
                             <div class="input-group">
                                 <span class="input-group-addon">
@@ -553,7 +553,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label class="col" for="Filhos">Mastigação</label>
+                        <label class="col" for="Filhos">Mastigação *</label>
                         <div class="col-md-5">
                             <div class="input-group">
                                 <span class="input-group-addon">
@@ -587,7 +587,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2" for="Filhos">Tabagista</label>
+                        <label class="col-md-2" for="Filhos">Tabagista *</label>
                         <div class="col-md-3">
                             <div class="input-group">
                                 <span class="input-group-addon">
@@ -616,7 +616,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-1" for="Filhos">Etilista</label>
+                        <label class="col-md-1" for="Filhos">Etilista *</label>
                         <div class="col-md-3">
                             <div class="input-group">
                                 <span class="input-group-addon">
@@ -643,7 +643,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label class="" style="vertical-align: top;" for="radios">&emsp;Usou suplementos</label><br>
+                        <label class="" style="vertical-align: top;" for="radios">&emsp;Usou suplementos *</label><br>
                         <label required="" class="radio-inline" for="radios-0" >&emsp;
                             <input type="radio" name="sup" id="sup" value="nao" onclick="desabilita('sup1')" required>
                             Não

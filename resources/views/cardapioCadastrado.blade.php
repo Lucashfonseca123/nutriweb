@@ -77,7 +77,8 @@
                     </h6>
                     <br>
                    <h4 style="font-family: auto">&ensp;
-                    Fernanda Caroline Fonseca - CRN8 9605
+                    Fernanda Caroline Fonseca - CRN8 9605 <br>
+                       &ensp; Contato: (42) 99959-9146
                     </h4>
                 </div>
                 <br>

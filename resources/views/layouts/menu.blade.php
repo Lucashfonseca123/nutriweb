@@ -74,7 +74,7 @@
                                     <a href="reconsulta">Reconsulta</a>
                                 </li>
                                 <li title="Analise a situação do paciente">
-                                    <a href="relatorio">Relatório Paciente</a>
+                                    <a href="relatorio">Gráficos Pacientes</a>
                                 </li>
                             </ul>
                         </div>
@@ -119,6 +119,9 @@
                                 </li>
                                 <li title="Adicione grupos nas refeições, crie seu cardápio">
                                     <a href="/hist_consultas">Histórico de Consultas</a>
+                                </li>
+                                <li title="Adicione grupos nas refeições, crie seu cardápio">
+                                    <a href="/reativa_paciente">Reativar Paciente</a>
                                 </li>
                             </ul>
                         </div>

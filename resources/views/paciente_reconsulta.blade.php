@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">% Muscular
-                                        <input type="text" name="muscular" class="form-control col-md-4">
+                                        <input type="text" name="muscular" min="0" max="99" class="form-control col-md-4">
                                     </label>
                                     <label for="nome" class="col-md-3">TMB
                                         <input type="text" name="tmb" class="form-control col-md-4">

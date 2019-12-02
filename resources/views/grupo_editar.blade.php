@@ -13,7 +13,7 @@
                                 <div class="input-group-append">
                                     <select class="js-example-basic-single form-control" title = "Insira o nome do grupo desejado" style="width: 250px" name="busca" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                            @foreach($group as $grupos)
+                                            @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                 <option value="{{$grupos->NomeGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                             @endforeach
                                         @endif
@@ -30,7 +30,12 @@
                         </div>
                     </form>
                     @if(session()->has('message'))
-                        <div class="alert alert-success">
+                        <div class="alert alert-danger col-md-6">
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
+                    @if(session()->has('message2'))
+                        <div class="alert alert-success col-md-6">
                             {{ session()->get('message') }}
                         </div>
                     @endif

@@ -17,7 +17,7 @@
                                     <label for="nome" class="col-md-3">Quantidade de calorias(Kcal)
                                         <input type="text" name="qtd_calorica" OnKeyPress="formatar('#.##', this)" class="form-control col-md-4">
                                     </label>
-                                    <label for="nome" class="col-md-3">Qauntidade de Proteínas
+                                    <label for="nome" class="col-md-3">Quantidade de Proteínas
                                         <input type="text" name="proteina" class="form-control col-md-4">
                                     </label>
                                 </div>

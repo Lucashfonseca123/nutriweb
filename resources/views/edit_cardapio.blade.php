@@ -40,7 +40,11 @@
                                     <tbody>
                                     <td> {{$paciente->NomePaciente}}</td>
                                     <td> {{$paciente->EmailPaciente}}</td>
-                                    <td><button class="btn btn-primary mostrar_esconder" alvo="{{$paciente->idPaciente}}">Editar</button>
+                                    <td>
+                                        <button class="btn btn-primary mostrar_esconder busca_paciente_cardapio"
+                                                alvo="{{$paciente->idPaciente}}">
+                                            Editar
+                                        </button>
                                     </td>
                                     </tr>
                                     </tbody>
@@ -57,9 +61,12 @@
                                         </label>
                                         <input type="hidden" name="idCardapio" value="{{$paciente->consulta->last()->Cardapio_idCardapio}}">
                                         &emsp;&emsp;
-                                        <label for="">
-                                            <button class="btn btn-success" id="btn2" type="input">Salvar cardápio</button>
-                                        </label>
+                                        <span style="cursor: pointer" onclick="window.open('/cardapioFinal/{{$paciente->idPaciente}}', '', 'width=600,height=300')">
+                                           <button class="btn btn-success" id="btn2" type="input">Salvar cardápio</button>
+                                       </span>
+                                        {{--<label for="">--}}
+                                            {{--<button class="btn btn-success" id="btn2" type="input">Salvar cardápio</button>--}}
+                                        {{--</label>--}}
                                         <br><br>
                                     </h4>
                                     <thead>
@@ -70,12 +77,14 @@
                                         <th scope="col">Opção 2</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
 
+                                    <tbody>
                                     <tr>
                                         <th scope="row" style="vertical-align: middle">Café da manhã</th>
                                         <th class="col">
-                                            <input type="time" name="time[1]" class="form-control col-md-10">
+{{--                                            @foreach($horario as $horas)--}}
+                                                <input type="time" name="time[1]" class="time1 form-control col-md-10">
+                                            {{--@endforeach--}}
                                         </th>
                                         <td>
                                             <div class="input-group" style="width: 350px">
@@ -107,7 +116,7 @@
                                     <tr>
                                         <th scope="row" style="vertical-align: middle">Lanche da manhã</th>
                                         <th class="col">
-                                            <input type="time" name="time[2]" class="form-control col-md-10">
+                                            <input type="time" name="time[2]" class="time2 form-control col-md-10">
                                         </th>
                                         <td>
                                             <div class="input-group" style="width: 350px">
@@ -145,7 +154,7 @@
                                     <tr>
                                         <th scope="row" style="vertical-align: middle">Almoço</th>
                                         <th class="col">
-                                            <input type="time" name="time[3]" class="form-control col-md-10">
+                                            <input type="time" name="time[3]"class="time3 form-control col-md-10">
                                         </th>
                                         <td>
                                             <div class="input-group" style="width: 350px">
@@ -177,7 +186,7 @@
                                     <tr>
                                         <th scope="row" style="vertical-align: middle">Lanche da tarde </th>
                                         <th class="col">
-                                            <input type="time" name="time[4]" class="form-control col-md-10">
+                                            <input type="time" name="time[4]"class="time4 form-control col-md-10">
                                         </th>
                                         <td>
                                             <div class="input-group" style="width: 350px">
@@ -209,7 +218,7 @@
                                     <tr>
                                         <th scope="row" style="vertical-align: middle">Jantar</th>
                                         <th class="col">
-                                            <input type="time" name="time[5]" class="form-control col-md-10">
+                                            <input type="time" name="time[5]" class="form-control col-md-10 time5">
                                         </th>
                                         <td>
                                             <div class="input-group" style="width: 350px">
@@ -241,7 +250,7 @@
                                     <tr>
                                         <th scope="row" style="vertical-align: middle">Ceia</th>
                                         <th class="col">
-                                            <input type="time" name="time[6]" class="form-control col-md-10">
+                                            <input type="time" name="time[6]" class="form-control col-md-10 time6">
                                         </th>
                                         <td>
                                             <div class="input-group" style="width: 350px">
@@ -271,6 +280,7 @@
                                         </td>
                                     </tr>
                                     </tbody>
+
                                 </form>
                             </table>
 
@@ -284,5 +294,6 @@
                         </form>
             </div>
         </div>
+        <script src="{{ asset('js/buscapaciente.js') }}"></script>
     </main>
 @endsection

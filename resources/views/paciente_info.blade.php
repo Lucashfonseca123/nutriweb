@@ -4,15 +4,15 @@
         <div class="container">
             <div class="card">
                 <div class="card-header"><br>
-                <h4 class="col">Nutriweb</h4><br>
+                <h4 class="col">&ensp;Nutriweb</h4><br>
                 <img class="logo5" src="\img\logo.png">
-                <h5 class="col">Selecione paciente</h5>
+                <h5 class="col">&ensp;Selecione paciente</h5>
                     <br>
                 <form action="/selecionar_paciente" method="get">
                             {{csrf_field()}}
                                 <div class="form-group col-md-8">
                                     <div class="input-group">
-                                        <input type="text" title = "Insira o nome do paciente desejado"class="form-control" name="busca" placeholder="Digite aqui..." >
+                                        &ensp;&ensp;  <input type="text" class="form-control" name="busca" placeholder="Digite aqui..." >
                                         <div class="input-group-append">
                                             <span>
                                                 <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
@@ -25,8 +25,7 @@
                                 </div>
                 </form>
                 <div class="col">
-                    <br><h5>Cardápios pendentes</h5> 
-
+                    <br><h5>&ensp; Cardápios pendentes</h5>
             <div class="container mt-4">
                 @if(isset($consultaPaciente)) 
                 <input type="hidden" name="type" value="<?= $varp = 0?>" >
@@ -36,14 +35,12 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Paciente</th>
                         <th scope="col">Data Consulta</th>
                         <th scope="col"></th>
                     </tr>
                     </thead>
-                        
-                        <th scope="row" >{{$varp = $varp+1}}</th>
+
                         <td> {{$paciente->NomePaciente}}</td>
                         <td><?php echo date('d/m/Y', strtotime($paciente->created_at)); ?> </td>
                         <form action="/buscarPessoa" method="post">

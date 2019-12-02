@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\GrupoHasAlimento;
 use App\Models\Grupo;
 use App\Models\Cmvcoltaco3;
+use App\Models\Itemcardapio;
 
 class GrupoController extends Controller
 {
@@ -129,9 +130,13 @@ class GrupoController extends Controller
 
 
         $varHasAlimento = GrupoHasAlimento::where('idBuscado', $request->id)->get();
+        $varHasAlimento = GrupoHasAlimento::where('idBuscado', $request->id)->get();
+//        dd($varHasAlimento);
+
 
         foreach ($varHasAlimento as $grupo){
-            $grupo->delete();
+            $salvoEmCardapio = Itemcardapio::where('Grupo_idGrupo',$grupo->idBuscado)->get();
+            $salvoEmCardapio2 = Itemcardapio::where('Grupo_idGrupo2',$grupo->idBuscado)->get();
         }
         $idg = (int)$request->id;
         $var = Grupo::find($idg);
@@ -141,6 +146,31 @@ class GrupoController extends Controller
         $group = Grupo::all();
         return view('grupo_editar');
 
+
+//        dd($salvoEmCardapio2);
+
+        if ($salvoEmCardapio->isEmpty() && $salvoEmCardapio2->isEmpty()){
+            foreach ($varHasAlimento as $grupo) {
+                $grupo->delete();
+            }
+
+
+            $idg = (int)$request->id;
+            $var = Grupo::find($idg);
+            $var->delete();
+
+            $varAlimento = Cmvcoltaco3::all();
+            $group = Grupo::all();
+
+            return view('grupo_editar')->with('busca_alimentos', $varAlimento)->with('group', $group);
+//            return redirect()->back()->with('message2', 'Grupo excluído com sucesso!');
+        }
+
+        else {
+            echo "da não";
+
+            return redirect()->back()->with('message', 'Grupo utilizado em cardápio!');
+        }
     }
 
     public function busca(Request $request){
@@ -159,7 +189,6 @@ class GrupoController extends Controller
             }
         }
 //        dd($nomeAlimento);
-
         return view('grupo_editar')->with('lista_nome', $consultaGrupo)->with('busca_alimentos', $var)->with('group', $group)->with('alimento', $nomeAlimento);
     }
 
