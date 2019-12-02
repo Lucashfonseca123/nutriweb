@@ -91,7 +91,7 @@
                     <tr>
                         <th scope="row" style="vertical-align: middle">Café da manhã</th>
                         <th class="col">
-                                <input type="time" name="time[1]" class="form-control col-md-10">
+                                <input type="time" name="time[1]"  class = "form-control col-md-10">
                         </th>
                         <td>
                             <div class="input-group" style="width: 350px">
