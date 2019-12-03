@@ -11,7 +11,7 @@
                         <div class="form-group col-md-8">
                             <div class="input-group">
                                 <div class="input-group-append">
-                                    <select class="js-example-basic-single form-control" style="width: 250px" name="busca" id="idgrupo">
+                                    <select class="js-example-basic-single form-control" title = "Insira o nome do grupo desejado" style="width: 250px" name="busca" id="idgrupo">
                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
                                             @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                 <option value="{{$grupos->NomeGrupo}}" name="">{{$grupos->NomeGrupo}}</option>

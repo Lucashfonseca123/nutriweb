@@ -15,7 +15,7 @@
                             {{csrf_field()}}
                                 <div class="form-group col-md-12">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" name="busca" placeholder="Digite aqui..." >
+                                        <input type="text" class="form-control" title = "Insira o nome do paciente desejado" name="busca" placeholder="Digite aqui..." >
                                         <div class="input-group-append">
                                             <span>
                                                 <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
@@ -36,7 +36,7 @@
                                 @endif
                             </div>
                         @if(isset($lista_nome))             {{--Se a variavel foi previamente definida--}}
-                            @forelse($lista_nome as $paciente)
+                            @forelse($lista_nome->sortBy('NomePaciente') as $paciente)
                         <div class="container mt-4 menu">
                             <table class="table">
                                 <thead>
@@ -107,12 +107,12 @@
                                         <input type="text" name="cirPunho" class="form-control col-md-4">
                                     </label>
                                     <label for="nome" class="col-md-3">% Gordura
-                                        <input type="text" name="gordura" class="form-control col-md-4">
+                                        <input type="number" name="gordura" id = "gordura" class="form-control col-md-4 porcentagemG">
                                     </label>
                                 </div>
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">% Muscular
-                                        <input type="text" name="muscular" min="0" max="99" class="form-control col-md-4">
+                                        <input type="number" name="muscular" id = "muscular" min="0" max="99" class="form-control col-md-4 porcentagemM">
                                     </label>
                                     <label for="nome" class="col-md-3">TMB
                                         <input type="text" name="tmb" class="form-control col-md-4">
@@ -123,7 +123,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="nome" class="col-md-3">Gordura Viceral
-                                        <input type="number" min="1" max= "60" name="gordVisc" class="form-control col-md-4">
+                                        <input type="number" min="1" max= "60" name="gordVisc" id = "gordV" class="form-control col-md-4 gordura">
                                     </label>
                                 </div>
                                 <div class="col">
@@ -145,4 +145,30 @@
             </div>
         </div>
 </main>
+<script type="text/javascript">
+$( ".porcentagemG" ).change(function() {
+        var gord = $("#gordura").val();
+       
+        if(gord>= 100){
+            this.value = 99;
+        }
+
+});
+$( ".porcentagemM" ).change(function() {
+        var musc = $("#muscular").val();
+       
+        if(musc >= 100){
+            this.value = 99;
+        }
+
+});
+$( ".gordura" ).change(function() {
+        var gord = $("#gordV").val();
+       
+        if(gord >= 60){
+            this.value = 59;
+        }
+
+});
+</script>
 @endsection

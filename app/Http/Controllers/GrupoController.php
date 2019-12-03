@@ -128,35 +128,26 @@ class GrupoController extends Controller
     public function destroy(Request $request)
     {
 //        dd($id);
-
         $varHasAlimento = GrupoHasAlimento::where('idBuscado', $request->id)->get();
 //        dd($varHasAlimento);
-
         foreach ($varHasAlimento as $grupo){
             $salvoEmCardapio = Itemcardapio::where('Grupo_idGrupo',$grupo->idBuscado)->get();
             $salvoEmCardapio2 = Itemcardapio::where('Grupo_idGrupo2',$grupo->idBuscado)->get();
         }
-
 //        dd($salvoEmCardapio2);
-
         if ($salvoEmCardapio->isEmpty() && $salvoEmCardapio2->isEmpty()){
             foreach ($varHasAlimento as $grupo) {
                 $grupo->delete();
             }
-
             $idg = (int)$request->id;
             $var = Grupo::find($idg);
             $var->delete();
-
             $varAlimento = Cmvcoltaco3::all();
             $group = Grupo::all();
-
             return view('grupo_editar')->with('busca_alimentos', $varAlimento)->with('group', $group);
 //            return redirect()->back()->with('message2', 'Grupo excluído com sucesso!');
         }
-
         else {
-            echo "da não";
 
             return redirect()->back()->with('message', 'Grupo utilizado em cardápio!');
         }

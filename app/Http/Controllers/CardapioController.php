@@ -44,6 +44,14 @@ class CardapioController extends Controller
      */
     public function store(Request $request)
     {
+         $varHorario = ($request->time);
+        $varHorario2[1]=  strtotime($varHorario[1]);
+        $varHorario2[2]=  strtotime($varHorario[2]);
+        $varHorario2[3]=  strtotime($varHorario[3]);
+        $varHorario2[4]=  strtotime($varHorario[4]);
+        $varHorario2[5]=  strtotime($varHorario[5]);
+        $varHorario2[6]=  strtotime($varHorario[6]);
+
         $varCardapio = new Cardapio();
 
         $varCardapio->Paciente_idPaciente  = $request->idpaciente;
@@ -51,10 +59,9 @@ class CardapioController extends Controller
 
         $varCon = Consultum::find($request->idconsulta);
         $varIdGrupo = $request->grupo;
-
+        
         $varIdGrupo2 = $request->grupo2;
-        $varHorario = $request->time;
-
+       
       foreach ($varIdGrupo as $key => $value){
             Itemcardapio::create([
                 'Grupo_idGrupo' => $varIdGrupo[$key],
@@ -253,6 +260,7 @@ class CardapioController extends Controller
 
     public function final($id){
         $varId = (int) $id;
+        date_default_timezone_set('America/Sao_Paulo');
         $ldate = date('d/m/Y');
         $var = Cardapio::where('Paciente_idPaciente', $varId)->orderBy('updated_at', 'DESC')->first();
         $varRefeicao = Itemcardapio::where('Cardapio_idCardapio', $var->idCardapio)
@@ -260,6 +268,7 @@ class CardapioController extends Controller
             ->get();
 
         $varPaciente = Paciente::find($id);
+//        dd($ldate);
 //        dd(collect($varRefeicao));
         return view('cardapioCadastrado', [
             'nomeAlimento'  => $varRefeicao,

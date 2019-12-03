@@ -139,7 +139,7 @@
                 <div class="escondido" id="revelado3">
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlTextarea3">Horário de trabalho e rotina diária</label>
-                        <textarea class="form-control" value="Trabalho o dia todo, durmo das 20 as 06" name="horErotina" id="exampleFormControlTextarea3" rows="7"></textarea>
+                         <textarea class="form-control" title = "Descrever o horário de inicio e fim de expediente, além de outros aspectos que formam a rotina" name="horErotina" id="exampleFormControlTextarea3" rows="7"></textarea>
                     </div>
 
                     <label class="radio-inline col" required for="radios-1"><br>Objetivo da consulta <br><br>
@@ -183,7 +183,7 @@
                         </label>
                         <div class="form-group col-md-4">
                         <label for="exampleFormControlTextarea3">Descrição atividade física</label>
-                        <textarea class="form-control" name="descricaoAf" id="atv2" rows="7"></textarea>
+                        <textarea class="form-control" title = "Descrever os horários, a frequência e quais atividades físicas realiza" name="descricaoAf" id="atv2" rows="7"></textarea>
                     </div>
                         
                     </div>
@@ -463,63 +463,63 @@
 
                     <div class="form-group">
                         <label for="nome" class="col-md-3">Peso(kg)
-                            <input type="text" name="peso" class="form-control col-md-4" value="70" pattern="[0-9]+$">
+                            <input type="text" name="peso" class="form-control col-md-4" pattern="[0-9]+$">
                         </label>
                         <label for="nome" class="col-md-3">Altura(m)
-                            <input type="text" name="estatura" OnKeyPress="formatar('#.##', this)" value="1.72" class="form-control col-md-4">
+                            <input type="text" name="estatura" OnKeyPress="formatar('#.##', this)" class="form-control col-md-4">
                         </label>
                         <label for="nome" class="col-md-3">Circunferência da cintura(cm)
-                            <input type="text" name="cirCintura" value="65" class="form-control col-md-4">
+                            <input type="text" name="cirCintura" class="form-control col-md-4">
                         </label>
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-3">Circunferência do abdômen(cm)
-                            <input type="text" name="circAbd" value="64" class="form-control col-md-4">
+                            <input type="text" name="circAbd" class="form-control col-md-4">
                         </label>
                         <label for="nome" class="col-md-3">Circunferência do quadril(cm)
-                            <input type="text" name="cirQuad" value="63" class="form-control col-md-4">
+                            <input type="text" name="cirQuad" class="form-control col-md-4">
                         </label>
                         <label for="nome" class="col-md-3">Circunferência coxa proximal direita(cm)
-                            <input type="text" name="cirCxDir" value="48" class="form-control col-md-4">
+                            <input type="text" name="cirCxDir" class="form-control col-md-4">
                         </label>
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-3">Circunferência coxa proximal esquerda(cm)
-                            <input type="text" name="cirCxEsq" value="49" class="form-control col-md-4">
+                            <input type="text" name="cirCxEsq" class="form-control col-md-4">
                         </label>
                         <label for="nome" class="col-md-3">Circunferência da panturrilha(cm)
-                            <input type="text" name="circ_pantu" value="38" class="form-control col-md-4">
+                            <input type="text" name="circ_pantu" class="form-control col-md-4">
                         </label>
                         <label for="nome" class="col-md-3">Circunferência do braço direito(cm)
-                            <input type="text" name="cirBraDir" value="35" class="form-control col-md-4">
+                            <input type="text" name="cirBraDir" class="form-control col-md-4">
                         </label>
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-3">Circunferência do braço esquerdo(cm)
-                            <input type="text" name="cirBraEsq" value="34" class="form-control col-md-4">
+                            <input type="text" name="cirBraEsq" class="form-control col-md-4">
                         </label>
                         <label for="nome" class="col-md-3">Circunferência do punho(cm)
-                            <input type="text" name="cirPunho" value="29" class="form-control col-md-4">
+                            <input type="text" name="cirPunho" class="form-control col-md-4">
                         </label>
                          <label for="nome" class="col-md-3">% Gordura
-                            <input type="text" name="gordura" value="19" class="form-control col-md-4">
+                             <input type="text" name="gordura" min="1" max= "100" id = "gordura" class="form-control col-md-4 porcentagemG">
                         </label>
 
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-3">% Muscular
-                            <input type="text" name="muscular" value="37" class="form-control col-md-4">
+                             <input type="text" name="muscular" min="1" max= "100" id = "muscular" class="form-control col-md-4 porcentagemM">
                         </label>
                         <label for="nome" class="col-md-3">TMB
-                            <input type="text" name="tmb" value="11" class="form-control col-md-4">
+                            <input type="text" name="tmb" class="form-control col-md-4">
                         </label>
                         <label for="nome" class="col-md-3">Body Age
-                            <input type="text" name="bodyAge" value="28" class="form-control col-md-4">
+                            <input type="text" name="bodyAge" class="form-control col-md-4">
                         </label>
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-3">Gordura Visceral
-                            <input type="number" min="1" max= "60" value="7" name="gordVisc" class="form-control col-md-4">
+                             <input type="number" min="1" max= "60" id = "gordV" name="gordVisc" class="form-control col-md-4 gordura">
                         </label>
                     </div>
                 </div>
@@ -580,10 +580,10 @@
 
                     <div class="form-group">
                         <label class="col-md-3" for="prependedtext">Preferência alimentares
-                            <input id="profissao" name="prefAlimentares" value="Macarrão" placeholder="" class="form-control">
+                            <input id="profissao" name="prefAlimentares" placeholder="" class="form-control">
                         </label>
                         <label class="col-md-3" for="prependedtext">Aversões alimentares
-                            <input id="profissao" name="aversoesAlimentares" value="Peixe" placeholder="" class="form-control">
+                            <input id="profissao" name="aversoesAlimentares" placeholder="" class="form-control">
                         </label>
                     </div>
                     <div class="form-group">
@@ -639,7 +639,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nome" class="col-md-4">Consumo de água(L/dia)
-                            <input type="text" id="agua" name="consumoAgua" value="1.5" class="form-control col-md-4">
+                            <input type="text" id="agua" name="consumoAgua" class="form-control col-md-4">
                         </label>
                     </div>
                     <div class="form-group">
@@ -658,7 +658,7 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3" for="prependedtext">Quem cozinha em casa?
-                            <input id="profissao"  placeholder="Descreva..." value="Paciente" class="form-control">
+                            <input id="profissao"  placeholder="Descreva..." class="form-control">
                         </label>
                     </div>
                 </div>
@@ -706,6 +706,31 @@
         </div>
     </div>
 </main>
+<script type="text/javascript">
+$( ".porcentagemG" ).change(function() {
+        var gord = $("#gordura").val();
+       
+        if(gord>= 100){
+            this.value = 99;
+        }
 
+});
+$( ".porcentagemM" ).change(function() {
+        var musc = $("#muscular").val();
+       
+        if(musc >= 100){
+            this.value = 99;
+        }
+
+});
+$( ".gordura" ).change(function() {
+        var gord = $("#gordV").val();
+       
+        if(gord >= 60){
+            this.value = 59;
+        }
+
+});
+</script>
 @endsection
 

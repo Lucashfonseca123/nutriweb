@@ -226,7 +226,7 @@ class EditarInfoController extends Controller
          $varp = Paciente::find($idp);
          $varp->ExcluidoPaciente = 1;
          $varp->update();
-        return redirect()->back()->with('message', 'Paciente excluído com sucesso!');
+        return redirect()->back()->with('message', 'Paciente inativado com sucesso!');
     }
     /**
 

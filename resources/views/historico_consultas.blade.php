@@ -30,7 +30,7 @@
                         <div>
                       <br><br>
                       @if(isset($consultaPaciente))  
-                        @forelse($consultaPaciente as $pacientes)
+                        @forelse($consultaPaciente->sortBy('NomePaciente') as $pacientes)
                             </div>
                                 <div class="container mt-4">
                                     <table class="table">
@@ -66,6 +66,7 @@
                      @if(isset($consultaPacientes))  
                         @foreach($consultaPacientes as $paciente)
                        </div>
+                       <h3>{{$paciente->NomePaciente}}</h3>
                                  <div>
                                 <h6 class="col">Dados antropométricos<br><br></h6>   
                                 <div class="form-group">

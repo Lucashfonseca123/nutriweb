@@ -14,7 +14,7 @@
                         {{csrf_field()}}
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Digite aqui..." >
+                                    <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Digite aqui..." title = "Insira o nome do paciente desejado" >
                                     <div class="input-group-append">
                                         <span>
                                             <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
@@ -35,7 +35,7 @@
                         
                       <br><br>
                       @if(isset($consultaPaciente))
-                        @forelse($consultaPaciente as $paciente)
+                        @forelse($consultaPaciente->sortBy('NomePaciente') as $paciente)
                                 <div class="container mt-4">
                                     <table class="table">
                                         <thead>

@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<style media="print">
+  .noPrint{ display: none; }
+  .yesPrint{ display: block !important; }
+</style>
 <html lang="pt">
 
 <style media="print">
@@ -23,7 +27,7 @@
 </head>
 <body>
 <!-- Início Menu -->
-<div class="page-wrapper chiller-theme toggled">
+<div class="page-wrapper  chiller-theme toggled">
     <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
         <i class="fas fa-bars"></i>
     </a>
@@ -36,15 +40,19 @@
                 </div>
             </div>
             <div class="sidebar-header">
-                <div class="user-pic">
-                    <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-                         alt="User picture" style="height: 80px; width: 60px">
-                </div>
+                {{--<div class="user-pic">--}}
+                    {{--<img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"--}}
+                         {{--alt="User picture" style="height: 80px; width: 60px">--}}
+                {{--</div>--}}
                 <div class="user-info">
-                     <span class="user-name">{{ Auth::user()->name }}
+                    <h5>
+                     <span class="user-name"  style="margin-left: 45px">{{ Auth::user()->name }}
                      </span>
-                     <span class="user-role">Nutricionista</span>
-                     <span class="user-status">
+                    </h5>
+                    <h6>
+                     <span class="user-role" style="margin-left: 72px">Nutricionista</span>
+                    </h6>
+                        <span class="user-status"  style="margin-left: 80px">
                         <i class="fa fa-circle"></i>
                      <span>Online</span>
                      </span>

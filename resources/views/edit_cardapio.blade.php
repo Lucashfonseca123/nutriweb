@@ -9,7 +9,7 @@
                     <form action="/buscarEditPessoa" method="post">
                         {{csrf_field()}}
                         <div class="col input-group">
-                            <input type="text" class="form-control col-md-6" name="busca" placeholder="Digite aqui...">
+                            <input type="text" class="form-control col-md-6" name="busca" title = "Insira o nome do paciente desejado" placeholder="Digite aqui...">
                             <button class="btn btn-primary" type="submit" value="busca">Busca</button>
                             &ensp;&ensp;
                             <span style="cursor: pointer" onclick="window.open('/help#6', '', 'width=600,height=300')">
@@ -26,7 +26,7 @@
                 @endif
                 <br>
                 @if(isset($lista_nome))
-                    @forelse($lista_nome as $paciente)
+                    @forelse($lista_nome->sortBy('NomePaciente') as $paciente)
                         <div class="container mt-4 mostrar esconder">
                             <table class="table menu">
                                 <thead>
@@ -184,7 +184,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" style="vertical-align: middle">Lanche da tarde 2</th>
+                                        <th scope="row" style="vertical-align: middle">Lanche da tarde </th>
                                         <th class="col">
                                             <input type="time" name="time[4]"class="time4 form-control col-md-10">
                                         </th>

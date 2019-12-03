@@ -41,7 +41,7 @@
             <h3>Relatório paciente</h3>
             <h5>Destinado a gerar gráficos para melhor visualização do desenvolvimento do paciente.</h5>
             <p>Faça a busca do paciente no campo "Selecione paciente...", irá retornar todos os paciente
-               com nomes iguais ou parecidos com o pesquisado. Após isso, selecione o paciente desejado, e irá ser retornado gráficos com as últimas consulas do paciente. </p>
+               com nomes iguais ou parecidos com o pesquisado. Após isso, selecione o paciente desejado, e irá ser retornado gráficos com as últimas 5 consultas do paciente. </p>
          </div>
             ______________________________________________________________________________
          <div class="" id="4"><br>
@@ -121,7 +121,7 @@
                <p>Faça a busca do paciente no campo "Digite aqui...", irá retornar todos os paciente
                   com nomes iguais ou parecidos com o pesquisado. Selecione o paciente desejado, e selecione
                   o botão "Ativar" para reativar o paciente desejado.
-                  .</p>
+                  </p>
             </div>
       </div>
       </div>

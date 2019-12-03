@@ -10,7 +10,7 @@
                 <div class="panel-heading col"><h4>Editar paciente</h4><br></div>
                 <div class="panel-body">
                 @if(isset($pacientes)) 
-                @foreach($pacientes as $paciente)         
+                @foreach($pacientes->sortBy('NomePaciente') as $paciente)
                     <!-- NOME -->
                     <div class="form-group">
                         <label for="nome" class="col-md-5">Nome
