@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<style media="print">
+  .noPrint{ display: none; }
+  .yesPrint{ display: block !important; }
+</style>
 <html lang="pt">
 
 <head>
@@ -18,11 +22,11 @@
 </head>
 <body>
 <!-- Início Menu -->
-<div class="page-wrapper chiller-theme toggled">
+<div class="page-wrapper  chiller-theme toggled">
     <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
         <i class="fas fa-bars"></i>
     </a>
-    <nav id="sidebar" class="sidebar-wrapper">
+    <nav id="sidebar" class="noPrint sidebar-wrapper">
         <div class="sidebar-content">
             <div class="sidebar-brand">
                 <a href="/">NUTRIWEB</a>

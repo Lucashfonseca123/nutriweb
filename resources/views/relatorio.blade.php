@@ -1,24 +1,31 @@
 @extends('layouts.menu')
 @section('content')
+
+<style media="print">
+  .noPrint{ display: none; }
+  .yesPrint{ display: block !important; }
+</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <main class="page-content">
         <div class="container">
         <div class="card">
             <div class="card-header"><br>
+            <div class=" noPrint">
             <h2 class="col">Situação paciente</h2><br>
             <h3 class="col">Gráficos</h3><br>
+            </div>
             <img class="logo" src="img/logo.png">
             {{--<img src="img/ajuda.png" id="1" class="help2">--}}
             <div class="row">
                 <div class="form-group col-md-12">
                         <form action="/buscarRelatorio" method="get">
                         {{csrf_field()}}
-                            <div class="form-group col-md-5">
-                                <div class="input-group">
+                            <div class="noPrint form-group col-md-5">
+                                <div class="noPrint input-group">
                                     <input type="hidden" name="idnutricionista" title = "Insira o nome do paciente desejado" value="{{Auth::user()->Nutricionista_idNutricionista}}">
                                     <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Selecione paciente   ..." >
 
-                                    <div class="input-group-append">
+                                    <div class="noPrint input-group-append">
                                         <span>
                                             <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
                                         </span> 
@@ -52,43 +59,43 @@
                                             </tr>
                 					</table>
                 				</div>
-                    <div class=" col-md-12  mt-12 escondido" id="{{$paciente->idPaciente}}" >
+                    <div class=" col-md-12 mt-12 escondido" id="{{$paciente->idPaciente}}" >
 
                     <h3>{{$paciente->NomePaciente}}</h3>
                     <div class="row">
-                        <div class="col-md-12  mt-12">
+                        <div class="col-md-12 yesPrint  mt-12">
                              <h6>Circunferencias (cm)</h6>
                              <canvas id="mostrarGraficoid{{$paciente->idPaciente}}" ></canvas>
                         </div>
                     </div>
                     <div class="row">
-                            <div class="col-md-6  mt-12">
+                            <div class="col-md-6 yesPrint mt-12">
                                 <h6>%Gordura </h6>
                                 <canvas id="mostrarGraficoGord{{$paciente->idPaciente}}" ></canvas>
                             </div>
-                            <div class="col-md-6  mt-12">
+                            <div class="col-md-6 yesPrint mt-12">
                                 <h6>%Muscular </h6>
                                 <canvas id="mostrarGraficoMusc{{$paciente->idPaciente}}" ></canvas>
                             </div>
                     </div>
                     <div class="row">
-                            <div class="col-md-6  mt-12">
+                            <div class="col-md-6 yesPrint mt-12">
                                 <h6>Tmb </h6>
                                 <canvas id="mostrarGraficoTmb{{$paciente->idPaciente}}" ></canvas>
                             </div>
-                            <div class="col-md-6  mt-12">
+                            <div class="col-md-6 yesPrint mt-12">
                                 <h6>Gordura Visceral</h6>
                                 <canvas id="mostrarGraficoGordVisc{{$paciente->idPaciente}}" ></canvas>
                             </div>
                     </div>
                     <div class="row">
-                            <div class="col-md-6  mt-12">
+                            <div class="col-md-6 yesPrint mt-12">
                                 <h6>Body Age</h6>
                                 <canvas id="mostrarGraficoBA{{$paciente->idPaciente}}" ></canvas>
                             </div>
                     </div>
                     <div class="row col">
-                        <button class="btn btn-primary selecionar" onClick="window.print()" type="submit" >Imprimir</button>
+                        <button class="btn btn-primary noPrint selecionar" onClick="window.print()" type="submit" >Imprimir</button>
                     </div>
                     </div>
             			@endforeach
