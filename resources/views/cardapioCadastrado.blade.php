@@ -9,7 +9,11 @@
                 <h5 class="col" style="font-family: sans-serif">Olá {{$paciente->NomePaciente}} !!! Abaixo o cardápio você seguirá durante 30 dias após isso faremos algumas
 
                     alterações, até lá qualquer duvida é só entrar em contato comigo!</h5><br>
-                <div class="container mt-4 ">
+                <h6>
+                Data consulta: {{$data}}
+                </h6>
+
+                    <div class="container mt-4 ">
                     <table class="table menu" style="table-layout: fixed">
                         <thead>
                         <tr>

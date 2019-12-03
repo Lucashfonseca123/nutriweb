@@ -6,7 +6,7 @@
             <div class="card-header text-center">
                 <h3>Cardápio <br><br></h3>
                 <img class="logo5" src="img/logo.png">
-                <form action="/buscarPessoa" method="post">
+                <form action="/buscarPessoas" method="post">
                 {{csrf_field()}}
                     <div class="input-group">
                         <input type="text" class="form-control col-md-6" name="busca" placeholder="Digite aqui...">

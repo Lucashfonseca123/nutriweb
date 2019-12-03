@@ -1,109 +1,116 @@
 @extends('layouts.menu')
 @section('content')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+    <style media="print">
+        .noPrint{ display: none; }
+        .yesPrint{ display: block !important; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <main class="page-content">
         <div class="container">
-        <div class="card">
-            <div class="card-header"><br>
-            <h2 class="col">Situação paciente</h2><br>
-            <h3 class="col">Gráficos</h3><br>
-            <img class="logo" src="img/logo.png">
-            {{--<img src="img/ajuda.png" id="1" class="help2">--}}
-            <div class="row">
-                <div class="form-group col-md-12">
-                        <form action="/buscarRelatorio" method="get">
-                        {{csrf_field()}}
-                            <div class="form-group col-md-5">
-                                <div class="input-group">
-                                    <input type="hidden" name="idnutricionista" value="{{Auth::user()->Nutricionista_idNutricionista}}">
-                                    <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Selecione paciente   ..." >
+            <div class="card">
+                <div class="card-header"><br>
+                    <div class=" noPrint">
+                        <h2 class="col">Situação paciente</h2><br>
+                        <h3 class="col">Gráficos</h3><br>
+                    </div>
+                    <img class="logo" src="img/logo.png">
+                    {{--<img src="img/ajuda.png" id="1" class="help2">--}}
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <form action="/buscarRelatorio" method="get">
+                                {{csrf_field()}}
+                                <div class="noPrint form-group col-md-5">
+                                    <div class="noPrint input-group">
+                                        <input type="hidden" name="idnutricionista" title = "Insira o nome do paciente desejado" value="{{Auth::user()->Nutricionista_idNutricionista}}">
+                                        <input type="text" class="form-control" id="pessoas" name="busca" placeholder="Selecione paciente   ..." >
 
-                                    <div class="input-group-append">
+                                        <div class="noPrint input-group-append">
                                         <span>
                                             <button class="btn btn-primary" value="busca" type="submit">Busca</button> &ensp;&ensp;
-                                        </span> 
-                                    </div>
-                                    <span style="cursor: pointer" onclick="window.open('/help#div3', '', 'width=600,height=300')">
+                                        </span>
+                                        </div>
+                                        <span style="cursor: pointer" onclick="window.open('/help#div3', '', 'width=600,height=300')">
                                       <img src="img/ajuda.png" class="help5">
                                   </span>
-                                   
+
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                      <br><br>
-                      @if(isset($consultaPaciente))  
-                      	@foreach($consultaPaciente as $paciente)
-                    			<div class="container mt-4 menu">
-                        			<table class="table">
-                            			<thead>
-			                                <tr>
-			                                    <th scope="col">Paciente</th>
-			                                    <th scope="col">Email</th>
-			                                    <th></th>
-			                                </tr>
-                            			</thead>
-                            				<tr>
+                            </form>
+                            <br><br>
+                            @if(isset($consultaPaciente))
+                                @foreach($consultaPaciente as $paciente)
+                                    <div class="container mt-4 menu">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Paciente</th>
+                                                <th scope="col">Email</th>
+                                                <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tr>
                                                 <tbody>
-                                                    <td> {{$paciente->NomePaciente}}</td>
-                                                    <td> {{$paciente->EmailPaciente}}</td>
-                                                    <td><button class="btn btn-primary mostrar_esconder selecionar" value="busca" id = "btn-{{$paciente->idPaciente}}" type="submit" data-id = "{{$paciente->idPaciente}}" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
-                                                    </td>
+                                                <td> {{$paciente->NomePaciente}}</td>
+                                                <td> {{$paciente->EmailPaciente}}</td>
+                                                <td><button class="btn btn-primary mostrar_esconder selecionar" value="busca" id = "btn-{{$paciente->idPaciente}}" type="submit" data-id = "{{$paciente->idPaciente}}" alvo="{{$paciente->idPaciente}}">Selecionar</button> &ensp;&ensp;
+                                                </td>
                                                 </tbody>
                                             </tr>
-                					</table>
-                				</div>
-                    <div class=" col-md-12  mt-12 escondido" id="{{$paciente->idPaciente}}" >
+                                        </table>
+                                    </div>
+                                    <div class=" col-md-12 mt-12 escondido" id="{{$paciente->idPaciente}}" >
 
-                    <h3>{{$paciente->NomePaciente}}</h3>
-                    <div class="row">
-                        <div class="col-md-12  mt-12">
-                             <h6>Circunferencias (cm)</h6>
-                             <canvas id="mostrarGraficoid{{$paciente->idPaciente}}" ></canvas>
+                                        <h3>{{$paciente->NomePaciente}}</h3>
+                                        <div class="row">
+                                            <div class="col-md-12 yesPrint  mt-12">
+                                                <h6>Circunferencias (cm)</h6>
+                                                <canvas id="mostrarGraficoid{{$paciente->idPaciente}}" ></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 yesPrint mt-12">
+                                                <h6>%Gordura </h6>
+                                                <canvas id="mostrarGraficoGord{{$paciente->idPaciente}}" ></canvas>
+                                            </div>
+                                            <div class="col-md-6 yesPrint mt-12">
+                                                <h6>%Muscular </h6>
+                                                <canvas id="mostrarGraficoMusc{{$paciente->idPaciente}}" ></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 yesPrint mt-12">
+                                                <h6>Tmb </h6>
+                                                <canvas id="mostrarGraficoTmb{{$paciente->idPaciente}}" ></canvas>
+                                            </div>
+                                            <div class="col-md-6 yesPrint mt-12">
+                                                <h6>Gordura Visceral</h6>
+                                                <canvas id="mostrarGraficoGordVisc{{$paciente->idPaciente}}" ></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 yesPrint mt-12">
+                                                <h6>Body Age</h6>
+                                                <canvas id="mostrarGraficoBA{{$paciente->idPaciente}}" ></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="row col">
+                                            <button class="btn btn-primary noPrint selecionar" onClick="window.print()" type="submit" >Imprimir</button>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
+
                         </div>
                     </div>
-                    <div class="row">
-                            <div class="col-md-6  mt-12">
-                                <h6>%Gordura </h6>
-                                <canvas id="mostrarGraficoGord{{$paciente->idPaciente}}" ></canvas>
-                            </div>
-                            <div class="col-md-6  mt-12">
-                                <h6>%Muscular </h6>
-                                <canvas id="mostrarGraficoMusc{{$paciente->idPaciente}}" ></canvas>
-                            </div>
-                    </div>
-                    <div class="row">
-                            <div class="col-md-6  mt-12">
-                                <h6>Tmb </h6>
-                                <canvas id="mostrarGraficoTmb{{$paciente->idPaciente}}" ></canvas>
-                            </div>
-                            <div class="col-md-6  mt-12">
-                                <h6>Gordura Visceral</h6>
-                                <canvas id="mostrarGraficoGordVisc{{$paciente->idPaciente}}" ></canvas>
-                            </div>
-                    </div>
-                    <div class="row">
-                            <div class="col-md-6  mt-12">
-                                <h6>Body Age</h6>
-                                <canvas id="mostrarGraficoBA{{$paciente->idPaciente}}" ></canvas>
-                            </div>
-                    </div>
-                    <div class="row col">
-                        <button class="btn btn-primary selecionar" onClick="window.print()" type="submit" >Imprimir</button>
-                    </div>
-                    </div>
-            			@endforeach
-                	@endif
+                </div>
+            </div>
+        </div>
 
-       </div>
-       </div>
-       </div>
-       </div>
-      </div>
-       
 
 
     </main>
-    
+
     <script type="text/javascript">
     let cintura = [];
     let quadril = [];
@@ -118,7 +125,7 @@
     let gord = [];
     let gordV = [];
     let tMb = [];
-    let bA = [];                
+    let bA = [];
     let data = [];
     let consulta = [];
     		$(".selecionar").click(function(){
@@ -146,7 +153,7 @@
                        gord[j] = response[i].Porc_gorduraConsulta;
                        gordV[j] = response[i].Gord_visceralConsulta;
                        tMb[j] = response[i].TmbConsulta;
-                       bA[j] = response[i].Body_ageConsulta;                
+                       bA[j] = response[i].Body_ageConsulta;
                        data[j] =response[i].created_at;
                        j++;
                     }
@@ -159,7 +166,7 @@
                         abdomen = [];
                         bracoDir = [];
                         bracoEsq = [];
-                        punho = [];                
+                        punho = [];
                         data = [];
                         musc = [];
                         gord = [];
@@ -168,7 +175,7 @@
                         bA =[];
             }
             });
-			}); 
+			});
     </script>
 
     <script type="text/javascript">
@@ -188,7 +195,7 @@
     var t = [];
     var b = [];
     var datasFormatadas = [];
-    var idp = id;  
+    var idp = id;
    var j =0;
     for (var i = cintura.length - 1; i >= 0; i--) {
         c[j] = parseFloat(cintura[i]);
@@ -209,7 +216,7 @@
         var date_aar2 = date_arr[0].split("-");
         datasFormatadas[j] = date_aar2[2] + "/" + date_aar2[1] + "/" + date_aar2[0];
         j++;
-        
+
     }
     q.push(0);
     c.push(0);
@@ -221,7 +228,7 @@
     let gordViscChart = document.getElementById('mostrarGraficoGordVisc'+idp).getContext('2d');
     let tmbChart = document.getElementById('mostrarGraficoTmb'+idp).getContext('2d');
     let baChart = document.getElementById('mostrarGraficoBA'+idp).getContext('2d');
-   
+
     Chart.defaults.global.defaultFontFamily = 'Lato';
     Chart.defaults.global.defaultFontSize = 18;
     Chart.defaults.global.defaultFontColor = '#777';
@@ -250,7 +257,7 @@
             data : [c[2],q[2],cE[2],cD[2],p[2],bD[2],bE[2],a[2],p[2]],
             label : datasFormatadas[2]
         },
-        { 
+        {
             backgroundColor: 'red',
             data : [c[3],q[3],cE[3],cD[3],p[3],bD[3],bE[3],a[3],p[3]],
             label : datasFormatadas[3]
@@ -260,7 +267,7 @@
             data : [c[4],q[4],cE[4],cD[4],p[4],bD[4],bE[4],a[4],p[4]],
             label : datasFormatadas[4]
         },
-       
+
         ]
       },
       options:{
@@ -286,7 +293,7 @@
         scales: {
                 yAxes : [{
                     ticks : {
-                           
+
                         min : 0
                     }
                 }]
@@ -331,7 +338,7 @@
         scales: {
                 yAxes : [{
                     ticks : {
-                           
+
                         min : 0
                     }
                 }]
@@ -351,7 +358,7 @@
           hoverBorderWidth:3,
           hoverBorderColor:'#000'
         }
-        
+
         ]
       },
       options:{
@@ -377,7 +384,7 @@
         scales: {
                 yAxes : [{
                     ticks : {
-                           
+
                         min : 0
                     }
                 }]
@@ -386,7 +393,7 @@
     });
 
     let gorduraVisceralChart = new Chart(gordViscChart, {
-      type:'bar', 
+      type:'bar',
       data:{
         labels:datasFormatadas,
         datasets:[{
@@ -397,7 +404,7 @@
           hoverBorderWidth:3,
           hoverBorderColor:'#000'
         }
-        
+
         ]
       },
       options:{
@@ -423,7 +430,7 @@
         scales: {
                 yAxes : [{
                     ticks : {
-                           
+
                         min : 0
                     }
                 }]
@@ -468,7 +475,7 @@
         scales: {
                 yAxes : [{
                     ticks : {
-                           
+
                         min : 0
                     }
                 }]
@@ -513,7 +520,7 @@
         scales: {
                 yAxes : [{
                     ticks : {
-                           
+
                         min : 0
                     }
                 }]

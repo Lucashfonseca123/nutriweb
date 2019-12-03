@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt">
 
+<style media="print">
+    .noPrint{ display: none; }
+    .yesPrint{ display: block !important; }
+</style>
+
 <head>
     <meta charset="utf-8">
     <title>@yield('title')</title>
@@ -22,7 +27,7 @@
     <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
         <i class="fas fa-bars"></i>
     </a>
-    <nav id="sidebar" class="sidebar-wrapper">
+    <nav id="sidebar" class="noPrint sidebar-wrapper">
         <div class="sidebar-content">
             <div class="sidebar-brand">
                 <a href="/">NUTRIWEB</a>

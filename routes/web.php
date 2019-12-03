@@ -90,6 +90,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/buscarPessoa', 'CardapioController@busca');
 
+    Route::post('/buscarPessoas', 'CardapioController@busca23');
+
     Route::post('/buscarEditPessoa', 'CardapioController@busca2');
 
     Route::resource('/salvarAlimentos', 'AlimentoController');

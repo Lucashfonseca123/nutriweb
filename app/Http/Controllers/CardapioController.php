@@ -167,6 +167,33 @@ class CardapioController extends Controller
         return view('cardapio_cadastro')->with('lista_nome', $lista_nome)->with('group', $var2);
         }
 
+    public function busca23(Request $request){
+        $var = $request->busca;
+        $varIds = $request->idPac;
+//        dd($var);
+//        $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('Paciente.ExcluidoPaciente','<>','1')->get();
+
+        $varId = $request->buscaId;
+
+        if ($varId == 0) {
+          $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('ExcluidoPaciente','0')->with(['consulta' => function($query) {
+//            $lista_nome = Paciente::where('idPaciente', $varIds)->where('ExcluidoPaciente','0')->with(['consulta' => function($query) {
+
+                $query->where('AlteracaoConsulta', 0);
+            }])->get();
+        }
+        else{
+            $lista_nome = Paciente::where('NomePaciente', "like", "%".$var."%")->where('ExcluidoPaciente','0')->with(['consulta' => function($query) use($varId){
+//            $lista_nome = Paciente::where('idPaciente', $varIds)->where('ExcluidoPaciente','0')->with(['consulta' => function($query) use($varId){
+
+                $query->where('idConsulta', $varId);
+            }])->get();
+        }
+//        dd($lista_nome);
+        $var2 = Grupo::all();
+        return view('cardapio_cadastro')->with('lista_nome', $lista_nome)->with('group', $var2);
+    }
+
 
     public function busca2(Request $request){
         $var = $request->busca;
@@ -226,6 +253,7 @@ class CardapioController extends Controller
 
     public function final($id){
         $varId = (int) $id;
+        $ldate = date('d/m/Y');
         $var = Cardapio::where('Paciente_idPaciente', $varId)->orderBy('updated_at', 'DESC')->first();
         $varRefeicao = Itemcardapio::where('Cardapio_idCardapio', $var->idCardapio)
             ->with(['grupo.grupo_has_alimentos.cmvcoltaco3', 'grupo2.grupo_has_alimentos.cmvcoltaco3'])
@@ -236,6 +264,6 @@ class CardapioController extends Controller
         return view('cardapioCadastrado', [
             'nomeAlimento'  => $varRefeicao,
             'paciente' => $varPaciente
-        ]);
+        ])->with('data', $ldate);
     }
 }

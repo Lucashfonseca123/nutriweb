@@ -91,7 +91,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[1]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
@@ -104,7 +104,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[1]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
@@ -123,7 +123,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[2]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
@@ -142,7 +142,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[2]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
@@ -161,7 +161,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[3]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
@@ -174,7 +174,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[3]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
@@ -193,7 +193,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[4]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
@@ -206,7 +206,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[4]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
@@ -225,7 +225,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[5]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
@@ -238,7 +238,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[5]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
@@ -257,7 +257,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo[6]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
@@ -270,7 +270,7 @@
                                                 <div class="input-group" style="width: 350px">
                                                     <select class="js-example-basic-single form-control" style="width: 250px" name="grupo2[6]" id="idgrupo">
                                                         @if(isset($group))             {{--Se a variavel foi previamente definida--}}
-                                                        @foreach($group as $grupos)
+                                                        @foreach($group->sortBy('NomeGrupo') as $grupos)
                                                             <option value="{{$grupos->idGrupo}}" name="">{{$grupos->NomeGrupo}}</option>
                                                         @endforeach
                                                         @endif
